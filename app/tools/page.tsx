@@ -12,7 +12,7 @@ import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
 import SchemaScript from "@/components/schema/SchemaScript";
 import { generatePageMetadata } from "@/lib/metadata";
-import { webPageSchema, SITE_URL } from "@/lib/schema";
+import { webPageSchema, breadcrumbSchema, softwareApplicationSchema, SITE_URL } from "@/lib/schema";
 import { TOOLS_ITEMS } from "@/lib/navigation";
 
 export const metadata: Metadata = generatePageMetadata({
@@ -42,6 +42,19 @@ export default function ToolsPage() {
           "Free AI Tools for Law Firms",
           "Free tools for law firms to measure AI visibility, missed-call revenue, and growth ROI.",
           `${SITE_URL}/tools`
+        )}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Tools", url: `${SITE_URL}/tools` },
+        ])}
+      />
+      <SchemaScript
+        schema={softwareApplicationSchema(
+          "AI Visibility Checker for Law Firms",
+          "Check how visible your law firm is across ChatGPT, Gemini, and Perplexity.",
+          `${SITE_URL}/tools/ai-visibility-checker`
         )}
       />
 

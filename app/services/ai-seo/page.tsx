@@ -1,5 +1,5 @@
 import { generatePageMetadata } from "@/lib/metadata";
-import { serviceSchema, SITE_URL } from "@/lib/schema";
+import { serviceSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 import SchemaScript from "@/components/schema/SchemaScript";
 import AiSeoClient from "./AiSeoClient";
 
@@ -18,6 +18,13 @@ export default function AiSeoPage() {
     <>
       <SchemaScript
         schema={serviceSchema(NAME, DESCRIPTION, `${SITE_URL}/services/ai-seo`)}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Services", url: `${SITE_URL}/services` },
+          { name: NAME, url: `${SITE_URL}/services/ai-seo` },
+        ])}
       />
       <AiSeoClient />
     </>

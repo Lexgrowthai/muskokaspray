@@ -1,5 +1,5 @@
 import { generatePageMetadata } from "@/lib/metadata";
-import { serviceSchema, SITE_URL } from "@/lib/schema";
+import { serviceSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 import SchemaScript from "@/components/schema/SchemaScript";
 import AiWebsitesClient from "./AiWebsitesClient";
 
@@ -22,6 +22,13 @@ export default function AiWebsitesPage() {
           DESCRIPTION,
           `${SITE_URL}/services/ai-websites`
         )}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Services", url: `${SITE_URL}/services` },
+          { name: NAME, url: `${SITE_URL}/services/ai-websites` },
+        ])}
       />
       <AiWebsitesClient />
     </>

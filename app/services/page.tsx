@@ -16,7 +16,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { generatePageMetadata } from "@/lib/metadata";
-import { webPageSchema, SITE_URL } from "@/lib/schema";
+import { webPageSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 import SchemaScript from "@/components/schema/SchemaScript";
 import Button from "@/components/ui/Button";
 import { SERVICES_ITEMS } from "@/lib/navigation";
@@ -52,6 +52,12 @@ export default function ServicesPage() {
           "The full suite of AI growth systems LexScale.ai builds for law firms — across AI search, websites, automation, and analytics.",
           `${SITE_URL}/services`
         )}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Services", url: `${SITE_URL}/services` },
+        ])}
       />
 
       {/* HERO */}

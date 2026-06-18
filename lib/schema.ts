@@ -1,5 +1,24 @@
 export const SITE_URL = "https://lexscale.ai";
 
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "LexScale.ai",
+    url: SITE_URL,
+    description:
+      "AI growth systems for law firms — AI search optimization, AI SEO, websites, chatbots, and receptionists.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/insights?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -114,6 +133,32 @@ export function webPageSchema(name: string, description: string, url: string) {
     url,
     isPartOf: {
       "@type": "WebSite",
+      name: "LexScale.ai",
+      url: SITE_URL,
+    },
+  };
+}
+
+export function softwareApplicationSchema(
+  name: string,
+  description: string,
+  url: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name,
+    description,
+    url,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    provider: {
+      "@type": "Organization",
       name: "LexScale.ai",
       url: SITE_URL,
     },

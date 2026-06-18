@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import SchemaScript from "@/components/schema/SchemaScript";
 import { generatePageMetadata } from "@/lib/metadata";
-import { articleSchema, SITE_URL } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { CATEGORIES, humanizeCategory } from "../../data";
 import { getArticleContent } from "./content";
 import ArticleClient from "./ArticleClient";
@@ -68,6 +68,14 @@ export default async function ArticlePage({
           found.article.date,
           "LexScale Editorial"
         )}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Insights", url: `${SITE_URL}/insights` },
+          { name: categoryName, url: `${SITE_URL}/insights/${category}` },
+          { name: content.title, url },
+        ])}
       />
       <ArticleClient
         title={content.title}

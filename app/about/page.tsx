@@ -19,7 +19,7 @@ import {
   Zap,
 } from "lucide-react";
 import { generatePageMetadata } from "@/lib/metadata";
-import { webPageSchema, SITE_URL } from "@/lib/schema";
+import { webPageSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 import SchemaScript from "@/components/schema/SchemaScript";
 import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
@@ -266,6 +266,12 @@ export default function AboutPage() {
           "LexScale.ai combines 10+ years of legal marketing experience with cutting-edge AI to help law firms grow through intelligent automation and AI-powered visibility.",
           `${SITE_URL}/about`
         )}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "About", url: `${SITE_URL}/about` },
+        ])}
       />
 
       {/* HERO */}

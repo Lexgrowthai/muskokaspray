@@ -1,6 +1,6 @@
 import SchemaScript from "@/components/schema/SchemaScript";
 import { generatePageMetadata } from "@/lib/metadata";
-import { serviceSchema, SITE_URL } from "@/lib/schema";
+import { serviceSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 import AISOClient from "./AISOClient";
 
 const NAME = "AI Search Optimization (AISO) for Law Firms";
@@ -22,6 +22,13 @@ export default function Page() {
           DESCRIPTION,
           SITE_URL + "/services/ai-search-optimization"
         )}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Services", url: `${SITE_URL}/services` },
+          { name: NAME, url: `${SITE_URL}/services/ai-search-optimization` },
+        ])}
       />
       <AISOClient />
     </>
