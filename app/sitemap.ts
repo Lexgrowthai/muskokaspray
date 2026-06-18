@@ -5,6 +5,7 @@ import {
   INSIGHTS_ITEMS,
   TOOLS_ITEMS,
 } from "@/lib/navigation";
+import { CHATGPT_SLUGS } from "./chatgpt/data";
 
 const GLOSSARY_TERMS = [
   "entity-seo",
@@ -78,6 +79,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }))
   );
 
+  const chatgptRoutes = [
+    {
+      url: `${SITE_URL}/chatgpt`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    ...CHATGPT_SLUGS.map((slug) => ({
+      url: `${SITE_URL}/chatgpt/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
+
   const toolRoutes = Array.from(
     new Set(TOOLS_ITEMS.map((t) => t.href))
   ).map((href) => ({
@@ -106,6 +122,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...serviceRoutes,
     ...insightCategoryRoutes,
     ...insightArticleRoutes,
+    ...chatgptRoutes,
     ...toolRoutes,
     ...glossaryRoutes,
     ...caseStudyRoutes,
