@@ -13,7 +13,7 @@ import Button from "@/components/ui/Button";
 import FAQ from "@/components/sections/FAQ";
 import SchemaScript from "@/components/schema/SchemaScript";
 import { generatePageMetadata } from "@/lib/metadata";
-import { serviceSchema, SITE_URL } from "@/lib/schema";
+import { serviceSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 const NAME = "Entity SEO for Law Firms";
 const DESCRIPTION =
@@ -103,6 +103,13 @@ export default function Page() {
           DESCRIPTION,
           SITE_URL + "/services/entity-seo"
         )}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Services", url: `${SITE_URL}/services` },
+          { name: NAME, url: `${SITE_URL}/services/entity-seo` },
+        ])}
       />
 
       <section className="hero-gradient relative overflow-hidden">

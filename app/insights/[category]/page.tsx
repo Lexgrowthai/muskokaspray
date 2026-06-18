@@ -4,7 +4,7 @@ import { ArrowRight, CalendarDays, Sparkles } from "lucide-react";
 import SchemaScript from "@/components/schema/SchemaScript";
 import Button from "@/components/ui/Button";
 import { generatePageMetadata } from "@/lib/metadata";
-import { webPageSchema, SITE_URL } from "@/lib/schema";
+import { webPageSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { CATEGORIES, CATEGORY_SLUGS, humanizeCategory } from "../data";
 
 export function generateStaticParams() {
@@ -56,6 +56,13 @@ export default async function CategoryPage({
           data.description,
           `${SITE_URL}/insights/${category}`
         )}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Insights", url: `${SITE_URL}/insights` },
+          { name: data.name, url: `${SITE_URL}/insights/${category}` },
+        ])}
       />
 
       <section className="hero-gradient relative overflow-hidden">

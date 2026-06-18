@@ -4,7 +4,7 @@ import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
 import SchemaScript from "@/components/schema/SchemaScript";
 import { generatePageMetadata } from "@/lib/metadata";
-import { webPageSchema, SITE_URL } from "@/lib/schema";
+import { webPageSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Law Firm Case Studies",
@@ -85,6 +85,12 @@ export default function CaseStudiesPage() {
           "Real results from law firms using LexScale.ai AI growth systems.",
           `${SITE_URL}/case-studies`
         )}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Case Studies", url: `${SITE_URL}/case-studies` },
+        ])}
       />
 
       <section className="hero-gradient relative overflow-hidden">

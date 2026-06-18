@@ -13,7 +13,7 @@ import Button from "@/components/ui/Button";
 import FAQ from "@/components/sections/FAQ";
 import SchemaScript from "@/components/schema/SchemaScript";
 import { generatePageMetadata } from "@/lib/metadata";
-import { serviceSchema, SITE_URL } from "@/lib/schema";
+import { serviceSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 const NAME = "Structured Data & Schema Markup for Law Firms";
 const DESCRIPTION =
@@ -108,6 +108,13 @@ export default function Page() {
           DESCRIPTION,
           SITE_URL + "/services/structured-data"
         )}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Services", url: `${SITE_URL}/services` },
+          { name: NAME, url: `${SITE_URL}/services/structured-data` },
+        ])}
       />
 
       <section className="hero-gradient relative overflow-hidden">

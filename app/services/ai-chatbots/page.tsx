@@ -4,7 +4,7 @@ import Button from "@/components/ui/Button";
 import FAQ from "@/components/sections/FAQ";
 import SchemaScript from "@/components/schema/SchemaScript";
 import { generatePageMetadata } from "@/lib/metadata";
-import { serviceSchema, SITE_URL } from "@/lib/schema";
+import { serviceSchema, breadcrumbSchema, faqSchema, SITE_URL } from "@/lib/schema";
 
 const NAME = "AI Chatbots for Law Firms";
 const DESCRIPTION =
@@ -96,6 +96,14 @@ export default function AiChatbotsPage() {
       <SchemaScript
         schema={serviceSchema(NAME, DESCRIPTION, `${SITE_URL}/services/ai-chatbots`)}
       />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: "Home", url: SITE_URL },
+          { name: "Services", url: `${SITE_URL}/services` },
+          { name: NAME, url: `${SITE_URL}/services/ai-chatbots` },
+        ])}
+      />
+      <SchemaScript schema={faqSchema(faqs)} />
 
       {/* Hero */}
       <section className="hero-gradient py-24 px-6 text-center relative overflow-hidden">
