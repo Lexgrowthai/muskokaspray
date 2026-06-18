@@ -293,6 +293,8 @@ footer{background:#040c1e;padding:36px 40px;}
   /* Comparison: shrink fixed columns */
   .cmp-head,.cmp-row{grid-template-columns:1fr 90px 90px !important;}
   .cmp-hcell,.cmp-cell{padding:12px 10px !important;}
+  /* Testimonials: 2 columns on tablet */
+  .t-grid{grid-template-columns:repeat(2,1fr) !important;}
 }
 @media(max-width:520px){
   .pa-grid,.svc-grid,.why-cards,.stats-grid,.plat-grid{grid-template-columns:1fr;}
@@ -303,6 +305,8 @@ footer{background:#040c1e;padding:36px 40px;}
   .cmp-head,.cmp-row{grid-template-columns:1fr auto !important;}
   .cmp-trad{display:none !important;}
   .cmp-hcell:last-child{display:none !important;}
+  /* Testimonials: single column on mobile */
+  .t-grid{grid-template-columns:1fr !important;}
 }
 </style>
 </head>
@@ -440,18 +444,82 @@ footer{background:#040c1e;padding:36px 40px;}
 
 <!-- TESTIMONIALS -->
 <section id="testimonials" class="sec-pad" style="background:linear-gradient(180deg,#fff,#f8f7ff);">
-  <div style="text-align:center;margin-bottom:44px;padding:0 40px;"><div class="tag"><span>Client Stories</span></div><h2 class="section-title">Trusted By Attorneys <span class="purple">Across North America</span></h2></div>
-  <div class="t-track-wrap"><div class="t-track" id="tTrack">
-    <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"</div><p class="t-text">Before LexScale, we were missing 60–80 calls a month. Within 90 days their AI Receptionist had us booking 40% more consultations — without hiring a single new staff member.</p><div class="t-sep"><div class="t-av" style="background:linear-gradient(135deg,#6A5CFF,#a89fff);">MR</div><div><div class="t-name">Michael R., Esq.</div><div class="t-role">Personal Injury Attorney</div><div class="t-firm">Rodriguez & Associates · Miami, FL</div></div><div class="t-result">+$340k/yr</div></div></div>
-    <div class="t-card dark"><div class="t-stars" style="color:#f59e0b;">★★★★★</div><div class="t-quote" style="color:rgba(106,92,255,.25);">"</div><p class="t-text">Divorce clients search at 11pm on a Tuesday. LexScale's AI chatbot captures them empathetically, professionally. Our consultations went up 52% in two months.</p><div class="t-sep"><div class="t-av" style="background:linear-gradient(135deg,#ec4899,#a855f7);">SC</div><div><div class="t-name">Sarah C., Esq.</div><div class="t-role">Family Law Attorney</div><div class="t-firm">Callahan Family Law · Toronto, ON</div></div><div class="t-result" style="color:#34d399;border-color:rgba(16,185,129,.25);">+52% leads</div></div></div>
-    <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"</div><p class="t-text">LexScale's AI search optimization got us appearing in ChatGPT and Perplexity results. That alone brought in three major commercial clients in Q1. The platform pays for itself ten times over.</p><div class="t-sep"><div class="t-av" style="background:linear-gradient(135deg,#0B1536,#6A5CFF);">DK</div><div><div class="t-name">David K., Esq.</div><div class="t-role">Business Law Attorney</div><div class="t-firm">Kwan Commercial Law · Vancouver, BC</div></div><div class="t-result">3 new clients</div></div></div>
-  </div></div>
-  <div class="t-nav">
-    <button class="t-arrow" onclick="tSlide(-1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-    <div class="t-dots" id="tDots"><div class="t-dot on" onclick="tGo(0)"></div><div class="t-dot" onclick="tGo(1)"></div><div class="t-dot" onclick="tGo(2)"></div></div>
-    <button class="t-arrow" onclick="tSlide(1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:44px;">
+      <div class="tag"><span>Client Stories</span></div>
+      <h2 class="section-title">Trusted By Attorneys <span class="purple">Across North America</span></h2>
+      <p class="section-sub" style="max-width:460px;margin:8px auto 0;">★★★★★ &nbsp;4.9/5 from 200+ law firms</p>
+    </div>
+    <div class="t-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-quote">"</div>
+        <p class="t-text">Before LexScale, we were missing 60–80 calls a month. Within 90 days their AI Receptionist had us booking 40% more consultations — without hiring a single new staff member.</p>
+        <div class="t-sep">
+          <div class="t-av" style="background:linear-gradient(135deg,#6A5CFF,#a89fff);">MR</div>
+          <div><div class="t-name">Michael R., Esq.</div><div class="t-role">Personal Injury Attorney</div><div class="t-firm">Rodriguez & Associates · Miami, FL</div></div>
+          <div class="t-result">+$340k/yr</div>
+        </div>
+      </div>
+
+      <div class="t-card dark">
+        <div class="t-stars" style="color:#f59e0b;">★★★★★</div>
+        <div class="t-quote" style="color:rgba(106,92,255,.25);">"</div>
+        <p class="t-text">Divorce clients search at 11pm on a Tuesday. LexScale's AI chatbot captures them empathetically and professionally. Our consultations went up 52% in two months.</p>
+        <div class="t-sep">
+          <div class="t-av" style="background:linear-gradient(135deg,#ec4899,#a855f7);">SC</div>
+          <div><div class="t-name">Sarah C., Esq.</div><div class="t-role">Family Law Attorney</div><div class="t-firm">Callahan Family Law · Toronto, ON</div></div>
+          <div class="t-result" style="color:#34d399;border-color:rgba(16,185,129,.25);">+52% leads</div>
+        </div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-quote">"</div>
+        <p class="t-text">LexScale's AI search optimization got us appearing in ChatGPT and Perplexity results. That alone brought in three major commercial clients in Q1. The platform pays for itself ten times over.</p>
+        <div class="t-sep">
+          <div class="t-av" style="background:linear-gradient(135deg,#0B1536,#6A5CFF);">DK</div>
+          <div><div class="t-name">David K., Esq.</div><div class="t-role">Business Law Attorney</div><div class="t-firm">Kwan Commercial Law · Vancouver, BC</div></div>
+          <div class="t-result">3 new clients</div>
+        </div>
+      </div>
+
+      <div class="t-card dark">
+        <div class="t-stars" style="color:#f59e0b;">★★★★★</div>
+        <div class="t-quote" style="color:rgba(106,92,255,.25);">"</div>
+        <p class="t-text">We went from ranking on page 3 to the top 3 results for our main keyword in under 60 days. The SEO strategy LexScale built is unlike anything we've seen from a marketing agency.</p>
+        <div class="t-sep">
+          <div class="t-av" style="background:linear-gradient(135deg,#0f172a,#1e293b);">BL</div>
+          <div><div class="t-name">Brian L., Esq.</div><div class="t-role">Criminal Defense Attorney</div><div class="t-firm">Burke Legal Defense · Chicago, IL</div></div>
+          <div class="t-result" style="color:#34d399;border-color:rgba(16,185,129,.25);">+310% leads</div>
+        </div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-quote">"</div>
+        <p class="t-text">The AI Visibility Dashboard alone is worth it. I can see exactly where my firm shows up on ChatGPT and Gemini in real time. We've already landed two estate planning clients from AI referrals this quarter.</p>
+        <div class="t-sep">
+          <div class="t-av" style="background:linear-gradient(135deg,#059669,#10b981);">JP</div>
+          <div><div class="t-name">Jennifer P., Esq.</div><div class="t-role">Wills & Estates Attorney</div><div class="t-firm">Palmer Estate Law · Calgary, AB</div></div>
+          <div class="t-result">2 AI referrals</div>
+        </div>
+      </div>
+
+      <div class="t-card dark">
+        <div class="t-stars" style="color:#f59e0b;">★★★★★</div>
+        <div class="t-quote" style="color:rgba(106,92,255,.25);">"</div>
+        <p class="t-text">I was skeptical about AI marketing but the results don't lie. Our intake is fully automated, we answer every call, and our Google rating went from 3.8 to 4.9 in 90 days. LexScale delivered.</p>
+        <div class="t-sep">
+          <div class="t-av" style="background:linear-gradient(135deg,#7c3aed,#a855f7);">AT</div>
+          <div><div class="t-name">Andre T., Esq.</div><div class="t-role">Personal Injury Attorney</div><div class="t-firm">Thompson Injury Law · Houston, TX</div></div>
+          <div class="t-result">4.9★ rating</div>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <div style="text-align:center;margin-top:20px;font-size:13px;color:#94a3b8;font-weight:500;">★★★★★ &nbsp;4.9/5 from 200+ law firms across North America</div>
 </section>
 
 <!-- STATS -->
@@ -737,18 +805,6 @@ function calc(){
   document.getElementById('annualL').textContent=fmt(monthly*12);
 }
 calc();
-
-// TESTIMONIALS
-var tIdx=0;
-function tGo(i){
-  tIdx=i;
-  var track=document.getElementById('tTrack');
-  var w=track.children[0].offsetWidth+22;
-  track.style.transform='translateX(-'+(i*w)+'px)';
-  var dots=document.getElementById('tDots').children;
-  for(var d=0;d<dots.length;d++)dots[d].className='t-dot'+(d===i?' on':'');
-}
-function tSlide(dir){tGo((tIdx+dir+3)%3);}
 
 // STATS counter
 var statsStarted=false;
