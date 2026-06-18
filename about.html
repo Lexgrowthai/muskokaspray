@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>About LexScale.ai — Built for Law Firms. Powered by AI.</title>
+<meta name="description" content="LexScale.ai combines 10+ years of legal marketing experience with cutting-edge AI technology. Learn how we help law firms grow through intelligent automation and AI-powered visibility."/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"LexScale.ai",
+  "url":"https://lexscale.ai",
+  "description":"AI-powered growth systems exclusively for law firms. Combining 10+ years of legal marketing experience with modern artificial intelligence.",
+  "foundingDate":"2013",
+  "serviceArea":{"@type":"Place","name":"United States and Canada"},
+  "knowsAbout":["Law Firm Marketing","AI SEO","Legal Website Design","AI Receptionist","Law Firm Growth"]
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0B1536;--pu:#6A5CFF;--pu2:#8B7FFF;--pu3:#a89fff;--gold:#D4AF37;--gold2:#F0C040;--gold3:#b8962e;--black:#06090f;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#0B1536;overflow-x:hidden;}
+a{text-decoration:none;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(1.3);}}
+@keyframes floatUp{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+@keyframes shimmer{0%{background-position:200% center;}100%{background-position:-200% center;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes goldPulse{0%,100%{box-shadow:0 0 0 0 rgba(212,175,55,.4);}70%{box-shadow:0 0 0 12px rgba(212,175,55,0);}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(106,92,255,.09);}
+.logo{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.4px;}
+.logo span{color:var(--pu);}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
+.nav-links a{font-size:13px;color:#4a5568;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--pu);}
+.has-drop{position:relative;}
+.has-drop>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.drop-arrow{width:14px;height:14px;opacity:.5;transition:transform .2s;}
+.has-drop:hover .drop-arrow{transform:rotate(180deg);}
+.dropdown{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(106,92,255,.12);border-radius:16px;padding:8px;box-shadow:0 16px 48px rgba(11,21,54,.12);min-width:240px;opacity:0;pointer-events:none;transition:all .2s;z-index:200;}
+.has-drop:hover .dropdown{opacity:1;pointer-events:all;}
+.drop-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;transition:background .15s;cursor:pointer;}
+.drop-item:hover{background:rgba(106,92,255,.07);}
+.drop-ico{width:30px;height:30px;border-radius:8px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.drop-label{font-size:12.5px;font-weight:600;color:var(--navy);}
+.drop-sub{font-size:11px;color:#94a3b8;margin-top:1px;}
+.drop-divider{height:1px;background:rgba(106,92,255,.07);margin:6px 8px;}
+.nav-cta{background:var(--pu);color:#fff;border:none;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;}
+.nav-cta:hover{background:#5848e8;transform:translateY(-1px);}
+
+/* LAYOUT */
+section{position:relative;overflow:hidden;}
+.si{max-width:1100px;margin:0 auto;}
+.sp{padding:90px 40px;}
+.spm{padding:70px 40px;}
+.blob{position:absolute;border-radius:50%;pointer-events:none;}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(106,92,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(106,92,255,.035) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;}
+
+/* TYPOGRAPHY */
+.tag{display:inline-flex;align-items:center;gap:7px;background:rgba(106,92,255,.08);border:1px solid rgba(106,92,255,.2);border-radius:100px;padding:6px 14px;margin-bottom:18px;}
+.tag span{font-size:11px;font-weight:700;color:var(--pu);letter-spacing:.8px;text-transform:uppercase;}
+.gold-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.25);border-radius:100px;padding:6px 14px;margin-bottom:18px;}
+.gold-tag span{font-size:11px;font-weight:700;color:var(--gold2);letter-spacing:.8px;text-transform:uppercase;}
+.section-title{font-size:clamp(26px,3.2vw,42px);font-weight:800;color:var(--navy);letter-spacing:-1.2px;line-height:1.1;margin-bottom:16px;}
+.section-title.light{color:#fff;}
+.section-sub{font-size:16px;color:#64748b;line-height:1.75;max-width:640px;}
+.section-sub.light{color:rgba(255,255,255,.65);}
+.purple{color:var(--pu);}
+.gold{color:var(--gold2);}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(106,92,255,.12),transparent);margin:0;}
+
+/* BUTTONS */
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:15px 30px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(106,92,255,.35);transition:all .25s;text-decoration:none;}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(106,92,255,.5);}
+.btn-g{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold3),var(--gold2));color:#0B1536;border:none;padding:15px 30px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(212,175,55,.3);transition:all .25s;text-decoration:none;}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(212,175,55,.5);}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25);padding:15px 30px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .25s;text-decoration:none;}
+.btn-s:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px);}
+.btn-s.dark{color:var(--navy);border-color:rgba(11,21,54,.2);}
+.btn-s.dark:hover{border-color:var(--pu);color:var(--pu);}
+
+/* HERO */
+#hero{background:linear-gradient(150deg,#04070f 0%,#060d1e 40%,#0B1536 100%);min-height:88vh;display:flex;align-items:center;}
+.hero-inner{max-width:1100px;margin:0 auto;padding:100px 40px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:100px;padding:7px 16px;margin-bottom:28px;}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:pulse 2s infinite;}
+.hero-badge-txt{font-size:11px;font-weight:700;color:var(--gold2);letter-spacing:.8px;text-transform:uppercase;}
+.hero-h1{font-size:clamp(32px,4vw,56px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-2px;margin-bottom:22px;}
+.hero-h1 .grad-gold{background:linear-gradient(135deg,var(--gold3),var(--gold2),#ffe680);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-p{font-size:16px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:36px;max-width:480px;}
+.hero-trust{display:flex;flex-wrap:wrap;gap:20px;margin-top:32px;}
+.hero-ti{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.5);}
+.hero-chk{width:18px;height:18px;border-radius:50%;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+/* HERO RIGHT — founding card */
+.hero-right{display:flex;flex-direction:column;gap:20px;}
+.founding-card{background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(212,175,55,.18);border-radius:24px;padding:36px;position:relative;overflow:hidden;}
+.founding-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);}
+.fc-year{font-size:64px;font-weight:900;color:var(--gold2);letter-spacing:-3px;line-height:1;opacity:.9;}
+.fc-label{font-size:13px;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;}
+.fc-desc{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-top:12px;}
+.mini-stats-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.mini-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;}
+.ms-val{font-size:28px;font-weight:900;color:#fff;letter-spacing:-1px;}
+.ms-val.gold-v{color:var(--gold2);}
+.ms-lbl{font-size:11px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:4px;}
+
+/* MISSION STRIP */
+#mission{background:linear-gradient(135deg,var(--gold3) 0%,var(--gold2) 50%,#e8c020 100%);}
+.mission-inner{max-width:1100px;margin:0 auto;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.mission-text{font-size:clamp(18px,2.2vw,26px);font-weight:800;color:var(--navy);letter-spacing:-.5px;line-height:1.3;max-width:600px;}
+.mission-sub{font-size:14px;color:rgba(11,21,54,.6);margin-top:8px;font-weight:500;}
+
+/* STORY / TIMELINE */
+#story{background:linear-gradient(180deg,#fff 0%,#f8f7ff 100%);}
+.timeline{position:relative;padding-left:36px;}
+.timeline::before{content:'';position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--pu),rgba(106,92,255,.1));}
+.tl-item{position:relative;margin-bottom:52px;}
+.tl-item:last-child{margin-bottom:0;}
+.tl-dot{position:absolute;left:-31px;top:4px;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--pu),var(--pu2));border:3px solid #fff;box-shadow:0 0 0 3px rgba(106,92,255,.2);}
+.tl-dot.gold-dot{background:linear-gradient(135deg,var(--gold3),var(--gold2));box-shadow:0 0 0 3px rgba(212,175,55,.25);}
+.tl-year{font-size:11px;font-weight:800;color:var(--pu);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.tl-year.gold-year{color:var(--gold3);}
+.tl-h{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:8px;letter-spacing:-.3px;}
+.tl-p{font-size:14px;color:#64748b;line-height:1.75;}
+
+/* EVOLUTION GRID */
+.evo-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:start;}
+.evo-col{background:rgba(255,255,255,.9);border:1px solid rgba(106,92,255,.1);border-radius:20px;padding:28px;}
+.evo-col.right{background:linear-gradient(135deg,var(--navy),#162050);border-color:rgba(106,92,255,.25);}
+.evo-header{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid rgba(106,92,255,.1);}
+.evo-col.right .evo-header{color:var(--gold2);border-color:rgba(212,175,55,.15);}
+.evo-col:not(.right) .evo-header{color:var(--pu);}
+.evo-item{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(106,92,255,.06);}
+.evo-item:last-child{border-bottom:none;}
+.evo-col.right .evo-item{border-color:rgba(255,255,255,.05);}
+.evo-ico{width:8px;height:8px;border-radius:50%;background:var(--pu);flex-shrink:0;}
+.evo-col.right .evo-ico{background:var(--gold2);}
+.evo-txt{font-size:13px;font-weight:600;color:#374151;}
+.evo-col.right .evo-txt{color:rgba(255,255,255,.8);}
+.evo-arrow-col{display:flex;align-items:center;justify-content:center;padding:0 24px;padding-top:56px;}
+.evo-arrow{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--pu),var(--pu2));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(106,92,255,.35);}
+
+/* DIFFERENCE SECTION */
+#difference{background:var(--navy);}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;}
+.diff-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:30px;transition:all .3s;}
+.diff-card:hover{background:rgba(106,92,255,.08);border-color:rgba(106,92,255,.25);transform:translateY(-4px);}
+.diff-ico{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.diff-h{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;}
+.diff-p{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.7;}
+
+/* AI SYSTEMS */
+#systems{background:linear-gradient(180deg,#f8f7ff,#fff);}
+.systems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;}
+.sys-card{background:#fff;border:1px solid rgba(106,92,255,.1);border-radius:22px;padding:28px;transition:all .3s;position:relative;overflow:hidden;}
+.sys-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pu),var(--pu3));opacity:0;transition:opacity .3s;}
+.sys-card:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(106,92,255,.1);border-color:rgba(106,92,255,.22);}
+.sys-card:hover::after{opacity:1;}
+.sys-ico-wrap{width:50px;height:50px;border-radius:14px;background:rgba(106,92,255,.08);display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:all .3s;}
+.sys-card:hover .sys-ico-wrap{background:linear-gradient(135deg,var(--pu),var(--pu2));}
+.sys-card:hover .sys-ico-wrap svg{stroke:#fff;}
+.sys-ico-wrap svg{transition:stroke .3s;}
+.sys-h{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:12px;}
+.sys-list{display:flex;flex-direction:column;gap:7px;}
+.sys-li{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#64748b;line-height:1.5;}
+.sys-li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu);flex-shrink:0;margin-top:5px;}
+
+/* TECH STACK */
+#tech{background:var(--black);}
+.tech-cat{margin-bottom:44px;}
+.tech-cat-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.tech-cat-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.06);}
+.tech-chips{display:flex;flex-wrap:wrap;gap:10px;}
+.tech-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:9px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);transition:all .25s;cursor:default;}
+.tech-chip:hover{background:rgba(106,92,255,.12);border-color:rgba(106,92,255,.3);color:#fff;}
+.tech-chip .tc-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* PHILOSOPHY */
+#philosophy{background:linear-gradient(160deg,#04070f 0%,#060c1c 50%,#0B1536 100%);}
+.phil-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:0;}
+.phil-quote{border-left:3px solid var(--gold2);padding-left:28px;margin-bottom:36px;}
+.phil-quote-text{font-size:clamp(18px,2.2vw,26px);font-weight:700;color:#fff;line-height:1.4;font-style:italic;letter-spacing:-.3px;}
+.phil-points{display:flex;flex-direction:column;gap:18px;}
+.phil-pt{display:flex;align-items:flex-start;gap:14px;}
+.phil-pt-ico{width:36px;height:36px;border-radius:10px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.phil-pt-h{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
+.phil-pt-p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;}
+.phil-right{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:24px;padding:36px;position:relative;overflow:hidden;}
+.phil-right::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);}
+.search-shift{display:flex;flex-direction:column;gap:12px;}
+.ss-row{display:flex;align-items:center;gap:14px;padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);}
+.ss-row.featured{background:rgba(212,175,55,.07);border-color:rgba(212,175,55,.2);}
+.ss-platform{font-size:13px;font-weight:700;color:#fff;}
+.ss-platform.gold{color:var(--gold2);}
+.ss-trend{font-size:11px;font-weight:700;color:#10b981;}
+.ss-bar-wrap{flex:1;height:6px;background:rgba(255,255,255,.07);border-radius:100px;overflow:hidden;}
+.ss-bar{height:100%;border-radius:100px;}
+
+/* CTA */
+#cta{background:linear-gradient(150deg,#04070f 0%,#060d1e 50%,#0B1536 100%);}
+.cta-inner{max-width:760px;margin:0 auto;padding:110px 40px;text-align:center;}
+.cta-h{font-size:clamp(28px,3.5vw,48px);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+.cta-sub{font-size:16px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:40px;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.cta-avs{display:flex;margin-bottom:20px;justify-content:center;}
+.cta-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;margin-left:-10px;border:2px solid #0B1536;}
+.cta-av:first-child{margin-left:0;}
+.cta-stars{color:var(--gold2);font-size:18px;letter-spacing:2px;margin-bottom:6px;}
+.cta-rating{font-size:13px;color:rgba(255,255,255,.4);font-weight:500;}
+
+/* FOOTER */
+footer{background:#04070f;border-top:1px solid rgba(255,255,255,.05);padding:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+.foot-logo{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;}
+.foot-logo span{color:var(--pu);}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap;}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.35);font-weight:500;transition:color .2s;}
+.foot-links a:hover{color:rgba(255,255,255,.7);}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.2);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:14px 20px;}
+  .nav-links{display:none;}
+  .hero-inner{grid-template-columns:1fr;gap:40px;padding:70px 24px 60px;}
+  .hero-right{display:none;}
+  .evo-grid{grid-template-columns:1fr;gap:16px;}
+  .evo-arrow-col{display:none;}
+  .diff-grid{grid-template-columns:1fr;}
+  .systems-grid{grid-template-columns:1fr;}
+  .phil-grid{grid-template-columns:1fr;}
+  .phil-right{display:none;}
+  .mini-stats-row{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .sp,.spm{padding:60px 20px;}
+  .cta-inner{padding:70px 20px;}
+  .mission-inner{padding:30px 20px;}
+  footer{padding:30px 20px;flex-direction:column;align-items:flex-start;}
+  .mini-stats-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">Lex<span>Scale</span>.ai</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-drop">
+      <a href="#">Services
+        <svg class="drop-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+      <div class="dropdown">
+        <a href="ai-website-design-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div><div class="drop-label">AI Website Design</div><div class="drop-sub">High-converting law firm sites</div></div>
+        </a>
+        <a href="ai-seo-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+          <div><div class="drop-label">AI SEO</div><div class="drop-sub">Rank on Google &amp; AI platforms</div></div>
+        </a>
+        <a href="ai-receptionist-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="drop-label">AI Receptionist</div><div class="drop-sub">Never miss a client call</div></div>
+        </a>
+        <a href="ai-chatbot-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><div class="drop-label">AI Chatbot</div><div class="drop-sub">Convert visitors into clients</div></div>
+        </a>
+        <div class="drop-divider"></div>
+        <a href="index.html#services" class="drop-item">
+          <div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+          <div><div class="drop-label">All 9 Services</div><div class="drop-sub">Full AI growth ecosystem</div></div>
+        </a>
+      </div>
+    </li>
+    <li><a href="about.html" style="color:#6A5CFF;font-weight:700;">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('form-overlay').style.display='flex';document.body.style.overflow='hidden'">Get a Free Strategy Call</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="blob" style="width:700px;height:700px;background:radial-gradient(circle,rgba(212,175,55,.06) 0%,transparent 65%);top:-200px;left:-200px;"></div>
+  <div class="blob" style="width:500px;height:500px;background:radial-gradient(circle,rgba(106,92,255,.08) 0%,transparent 65%);bottom:-100px;right:-100px;"></div>
+  <div class="grid-bg"></div>
+  <div class="hero-inner" style="position:relative;z-index:1;">
+    <div style="animation:fadeUp .8s ease both;">
+      <div class="hero-badge">
+        <div class="hero-dot"></div>
+        <span class="hero-badge-txt">About LexScale.ai</span>
+      </div>
+      <h1 class="hero-h1">Built for Law Firms.<br><span class="grad-gold">Powered by AI.</span></h1>
+      <p class="hero-p">LexScale.ai was created with one goal in mind: helping law firms grow through modern technology, intelligent automation, and AI-powered search visibility.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="index.html#contact" class="btn-g">Schedule a Strategy Call</a>
+        <a href="index.html#services" class="btn-s">Explore Our AI Systems</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-ti"><div class="hero-chk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Law Firm Exclusive</div>
+        <div class="hero-ti"><div class="hero-chk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Serving Firms Since 2013</div>
+        <div class="hero-ti"><div class="hero-chk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>AI-First Methodology</div>
+      </div>
+    </div>
+    <div class="hero-right" style="animation:fadeUp 1s ease .15s both;">
+      <div class="founding-card">
+        <div class="fc-label">Founded</div>
+        <div class="fc-year">2013</div>
+        <div class="fc-desc">Long before AI transformed the legal industry, we were helping law firms grow online — building sustainable visibility and real client relationships.</div>
+      </div>
+      <div class="mini-stats-row">
+        <div class="mini-stat">
+          <div class="ms-val gold-v">10+</div>
+          <div class="ms-lbl">Years Serving Law Firms</div>
+        </div>
+        <div class="mini-stat">
+          <div class="ms-val">100%</div>
+          <div class="ms-lbl">Legal Industry Focus</div>
+        </div>
+        <div class="mini-stat">
+          <div class="ms-val gold-v">7</div>
+          <div class="ms-lbl">AI System Categories</div>
+        </div>
+        <div class="mini-stat">
+          <div class="ms-val">US &amp; CA</div>
+          <div class="ms-lbl">Markets Served</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION STRIP -->
+<section id="mission">
+  <div class="mission-inner">
+    <div>
+      <div class="mission-text">Our mission is simple: help forward-thinking law firms grow, improve the client experience, and position themselves for the future.</div>
+      <div class="mission-sub">Strategy · Automation · AI Visibility · Long-Term Partnerships</div>
+    </div>
+    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(11,21,54,.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+  </div>
+</section>
+
+<!-- STORY TIMELINE -->
+<section id="story">
+  <div class="si sp">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <div class="tag"><span>Our Journey</span></div>
+        <h2 class="section-title">Serving Law Firms <span class="purple">Since 2013</span></h2>
+        <p class="section-sub" style="margin-bottom:48px;">Long before AI transformed legal marketing, we were in the trenches helping law firms build sustainable online visibility.</p>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2013 — Founded</div>
+            <div class="tl-h">Traditional Legal Marketing</div>
+            <div class="tl-p">Started helping law firms with professional website development and search engine optimization — building online visibility from the ground up.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2015 – 2019</div>
+            <div class="tl-h">Deepening Legal Expertise</div>
+            <div class="tl-p">Expanded into local search, Google Business optimization, and content marketing. Developed a deep understanding of how legal clients search, evaluate, and choose lawyers.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2020 – 2022</div>
+            <div class="tl-h">Watching the Shift Begin</div>
+            <div class="tl-p">Recognized the early signals of AI's impact on search behavior and client engagement. Began building frameworks for the next generation of legal growth.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot gold-dot"></div>
+            <div class="tl-year gold-year">2023 — Transformation</div>
+            <div class="tl-h">LexScale.ai Is Born</div>
+            <div class="tl-p">Combined a decade of legal marketing experience with modern AI to create the most comprehensive growth ecosystem built exclusively for law firms.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot gold-dot"></div>
+            <div class="tl-year gold-year">Today</div>
+            <div class="tl-h">AI-Powered Growth at Scale</div>
+            <div class="tl-p">Delivering AI receptionists, intelligent websites, search visibility systems, and automation tools that help law firms compete in an increasingly digital world.</div>
+          </div>
+        </div>
+      </div>
+      <div style="position:sticky;top:100px;">
+        <div class="gold-tag"><span>Then vs Now</span></div>
+        <h3 style="font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.5px;margin-bottom:28px;">From Websites to<br>AI-Powered Ecosystems</h3>
+        <div class="evo-grid">
+          <div class="evo-col">
+            <div class="evo-header">Traditional Foundation</div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">WordPress Websites</span></div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">Search Engine Optimization</span></div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">Local Search Optimization</span></div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">Content Marketing</span></div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">Google Business Profile</span></div>
+          </div>
+          <div class="evo-arrow-col">
+            <div class="evo-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </div>
+          <div class="evo-col right">
+            <div class="evo-header">AI-Powered Systems</div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">AI Receptionists</span></div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">AI Website Systems</span></div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">AI Search Visibility</span></div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">AI Chat Assistants</span></div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">Workflow Automation</span></div>
+            <div class="evo-item"><div class="evo-ico"></div><span class="evo-txt">Lead Tracking & Analytics</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DIFFERENCE -->
+<section id="difference" class="spm">
+  <div class="si">
+    <div style="text-align:center;margin-bottom:0;">
+      <div class="gold-tag" style="justify-content:center;"><span>Why We're Different</span></div>
+      <h2 class="section-title light" style="text-align:center;">A Different Kind of <span class="gold">Growth Partner</span></h2>
+      <p class="section-sub light" style="text-align:center;margin:0 auto;">Unlike traditional agencies that work with every industry imaginable, LexScale.ai focuses exclusively on law firms.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-ico" style="background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="diff-h">Law Firms Only</div>
+        <div class="diff-p">Every strategy, website, and system we build is designed around how legal clients search, evaluate, and engage with lawyers. We don't serve every industry — we master one.</div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-ico" style="background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="diff-h">Hands-On Approach</div>
+        <div class="diff-p">Because we remain selective about the firms we work with, we maintain a hands-on approach that prioritizes quality, responsiveness, and long-term relationships.</div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-ico" style="background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="diff-h">Results-Driven</div>
+        <div class="diff-p">We measure success by what matters to you: more qualified leads, more consultations booked, stronger visibility, and better client experiences.</div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-ico" style="background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="diff-h">Fast Response Times</div>
+        <div class="diff-p">Direct access to your team. No ticketing systems, no junior account managers. When you need something, you reach someone who can act immediately.</div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-ico" style="background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="diff-h">Full Transparency</div>
+        <div class="diff-p">Clear reporting, honest communication, and no hidden fees. You always know what we're doing, why we're doing it, and what results it's producing.</div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-ico" style="background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="diff-h">Long-Term Partnerships</div>
+        <div class="diff-p">We build relationships, not transactions. Our clients stay with us because we continue to deliver value as their practice grows and the digital landscape evolves.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI SYSTEMS -->
+<section id="systems">
+  <div class="si sp">
+    <div style="text-align:center;">
+      <div class="tag" style="justify-content:center;"><span>What We Build</span></div>
+      <h2 class="section-title" style="text-align:center;">AI Systems We <span class="purple">Deploy</span></h2>
+      <p class="section-sub" style="text-align:center;margin:0 auto 0;">Seven categories of AI technology working together to grow your practice.</p>
+    </div>
+    <div class="systems-grid">
+
+      <div class="sys-card">
+        <div class="sys-ico-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="sys-h">AI Receptionist & Voice Systems</div>
+        <div class="sys-list">
+          <div class="sys-li">24/7 AI Call Answering</div>
+          <div class="sys-li">Voice AI Assistants</div>
+          <div class="sys-li">Missed Call Text Back Automation</div>
+          <div class="sys-li">Consultation Booking Systems</div>
+          <div class="sys-li">Call Recording and Summaries</div>
+          <div class="sys-li">SMS Follow-Up Automation</div>
+        </div>
+      </div>
+
+      <div class="sys-card">
+        <div class="sys-ico-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="sys-h">AI Website Systems</div>
+        <div class="sys-list">
+          <div class="sys-li">High-Converting Law Firm Websites</div>
+          <div class="sys-li">AI Chat Assistants</div>
+          <div class="sys-li">Mobile-First Design</div>
+          <div class="sys-li">Conversion Tracking</div>
+          <div class="sys-li">Dynamic Content Systems</div>
+          <div class="sys-li">Speed Optimization</div>
+        </div>
+      </div>
+
+      <div class="sys-card">
+        <div class="sys-ico-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <div class="sys-h">AI Search Visibility Systems</div>
+        <div class="sys-list">
+          <div class="sys-li">AI SEO Optimization</div>
+          <div class="sys-li">Structured Data & Schema Markup</div>
+          <div class="sys-li">Entity Development</div>
+          <div class="sys-li">Local & Voice Search Optimization</div>
+          <div class="sys-li">AI Search Optimization (AISO)</div>
+          <div class="sys-li">Authority Building & Content Architecture</div>
+        </div>
+      </div>
+
+      <div class="sys-card">
+        <div class="sys-ico-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="sys-h">AI Content Systems</div>
+        <div class="sys-list">
+          <div class="sys-li">Long-Form Authority Content</div>
+          <div class="sys-li">FAQ Generation</div>
+          <div class="sys-li">Blog Content Systems</div>
+          <div class="sys-li">Knowledge Base Development</div>
+          <div class="sys-li">Internal Linking Systems</div>
+          <div class="sys-li">Practice Area Content Clusters</div>
+        </div>
+      </div>
+
+      <div class="sys-card">
+        <div class="sys-ico-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+        </div>
+        <div class="sys-h">AI Automation Systems</div>
+        <div class="sys-list">
+          <div class="sys-li">Email & SMS Automation</div>
+          <div class="sys-li">Workflow Automation</div>
+          <div class="sys-li">CRM Integrations</div>
+          <div class="sys-li">Appointment Scheduling</div>
+          <div class="sys-li">Lead Capture Systems</div>
+        </div>
+      </div>
+
+      <div class="sys-card">
+        <div class="sys-ico-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="sys-h">Analytics & Intelligence</div>
+        <div class="sys-list">
+          <div class="sys-li">Call Tracking & Lead Attribution</div>
+          <div class="sys-li">Dashboard Reporting</div>
+          <div class="sys-li">ROI Monitoring</div>
+          <div class="sys-li">Conversion Tracking</div>
+          <div class="sys-li">Performance Analytics</div>
+          <div class="sys-li">Pipeline Tracking</div>
+        </div>
+      </div>
+
+      <div class="sys-card" style="grid-column:1/-1;max-width:380px;justify-self:center;">
+        <div class="sys-ico-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="sys-h">AI Client Experience Systems</div>
+        <div class="sys-list">
+          <div class="sys-li">Live Chat Systems</div>
+          <div class="sys-li">AI Intake Assistants</div>
+          <div class="sys-li">Instant Response Systems</div>
+          <div class="sys-li">FAQ Assistants</div>
+          <div class="sys-li">Consultation Booking Systems</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="tech" class="sp">
+  <div class="si">
+    <div style="text-align:center;margin-bottom:52px;">
+      <div class="gold-tag" style="justify-content:center;"><span>Technology Stack</span></div>
+      <h2 class="section-title light" style="text-align:center;">Powered by Leading AI &<br><span class="gold">Technology Platforms</span></h2>
+      <p class="section-sub light" style="text-align:center;margin:0 auto;">We integrate the world's most advanced AI and development platforms to build systems that are reliable, scalable, and future-proof.</p>
+    </div>
+
+    <div class="tech-cat">
+      <div class="tech-cat-label" style="color:rgba(240,192,64,.5);">Artificial Intelligence</div>
+      <div class="tech-chips">
+        <div class="tech-chip"><div class="tc-dot" style="background:#10b981;"></div>OpenAI</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#a855f7;"></div>Claude (Anthropic)</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#4285f4;"></div>Google Gemini</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#6A5CFF;"></div>Perplexity</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#e11d48;"></div>Grok</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#f59e0b;"></div>ElevenLabs</div>
+      </div>
+    </div>
+
+    <div class="tech-cat">
+      <div class="tech-cat-label" style="color:rgba(240,192,64,.5);">Voice AI & Communication</div>
+      <div class="tech-chips">
+        <div class="tech-chip"><div class="tc-dot" style="background:#f22f46;"></div>Twilio</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#6A5CFF;"></div>Voice AI Systems</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#10b981;"></div>SMS Automation</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#a89fff;"></div>AI Receptionists</div>
+      </div>
+    </div>
+
+    <div class="tech-cat">
+      <div class="tech-cat-label" style="color:rgba(240,192,64,.5);">Website & Development</div>
+      <div class="tech-chips">
+        <div class="tech-chip"><div class="tc-dot" style="background:#fff;"></div>Vercel</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#6e40c9;"></div>GitHub</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#3ecf8e;"></div>Supabase</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#f38020;"></div>Cloudflare</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#ff5d01;"></div>Astro</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#fff;"></div>Next.js</div>
+      </div>
+    </div>
+
+    <div class="tech-cat">
+      <div class="tech-cat-label" style="color:rgba(240,192,64,.5);">Automation & Integrations</div>
+      <div class="tech-chips">
+        <div class="tech-chip"><div class="tc-dot" style="background:#a855f7;"></div>Make.com</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#f96854;"></div>Zapier</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#006bff;"></div>Calendly</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#10b981;"></div>CRM Platforms</div>
+      </div>
+    </div>
+
+    <div class="tech-cat">
+      <div class="tech-cat-label" style="color:rgba(240,192,64,.5);">Analytics & Search</div>
+      <div class="tech-chips">
+        <div class="tech-chip"><div class="tc-dot" style="background:#f97316;"></div>Google Analytics</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#4285f4;"></div>Google Search Console</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#34a853;"></div>Google Business Profile</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#D4AF37;"></div>AI Visibility Tracking</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#6A5CFF;"></div>Call Tracking Systems</div>
+      </div>
+    </div>
+
+    <div class="tech-cat" style="margin-bottom:0;">
+      <div class="tech-cat-label" style="color:rgba(240,192,64,.5);">Payment Systems</div>
+      <div class="tech-chips">
+        <div class="tech-chip"><div class="tc-dot" style="background:#635bff;"></div>Stripe</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#003087;"></div>PayPal</div>
+        <div class="tech-chip"><div class="tc-dot" style="background:#3e9e4f;"></div>Square</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy" class="sp">
+  <div class="si">
+    <div class="phil-grid">
+      <div>
+        <div class="gold-tag"><span>Our Philosophy</span></div>
+        <h2 class="section-title light" style="margin-bottom:32px;">Technology Should Never<br><span class="gold">Replace Relationships.</span></h2>
+        <div class="phil-quote">
+          <div class="phil-quote-text">"AI should enhance responsiveness, improve efficiency, and create better experiences for prospective clients — not replace the human connection that makes great law firms great."</div>
+        </div>
+        <div class="phil-points">
+          <div class="phil-pt">
+            <div class="phil-pt-ico">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="phil-pt-h">Behind Every Strategy</div>
+              <div class="phil-pt-p">Behind every website, automation, and AI system is a commitment to helping lawyers serve more people and build stronger practices.</div>
+            </div>
+          </div>
+          <div class="phil-pt">
+            <div class="phil-pt-ico">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div>
+              <div class="phil-pt-h">Looking Beyond Google</div>
+              <div class="phil-pt-p">Potential clients increasingly discover businesses through AI platforms, conversational search, and voice assistants. We prepare firms for where search is heading — not just where it's been.</div>
+            </div>
+          </div>
+          <div class="phil-pt">
+            <div class="phil-pt-ico">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="phil-pt-h">Built for What's Next</div>
+              <div class="phil-pt-p">Law firms that embrace these changes will thrive. Our role is to be the partner that helps you get there first.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phil-right">
+        <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.8px;margin-bottom:20px;">Where Clients Find Lawyers — 2025</div>
+        <div class="search-shift">
+          <div class="ss-row featured">
+            <div style="flex:0 0 auto;">
+              <div class="ss-platform gold">AI Platforms</div>
+              <div style="font-size:11px;color:rgba(212,175,55,.5);margin-top:2px;">ChatGPT · Perplexity · Gemini</div>
+            </div>
+            <div class="ss-bar-wrap">
+              <div class="ss-bar" style="width:72%;background:linear-gradient(90deg,var(--gold3),var(--gold2));"></div>
+            </div>
+            <div class="ss-trend">↑ 72%</div>
+          </div>
+          <div class="ss-row">
+            <div style="flex:0 0 auto;">
+              <div class="ss-platform">Google Search</div>
+              <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:2px;">Traditional results</div>
+            </div>
+            <div class="ss-bar-wrap">
+              <div class="ss-bar" style="width:85%;background:linear-gradient(90deg,var(--pu),var(--pu3));"></div>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);">85%</div>
+          </div>
+          <div class="ss-row">
+            <div style="flex:0 0 auto;">
+              <div class="ss-platform">Voice Search</div>
+              <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:2px;">Siri · Alexa · Google</div>
+            </div>
+            <div class="ss-bar-wrap">
+              <div class="ss-bar" style="width:41%;background:linear-gradient(90deg,#10b981,#34d399);"></div>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:#10b981;">↑ 41%</div>
+          </div>
+          <div class="ss-row">
+            <div style="flex:0 0 auto;">
+              <div class="ss-platform">Social Discovery</div>
+              <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:2px;">LinkedIn · Reviews</div>
+            </div>
+            <div class="ss-bar-wrap">
+              <div class="ss-bar" style="width:28%;background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:#f59e0b;">28%</div>
+          </div>
+        </div>
+        <div style="margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.07);">
+          <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px;">AI Platforms Answering Legal Queries</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:6px 13px;font-size:12px;font-weight:600;color:rgba(255,255,255,.6);">ChatGPT</span>
+            <span style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:6px 13px;font-size:12px;font-weight:600;color:rgba(255,255,255,.6);">Perplexity</span>
+            <span style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:6px 13px;font-size:12px;font-weight:600;color:rgba(255,255,255,.6);">Google AI</span>
+            <span style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:6px 13px;font-size:12px;font-weight:600;color:rgba(255,255,255,.6);">Bing AI</span>
+            <span style="background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.2);border-radius:100px;padding:6px 13px;font-size:12px;font-weight:600;color:var(--gold2);">Is Your Firm Visible?</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="blob" style="width:600px;height:600px;background:radial-gradient(circle,rgba(212,175,55,.06) 0%,transparent 65%);top:-200px;left:50%;transform:translateX(-50%);"></div>
+  <div class="grid-bg"></div>
+  <div class="cta-inner" style="position:relative;z-index:1;">
+    <div class="cta-avs">
+      <div class="cta-av" style="background:linear-gradient(135deg,#6A5CFF,#a89fff);z-index:5;">MR</div>
+      <div class="cta-av" style="background:linear-gradient(135deg,#ec4899,#a855f7);z-index:4;">SC</div>
+      <div class="cta-av" style="background:linear-gradient(135deg,#0B1536,#6A5CFF);z-index:3;">DK</div>
+      <div class="cta-av" style="background:linear-gradient(135deg,#0f172a,#1e293b);z-index:2;">BL</div>
+    </div>
+    <div class="cta-stars">★★★★★</div>
+    <div class="cta-rating" style="margin-bottom:36px;">Trusted by law firms across the United States and Canada</div>
+    <div style="display:inline-flex;align-items:center;gap:9px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.25);border-radius:100px;padding:8px 18px;margin-bottom:28px;">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:pulse 2s infinite;"></span>
+      <span style="font-size:11px;font-weight:700;color:var(--gold2);letter-spacing:.8px;text-transform:uppercase;">Now Accepting New Law Firm Clients</span>
+    </div>
+    <h2 class="cta-h">Built for Law Firms.<br><span style="background:linear-gradient(135deg,var(--gold3),var(--gold2),#ffe680);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Powered by AI.</span></h2>
+    <p class="cta-sub">Ready to grow your practice with intelligent systems built for the way clients search, engage, and hire lawyers today?</p>
+    <div class="cta-btns">
+      <a href="index.html#contact" class="btn-g">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Schedule a Strategy Call
+      </a>
+      <a href="index.html#services" class="btn-s">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        Explore Our AI Systems
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">Lex<span>Scale</span>.ai</div>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="ai-website-design-for-law-firms.html">AI Website Design</a>
+    <a href="ai-seo-for-law-firms.html">AI SEO</a>
+    <a href="ai-receptionist-for-law-firms.html">AI Receptionist</a>
+    <a href="ai-chatbot-for-law-firms.html">AI Chatbot</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="foot-copy">© 2025 LexScale.ai · All rights reserved</div>
+</footer>
+
+<!-- LEAD FORM MODAL -->
+<div id="form-overlay" onclick="if(event.target===this)closeForm()" style="position:fixed;inset:0;background:rgba(6,9,15,.75);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border-radius:24px;padding:40px;max-width:500px;width:100%;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.3);max-height:90vh;overflow-y:auto;">
+    <button onclick="closeForm()" style="position:absolute;top:18px;right:18px;background:rgba(11,21,54,.06);border:none;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#64748b;">×</button>
+    <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.2);border-radius:100px;padding:5px 12px;margin-bottom:16px;">
+      <span style="font-size:10px;font-weight:700;color:var(--gold3);text-transform:uppercase;letter-spacing:.8px;">Free Strategy Session</span>
+    </div>
+    <h3 style="font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.5px;margin-bottom:8px;">Let's Grow Your Law Firm</h3>
+    <p style="font-size:14px;color:#64748b;margin-bottom:24px;line-height:1.6;">Tell us about your firm and we'll put together a custom AI growth plan — no obligation.</p>
+    <form onsubmit="submitForm(event)" style="display:flex;flex-direction:column;gap:14px;">
+      <div><label style="display:block;font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;">Your Name</label><input required type="text" placeholder="Jane Smith" style="width:100%;border:1.5px solid rgba(106,92,255,.15);border-radius:10px;padding:12px 14px;font-size:14px;font-family:inherit;color:var(--navy);outline:none;transition:border .2s;box-sizing:border-box;" onfocus="this.style.borderColor='#6A5CFF'" onblur="this.style.borderColor='rgba(106,92,255,.15)'"/></div>
+      <div><label style="display:block;font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;">Firm Name</label><input required type="text" placeholder="Smith & Associates" style="width:100%;border:1.5px solid rgba(106,92,255,.15);border-radius:10px;padding:12px 14px;font-size:14px;font-family:inherit;color:var(--navy);outline:none;transition:border .2s;box-sizing:border-box;" onfocus="this.style.borderColor='#6A5CFF'" onblur="this.style.borderColor='rgba(106,92,255,.15)'"/></div>
+      <div><label style="display:block;font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;">Phone Number</label><input required type="tel" placeholder="+1 (555) 000-0000" style="width:100%;border:1.5px solid rgba(106,92,255,.15);border-radius:10px;padding:12px 14px;font-size:14px;font-family:inherit;color:var(--navy);outline:none;transition:border .2s;box-sizing:border-box;" onfocus="this.style.borderColor='#6A5CFF'" onblur="this.style.borderColor='rgba(106,92,255,.15)'"/></div>
+      <div><label style="display:block;font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;">Practice Area</label><select required style="width:100%;border:1.5px solid rgba(106,92,255,.15);border-radius:10px;padding:12px 14px;font-size:14px;font-family:inherit;color:var(--navy);outline:none;background:#fff;cursor:pointer;transition:border .2s;box-sizing:border-box;" onfocus="this.style.borderColor='#6A5CFF'" onblur="this.style.borderColor='rgba(106,92,255,.15)'"><option value="" disabled selected>Select practice area</option><option>Family Law</option><option>Personal Injury</option><option>Criminal Defence</option><option>Immigration</option><option>Real Estate</option><option>Estate Planning / Wills</option><option>Business Law</option><option>Employment Law</option><option>Other</option></select></div>
+      <button type="submit" style="background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:15px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:4px;box-shadow:0 4px 20px rgba(106,92,255,.3);transition:all .25s;">Book My Free Strategy Call →</button>
+    </form>
+    <div id="form-success" style="display:none;text-align:center;padding:20px 0;">
+      <div style="font-size:40px;margin-bottom:12px;">✅</div>
+      <h4 style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px;">You're All Set!</h4>
+      <p style="font-size:14px;color:#64748b;line-height:1.6;">We'll be in touch within one business day to schedule your strategy call.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openForm(){document.getElementById('form-overlay').style.display='flex';document.body.style.overflow='hidden';}
+function closeForm(){document.getElementById('form-overlay').style.display='none';document.body.style.overflow='';}
+function submitForm(e){e.preventDefault();document.querySelector('#form-overlay form').style.display='none';document.getElementById('form-success').style.display='block';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeForm();});
+</script>
+
+</body>
+</html>
