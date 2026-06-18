@@ -287,10 +287,22 @@ footer{background:#040c1e;padding:36px 40px;}
   .hero-grid{padding:48px 20px 40px;max-width:100%;}
   .stats-inner,.lg-inner,.cta-inner{padding:60px 20px;}
   footer{padding:28px 20px;}
+  /* AI icons bar: 2x2 on tablet */
+  .ai-platforms-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .ai-platforms-wrap{padding:24px 20px !important;}
+  /* Comparison: shrink fixed columns */
+  .cmp-head,.cmp-row{grid-template-columns:1fr 90px 90px !important;}
+  .cmp-hcell,.cmp-cell{padding:12px 10px !important;}
 }
 @media(max-width:520px){
-  .pa-grid,.svc-grid,.why-cards,.stats-grid,.plat-grid,.cmp-head,.cmp-row{grid-template-columns:1fr;}
+  .pa-grid,.svc-grid,.why-cards,.stats-grid,.plat-grid{grid-template-columns:1fr;}
   .dash-grid,.cs-stats,.cs-mini-grid{grid-template-columns:1fr 1fr;}
+  /* AI icons bar: 2x2 on mobile */
+  .ai-platforms-grid{grid-template-columns:repeat(2,1fr) !important;}
+  /* Comparison: hide traditional agency column, show only LexScale */
+  .cmp-head,.cmp-row{grid-template-columns:1fr auto !important;}
+  .cmp-trad{display:none !important;}
+  .cmp-hcell:last-child{display:none !important;}
 }
 </style>
 </head>
@@ -332,10 +344,10 @@ footer{background:#040c1e;padding:36px 40px;}
   </div>
 
   <!-- AI Platform Bar -->
-  <div style="border-top:1px solid rgba(255,255,255,.07);padding:28px 40px;">
+  <div class="ai-platforms-wrap" style="border-top:1px solid rgba(255,255,255,.07);padding:28px 40px;">
     <div style="max-width:900px;margin:0 auto;">
       <p style="text-align:center;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:22px;">We Optimise Your Firm For Every AI Search Platform</p>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+      <div class="ai-platforms-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
 
         <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px 18px;transition:all .25s;" onmouseover="this.style.background='rgba(106,92,255,.15)';this.style.borderColor='rgba(106,92,255,.35)'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.borderColor='rgba(255,255,255,.08)'">
           <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#10a37f,#1a7f64);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🤖</div>
@@ -509,7 +521,7 @@ footer{background:#040c1e;padding:36px 40px;}
       <div class="cmp-head">
         <div class="cmp-hcell"><span style="font-size:11px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.7px;">Feature</span></div>
         <div class="cmp-hcell" style="text-align:center;border-left:1px solid rgba(255,255,255,.06);"><div style="display:inline-flex;align-items:center;gap:6px;background:rgba(106,92,255,.25);border:1px solid rgba(106,92,255,.4);border-radius:100px;padding:5px 12px;"><span style="width:5px;height:5px;border-radius:50%;background:#a89fff;animation:pulse 2s infinite;"></span><span style="font-size:11px;font-weight:700;color:#a89fff;">LexScale.ai</span></div></div>
-        <div class="cmp-hcell" style="text-align:center;border-left:1px solid rgba(255,255,255,.06);"><span style="font-size:11px;font-weight:600;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.5px;">Traditional Agency</span></div>
+        <div class="cmp-hcell cmp-trad" style="text-align:center;border-left:1px solid rgba(255,255,255,.06);"><span style="font-size:11px;font-weight:600;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.5px;">Traditional Agency</span></div>
       </div>
       <div id="cmpRows"></div>
     </div>
@@ -831,7 +843,7 @@ cmpData.forEach(function(r,i){
   div.onmouseout=function(){this.style.background=bg;};
   div.innerHTML='<div class="cmp-cell" style="flex-direction:column;align-items:start;gap:2px;"><div style="font-size:13px;font-weight:700;color:#0B1536;">'+r.f+'</div><div style="font-size:11px;color:#94a3b8;">'+r.n+'</div></div>'
     +'<div class="cmp-cell center"><div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(106,92,255,.3);">'+chkSvg+'</div></div>'
-    +'<div class="cmp-cell center">'+tCell+'</div>';
+    +'<div class="cmp-cell center cmp-trad">'+tCell+'</div>';
   cmpEl.appendChild(div);
 });
 </script>
