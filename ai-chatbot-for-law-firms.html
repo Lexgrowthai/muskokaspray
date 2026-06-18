@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AI Chatbot For Law Firms | LexScale.ai</title>
+<meta name="description" content="AI chatbot designed for law firm websites. Qualifies leads, answers common legal questions, books consultations, and captures after-hours inquiries 24/7 — without adding to your staff workload."/>
+<link rel="canonical" href="https://lexscale.ai/ai-chatbot-for-law-firms"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Service",
+  "name":"AI Chatbot For Law Firms",
+  "provider":{"@type":"Organization","name":"LexScale.ai","url":"https://lexscale.ai"},
+  "description":"AI-powered chat widget for law firm websites that qualifies leads, books consultations, and captures after-hours inquiries automatically.",
+  "areaServed":["United States","Canada"],
+  "audience":{"@type":"Audience","audienceType":"Law Firms and Attorneys"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is an AI chatbot for law firms?","acceptedAnswer":{"@type":"Answer","text":"An AI chatbot for law firms is a chat widget embedded on your website that engages visitors automatically, asks qualifying questions about their legal matter, answers common questions about your practice, and routes strong leads to book consultations or be contacted by your team."}},
+    {"@type":"Question","name":"How is a law firm AI chatbot different from a regular live chat widget?","acceptedAnswer":{"@type":"Answer","text":"A regular live chat widget requires a human to monitor and respond. When no one is available, visitors get no response. An AI chatbot is always available, responds instantly, follows a structured qualification flow, and captures leads at any hour — without any human involvement until a lead is qualified."}},
+    {"@type":"Question","name":"Can the chatbot answer legal questions?","acceptedAnswer":{"@type":"Answer","text":"The chatbot is designed to answer general informational questions about your firm and practice areas — not to provide legal advice. It explains what your firm handles, describes the consultation process, and helps visitors determine whether they should book a consultation. Legal advice remains the exclusive domain of your attorneys."}}
+  ]
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0B1536;--pu:#6A5CFF;--pu2:#8B7FFF;--pu3:#a89fff;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#0B1536;overflow-x:hidden;}
+a{text-decoration:none;}
+@keyframes shimmer{0%{background-position:200% center;}100%{background-position:-200% center;}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(1.3);}}
+@keyframes typeDot{0%,80%,100%{opacity:0;transform:translateY(0);}40%{opacity:1;transform:translateY(-4px);}}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(106,92,255,.09);}
+.logo{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.4px;}
+.logo span{color:var(--pu);}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
+.nav-links a{font-size:13px;color:#4a5568;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--pu);}
+.has-drop{position:relative;}
+.has-drop>a{display:flex;align-items:center;gap:4px;}
+.drop-arrow{width:14px;height:14px;opacity:.5;transition:transform .2s;}
+.has-drop:hover .drop-arrow{transform:rotate(180deg);}
+.dropdown{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(106,92,255,.12);border-radius:16px;padding:8px;box-shadow:0 16px 48px rgba(11,21,54,.12);min-width:240px;opacity:0;pointer-events:none;transition:all .2s;z-index:200;}
+.has-drop:hover .dropdown{opacity:1;pointer-events:all;}
+.drop-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;transition:background .15s;cursor:pointer;text-decoration:none;}
+.drop-item:hover{background:rgba(106,92,255,.07);}
+.drop-ico{width:30px;height:30px;border-radius:8px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.drop-label{font-size:12.5px;font-weight:600;color:var(--navy);}
+.drop-sub{font-size:11px;color:#94a3b8;margin-top:1px;}
+.drop-divider{height:1px;background:rgba(106,92,255,.07);margin:6px 8px;}
+.drop-item.current .drop-label{color:var(--pu);}
+.nav-cta{background:var(--pu);color:#fff;border:none;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;}
+.nav-cta:hover{background:#5848e8;transform:translateY(-1px);}
+
+.page-hero{background:linear-gradient(160deg,#060d24 0%,#0B1536 50%,#111d45 100%);padding:80px 40px 72px;}
+.page-hero-inner{max-width:860px;margin:0 auto;text-align:center;}
+.tag{display:inline-flex;align-items:center;gap:7px;background:rgba(106,92,255,.12);border:1px solid rgba(106,92,255,.25);border-radius:100px;padding:6px 14px;margin-bottom:20px;}
+.tag span{font-size:11px;font-weight:700;color:var(--pu3);letter-spacing:.8px;text-transform:uppercase;}
+.page-h1{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1.5px;margin-bottom:18px;}
+.page-h1 .grad{background:linear-gradient(135deg,#fff 0%,var(--pu3) 40%,var(--pu) 70%,var(--pu3) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite;}
+.page-sub{font-size:17px;color:rgba(255,255,255,.55);line-height:1.75;max-width:620px;margin:0 auto 32px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:36px;}
+.hero-pill{background:rgba(106,92,255,.12);border:1px solid rgba(106,92,255,.25);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--pu3);}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-p{background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:14px 30px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(106,92,255,.4);transition:all .25s;}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(106,92,255,.55);}
+.btn-s{background:rgba(255,255,255,.07);color:#fff;border:1.5px solid rgba(255,255,255,.2);padding:14px 30px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .25s;}
+.btn-s:hover{background:rgba(106,92,255,.15);border-color:rgba(106,92,255,.45);transform:translateY(-2px);}
+
+/* CHAT VISUAL */
+.chat-section{background:linear-gradient(180deg,#f8f7ff,#fff);padding:64px 40px;}
+.chat-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.chat-window{background:linear-gradient(135deg,var(--navy),#162050);border-radius:24px;padding:0;overflow:hidden;box-shadow:0 24px 64px rgba(11,21,54,.2);}
+.chat-header{display:flex;align-items:center;gap:10px;padding:16px 18px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.06);}
+.chat-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--pu),var(--pu2));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;}
+.chat-name{font-size:13px;font-weight:700;color:#fff;}
+.chat-status{font-size:11px;color:rgba(255,255,255,.35);}
+.online-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#10b981;margin-right:4px;}
+.chat-body{padding:18px;}
+.chat-msg{margin-bottom:12px;}
+.chat-msg.bot .bubble{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.85);border-radius:16px 16px 16px 4px;padding:11px 14px;font-size:13px;line-height:1.55;max-width:85%;display:inline-block;}
+.chat-msg.user{text-align:right;}
+.chat-msg.user .bubble{background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border-radius:16px 16px 4px 16px;padding:11px 14px;font-size:13px;line-height:1.55;max-width:85%;display:inline-block;}
+.chat-typing{display:flex;gap:4px;align-items:center;padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);border-radius:16px 16px 16px 4px;width:fit-content;margin-bottom:12px;}
+.typing-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);}
+.typing-dot:nth-child(1){animation:typeDot 1.2s infinite 0s;}
+.typing-dot:nth-child(2){animation:typeDot 1.2s infinite 0.2s;}
+.typing-dot:nth-child(3){animation:typeDot 1.2s infinite 0.4s;}
+.chat-quick{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;}
+.chat-qbtn{background:rgba(106,92,255,.2);border:1px solid rgba(106,92,255,.35);border-radius:100px;padding:7px 14px;font-size:12px;font-weight:600;color:var(--pu3);cursor:pointer;transition:all .2s;}
+.chat-qbtn:hover{background:rgba(106,92,255,.35);}
+
+/* STAT ROW */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;}
+.stat-box{background:#fff;border:1px solid rgba(106,92,255,.1);border-radius:16px;padding:20px;text-align:center;}
+.stat-val{font-size:28px;font-weight:900;color:var(--navy);letter-spacing:-1px;line-height:1;}
+.stat-lbl{font-size:11px;font-weight:600;color:#94a3b8;margin-top:5px;}
+.stat-delta{font-size:11px;font-weight:700;color:#10b981;margin-top:4px;}
+
+.trust-bar{background:#f8f7ff;border-top:1px solid rgba(106,92,255,.08);border-bottom:1px solid rgba(106,92,255,.08);padding:20px 40px;}
+.trust-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#4a5568;}
+.trust-ico{width:22px;height:22px;border-radius:50%;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;}
+.trust-div{width:1px;height:18px;background:rgba(106,92,255,.12);}
+
+.content-wrap{max-width:860px;margin:0 auto;padding:0 40px;}
+.section-block{padding:64px 0;}
+.section-block+.section-block{border-top:1px solid rgba(106,92,255,.08);}
+.sp-tag{display:inline-block;background:rgba(106,92,255,.08);border:1px solid rgba(106,92,255,.15);border-radius:100px;padding:4px 12px;font-size:10px;font-weight:700;color:var(--pu);letter-spacing:.7px;text-transform:uppercase;margin-bottom:14px;}
+.sp-h2{font-size:clamp(22px,2.8vw,34px);font-weight:800;color:var(--navy);letter-spacing:-.8px;line-height:1.15;margin-bottom:18px;}
+.sp-h2 .purple{color:var(--pu);}
+.sp-h3{font-size:18px;font-weight:700;color:var(--navy);letter-spacing:-.3px;margin:32px 0 10px;}
+.sp-p{font-size:15.5px;color:#374151;line-height:1.85;margin-bottom:16px;}
+.sp-p:last-child{margin-bottom:0;}
+.sp-p strong{color:var(--navy);font-weight:700;}
+.sp-pull{border-left:3px solid var(--pu);border-radius:0 10px 10px 0;background:rgba(106,92,255,.04);padding:18px 22px;margin:24px 0;font-size:15px;color:#374151;line-height:1.8;font-style:italic;}
+.intro-box{background:linear-gradient(135deg,rgba(106,92,255,.06),rgba(106,92,255,.02));border:1px solid rgba(106,92,255,.13);border-radius:20px;padding:36px 40px;margin-bottom:48px;}
+.intro-box .sp-p{font-size:16px;}
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0;}
+.info-card{background:rgba(255,255,255,.9);border:1px solid rgba(106,92,255,.1);border-radius:18px;padding:24px;transition:all .25s;cursor:default;}
+.info-card:hover{transform:translateY(-4px);border-color:rgba(106,92,255,.28);box-shadow:0 16px 44px rgba(106,92,255,.1);}
+.info-card-ico{width:40px;height:40px;border-radius:12px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.info-card h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.info-card p{font-size:13px;color:#64748b;line-height:1.65;}
+.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0;}
+.feat-card{background:#fff;border:1px solid rgba(106,92,255,.1);border-radius:16px;padding:20px;text-align:center;transition:all .25s;}
+.feat-card:hover{transform:translateY(-3px);border-color:rgba(106,92,255,.28);box-shadow:0 12px 32px rgba(106,92,255,.09);}
+.feat-ico{font-size:28px;margin-bottom:10px;}
+.feat-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.feat-desc{font-size:12px;color:#64748b;line-height:1.55;}
+.dark-box{background:linear-gradient(135deg,var(--navy),#162050);border-radius:20px;padding:36px 40px;margin:32px 0;}
+.dark-box h3{font-size:20px;font-weight:800;color:#fff;margin-bottom:14px;}
+.dark-box p{font-size:14.5px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:12px;}
+.dark-box p:last-child{margin-bottom:0;}
+.dark-box ul{margin-top:12px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
+.dark-box li{font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.65;display:flex;align-items:flex-start;gap:8px;}
+.dark-box li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu3);flex-shrink:0;margin-top:8px;}
+.sp-list{list-style:none;padding:0;margin:16px 0 20px;display:flex;flex-direction:column;gap:10px;}
+.sp-list li{font-size:15px;color:#374151;line-height:1.7;display:flex;align-items:flex-start;gap:10px;}
+.sp-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu);flex-shrink:0;margin-top:8px;}
+.sp-table-wrap{overflow-x:auto;margin:24px 0;border-radius:16px;border:1px solid rgba(106,92,255,.12);}
+.sp-table{width:100%;border-collapse:collapse;}
+.sp-table th{background:linear-gradient(135deg,var(--navy),#162050);color:rgba(255,255,255,.85);font-size:12px;font-weight:700;padding:14px 18px;text-align:left;letter-spacing:.3px;}
+.sp-table th:first-child{border-radius:16px 0 0 0;}
+.sp-table th:last-child{border-radius:0 16px 0 0;}
+.sp-table td{font-size:13.5px;color:#374151;padding:14px 18px;border-top:1px solid rgba(106,92,255,.07);}
+.sp-table tr:hover td{background:rgba(106,92,255,.03);}
+.sp-table td strong{color:var(--navy);font-weight:600;}
+.mistake-list{display:flex;flex-direction:column;gap:12px;margin:20px 0;}
+.mistake-item{display:flex;gap:14px;background:#fff;border:1px solid rgba(239,68,68,.12);border-radius:14px;padding:18px 20px;align-items:flex-start;}
+.mistake-x{width:28px;height:28px;border-radius:8px;background:rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700;color:#ef4444;}
+.mistake-text h4{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.mistake-text p{font-size:13px;color:#64748b;line-height:1.6;}
+.process-steps{display:flex;flex-direction:column;gap:0;margin:28px 0;position:relative;}
+.process-steps::before{content:'';position:absolute;left:24px;top:24px;bottom:24px;width:2px;background:linear-gradient(180deg,var(--pu),transparent);}
+.process-step{display:flex;gap:20px;align-items:flex-start;padding:20px 0;position:relative;}
+.step-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--pu),var(--pu2));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 4px 16px rgba(106,92,255,.35);z-index:1;position:relative;}
+.step-body{padding-top:10px;}
+.step-body h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.step-body p{font-size:13.5px;color:#64748b;line-height:1.7;}
+.faq-list{display:flex;flex-direction:column;gap:0;margin:24px 0;}
+.faq-item{border-bottom:1px solid rgba(106,92,255,.09);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);line-height:1.4;}
+.faq-q:hover{color:var(--pu);}
+.faq-arrow{width:22px;height:22px;border-radius:50%;background:rgba(106,92,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;}
+.faq-item.open .faq-arrow{background:var(--pu);transform:rotate(180deg);}
+.faq-a{font-size:14px;color:#4b5563;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:20px;}
+.page-cta{background:linear-gradient(160deg,#060d24 0%,var(--navy) 40%,#0f1c42 70%,#080f28 100%);padding:90px 40px;text-align:center;}
+.page-cta h2{font-size:clamp(28px,4vw,48px);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+.page-cta h2 .grad{background:linear-gradient(135deg,#fff 0%,var(--pu3) 40%,var(--pu) 70%,var(--pu3) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite;}
+.page-cta p{font-size:16px;color:rgba(255,255,255,.45);line-height:1.75;max-width:480px;margin:0 auto 36px;}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px;}
+.cta-btn-p{background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:16px 36px;border-radius:100px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 8px 28px rgba(106,92,255,.5);transition:all .3s;}
+.cta-btn-p:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(106,92,255,.65);}
+.cta-btn-s{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.15);padding:16px 36px;border-radius:100px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .3s;}
+.cta-btn-s:hover{background:rgba(106,92,255,.15);border-color:rgba(106,92,255,.5);transform:translateY(-3px);}
+.cta-note{font-size:12px;color:rgba(255,255,255,.22);}
+footer{background:#040c1e;padding:36px 40px;}
+.footer-logo{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.4px;}
+.footer-logo span{color:var(--pu);}
+.footer-tagline{font-size:11px;color:rgba(255,255,255,.22);margin-top:3px;}
+.footer-col h5{font-size:11px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.7px;text-transform:uppercase;margin-bottom:12px;}
+.footer-col a{display:block;font-size:12.5px;color:rgba(255,255,255,.35);font-weight:500;margin-bottom:8px;transition:color .2s;}
+.footer-col a:hover{color:var(--pu3);}
+.footer-col a.current{color:var(--pu3);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);margin-top:28px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.16);}
+
+@media(max-width:860px){
+  nav{padding:14px 20px;}.nav-links{display:none;}
+  .page-hero{padding:56px 20px 52px;}
+  .chat-inner{grid-template-columns:1fr;}
+  .trust-bar{padding:16px 20px;}.trust-inner{gap:16px;}.trust-div{display:none;}
+  .content-wrap{padding:0 20px;}.section-block{padding:44px 0;}
+  .intro-box{padding:24px 22px;}.card-grid{grid-template-columns:1fr;}
+  .three-grid{grid-template-columns:repeat(2,1fr);}
+  .dark-box{padding:24px 22px;}.page-cta{padding:60px 20px;}
+  footer{padding:28px 20px;}.process-steps::before{display:none;}
+  .chat-section{padding:44px 20px;}.stat-row{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:520px){
+  .three-grid{grid-template-columns:1fr;}.stat-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Lex<span>Scale</span>.ai</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-drop">
+      <a href="#">Services<svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="dropdown">
+        <a href="ai-website-design-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div><div class="drop-label">AI Website Design</div><div class="drop-sub">For law firms</div></div>
+        </a>
+        <a href="ai-seo-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          <div><div class="drop-label">AI SEO</div><div class="drop-sub">Rank higher, get cited by AI</div></div>
+        </a>
+        <a href="ai-receptionist-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="drop-label">AI Receptionist</div><div class="drop-sub">24/7 call answering</div></div>
+        </a>
+        <a href="ai-chatbot-for-law-firms.html" class="drop-item current">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div><div class="drop-label">AI Chatbot</div><div class="drop-sub">Convert more website visitors</div></div>
+        </a>
+        <div class="drop-divider"></div>
+        <a href="index.html#services" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div><div class="drop-label">All 9 Services</div><div class="drop-sub">View full suite</div></div>
+        </a>
+      </div>
+    </li>
+    <li><a href="index.html#case-studies">Results</a></li>
+    <li><a href="index.html#comparison">Compare</a></li>
+    <li><a href="index.html#lead-gen">Free Report</a></li>
+  </ul>
+  <button class="nav-cta" onclick="window.location='index.html#lead-gen'">Book A Demo</button>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="tag"><span>Service · AI Chatbot</span></div>
+    <h1 class="page-h1">AI Chatbot For <span class="grad">Law Firms</span></h1>
+    <p class="page-sub">Most website visitors leave without making contact. An AI chatbot engages them the moment they show interest, qualifies their matter, answers their questions, and gets them into your calendar — while you focus on practising law.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">Instant Response</span>
+      <span class="hero-pill">Lead Qualification</span>
+      <span class="hero-pill">Consultation Booking</span>
+      <span class="hero-pill">After-Hours Coverage</span>
+      <span class="hero-pill">CRM Integration</span>
+    </div>
+    <div class="hero-ctas">
+      <button class="btn-p" onclick="window.location='index.html#lead-gen'">See It In Action</button>
+      <button class="btn-s" onclick="window.location='index.html#lead-gen'">Book A Strategy Call</button>
+    </div>
+  </div>
+</section>
+
+<!-- CHAT VISUAL SECTION -->
+<section class="chat-section">
+  <div class="chat-inner">
+    <div>
+      <div class="sp-tag">Live on your website</div>
+      <h2 class="sp-h2" style="margin-bottom:12px;">The Conversation That Turns a <span class="purple">Visitor Into a Lead</span></h2>
+      <p class="sp-p">This is what happens when a prospective client lands on your website at 10 p.m. The chatbot engages them immediately, asks the right questions, and gets their information into your system — before they leave and call someone else.</p>
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-val">3.8x</div><div class="stat-lbl">More Leads Captured</div><div class="stat-delta">vs no chat widget</div></div>
+        <div class="stat-box"><div class="stat-val">&lt;8s</div><div class="stat-lbl">Response Time</div><div class="stat-delta">Any hour, any day</div></div>
+        <div class="stat-box"><div class="stat-val">71%</div><div class="stat-lbl">After-Hours Engagement</div><div class="stat-delta">Captured automatically</div></div>
+      </div>
+    </div>
+    <div class="chat-window">
+      <div class="chat-header">
+        <div class="chat-avatar">L</div>
+        <div><div class="chat-name">LexScale Assistant</div><div class="chat-status"><span class="online-dot"></span>Online now · Typically replies instantly</div></div>
+      </div>
+      <div class="chat-body">
+        <div class="chat-msg bot"><div class="bubble">Hi there — I'm here to help. Are you looking for legal assistance, or do you have a question about our firm?</div></div>
+        <div class="chat-msg user"><div class="bubble">I was in a car accident last week and need to talk to someone</div></div>
+        <div class="chat-msg bot"><div class="bubble">I'm sorry to hear that. We handle personal injury cases and can help. Were you injured in the accident?</div></div>
+        <div class="chat-msg user"><div class="bubble">Yes, my neck and back have been hurting since</div></div>
+        <div class="chat-typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>
+        <div class="chat-quick">
+          <div class="chat-qbtn">Book a free consultation</div>
+          <div class="chat-qbtn">What does it cost?</div>
+          <div class="chat-qbtn">Call me back</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>Responds in seconds, 24/7</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>Configured for your practice areas</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>Books directly into your calendar</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>Integrates with Clio, MyCase &amp; CRMs</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>No legal advice — qualification only</div>
+  </div>
+</div>
+
+<div style="background:#fff;padding:0 0 80px;">
+<div class="content-wrap">
+
+  <div class="section-block">
+    <div class="intro-box">
+      <p class="sp-p">Most law firm websites have a contact page. That's it. A prospective client who has a question at 11 p.m. gets a form, a phone number that goes to voicemail, and an email address that won't be checked until Monday morning.</p>
+      <p class="sp-p">That's not a conversion problem — it's a communication problem. The visitor was interested enough to navigate to your contact page. They just needed someone to talk to, and no one was available.</p>
+      <p class="sp-p" style="margin-bottom:0;">An AI chatbot for law firms fixes that gap. It sits on your website and engages visitors the moment they show interest — not in a pushy, intrusive way, but in the way a good receptionist would. It asks what they need, listens to their situation, gives them a sense of whether your firm can help, and makes it easy to take the next step. All of this happens instantly, at any hour, without any staff involvement until a qualified lead is identified.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">The Problem</div>
+    <h2 class="sp-h2">Why Most Law Firm Websites <span class="purple">Lose Visitors</span></h2>
+    <p class="sp-p">Traffic to your website is not the same as leads from your website. A lot of firms invest heavily in getting people to their site — through SEO, paid advertising, directories, referrals — and then lose a significant portion of them at the point of contact.</p>
+    <p class="sp-p">The reasons are predictable:</p>
+    <ul class="sp-list">
+      <li>The visitor has a question and there's no immediate way to get an answer</li>
+      <li>The contact form feels formal and high-commitment — especially for someone still deciding if they have a case</li>
+      <li>The visitor isn't ready to call but would engage in a lower-friction conversation</li>
+      <li>It's after hours and there's no one to respond to a live chat message</li>
+      <li>The visitor is comparing multiple firms and the first one to respond wins the consultation</li>
+    </ul>
+    <div class="sp-pull">Legal clients often spend days or weeks researching before retaining a firm. The chatbot isn't trying to close them immediately — it's capturing their information and starting the relationship at the moment they're most engaged.</div>
+    <p class="sp-p">An AI chatbot addresses every one of these failure points. It's available constantly, it responds instantly, it's lower friction than a phone call, and it captures information at the exact moment the visitor is most interested in your firm.</p>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">What It Does</div>
+    <h2 class="sp-h2">What Our AI Chatbot <span class="purple">Actually Does</span></h2>
+    <div class="card-grid">
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h4>Engages Visitors Proactively</h4>
+        <p>When a visitor has spent a set amount of time on a practice area page or scrolls a certain depth, the chatbot opens a friendly message. Not a generic pop-up — a context-aware opener relevant to the page they're reading.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h4>Qualifies the Lead</h4>
+        <p>Through a structured but natural conversation, the chatbot collects the basic information needed to determine whether the visitor's matter is a fit for your firm — before any attorney's time is involved.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h4>Books Consultations In Real Time</h4>
+        <p>For qualified visitors, the chatbot shows available consultation slots and books directly into your calendar — with confirmation sent automatically to both parties. No email chains, no phone tag.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17H2a3 3 0 000 6h20a3 3 0 000-6z"/><path d="M5.45 5.11L2 12v3h20v-3l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></svg></div>
+        <h4>Answers Common Questions</h4>
+        <p>What does a consultation cost? How long does a divorce typically take? Do you handle cases in my state? The chatbot answers the questions prospective clients ask repeatedly, without taking up staff time.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></div>
+        <h4>Captures After-Hours Leads</h4>
+        <p>When no booking slots are available or the visitor prefers not to schedule, the chatbot collects contact information and the key facts of their matter — so your team can follow up first thing in the morning with full context.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h4>Works on Every Device</h4>
+        <p>The chat widget is fully functional on mobile, tablet, and desktop. Given that most legal searches happen on phones, mobile optimisation is not optional — it's where most of your chatbot conversations will happen.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">Comparison</div>
+    <h2 class="sp-h2">AI Chatbot vs Live Chat vs <span class="purple">Contact Form</span></h2>
+    <div class="sp-table-wrap">
+      <table class="sp-table">
+        <thead><tr><th>Feature</th><th>Contact Form</th><th>Live Chat</th><th>AI Chatbot</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Available 24/7</strong></td><td>✓ (form)</td><td>✕ (needs staff)</td><td>✓ always</td></tr>
+          <tr><td><strong>Instant response</strong></td><td>✕ (hours/days)</td><td>✕ (if staff available)</td><td>✓ under 8 seconds</td></tr>
+          <tr><td><strong>Lead qualification</strong></td><td>✕</td><td>Depends on staff training</td><td>✓ structured flow</td></tr>
+          <tr><td><strong>Consultation booking</strong></td><td>✕</td><td>Manual scheduling needed</td><td>✓ real-time booking</td></tr>
+          <tr><td><strong>After-hours capture</strong></td><td>Partial (no qualification)</td><td>✕</td><td>✓ fully automated</td></tr>
+          <tr><td><strong>CRM integration</strong></td><td>Limited</td><td>Manual entry required</td><td>✓ automatic push</td></tr>
+          <tr><td><strong>Engagement rate</strong></td><td>Low</td><td>Medium (when available)</td><td>High</td></tr>
+          <tr><td><strong>Staff time required</strong></td><td>Follow-up only</td><td>High (monitoring)</td><td>Qualified leads only</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">Practice Area Flows</div>
+    <h2 class="sp-h2">Configured For Your <span class="purple">Practice Areas</span></h2>
+    <p class="sp-p">A chatbot that asks every visitor the same generic questions is not much better than a contact form. Our AI chatbots are configured with different conversation flows depending on which page the visitor is on and what practice area they're exploring.</p>
+    <div class="dark-box">
+      <h3>How Conversation Flows Adapt By Practice Area</h3>
+      <ul>
+        <li><strong style="color:#fff;">Personal Injury page visitor:</strong> Date of incident, type of accident, injuries, insurance information, whether a police report was filed. Quick-reply buttons for consultation booking, callback request, and case evaluation.</li>
+        <li><strong style="color:#fff;">Family Law page visitor:</strong> Type of matter (divorce, custody, support modification), whether children are involved, current living situation if separation, urgency level.</li>
+        <li><strong style="color:#fff;">Criminal Defense page visitor:</strong> Type of charges or investigation, jurisdiction and court date if applicable, immediate urgency flags for bail or imminent hearing situations.</li>
+        <li><strong style="color:#fff;">Estate Planning page visitor:</strong> Current estate documents in place, life events driving the inquiry (marriage, birth, health change), preferred meeting format (in-person vs virtual).</li>
+        <li><strong style="color:#fff;">Business Law page visitor:</strong> Business size and structure, type of legal need (contract, dispute, formation, M&amp;A), timeline and urgency.</li>
+        <li><strong style="color:#fff;">General visitors (homepage or about page):</strong> Open question to identify matter type, then routes to the appropriate practice area flow automatically.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">Integration</div>
+    <h2 class="sp-h2">Connects To Your <span class="purple">Existing Systems</span></h2>
+    <p class="sp-p">The chatbot isn't a standalone tool that creates a separate inbox. Every qualified conversation flows directly into your existing workflow — whether that's your practice management software, your CRM, or simply an immediate alert to your phone.</p>
+    <div class="three-grid">
+      <div class="feat-card"><div class="feat-ico">📋</div><div class="feat-title">Clio</div><div class="feat-desc">New matters created automatically from qualified chatbot conversations. Contact records synced.</div></div>
+      <div class="feat-card"><div class="feat-ico">⚖️</div><div class="feat-title">MyCase</div><div class="feat-desc">Lead information pushed to MyCase immediately, with consultation bookings synced to your calendar.</div></div>
+      <div class="feat-card"><div class="feat-ico">📊</div><div class="feat-title">Lawmatics</div><div class="feat-desc">Full lead qualification data flows into Lawmatics for automated follow-up workflows.</div></div>
+      <div class="feat-card"><div class="feat-ico">💼</div><div class="feat-title">HubSpot / Salesforce</div><div class="feat-desc">CRM integration for firms that track leads through a sales pipeline or have a business development team.</div></div>
+      <div class="feat-card"><div class="feat-ico">📅</div><div class="feat-title">Google Calendar / Outlook</div><div class="feat-desc">Real-time availability sync for consultation booking. No double-booking, no manual entry.</div></div>
+      <div class="feat-card"><div class="feat-ico">💬</div><div class="feat-title">SMS &amp; Email Alerts</div><div class="feat-desc">Instant notification to your team when a hot lead is captured — name, matter type, contact info, and conversation summary.</div></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">What We See</div>
+    <h2 class="sp-h2">Common Chatbot Mistakes <span class="purple">Law Firms Make</span></h2>
+    <div class="mistake-list">
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>Generic "How Can I Help?" Openers</h4><p>Opening a chat with a vague greeting on every page creates a generic experience. Context-aware openers — relevant to the practice area page the visitor is on — significantly increase engagement.</p></div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>Asking Too Many Questions Before Offering Value</h4><p>Chatbot flows that interrogate visitors before giving them any useful information create friction. The conversation should feel reciprocal — the bot gives as well as asks.</p></div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>No Fallback For After-Hours Visitors</h4><p>A chatbot that tells visitors "our team will respond tomorrow" without capturing their information loses the lead. After-hours flows need to capture contact details and key case facts, not just offer a promise.</p></div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>Attempting to Provide Legal Advice</h4><p>The chatbot's job is to qualify visitors and capture leads — not to answer specific legal questions about their situation. A bot that wanders into legal advice territory creates both a professional and ethical problem.</p></div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>Poor Mobile Experience</h4><p>A chat widget that opens in a way that covers the entire phone screen, is hard to dismiss, or requires tiny typing creates a terrible mobile experience. Most chatbot conversations happen on mobile — it needs to be designed for that.</p></div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>No Human Escalation Option</h4><p>Some visitors want to speak to a person immediately. A chatbot without a clear "talk to someone now" option — that actually connects them — frustrates those visitors and loses the lead entirely.</p></div></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">Our Process</div>
+    <h2 class="sp-h2">How We Build And Deploy <span class="purple">Your AI Chatbot</span></h2>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-num">1</div><div class="step-body"><h4>Practice Area and Qualification Mapping</h4><p>We document your practice areas, your qualification criteria, the questions that determine whether a visitor is a good fit, and the common questions prospective clients ask about your firm. This becomes the foundation of every conversation flow.</p></div></div>
+      <div class="process-step"><div class="step-num">2</div><div class="step-body"><h4>Conversation Flow Design</h4><p>We build separate conversation flows for each practice area, including the proactive opener, the qualification sequence, the booking or lead capture path, the after-hours fallback, and the non-qualifying exit. We also build the general flow for visitors who arrive on non-practice-area pages.</p></div></div>
+      <div class="process-step"><div class="step-num">3</div><div class="step-body"><h4>Design and Website Integration</h4><p>We configure the chatbot's appearance to match your firm's brand — colours, logo, name, and tone. The widget is embedded on your website with minimal code, and we test its appearance and behavior across desktop, tablet, and mobile.</p></div></div>
+      <div class="process-step"><div class="step-num">4</div><div class="step-body"><h4>Integration and Alert Setup</h4><p>We connect the chatbot to your practice management software, CRM, and calendar. We set up SMS and email alerts so your team is notified immediately when a qualified lead is captured, with the conversation summary included.</p></div></div>
+      <div class="process-step"><div class="step-num">5</div><div class="step-body"><h4>Review, Refinement and Ongoing Optimisation</h4><p>We review chatbot conversations regularly — looking at where visitors drop off, which flows are converting, and where the qualification logic can be tightened. Most chatbots improve significantly in the first 60 to 90 days as we refine based on real conversation data.</p></div></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">FAQ</div>
+    <h2 class="sp-h2">Frequently Asked <span class="purple">Questions</span></h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is an AI chatbot for law firms?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">An AI chatbot for law firms is a chat widget embedded on your website that engages visitors automatically, asks qualifying questions about their legal matter, answers common questions about your practice, and routes strong leads to book consultations or be contacted by your team — all without any human involvement until a lead is qualified.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How is this different from a regular live chat widget?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">A regular live chat widget requires a human to monitor and respond. When no one is available, visitors get no response or a message saying someone will reply later. An AI chatbot is always available, responds instantly, follows a structured qualification flow, and captures leads at any hour without any human involvement until a lead is qualified.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can the chatbot provide legal advice?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">No. The chatbot is designed to answer general informational questions about your firm and practice areas — not to provide legal advice specific to someone's situation. It explains what your firm handles, describes the consultation process, and helps visitors determine whether to book a consultation. Legal advice remains exclusively your attorneys' domain.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens to chat conversations outside business hours?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">The chatbot operates exactly the same at 2 a.m. as it does at 2 p.m. After-hours qualified leads are captured with full contact information and matter details, pushed to your CRM or practice management system, and your team receives an alert so they can follow up first thing in the morning with full context.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can visitors talk to a real person if they want to?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Yes. The chatbot always offers a way to speak to someone directly — whether by phone, by scheduling a call, or by submitting contact information for a callback. Visitors who want human contact can always get it. The chatbot handles the rest.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does the chatbot know which practice area a visitor is interested in?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">The chatbot is aware of which page the visitor is on. If someone is reading your personal injury page, it opens with an opener relevant to personal injury. If someone is on the family law page, it adapts accordingly. For visitors on general pages, it asks an initial question to identify the matter type and then routes to the right flow.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Will the chatbot slow down my website?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">The widget is designed to load asynchronously so it doesn't block the page from rendering. We test Core Web Vitals before and after deployment to ensure no meaningful impact on your site's performance score. Page speed is not sacrificed for the chatbot.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which software does it integrate with?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">We integrate with Clio, MyCase, Smokeball, Lawmatics, HubSpot, Salesforce, Google Calendar, and Outlook. SMS and email alerts are standard for all configurations. If you use a system not on this list, we'll assess integration during onboarding.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I see the conversations visitors are having with the chatbot?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Yes. You have access to full conversation transcripts through your dashboard. We review these as part of ongoing optimisation and you can review any conversation at any time. This visibility is also useful for training staff on the questions prospective clients most commonly ask.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does setup take?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Most chatbot implementations are live within two to three weeks. The timeline includes practice area mapping, conversation flow design, integration setup, and testing across devices. We don't deploy until the flows have been tested thoroughly.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does the chatbot work on mobile?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Yes, fully. Mobile is actually where we focus most of our testing because that's where the majority of legal website visitors arrive. The widget opens cleanly on small screens, doesn't obstruct the page navigation, and the conversation interface is easy to use on a touch screen.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can it handle multiple practice areas at once?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Yes. We configure separate conversation flows for each practice area, plus a general flow for visitors who arrive on non-practice-area pages. There's no limit on the number of practice areas — the chatbot routes each visitor to the appropriate flow based on the page they're on and the matter type they describe.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there a multilingual option?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Spanish language support is available for firms serving Spanish-speaking clients. The chatbot can detect language preference from the visitor's browser settings or offer a language selection option early in the conversation.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the difference between an AI chatbot and an AI receptionist?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">The AI chatbot lives on your website and handles text-based conversations with website visitors. The AI receptionist answers your firm's phone calls. They're complementary — the chatbot captures web traffic that would otherwise leave without contacting you, while the receptionist captures phone inquiries that would otherwise go to voicemail. Many firms use both.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What does it cost?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Pricing depends on the number of practice areas configured, integrations required, and conversation volume. It's structured as a monthly service. The practical way to evaluate it is to consider what one additional retained client per month is worth to your firm — for most practice areas, the math is straightforward. Book a call and we'll give you specific numbers.</div></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<section class="page-cta">
+  <div style="max-width:640px;margin:0 auto;">
+    <div class="tag" style="margin-bottom:20px;"><span>Get Started</span></div>
+    <h2>Turn Your Website Traffic Into <span class="grad">Consultations</span></h2>
+    <p>Most of your website visitors leave without making contact. They were interested — they just needed someone available to engage them. Let's fix that. Book a strategy call and we'll walk you through how an AI chatbot would work on your specific site.</p>
+    <div class="cta-btns">
+      <button class="cta-btn-p" onclick="window.location='index.html#lead-gen'">See It In Action</button>
+      <button class="cta-btn-s" onclick="window.location='index.html#lead-gen'">Book A Strategy Call</button>
+    </div>
+    <p class="cta-note">No obligation. No hard sell. Just a real conversation about what's possible.</p>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:28px;">
+      <div><div class="footer-logo">Lex<span>Scale</span>.ai</div><div class="footer-tagline">AI Growth Systems For Law Firms</div></div>
+      <div class="footer-col"><h5>Services</h5><a href="ai-website-design-for-law-firms.html">AI Website Design</a><a href="ai-seo-for-law-firms.html">AI SEO</a><a href="ai-receptionist-for-law-firms.html">AI Receptionist</a><a href="ai-chatbot-for-law-firms.html" class="current">AI Chatbot</a><a href="index.html#services">Review Management</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="index.html">Home</a><a href="index.html#case-studies">Case Studies</a><a href="index.html#comparison">Compare</a><a href="index.html#lead-gen">Free Report</a></div>
+      <div class="footer-col"><h5>Legal</h5><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2025 LexScale.ai · All rights reserved · Serving law firms across the United States and Canada</div></div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>

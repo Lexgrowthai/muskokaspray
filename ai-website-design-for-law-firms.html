@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AI Website Design For Law Firms | LexScale.ai</title>
+<meta name="description" content="AI website design built exclusively for law firms. Fast, mobile-friendly, SEO-optimised attorney websites that rank on Google and get cited by ChatGPT, Gemini and Perplexity."/>
+<meta name="keywords" content="AI Website Design For Law Firms, Law Firm Website Design, Attorney Website Design, AI Websites For Lawyers, Legal Website Design, SEO Friendly Law Firm Websites, High-Converting Lawyer Websites, Mobile-Friendly Attorney Websites, Fast Law Firm Websites, AI Optimized Websites"/>
+<link rel="canonical" href="https://lexscale.ai/ai-website-design-for-law-firms"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI Website Design For Law Firms",
+  "provider": {
+    "@type": "Organization",
+    "name": "LexScale.ai",
+    "url": "https://lexscale.ai"
+  },
+  "description": "AI-optimized website design built exclusively for law firms and attorneys across North America. Includes SEO, schema markup, AI search optimization, and high-converting design.",
+  "areaServed": ["United States", "Canada"],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Law Firms and Attorneys"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is AI website design for law firms?","acceptedAnswer":{"@type":"Answer","text":"It is the practice of building attorney websites optimized not just for traditional Google search, but for AI search platforms like ChatGPT, Google AI Overviews, Gemini, and Perplexity. This involves content structure, technical markup, site architecture, and performance standards."}},
+    {"@type":"Question","name":"How long does it take to build a law firm website?","acceptedAnswer":{"@type":"Answer","text":"A professionally built legal website typically takes six to ten weeks from kickoff to launch, depending on the number of practice areas, pages, and how quickly content approvals and attorney photos are received."}},
+    {"@type":"Question","name":"Will my website rank on Google right away?","acceptedAnswer":{"@type":"Answer","text":"No. New websites typically take three to six months to establish meaningful organic rankings. Competitive markets take longer. What we control is building a site positioned to rank as domain authority grows."}},
+    {"@type":"Question","name":"What makes a law firm website high-converting?","acceptedAnswer":{"@type":"Answer","text":"Visible contact information, clear calls to action, trust signals, fast load times, well-written content that answers the right questions, and an easy-to-use contact form or chat widget — especially outside business hours."}},
+    {"@type":"Question","name":"How do AI platforms like ChatGPT and Perplexity find law firms to recommend?","acceptedAnswer":{"@type":"Answer","text":"They pull from websites indexed on the web, prioritizing sources that demonstrate expertise, have clear and accurate information, are well-structured, and meet basic credibility signals."}}
+  ]
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0B1536;--pu:#6A5CFF;--pu2:#8B7FFF;--pu3:#a89fff;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#0B1536;overflow-x:hidden;}
+a{text-decoration:none;}
+@keyframes shimmer{0%{background-position:200% center;}100%{background-position:-200% center;}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(1.3);}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(106,92,255,.09);}
+.logo{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.4px;}
+.logo span{color:var(--pu);}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
+.nav-links a{font-size:13px;color:#4a5568;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--pu);}
+.nav-links .active{color:var(--pu);}
+
+/* DROPDOWN */
+.has-drop{position:relative;}
+.has-drop>a{display:flex;align-items:center;gap:4px;}
+.drop-arrow{width:14px;height:14px;opacity:.5;transition:transform .2s;}
+.has-drop:hover .drop-arrow{transform:rotate(180deg);}
+.dropdown{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(106,92,255,.12);border-radius:16px;padding:8px;box-shadow:0 16px 48px rgba(11,21,54,.12);min-width:220px;opacity:0;pointer-events:none;transition:all .2s;z-index:200;}
+.has-drop:hover .dropdown{opacity:1;pointer-events:all;}
+.drop-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;transition:background .15s;cursor:pointer;}
+.drop-item:hover{background:rgba(106,92,255,.07);}
+.drop-ico{width:30px;height:30px;border-radius:8px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.drop-label{font-size:12.5px;font-weight:600;color:var(--navy);}
+.drop-sub{font-size:11px;color:#94a3b8;margin-top:1px;}
+.drop-item.current .drop-label{color:var(--pu);}
+.drop-divider{height:1px;background:rgba(106,92,255,.07);margin:6px 8px;}
+
+.nav-cta{background:var(--pu);color:#fff;border:none;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;}
+.nav-cta:hover{background:#5848e8;transform:translateY(-1px);}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(160deg,#060d24 0%,#0B1536 50%,#111d45 100%);padding:80px 40px 72px;}
+.page-hero-inner{max-width:860px;margin:0 auto;text-align:center;}
+.tag{display:inline-flex;align-items:center;gap:7px;background:rgba(106,92,255,.12);border:1px solid rgba(106,92,255,.25);border-radius:100px;padding:6px 14px;margin-bottom:20px;}
+.tag span{font-size:11px;font-weight:700;color:var(--pu3);letter-spacing:.8px;text-transform:uppercase;}
+.page-h1{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1.5px;margin-bottom:18px;}
+.page-h1 .grad{background:linear-gradient(135deg,#fff 0%,var(--pu3) 40%,var(--pu) 70%,var(--pu3) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite;}
+.page-sub{font-size:17px;color:rgba(255,255,255,.55);line-height:1.75;max-width:620px;margin:0 auto 32px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:36px;}
+.hero-pill{background:rgba(106,92,255,.12);border:1px solid rgba(106,92,255,.25);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--pu3);}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-p{background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:14px 30px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(106,92,255,.4);transition:all .25s;}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(106,92,255,.55);}
+.btn-s{background:rgba(255,255,255,.07);color:#fff;border:1.5px solid rgba(255,255,255,.2);padding:14px 30px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .25s;}
+.btn-s:hover{background:rgba(106,92,255,.15);border-color:rgba(106,92,255,.45);transform:translateY(-2px);}
+
+/* TRUST BAR */
+.trust-bar{background:#f8f7ff;border-top:1px solid rgba(106,92,255,.08);border-bottom:1px solid rgba(106,92,255,.08);padding:20px 40px;}
+.trust-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#4a5568;}
+.trust-ico{width:22px;height:22px;border-radius:50%;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;}
+.trust-div{width:1px;height:18px;background:rgba(106,92,255,.12);}
+
+/* MAIN CONTENT */
+.content-wrap{max-width:860px;margin:0 auto;padding:0 40px;}
+.section-block{padding:64px 0;}
+.section-block+.section-block{border-top:1px solid rgba(106,92,255,.08);}
+.sp-tag{display:inline-block;background:rgba(106,92,255,.08);border:1px solid rgba(106,92,255,.15);border-radius:100px;padding:4px 12px;font-size:10px;font-weight:700;color:var(--pu);letter-spacing:.7px;text-transform:uppercase;margin-bottom:14px;}
+.sp-h2{font-size:clamp(22px,2.8vw,34px);font-weight:800;color:var(--navy);letter-spacing:-.8px;line-height:1.15;margin-bottom:18px;}
+.sp-h2 .purple{color:var(--pu);}
+.sp-h3{font-size:18px;font-weight:700;color:var(--navy);letter-spacing:-.3px;margin:32px 0 10px;}
+.sp-p{font-size:15.5px;color:#374151;line-height:1.85;margin-bottom:16px;}
+.sp-p:last-child{margin-bottom:0;}
+.sp-p strong{color:var(--navy);font-weight:700;}
+.sp-pull{border-left:3px solid var(--pu);border-radius:0 10px 10px 0;background:rgba(106,92,255,.04);padding:18px 22px;margin:24px 0;font-size:15px;color:#374151;line-height:1.8;font-style:italic;}
+
+/* INTRO BOX */
+.intro-box{background:linear-gradient(135deg,rgba(106,92,255,.06),rgba(106,92,255,.02));border:1px solid rgba(106,92,255,.13);border-radius:20px;padding:36px 40px;margin-bottom:48px;}
+.intro-box .sp-p{font-size:16px;}
+
+/* CARD GRID */
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0;}
+.info-card{background:rgba(255,255,255,.9);border:1px solid rgba(106,92,255,.1);border-radius:18px;padding:24px;transition:all .25s;cursor:default;}
+.info-card:hover{transform:translateY(-4px);border-color:rgba(106,92,255,.28);box-shadow:0 16px 44px rgba(106,92,255,.1);}
+.info-card-ico{width:40px;height:40px;border-radius:12px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.info-card h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.info-card p{font-size:13px;color:#64748b;line-height:1.65;}
+
+/* THREE GRID */
+.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0;}
+.feat-card{background:#fff;border:1px solid rgba(106,92,255,.1);border-radius:16px;padding:20px;text-align:center;transition:all .25s;}
+.feat-card:hover{transform:translateY(-3px);border-color:rgba(106,92,255,.28);box-shadow:0 12px 32px rgba(106,92,255,.09);}
+.feat-ico{font-size:28px;margin-bottom:10px;}
+.feat-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.feat-desc{font-size:12px;color:#64748b;line-height:1.55;}
+
+/* DARK CALLOUT */
+.dark-box{background:linear-gradient(135deg,var(--navy),#162050);border-radius:20px;padding:36px 40px;margin:32px 0;}
+.dark-box h3{font-size:20px;font-weight:800;color:#fff;margin-bottom:14px;}
+.dark-box p{font-size:14.5px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:12px;}
+.dark-box p:last-child{margin-bottom:0;}
+.dark-box ul{margin-top:12px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
+.dark-box li{font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.65;display:flex;align-items:flex-start;gap:8px;}
+.dark-box li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu3);flex-shrink:0;margin-top:8px;}
+
+/* BULLET LIST */
+.sp-list{list-style:none;padding:0;margin:16px 0 20px;display:flex;flex-direction:column;gap:10px;}
+.sp-list li{font-size:15px;color:#374151;line-height:1.7;display:flex;align-items:flex-start;gap:10px;}
+.sp-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu);flex-shrink:0;margin-top:8px;}
+
+/* TABLE */
+.sp-table-wrap{overflow-x:auto;margin:24px 0;border-radius:16px;border:1px solid rgba(106,92,255,.12);}
+.sp-table{width:100%;border-collapse:collapse;}
+.sp-table th{background:linear-gradient(135deg,var(--navy),#162050);color:rgba(255,255,255,.85);font-size:12px;font-weight:700;padding:14px 18px;text-align:left;letter-spacing:.3px;}
+.sp-table th:first-child{border-radius:16px 0 0 0;}
+.sp-table th:last-child{border-radius:0 16px 0 0;}
+.sp-table td{font-size:13.5px;color:#374151;padding:14px 18px;border-top:1px solid rgba(106,92,255,.07);}
+.sp-table tr:hover td{background:rgba(106,92,255,.03);}
+.sp-table td strong{color:var(--navy);font-weight:600;}
+
+/* MISTAKES */
+.mistake-list{display:flex;flex-direction:column;gap:12px;margin:20px 0;}
+.mistake-item{display:flex;gap:14px;background:#fff;border:1px solid rgba(239,68,68,.12);border-radius:14px;padding:18px 20px;align-items:flex-start;}
+.mistake-x{width:28px;height:28px;border-radius:8px;background:rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700;color:#ef4444;}
+.mistake-text h4{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.mistake-text p{font-size:13px;color:#64748b;line-height:1.6;}
+
+/* PROCESS */
+.process-steps{display:flex;flex-direction:column;gap:0;margin:28px 0;position:relative;}
+.process-steps::before{content:'';position:absolute;left:24px;top:24px;bottom:24px;width:2px;background:linear-gradient(180deg,var(--pu),transparent);}
+.process-step{display:flex;gap:20px;align-items:flex-start;padding:20px 0 20px 0;position:relative;}
+.step-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--pu),var(--pu2));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 4px 16px rgba(106,92,255,.35);z-index:1;position:relative;}
+.step-body{padding-top:10px;}
+.step-body h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.step-body p{font-size:13.5px;color:#64748b;line-height:1.7;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:0;margin:24px 0;}
+.faq-item{border-bottom:1px solid rgba(106,92,255,.09);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);line-height:1.4;}
+.faq-q:hover{color:var(--pu);}
+.faq-arrow{width:22px;height:22px;border-radius:50%;background:rgba(106,92,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;}
+.faq-item.open .faq-arrow{background:var(--pu);transform:rotate(180deg);}
+.faq-a{font-size:14px;color:#4b5563;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:20px;}
+
+/* FINAL CTA */
+.page-cta{background:linear-gradient(160deg,#060d24 0%,var(--navy) 40%,#0f1c42 70%,#080f28 100%);padding:90px 40px;text-align:center;}
+.page-cta h2{font-size:clamp(28px,4vw,48px);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+.page-cta h2 .grad{background:linear-gradient(135deg,#fff 0%,var(--pu3) 40%,var(--pu) 70%,var(--pu3) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite;}
+.page-cta p{font-size:16px;color:rgba(255,255,255,.45);line-height:1.75;max-width:480px;margin:0 auto 36px;}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px;}
+.cta-btn-p{background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:16px 36px;border-radius:100px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 8px 28px rgba(106,92,255,.5);transition:all .3s;}
+.cta-btn-p:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(106,92,255,.65);}
+.cta-btn-s{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.15);padding:16px 36px;border-radius:100px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .3s;}
+.cta-btn-s:hover{background:rgba(106,92,255,.15);border-color:rgba(106,92,255,.5);transform:translateY(-3px);}
+.cta-note{font-size:12px;color:rgba(255,255,255,.22);}
+
+/* FOOTER */
+footer{background:#040c1e;padding:36px 40px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:28px;}
+.footer-logo{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.4px;}
+.footer-logo span{color:var(--pu);}
+.footer-tagline{font-size:11px;color:rgba(255,255,255,.22);margin-top:3px;}
+.footer-col h5{font-size:11px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.7px;text-transform:uppercase;margin-bottom:12px;}
+.footer-col a{display:block;font-size:12.5px;color:rgba(255,255,255,.35);font-weight:500;margin-bottom:8px;transition:color .2s;}
+.footer-col a:hover{color:var(--pu3);}
+.footer-col a.current{color:var(--pu3);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);margin-top:28px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.16);}
+
+/* RESPONSIVE */
+@media(max-width:860px){
+  nav{padding:14px 20px;}
+  .nav-links{display:none;}
+  .page-hero{padding:56px 20px 52px;}
+  .trust-bar{padding:16px 20px;}
+  .trust-inner{gap:16px;}
+  .trust-div{display:none;}
+  .content-wrap{padding:0 20px;}
+  .section-block{padding:44px 0;}
+  .intro-box{padding:24px 22px;}
+  .card-grid{grid-template-columns:1fr;}
+  .three-grid{grid-template-columns:repeat(2,1fr);}
+  .dark-box{padding:24px 22px;}
+  .page-cta{padding:60px 20px;}
+  footer{padding:28px 20px;}
+  .process-steps::before{display:none;}
+}
+@media(max-width:520px){
+  .three-grid{grid-template-columns:1fr;}
+  .hero-pills{gap:6px;}
+  .hero-pill{font-size:11px;padding:5px 11px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">Lex<span>Scale</span>.ai</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-drop">
+      <a href="#">Services
+        <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="dropdown">
+        <a href="ai-website-design-for-law-firms.html" class="drop-item current">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div><div class="drop-label">AI Website Design</div><div class="drop-sub">For law firms</div></div>
+        </a>
+        <div class="drop-divider"></div>
+        <a href="index.html#services" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div><div class="drop-label">All Services</div><div class="drop-sub">View full suite</div></div>
+        </a>
+      </div>
+    </li>
+    <li><a href="index.html#case-studies">Results</a></li>
+    <li><a href="index.html#comparison">Compare</a></li>
+    <li><a href="index.html#lead-gen">Free Report</a></li>
+  </ul>
+  <button class="nav-cta" onclick="window.location='index.html#lead-gen'">Book A Demo</button>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="tag"><span>Service · AI Website Design</span></div>
+    <h1 class="page-h1">AI Website Design<br>For <span class="grad">Law Firms</span></h1>
+    <p class="page-sub">Your website is either generating consultations or losing them to a competitor. We build attorney websites that rank on Google, get cited by AI search platforms, and convert visitors into clients.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">Law Firm Website Design</span>
+      <span class="hero-pill">Mobile-First</span>
+      <span class="hero-pill">AI Search Optimised</span>
+      <span class="hero-pill">Fast Loading</span>
+      <span class="hero-pill">High-Converting</span>
+    </div>
+    <div class="hero-ctas">
+      <button class="btn-p" onclick="window.location='index.html#lead-gen'">Get A Free Website Audit</button>
+      <button class="btn-s" onclick="window.location='index.html#lead-gen'">Book A Strategy Call</button>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      Optimised for ChatGPT &amp; Gemini
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      Core Web Vitals Compliant
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      Schema Markup Included
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      Built for North American Law Firms
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      Content Written By Legal Marketing Specialists
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div style="background:#fff;padding:0 0 80px;">
+<div class="content-wrap">
+
+  <!-- INTRODUCTION -->
+  <div class="section-block">
+    <div class="intro-box">
+      <p class="sp-p">Your website is the first place most prospective clients will judge whether you're worth calling. They won't read your bio carefully. They won't study your credentials. They'll spend about eight seconds deciding if you feel credible — and then they'll either fill out your contact form or hit the back button and call someone else.</p>
+      <p class="sp-p">Most law firm websites fail at that moment. Not because the attorneys aren't qualified. Not because the services aren't good. They fail because the site was built without understanding how legal clients actually make decisions online.</p>
+      <p class="sp-p">A prospective client searching for a personal injury lawyer at 10 p.m. after a car accident isn't browsing. They're scared, overwhelmed, and looking for reassurance. A family law client researching divorce options is emotionally raw and looking for someone who understands their situation. A small business owner needing a commercial contract reviewed is pressed for time and wants a straight answer about whether you can help.</p>
+      <p class="sp-p" style="margin-bottom:0;">Your website needs to speak directly to those moments. It needs to load fast, look credible on a phone, answer the questions people actually have, and make it easy to take the next step. That's a higher bar than most law firm websites clear.</p>
+    </div>
+  </div>
+
+  <!-- WHY FIRMS NEED MORE -->
+  <div class="section-block">
+    <div class="sp-tag">The Problem</div>
+    <h2 class="sp-h2">Why Law Firms Need More Than A <span class="purple">Traditional Website</span></h2>
+    <p class="sp-p">The old model was simple: build a site, write some pages about your practice areas, add your phone number, and wait for Google to send traffic. That worked reasonably well from 2005 to maybe 2018.</p>
+    <p class="sp-p">It doesn't work anymore — at least not on its own.</p>
+    <p class="sp-p">The legal market online has gotten crowded and technically demanding. Google's algorithm has matured considerably. It rewards pages that demonstrate genuine expertise, that answer questions thoroughly, and that provide a good experience across every device. The top-ranking law firm websites today aren't just better-looking than the ones they displaced — they're architecturally stronger, technically faster, and built around how search engines and AI platforms understand content.</p>
+    <p class="sp-p">At the same time, a growing number of prospective clients are starting their search not on Google, but by asking ChatGPT or Gemini a direct question: <em>"What should I do after a car accident in Texas?"</em> or <em>"Do I need a lawyer to set up an LLC in Ontario?"</em></p>
+    <div class="sp-pull">If your firm isn't being recommended in those answers, you're invisible to a segment of potential clients that's growing every month. Traditional websites were not designed for this.</div>
+    <p class="sp-p">They were designed to exist — to give your firm a web presence. That's no longer enough.</p>
+  </div>
+
+  <!-- WHAT MAKES AI DIFFERENT -->
+  <div class="section-block">
+    <div class="sp-tag">What's Different</div>
+    <h2 class="sp-h2">What Makes <span class="purple">AI Website Design</span> Different</h2>
+    <p class="sp-p">The term "AI website design" can sound like marketing language, so it's worth being specific about what it actually means in practice.</p>
+    <p class="sp-p">An AI-optimised law firm website is built to be understood — not just by Google's traditional search algorithm, but by the AI systems that are increasingly answering user questions directly. That requires a different approach to content structure, technical markup, internal linking, and how information is presented.</p>
+    <div class="card-grid">
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <h4>Content That Answers Questions Directly</h4>
+        <p>AI platforms pull from pages that give clear, authoritative answers. Not buried key points — direct answers that expand into detail. A page about wrongful termination should explain what it is, what evidence matters, and what someone should do next.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
+        <h4>Structured Data and Schema Markup</h4>
+        <p>Code that tells search engines and AI platforms exactly what type of business you are, what services you offer, where you're located, and what your credentials are. Most law firm websites don't have this properly implemented.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h4>Clean Site Architecture</h4>
+        <p>Every page exists for a reason, connects logically to related pages, and signals clearly to search engines what it's about. This takes planning before the build, not retrofitting afterward.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h4>E-E-A-T Signals Throughout</h4>
+        <p>Experience, Expertise, Authoritativeness, and Trustworthiness — the four qualities Google explicitly evaluates for legal content. Your site needs to demonstrate all four, not just claim them.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEAD GEN -->
+  <div class="section-block">
+    <div class="sp-tag">Lead Generation</div>
+    <h2 class="sp-h2">How AI Websites Help <span class="purple">Generate More Leads</span></h2>
+    <p class="sp-p">A well-built legal website generates leads in multiple ways simultaneously. Most law firm websites only do one — if that.</p>
+    <p class="sp-p">The primary channels are:</p>
+    <ul class="sp-list">
+      <li><strong>Organic Google search</strong> — ranking for keywords prospective clients are actually searching</li>
+      <li><strong>AI search referrals</strong> — being cited or recommended by ChatGPT, Gemini, Perplexity, and Google's AI Overviews</li>
+      <li><strong>Local search</strong> — appearing in the Google Maps pack for location-specific searches</li>
+      <li><strong>Direct traffic</strong> — people who've heard of your firm and visit directly</li>
+      <li><strong>Referral traffic</strong> — links from directories, legal publications, and other websites</li>
+    </ul>
+    <p class="sp-p">An AI-optimised website is built to perform across all of these. The technical foundation — fast load times, proper schema markup, clean architecture — supports every channel. The content structure ensures you're visible when AI platforms are synthesising answers to legal questions.</p>
+    <div class="sp-pull">A law firm website that only ranks on Google misses the referral and AI search traffic that's growing as a share of how people find legal services. Building for both from the start is simply the more defensible approach.</div>
+  </div>
+
+  <!-- SPEED -->
+  <div class="section-block">
+    <div class="sp-tag">Performance</div>
+    <h2 class="sp-h2">Website Speed And <span class="purple">User Experience</span></h2>
+    <p class="sp-p">Page speed matters more than most lawyers realise. Google's Core Web Vitals — a set of performance metrics introduced as official ranking factors in 2021 — measure how quickly your page loads, how stable the layout is as it loads, and how quickly it responds to user input.</p>
+    <p class="sp-p">A slow law firm website doesn't just rank lower. It loses visitors. Mobile users will abandon a page that takes more than three seconds to load. Legal clients who find your site at a stressful moment aren't going to wait for slow images and heavy scripts to finish loading.</p>
+    <h3 class="sp-h3">Common reasons law firm websites are slow:</h3>
+    <ul class="sp-list">
+      <li>Uncompressed images (the single biggest culprit — often by a wide margin)</li>
+      <li>Too many third-party scripts running simultaneously: chat widgets, analytics, ad trackers</li>
+      <li>Cheap shared hosting that can't handle traffic spikes</li>
+      <li>No content delivery network to serve files from servers near the user</li>
+      <li>Bloated page builders and template frameworks with excess code</li>
+    </ul>
+    <p class="sp-p">A properly built legal website scores well on Google's PageSpeed Insights and passes Core Web Vitals. These aren't luxury features — they're baseline requirements for competing in legal search today.</p>
+  </div>
+
+  <!-- MOBILE -->
+  <div class="section-block">
+    <div class="sp-tag">Mobile Design</div>
+    <h2 class="sp-h2">Mobile-Friendly Attorney <span class="purple">Website Design</span></h2>
+    <p class="sp-p">More than 60% of legal searches happen on a phone. That number is higher for certain practice areas — personal injury, criminal defense, and immigration clients are especially likely to be searching from their phones, often immediately after a problem occurs.</p>
+    <p class="sp-p">Mobile-friendly doesn't just mean the site technically displays on a phone. It means the experience is actually good on a phone.</p>
+    <div class="three-grid">
+      <div class="feat-card">
+        <div class="feat-ico">📱</div>
+        <div class="feat-title">Thumb-Friendly Navigation</div>
+        <div class="feat-desc">Navigation that works naturally with a thumb, not a mouse cursor. Buttons sized for tapping, not clicking.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">📞</div>
+        <div class="feat-title">Tap-To-Call</div>
+        <div class="feat-desc">Your phone number triggers a call when tapped. No copying, no searching — immediate connection.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">⚡</div>
+        <div class="feat-title">Sub-3 Second Load</div>
+        <div class="feat-desc">Load times under three seconds on a 4G connection. No horizontal scrolling. No layout shifts.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">🔤</div>
+        <div class="feat-title">Readable Text</div>
+        <div class="feat-desc">Font sizes large enough to read without zooming. No tiny text that sends users reaching for the pinch gesture.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">📋</div>
+        <div class="feat-title">Mobile-First Forms</div>
+        <div class="feat-desc">Contact forms with large input fields that work cleanly with a mobile keyboard. Short, purposeful, friction-free.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">🏆</div>
+        <div class="feat-title">Mobile-First Indexing</div>
+        <div class="feat-desc">Google ranks your site based on its mobile version. Your mobile experience is your SEO performance.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCAL SEO -->
+  <div class="section-block">
+    <div class="sp-tag">Local &amp; Technical SEO</div>
+    <h2 class="sp-h2">Local SEO And <span class="purple">Technical SEO</span></h2>
+    <p class="sp-p">Most law firms serve clients in a defined geographic area. Even national or multi-state firms typically have offices in specific cities. Local SEO is the work of making sure your firm appears when people search for legal services in those locations.</p>
+    <h3 class="sp-h3">Local SEO elements that matter:</h3>
+    <ul class="sp-list">
+      <li><strong>Google Business Profile optimisation</strong> — Your website's signals support your profile's credibility and ranking in Google Maps</li>
+      <li><strong>Location-specific pages</strong> — Dedicated pages for each city you serve, with genuinely location-specific content</li>
+      <li><strong>NAP consistency</strong> — Name, Address, and Phone number appearing identically across your website, Google profile, and every directory</li>
+      <li><strong>Local schema markup</strong> — Structured data that explicitly tells search engines your service areas</li>
+      <li><strong>Locally relevant content</strong> — References to local courts, local laws, and locally relevant situations</li>
+    </ul>
+    <h3 class="sp-h3">Technical SEO fundamentals:</h3>
+    <ul class="sp-list">
+      <li>A properly configured sitemap submitted to Google Search Console</li>
+      <li>Canonical tags to prevent duplicate content issues</li>
+      <li>SSL certificate (HTTPS) — now a baseline requirement, not an option</li>
+      <li>Correct redirect structure — no broken links, 301 redirects from old URLs</li>
+      <li>Crawlability — no pages accidentally blocked from search engine access</li>
+    </ul>
+    <div class="sp-pull">Most law firm websites that struggle to rank have technical issues underneath the surface that prevent even well-written content from performing. Fix the foundation first.</div>
+  </div>
+
+  <!-- CONTENT STRUCTURE -->
+  <div class="section-block">
+    <div class="sp-tag">Content Architecture</div>
+    <h2 class="sp-h2">Content Structure And <span class="purple">Internal Linking</span></h2>
+    <p class="sp-p">Search engines understand websites through their structure — how pages relate to each other, what terms appear together, what context surrounds the main topics. A law firm website with strong content structure has:</p>
+    <ul class="sp-list">
+      <li><strong>A clear topic hierarchy.</strong> Practice area pages sit above specific sub-topic pages. A personal injury page links down to pages about car accidents, slip and fall, medical malpractice, and wrongful death. Each links back up.</li>
+      <li><strong>Logical internal linking.</strong> When a page about car accident claims mentions medical bills, it links to your page about recoverable damages. Internal links help users navigate and help search engines understand your site's topical depth.</li>
+      <li><strong>Consistent anchor text.</strong> "Learn more about our personal injury practice" is better than "click here."</li>
+      <li><strong>No orphaned pages.</strong> Every page on your site should be reachable through at least one internal link. Pages that aren't linked internally are harder for search engines to find and index reliably.</li>
+    </ul>
+  </div>
+
+  <!-- SCHEMA -->
+  <div class="section-block">
+    <div class="sp-tag">Structured Data</div>
+    <h2 class="sp-h2">Schema Markup And <span class="purple">Structured Data</span></h2>
+    <p class="sp-p">Schema markup is code that describes your website's content to search engines in a language they read directly, rather than inferring meaning from your written text. For law firms, the most important schema types are:</p>
+    <div class="sp-table-wrap">
+      <table class="sp-table">
+        <thead>
+          <tr>
+            <th>Schema Type</th>
+            <th>What It Communicates</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>LegalService</strong></td><td>That your site represents a legal services provider</td></tr>
+          <tr><td><strong>LocalBusiness</strong></td><td>Physical location, hours, contact information</td></tr>
+          <tr><td><strong>Attorney</strong></td><td>Individual attorney credentials and specialisations</td></tr>
+          <tr><td><strong>FAQPage</strong></td><td>Question-and-answer content eligible for rich results in Google</td></tr>
+          <tr><td><strong>Review / AggregateRating</strong></td><td>Client reviews and star ratings in search results</td></tr>
+          <tr><td><strong>BreadcrumbList</strong></td><td>Site navigation structure for search engine context</td></tr>
+          <tr><td><strong>Article / BlogPosting</strong></td><td>Educational content and blog articles with authorship signals</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sp-p">When schema markup is implemented correctly, your firm becomes more likely to appear in featured snippets, Google's Knowledge Panel, and AI-generated answers. AI platforms like Perplexity and Google's AI Overviews draw heavily from structured data when composing their responses.</p>
+    <p class="sp-p">Most law firm websites have no schema markup, or have it implemented incorrectly. That's a significant and entirely fixable disadvantage.</p>
+  </div>
+
+  <!-- AI SEARCH OPT -->
+  <div class="section-block">
+    <div class="sp-tag">AISO</div>
+    <h2 class="sp-h2">AI Search Optimisation For <span class="purple">Law Firms</span></h2>
+    <p class="sp-p">AI search optimisation — sometimes called AISO — is the practice of structuring your content and technical setup to be cited by AI search platforms. When someone asks ChatGPT <em>"Do I need a lawyer after a minor car accident?"</em> or asks Perplexity <em>"How long does a divorce take in California?"</em> — those platforms synthesise answers from web content they consider authoritative.</p>
+    <div class="dark-box">
+      <h3>What AI Search Platforms Look For</h3>
+      <ul>
+        <li><strong style="color:#fff;">Direct answers to specific questions.</strong> Paragraphs that open with a clear answer before expanding on detail. Not burying the key point in the middle of a long block of text.</li>
+        <li><strong style="color:#fff;">Demonstrated expertise.</strong> Content written by or attributed to qualified attorneys, with credentials clearly stated and verifiable.</li>
+        <li><strong style="color:#fff;">Factual specificity.</strong> Dates, statutes, case outcomes, and verifiable details that signal the content is grounded rather than generic.</li>
+        <li><strong style="color:#fff;">Clean information architecture.</strong> Well-organised pages with logical headings, clear paragraphs, and content that doesn't contradict itself.</li>
+        <li><strong style="color:#fff;">Trustworthy citations.</strong> Links to authoritative sources — court websites, state bar resources, government publications — establish credibility.</li>
+      </ul>
+    </div>
+    <p class="sp-p" style="margin-top:20px;">This isn't fundamentally different from good SEO. But it requires intentional content strategy rather than generic service page writing.</p>
+  </div>
+
+  <!-- GOOGLE AI OVERVIEWS -->
+  <div class="section-block">
+    <div class="sp-tag">Future of Search</div>
+    <h2 class="sp-h2">Google AI Overviews And <span class="purple">Future Search</span></h2>
+    <p class="sp-p">Google's AI Overviews appear at the top of many search results pages, synthesising an answer before users see the traditional list of links. For informational legal searches — "what is negligence," "how does probate work," "can I sue my employer" — AI Overviews frequently appear and reduce click-through rates to the websites below.</p>
+    <p class="sp-p">This creates a real challenge for law firm content strategy. More searches are being answered directly on the results page without anyone visiting your website.</p>
+    <p class="sp-p">There are two ways to respond intelligently:</p>
+    <div class="card-grid">
+      <div class="info-card">
+        <div class="info-card-ico" style="background:rgba(16,185,129,.1);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+        <h4>Become The Source</h4>
+        <p>Make sure your content is what Google's AI Overview is pulling from. If your page is cited as a source, your firm gets visibility even when the user doesn't click through to your site.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico" style="background:rgba(16,185,129,.1);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h4>Focus On Decision Content</h4>
+        <p>Shift focus toward content that drives action: "what should I do," "how do I know if I have a case," "what does a consultation cost." Decision content drives calls regardless of AI Overview presence.</p>
+      </div>
+    </div>
+    <p class="sp-p" style="margin-top:8px;">The attorneys who understand this shift will be better positioned than those still optimising for the web of 2019.</p>
+  </div>
+
+  <!-- CONVERSION -->
+  <div class="section-block">
+    <div class="sp-tag">Conversion</div>
+    <h2 class="sp-h2">Conversion Optimisation <span class="purple">For Law Firms</span></h2>
+    <p class="sp-p">Getting traffic to your website is only half the problem. Converting that traffic into consultations is the other half — and it's where many law firm websites fall short even when their SEO is doing reasonably well.</p>
+    <ul class="sp-list">
+      <li><strong>Phone number visibility.</strong> Your number should be in the top right corner of every page, clickable on mobile. If someone has to search for your phone number, you've already lost some of them.</li>
+      <li><strong>Clear calls to action.</strong> "Schedule a free consultation" beats a vague "contact us." Be specific about what the consultation includes and that it costs nothing.</li>
+      <li><strong>Short contact forms.</strong> Ask for name, phone, email, and a brief description of the matter. Twelve fields before a first conversation will kill your form completion rate.</li>
+      <li><strong>Trust signals throughout.</strong> Lawyer ratings, years in practice, bar admissions, notable results, and client testimonials are the signals prospective clients look for to confirm you're credible.</li>
+      <li><strong>After-hours capture.</strong> Most legal inquiries happen outside business hours. An AI receptionist or chat widget that captures inquiries at 9 p.m. on a Saturday converts visitors who would otherwise leave without contacting anyone.</li>
+      <li><strong>Reassuring language.</strong> "Your consultation is completely confidential" and "There's no obligation to retain us" address the hesitation many prospective clients feel before reaching out.</li>
+    </ul>
+  </div>
+
+  <!-- PRACTICE AREA PAGES -->
+  <div class="section-block">
+    <div class="sp-tag">Page Strategy</div>
+    <h2 class="sp-h2">Practice Area Pages And <span class="purple">Location Pages</span></h2>
+    <p class="sp-p">Practice area pages and location pages are the workhorses of legal SEO. They're the pages prospective clients actually land on — and the pages search engines evaluate when deciding whether your firm is relevant to a particular search.</p>
+    <h3 class="sp-h3">What a strong practice area page covers:</h3>
+    <ul class="sp-list">
+      <li>What the practice area actually involves, in plain language prospective clients understand</li>
+      <li>The types of matters you handle within that area</li>
+      <li>What the process looks like from a client's perspective, step by step</li>
+      <li>The questions clients commonly have — answered directly</li>
+      <li>Why experience in this specific area matters and what it means for the client's outcome</li>
+      <li>Geographic relevance: courts, local laws, relevant jurisdiction details</li>
+    </ul>
+    <p class="sp-p">A personal injury page that's 200 words of generic description doesn't compete with a 1,500-word page that answers the questions a prospective personal injury client actually has.</p>
+    <div class="sp-pull">Location pages matter for firms serving multiple cities or regions. Genuine local pages — with content specific to practicing law in those areas — are a real competitive advantage in regional markets. Thin pages with identical content and just the city name swapped are widely recognised as low-quality by search engines.</div>
+  </div>
+
+  <!-- WHY TEMPLATES FAIL -->
+  <div class="section-block">
+    <div class="sp-tag">Templates</div>
+    <h2 class="sp-h2">Why Generic Website Templates <span class="purple">Often Fail</span></h2>
+    <p class="sp-p">Many law firms have websites built on generic legal templates — the kind sold by legal website companies that power thousands of nearly identical sites. These templates have several structural problems that are hard to work around.</p>
+    <ul class="sp-list">
+      <li><strong>Hard to differentiate.</strong> When your website looks and reads like every other firm using the same template, you give prospective clients no reason to choose you over the next result.</li>
+      <li><strong>Often bloated code.</strong> Template systems add features and code for every possible use case, most of which you don't need. That adds load time and complexity that penalises performance.</li>
+      <li><strong>Resist proper SEO customisation.</strong> Getting schema markup, proper heading structures, and content architecture right is harder within a template that wasn't designed with your specific firm in mind.</li>
+      <li><strong>Built for the directory, not the client.</strong> Legal website platforms are frequently focused on helping firms appear in their own directory, not on helping your site rank and convert on the open web.</li>
+    </ul>
+    <p class="sp-p">This doesn't mean every custom website is better than every template. But firms serious about using their website as a business development tool typically find that a properly built, custom site — one built specifically around their practice areas, markets, and client types — outperforms a template over time.</p>
+  </div>
+
+  <!-- COMMON MISTAKES -->
+  <div class="section-block">
+    <div class="sp-tag">What We See</div>
+    <h2 class="sp-h2">Common Mistakes On <span class="purple">Lawyer Websites</span></h2>
+    <p class="sp-p">After working with law firms across North America, the same problems come up repeatedly. Most of them are fixable.</p>
+    <div class="mistake-list">
+      <div class="mistake-item">
+        <div class="mistake-x">✕</div>
+        <div class="mistake-text"><h4>No Clear Differentiation</h4><p>"Experienced. Dedicated. Results-driven." Every firm says this. It tells prospective clients nothing about why they should choose you. What actually makes your approach different?</p></div>
+      </div>
+      <div class="mistake-item">
+        <div class="mistake-x">✕</div>
+        <div class="mistake-text"><h4>Stock Photos That Undermine Credibility</h4><p>Photos of gavels and scales of justice signal that you didn't invest in your online presence. Real photos of your team, office, and community consistently build more trust with prospective clients.</p></div>
+      </div>
+      <div class="mistake-item">
+        <div class="mistake-x">✕</div>
+        <div class="mistake-text"><h4>Practice Area Pages Written for Search Engines, Not Clients</h4><p>Pages stuffed with keywords but structured in a way that doesn't help someone understand whether they have a case or what to do next. These pages rank poorly and convert worse.</p></div>
+      </div>
+      <div class="mistake-item">
+        <div class="mistake-x">✕</div>
+        <div class="mistake-text"><h4>Attorney Bios That List Credentials But Give No Sense of the Person</h4><p>Clients hire people, not credential lists. A bio that doesn't give a prospective client any sense of who you are as an attorney is a missed opportunity.</p></div>
+      </div>
+      <div class="mistake-item">
+        <div class="mistake-x">✕</div>
+        <div class="mistake-text"><h4>Neglected Blog or Resource Sections</h4><p>A blog updated twice and then abandoned signals to both search engines and visitors that the firm isn't actively maintaining its presence. Either commit to it or don't start it.</p></div>
+      </div>
+      <div class="mistake-item">
+        <div class="mistake-x">✕</div>
+        <div class="mistake-text"><h4>Slow Response to Form Submissions</h4><p>Speed of response is a significant factor in whether prospective clients retain your firm. A contact form submission that takes 48 hours to get a response loses most of those leads.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="section-block">
+    <div class="sp-tag">Our Process</div>
+    <h2 class="sp-h2">Our AI Website <span class="purple">Design Process</span></h2>
+    <p class="sp-p">We don't start with a template and fill in the blanks. We start with your firm — your practice areas, your markets, your competition, and your goals — and build from there.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Discovery and Strategy</h4>
+          <p>We map out your practice areas, identify the markets you're targeting, and analyse the competitive landscape. We look at what terms prospective clients are searching, what questions they're asking AI platforms, and what your current site is and isn't doing well.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Architecture and Content Planning</h4>
+          <p>We structure the site before writing a word — what pages exist, how they connect, what each page needs to accomplish, and how the site will communicate your firm's expertise to both human visitors and AI platforms.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Design and Development</h4>
+          <p>We build your site for performance: fast load times, mobile-first design, clean code, and all the technical SEO elements in place from day one — schema markup, sitemap, proper heading structure, and Core Web Vitals compliance.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Content Creation</h4>
+          <p>Every page is written by legal marketing specialists who understand how prospective clients think and what search engines and AI platforms reward. Practice area pages, attorney bios, location pages, and FAQs — all written to rank and convert.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h4>Launch and Ongoing Optimisation</h4>
+          <p>After launch, we monitor performance, track rankings, and make adjustments based on real traffic data. A legal website is not a one-time project — it's an ongoing asset that should improve over time as your domain authority and content depth grow.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-block">
+    <div class="sp-tag">FAQ</div>
+    <h2 class="sp-h2">Frequently Asked <span class="purple">Questions</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What is AI website design for law firms?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">It's the practice of building attorney websites that are optimised not just for traditional Google search, but for AI search platforms like ChatGPT, Google's AI Overviews, Gemini, and Perplexity. This involves content structure, technical markup, site architecture, and performance standards that help AI platforms recognise and cite your firm as a credible source.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How is this different from regular law firm website design?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">Traditional legal website design focuses primarily on appearance and basic Google SEO. AI-optimised design goes further — incorporating schema markup, structured content designed to answer direct questions, E-E-A-T signals throughout, and technical performance that meets the higher standards AI search platforms apply when selecting sources.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I really need a new website, or can my current site be improved?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">It depends on the state of your current site. Some firms have a solid foundation that needs optimisation — better content, schema markup, speed improvements. Others have structural problems that make a rebuild more efficient than a retrofit. We evaluate each site individually before making a recommendation.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How long does it take to build a law firm website?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">A professionally built legal website typically takes six to ten weeks from kickoff to launch, depending on the number of practice areas, pages, and how quickly we receive content approvals and attorney photos. Rush timelines are sometimes possible depending on scope.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Will my website rank on Google right away?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">No. New websites typically take three to six months to establish meaningful organic rankings. Competitive markets take longer. Any company promising instant first-page Google rankings is overpromising. What we control is building a site that's positioned to rank as your domain authority grows.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What's the difference between a website that ranks and one that converts?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">Ranking gets people to your site. Converting turns visitors into consultations. Both require separate attention. A site can rank well but convert poorly if the messaging is off, the calls to action are buried, or the user experience is frustrating on mobile. We build for both from the start.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How important is page speed for law firm websites?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">Very important. Google uses Core Web Vitals as ranking factors, and slow sites lose users before they can convert. We target loading times under two seconds and passing scores on Google's PageSpeed Insights as baseline standards for every site we build.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do you write the content, or do we provide it?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">We write all the content. Our team of legal marketing specialists handles every page — practice areas, attorney bios, location pages, FAQs, and any blog content. We may ask you to review and approve content before publication, particularly attorney bios and case result descriptions.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What is schema markup and why does it matter?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">Schema markup is structured code that tells search engines and AI platforms exactly what your website represents — your firm's name, location, services, attorneys, and more. It helps Google display rich results and helps AI platforms like Perplexity and ChatGPT recognise your firm as a credible source when answering legal questions.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How do AI platforms like ChatGPT and Perplexity find law firms to recommend?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">They pull from websites indexed on the web, prioritising sources that demonstrate expertise, have clear and accurate information, are well-structured, and meet basic credibility signals. Firms with properly built websites — good schema markup, authoritative content, strong E-E-A-T signals — are more likely to be cited.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I need a separate website for each city I serve?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">No. One website can serve multiple geographic markets through well-built location pages, proper local schema markup, and geographic signals throughout your content. You don't need multiple domains — but you do need more than a one-line mention of the cities you serve.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What makes a law firm website high-converting?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">Visible contact information, clear calls to action, reassuring trust signals, fast load times, well-written content that answers the right questions, and a contact form or chat widget that makes it easy to reach out — especially outside business hours when most legal inquiries actually happen.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How often should a law firm website be updated?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">Your core pages should be reviewed annually and updated whenever information changes. Fresh educational content — blog posts, FAQs, legal updates — should be added regularly, ideally at least twice a month. Search engines and AI platforms both reward active, maintained sites over static ones.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How do mobile and desktop visitors behave differently?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">Mobile visitors tend to be higher intent — they're often searching immediately after a legal problem occurs, they want to call quickly, and they make faster decisions. Desktop visitors may spend more time reading and comparing. A well-built legal website serves both behaviors well.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What does a law firm website typically cost?
+          <div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-a">This varies considerably based on the number of pages, practice areas, and the scope of content creation. Basic legal sites can cost a few thousand dollars; comprehensive, multi-practice-area sites with full content creation are a larger investment. The better question is what a consistent source of qualified client inquiries is worth to your firm over time.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /content-wrap -->
+</div><!-- /main content -->
+
+<!-- FINAL CTA -->
+<section class="page-cta">
+  <div style="max-width:640px;margin:0 auto;">
+    <div class="tag" style="margin-bottom:20px;"><span>Get Started</span></div>
+    <h2>Ready To Build A Website That <span class="grad">Works As Hard As You Do?</span></h2>
+    <p>Your website should be doing the heavy lifting between referrals — generating enquiries at 11 p.m. and showing up when someone asks ChatGPT to recommend a lawyer in your city. Let's talk about what that looks like for your firm.</p>
+    <div class="cta-btns">
+      <button class="cta-btn-p" onclick="window.location='index.html#lead-gen'">Get A Free Website Audit</button>
+      <button class="cta-btn-s" onclick="window.location='index.html#lead-gen'">Book A Strategy Call</button>
+    </div>
+    <p class="cta-note">No obligation. No hard sell. Just a straightforward conversation about your firm's online presence.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Lex<span>Scale</span>.ai</div>
+        <div class="footer-tagline">AI Growth Systems For Law Firms</div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="ai-website-design-for-law-firms.html" class="current">AI Website Design</a>
+        <a href="index.html#services">AI Receptionist</a>
+        <a href="index.html#services">AI SEO</a>
+        <a href="index.html#services">AI Chatbots</a>
+        <a href="index.html#services">Review Management</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="index.html">Home</a>
+        <a href="index.html#case-studies">Case Studies</a>
+        <a href="index.html#comparison">Compare</a>
+        <a href="index.html#lead-gen">Free Report</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 LexScale.ai · All rights reserved · Serving law firms across the United States and Canada</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen)item.classList.add('open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AI Receptionist For Law Firms | LexScale.ai</title>
+<meta name="description" content="AI receptionist for law firms that answers calls 24/7, qualifies leads, books consultations and captures after-hours inquiries — so your firm never misses a potential client again."/>
+<link rel="canonical" href="https://lexscale.ai/ai-receptionist-for-law-firms"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Service",
+  "name":"AI Receptionist For Law Firms",
+  "provider":{"@type":"Organization","name":"LexScale.ai","url":"https://lexscale.ai"},
+  "description":"24/7 AI receptionist service for law firms that answers calls, qualifies leads, books consultations and integrates with your practice management software.",
+  "areaServed":["United States","Canada"],
+  "audience":{"@type":"Audience","audienceType":"Law Firms and Attorneys"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is an AI receptionist for law firms?","acceptedAnswer":{"@type":"Answer","text":"An AI receptionist is a voice-based AI system that answers your firm's incoming calls 24 hours a day, 7 days a week. It greets callers, qualifies them as potential clients, collects basic case information, books consultations, and routes urgent matters appropriately — without requiring a human staff member to be available."}},
+    {"@type":"Question","name":"Can an AI receptionist replace a human receptionist?","acceptedAnswer":{"@type":"Answer","text":"It can handle the majority of routine call volume — new client inquiries, appointment scheduling, basic case screening, and after-hours calls. For complex existing client matters or sensitive conversations, the system routes calls to the appropriate attorney or staff member. Most firms use it to extend their coverage rather than replace human staff entirely."}},
+    {"@type":"Question","name":"How does the AI receptionist qualify leads?","acceptedAnswer":{"@type":"Answer","text":"The system asks callers a set of qualifying questions specific to your practice areas — type of matter, jurisdiction, timeline, and basic facts. Based on your firm's criteria, it categorises the caller as a strong lead, a referral out, or a follow-up, and routes or logs accordingly."}}
+  ]
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0B1536;--pu:#6A5CFF;--pu2:#8B7FFF;--pu3:#a89fff;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#0B1536;overflow-x:hidden;}
+a{text-decoration:none;}
+@keyframes shimmer{0%{background-position:200% center;}100%{background-position:-200% center;}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(1.3);}}
+@keyframes floatRing{0%,100%{transform:scale(1);opacity:.6;}50%{transform:scale(1.15);opacity:.2;}}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(106,92,255,.09);}
+.logo{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.4px;}
+.logo span{color:var(--pu);}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
+.nav-links a{font-size:13px;color:#4a5568;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--pu);}
+.has-drop{position:relative;}
+.has-drop>a{display:flex;align-items:center;gap:4px;}
+.drop-arrow{width:14px;height:14px;opacity:.5;transition:transform .2s;}
+.has-drop:hover .drop-arrow{transform:rotate(180deg);}
+.dropdown{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(106,92,255,.12);border-radius:16px;padding:8px;box-shadow:0 16px 48px rgba(11,21,54,.12);min-width:240px;opacity:0;pointer-events:none;transition:all .2s;z-index:200;}
+.has-drop:hover .dropdown{opacity:1;pointer-events:all;}
+.drop-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;transition:background .15s;cursor:pointer;text-decoration:none;}
+.drop-item:hover{background:rgba(106,92,255,.07);}
+.drop-ico{width:30px;height:30px;border-radius:8px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.drop-label{font-size:12.5px;font-weight:600;color:var(--navy);}
+.drop-sub{font-size:11px;color:#94a3b8;margin-top:1px;}
+.drop-divider{height:1px;background:rgba(106,92,255,.07);margin:6px 8px;}
+.drop-item.current .drop-label{color:var(--pu);}
+.nav-cta{background:var(--pu);color:#fff;border:none;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;}
+.nav-cta:hover{background:#5848e8;transform:translateY(-1px);}
+
+.page-hero{background:linear-gradient(160deg,#060d24 0%,#0B1536 50%,#111d45 100%);padding:80px 40px 72px;}
+.page-hero-inner{max-width:860px;margin:0 auto;text-align:center;}
+.tag{display:inline-flex;align-items:center;gap:7px;background:rgba(106,92,255,.12);border:1px solid rgba(106,92,255,.25);border-radius:100px;padding:6px 14px;margin-bottom:20px;}
+.tag span{font-size:11px;font-weight:700;color:var(--pu3);letter-spacing:.8px;text-transform:uppercase;}
+.page-h1{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1.5px;margin-bottom:18px;}
+.page-h1 .grad{background:linear-gradient(135deg,#fff 0%,var(--pu3) 40%,var(--pu) 70%,var(--pu3) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite;}
+.page-sub{font-size:17px;color:rgba(255,255,255,.55);line-height:1.75;max-width:620px;margin:0 auto 32px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:36px;}
+.hero-pill{background:rgba(106,92,255,.12);border:1px solid rgba(106,92,255,.25);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--pu3);}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-p{background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:14px 30px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(106,92,255,.4);transition:all .25s;}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(106,92,255,.55);}
+.btn-s{background:rgba(255,255,255,.07);color:#fff;border:1.5px solid rgba(255,255,255,.2);padding:14px 30px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .25s;}
+.btn-s:hover{background:rgba(106,92,255,.15);border-color:rgba(106,92,255,.45);transform:translateY(-2px);}
+
+/* PHONE VISUAL */
+.phone-visual{background:linear-gradient(180deg,#f8f7ff,#fff);padding:64px 40px;}
+.phone-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.phone-card{background:linear-gradient(135deg,var(--navy),#162050);border-radius:28px;padding:32px;position:relative;overflow:hidden;}
+.phone-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(106,92,255,.15) 0%,transparent 70%);}
+.call-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);border-radius:100px;padding:6px 14px;margin-bottom:20px;}
+.call-dot{width:7px;height:7px;border-radius:50%;background:#10b981;animation:pulse 1.8s infinite;}
+.call-badge-txt{font-size:11px;font-weight:700;color:#34d399;letter-spacing:.6px;text-transform:uppercase;}
+.call-item{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;margin-bottom:10px;transition:all .2s;}
+.call-item:last-child{margin-bottom:0;}
+.call-item:hover{background:rgba(106,92,255,.1);border-color:rgba(106,92,255,.25);}
+.call-ico{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+.call-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
+.call-sub{font-size:11px;color:rgba(255,255,255,.35);}
+.call-tag{margin-left:auto;font-size:10px;font-weight:700;border-radius:100px;padding:3px 9px;white-space:nowrap;}
+.call-tag.green{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.2);}
+.call-tag.pu{background:rgba(106,92,255,.2);color:var(--pu3);border:1px solid rgba(106,92,255,.3);}
+.call-tag.amber{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2);}
+
+/* STAT ROW */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;}
+.stat-box{background:#fff;border:1px solid rgba(106,92,255,.1);border-radius:16px;padding:20px;text-align:center;}
+.stat-val{font-size:28px;font-weight:900;color:var(--navy);letter-spacing:-1px;line-height:1;}
+.stat-lbl{font-size:11px;font-weight:600;color:#94a3b8;margin-top:5px;}
+.stat-delta{font-size:11px;font-weight:700;color:#10b981;margin-top:4px;}
+
+.trust-bar{background:#f8f7ff;border-top:1px solid rgba(106,92,255,.08);border-bottom:1px solid rgba(106,92,255,.08);padding:20px 40px;}
+.trust-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#4a5568;}
+.trust-ico{width:22px;height:22px;border-radius:50%;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;}
+.trust-div{width:1px;height:18px;background:rgba(106,92,255,.12);}
+
+.content-wrap{max-width:860px;margin:0 auto;padding:0 40px;}
+.section-block{padding:64px 0;}
+.section-block+.section-block{border-top:1px solid rgba(106,92,255,.08);}
+.sp-tag{display:inline-block;background:rgba(106,92,255,.08);border:1px solid rgba(106,92,255,.15);border-radius:100px;padding:4px 12px;font-size:10px;font-weight:700;color:var(--pu);letter-spacing:.7px;text-transform:uppercase;margin-bottom:14px;}
+.sp-h2{font-size:clamp(22px,2.8vw,34px);font-weight:800;color:var(--navy);letter-spacing:-.8px;line-height:1.15;margin-bottom:18px;}
+.sp-h2 .purple{color:var(--pu);}
+.sp-h3{font-size:18px;font-weight:700;color:var(--navy);letter-spacing:-.3px;margin:32px 0 10px;}
+.sp-p{font-size:15.5px;color:#374151;line-height:1.85;margin-bottom:16px;}
+.sp-p:last-child{margin-bottom:0;}
+.sp-p strong{color:var(--navy);font-weight:700;}
+.sp-pull{border-left:3px solid var(--pu);border-radius:0 10px 10px 0;background:rgba(106,92,255,.04);padding:18px 22px;margin:24px 0;font-size:15px;color:#374151;line-height:1.8;font-style:italic;}
+.intro-box{background:linear-gradient(135deg,rgba(106,92,255,.06),rgba(106,92,255,.02));border:1px solid rgba(106,92,255,.13);border-radius:20px;padding:36px 40px;margin-bottom:48px;}
+.intro-box .sp-p{font-size:16px;}
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0;}
+.info-card{background:rgba(255,255,255,.9);border:1px solid rgba(106,92,255,.1);border-radius:18px;padding:24px;transition:all .25s;cursor:default;}
+.info-card:hover{transform:translateY(-4px);border-color:rgba(106,92,255,.28);box-shadow:0 16px 44px rgba(106,92,255,.1);}
+.info-card-ico{width:40px;height:40px;border-radius:12px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.info-card h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.info-card p{font-size:13px;color:#64748b;line-height:1.65;}
+.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0;}
+.feat-card{background:#fff;border:1px solid rgba(106,92,255,.1);border-radius:16px;padding:20px;text-align:center;transition:all .25s;}
+.feat-card:hover{transform:translateY(-3px);border-color:rgba(106,92,255,.28);box-shadow:0 12px 32px rgba(106,92,255,.09);}
+.feat-ico{font-size:28px;margin-bottom:10px;}
+.feat-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.feat-desc{font-size:12px;color:#64748b;line-height:1.55;}
+.dark-box{background:linear-gradient(135deg,var(--navy),#162050);border-radius:20px;padding:36px 40px;margin:32px 0;}
+.dark-box h3{font-size:20px;font-weight:800;color:#fff;margin-bottom:14px;}
+.dark-box p{font-size:14.5px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:12px;}
+.dark-box p:last-child{margin-bottom:0;}
+.dark-box ul{margin-top:12px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
+.dark-box li{font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.65;display:flex;align-items:flex-start;gap:8px;}
+.dark-box li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu3);flex-shrink:0;margin-top:8px;}
+.sp-list{list-style:none;padding:0;margin:16px 0 20px;display:flex;flex-direction:column;gap:10px;}
+.sp-list li{font-size:15px;color:#374151;line-height:1.7;display:flex;align-items:flex-start;gap:10px;}
+.sp-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu);flex-shrink:0;margin-top:8px;}
+.sp-table-wrap{overflow-x:auto;margin:24px 0;border-radius:16px;border:1px solid rgba(106,92,255,.12);}
+.sp-table{width:100%;border-collapse:collapse;}
+.sp-table th{background:linear-gradient(135deg,var(--navy),#162050);color:rgba(255,255,255,.85);font-size:12px;font-weight:700;padding:14px 18px;text-align:left;letter-spacing:.3px;}
+.sp-table th:first-child{border-radius:16px 0 0 0;}
+.sp-table th:last-child{border-radius:0 16px 0 0;}
+.sp-table td{font-size:13.5px;color:#374151;padding:14px 18px;border-top:1px solid rgba(106,92,255,.07);}
+.sp-table tr:hover td{background:rgba(106,92,255,.03);}
+.sp-table td strong{color:var(--navy);font-weight:600;}
+.mistake-list{display:flex;flex-direction:column;gap:12px;margin:20px 0;}
+.mistake-item{display:flex;gap:14px;background:#fff;border:1px solid rgba(239,68,68,.12);border-radius:14px;padding:18px 20px;align-items:flex-start;}
+.mistake-x{width:28px;height:28px;border-radius:8px;background:rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700;color:#ef4444;}
+.mistake-text h4{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.mistake-text p{font-size:13px;color:#64748b;line-height:1.6;}
+.process-steps{display:flex;flex-direction:column;gap:0;margin:28px 0;position:relative;}
+.process-steps::before{content:'';position:absolute;left:24px;top:24px;bottom:24px;width:2px;background:linear-gradient(180deg,var(--pu),transparent);}
+.process-step{display:flex;gap:20px;align-items:flex-start;padding:20px 0;position:relative;}
+.step-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--pu),var(--pu2));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 4px 16px rgba(106,92,255,.35);z-index:1;position:relative;}
+.step-body{padding-top:10px;}
+.step-body h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.step-body p{font-size:13.5px;color:#64748b;line-height:1.7;}
+.faq-list{display:flex;flex-direction:column;gap:0;margin:24px 0;}
+.faq-item{border-bottom:1px solid rgba(106,92,255,.09);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);line-height:1.4;}
+.faq-q:hover{color:var(--pu);}
+.faq-arrow{width:22px;height:22px;border-radius:50%;background:rgba(106,92,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;}
+.faq-item.open .faq-arrow{background:var(--pu);transform:rotate(180deg);}
+.faq-a{font-size:14px;color:#4b5563;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:20px;}
+.page-cta{background:linear-gradient(160deg,#060d24 0%,var(--navy) 40%,#0f1c42 70%,#080f28 100%);padding:90px 40px;text-align:center;}
+.page-cta h2{font-size:clamp(28px,4vw,48px);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+.page-cta h2 .grad{background:linear-gradient(135deg,#fff 0%,var(--pu3) 40%,var(--pu) 70%,var(--pu3) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite;}
+.page-cta p{font-size:16px;color:rgba(255,255,255,.45);line-height:1.75;max-width:480px;margin:0 auto 36px;}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px;}
+.cta-btn-p{background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:16px 36px;border-radius:100px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 8px 28px rgba(106,92,255,.5);transition:all .3s;}
+.cta-btn-p:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(106,92,255,.65);}
+.cta-btn-s{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.15);padding:16px 36px;border-radius:100px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .3s;}
+.cta-btn-s:hover{background:rgba(106,92,255,.15);border-color:rgba(106,92,255,.5);transform:translateY(-3px);}
+.cta-note{font-size:12px;color:rgba(255,255,255,.22);}
+footer{background:#040c1e;padding:36px 40px;}
+.footer-logo{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.4px;}
+.footer-logo span{color:var(--pu);}
+.footer-tagline{font-size:11px;color:rgba(255,255,255,.22);margin-top:3px;}
+.footer-col h5{font-size:11px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.7px;text-transform:uppercase;margin-bottom:12px;}
+.footer-col a{display:block;font-size:12.5px;color:rgba(255,255,255,.35);font-weight:500;margin-bottom:8px;transition:color .2s;}
+.footer-col a:hover{color:var(--pu3);}
+.footer-col a.current{color:var(--pu3);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);margin-top:28px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.16);}
+
+@media(max-width:860px){
+  nav{padding:14px 20px;}.nav-links{display:none;}
+  .page-hero{padding:56px 20px 52px;}
+  .phone-inner{grid-template-columns:1fr;}
+  .trust-bar{padding:16px 20px;}.trust-inner{gap:16px;}.trust-div{display:none;}
+  .content-wrap{padding:0 20px;}.section-block{padding:44px 0;}
+  .intro-box{padding:24px 22px;}.card-grid{grid-template-columns:1fr;}
+  .three-grid{grid-template-columns:repeat(2,1fr);}
+  .dark-box{padding:24px 22px;}.page-cta{padding:60px 20px;}
+  footer{padding:28px 20px;}.process-steps::before{display:none;}
+  .stat-row{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:520px){
+  .three-grid{grid-template-columns:1fr;}.stat-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Lex<span>Scale</span>.ai</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-drop">
+      <a href="#">Services<svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="dropdown">
+        <a href="ai-website-design-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div><div class="drop-label">AI Website Design</div><div class="drop-sub">For law firms</div></div>
+        </a>
+        <a href="ai-seo-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          <div><div class="drop-label">AI SEO</div><div class="drop-sub">Rank higher, get cited by AI</div></div>
+        </a>
+        <a href="ai-receptionist-for-law-firms.html" class="drop-item current">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="drop-label">AI Receptionist</div><div class="drop-sub">24/7 call answering</div></div>
+        </a>
+        <a href="ai-chatbot-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div><div class="drop-label">AI Chatbot</div><div class="drop-sub">Convert more website visitors</div></div>
+        </a>
+        <div class="drop-divider"></div>
+        <a href="index.html#services" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div><div class="drop-label">All 9 Services</div><div class="drop-sub">View full suite</div></div>
+        </a>
+      </div>
+    </li>
+    <li><a href="index.html#case-studies">Results</a></li>
+    <li><a href="index.html#comparison">Compare</a></li>
+    <li><a href="index.html#lead-gen">Free Report</a></li>
+  </ul>
+  <button class="nav-cta" onclick="window.location='index.html#lead-gen'">Book A Demo</button>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="tag"><span>Service · AI Receptionist</span></div>
+    <h1 class="page-h1">AI Receptionist For <span class="grad">Law Firms</span></h1>
+    <p class="page-sub">Your firm gets calls at 9 p.m. on a Friday and 7 a.m. on a Sunday. Most of those callers don't leave voicemails — they call the next firm. Our AI receptionist answers every call, qualifies every lead, and books every consultation, around the clock.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">24/7 Call Answering</span>
+      <span class="hero-pill">Lead Qualification</span>
+      <span class="hero-pill">Consultation Booking</span>
+      <span class="hero-pill">Bilingual Available</span>
+      <span class="hero-pill">CRM Integration</span>
+    </div>
+    <div class="hero-ctas">
+      <button class="btn-p" onclick="window.location='index.html#lead-gen'">See A Live Demo</button>
+      <button class="btn-s" onclick="window.location='index.html#lead-gen'">Book A Strategy Call</button>
+    </div>
+  </div>
+</section>
+
+<!-- PHONE VISUAL -->
+<section class="phone-visual">
+  <div class="phone-inner">
+    <div>
+      <div class="sp-tag">Live Activity</div>
+      <h2 class="sp-h2" style="margin-bottom:12px;">Every Call <span class="purple">Answered. Every Lead Captured.</span></h2>
+      <p class="sp-p">This is what your firm's call activity looks like with an AI receptionist running. Calls that used to go to voicemail — or worse, to a competitor — are now being answered, qualified, and booked into your calendar automatically.</p>
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-val">94%</div><div class="stat-lbl">Calls Answered</div><div class="stat-delta">↑ vs 61% avg</div></div>
+        <div class="stat-box"><div class="stat-val">3.2x</div><div class="stat-lbl">More Consultations Booked</div><div class="stat-delta">vs voicemail</div></div>
+        <div class="stat-box"><div class="stat-val">67%</div><div class="stat-lbl">After-Hours Calls</div><div class="stat-delta">Captured automatically</div></div>
+      </div>
+    </div>
+    <div class="phone-card">
+      <div class="call-badge"><span class="call-dot"></span><span class="call-badge-txt">Live Calls Today</span></div>
+      <div class="call-item">
+        <div class="call-ico" style="background:rgba(16,185,129,.15);">📞</div>
+        <div><div class="call-title">Maria T. — Personal Injury</div><div class="call-sub">Qualified · Booked for Tuesday 2pm</div></div>
+        <div class="call-tag green">Booked</div>
+      </div>
+      <div class="call-item">
+        <div class="call-ico" style="background:rgba(106,92,255,.15);">📞</div>
+        <div><div class="call-title">James R. — Family Law</div><div class="call-sub">After-hours · Intake form sent</div></div>
+        <div class="call-tag pu">Intake Sent</div>
+      </div>
+      <div class="call-item">
+        <div class="call-ico" style="background:rgba(245,158,11,.12);">📞</div>
+        <div><div class="call-title">David K. — Criminal Defense</div><div class="call-sub">Urgent — Routed to on-call attorney</div></div>
+        <div class="call-tag amber">Escalated</div>
+      </div>
+      <div class="call-item">
+        <div class="call-ico" style="background:rgba(16,185,129,.15);">📞</div>
+        <div><div class="call-title">Aisha P. — Estate Planning</div><div class="call-sub">Qualified · Referred to partner</div></div>
+        <div class="call-tag green">Referred</div>
+      </div>
+      <div class="call-item">
+        <div class="call-ico" style="background:rgba(16,185,129,.15);">📞</div>
+        <div><div class="call-title">Carlos M. — Immigration</div><div class="call-sub">Bilingual (ES) · Booked consultation</div></div>
+        <div class="call-tag green">Booked</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>Answers in under 2 rings</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>Available 24/7/365</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>Integrates with Clio, MyCase &amp; more</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>English &amp; Spanish support</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><div class="trust-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>HIPAA-aware handling protocols</div>
+  </div>
+</div>
+
+<div style="background:#fff;padding:0 0 80px;">
+<div class="content-wrap">
+
+  <div class="section-block">
+    <div class="intro-box">
+      <p class="sp-p">Most law firms lose potential clients before the first conversation ever happens. A prospective client calls at 7:30 p.m. on a Thursday — maybe right after a car accident, maybe after being served divorce papers, maybe after getting arrested. They need to talk to someone. They don't get anyone. They call the next firm on the list.</p>
+      <p class="sp-p">This happens dozens of times a month at the average law firm. The problem isn't that attorneys aren't good at their jobs — it's that good attorneys are busy doing their jobs and can't staff a receptionist around the clock.</p>
+      <p class="sp-p" style="margin-bottom:0;">An AI receptionist for law firms solves that gap completely. It answers every call, day or night, weekend or holiday — speaks naturally with callers, asks the right qualifying questions, books consultations directly into your calendar, sends intake forms, and routes urgent matters appropriately. Your firm becomes reachable at exactly the moments prospective clients need you most.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">The Problem</div>
+    <h2 class="sp-h2">Why Law Firms Miss So Many <span class="purple">Potential Clients</span></h2>
+    <p class="sp-p">The legal industry has a specific call problem that most other service businesses don't face. Legal matters tend to be urgent. A car accident victim isn't going to wait three days to schedule a consultation at their convenience — they're calling multiple firms and retaining the first one that makes them feel heard.</p>
+    <p class="sp-p">The data on this is consistent across practice areas. Studies of legal intake show that:</p>
+    <ul class="sp-list">
+      <li>The majority of potential clients contact multiple law firms before making a decision</li>
+      <li>Firms that respond within the first few minutes of initial contact win a significantly higher share of those clients</li>
+      <li>A substantial portion of all legal inquiries happen outside standard business hours — evenings and weekends</li>
+      <li>Most callers who reach voicemail don't leave a message and don't call back</li>
+    </ul>
+    <div class="sp-pull">The problem isn't that your firm lacks good lawyers. The problem is that the intake process has gaps — and every gap is a client retained by a competitor.</div>
+    <p class="sp-p">Staffing a human receptionist around the clock is not practical for most law firms. The cost alone — salaries, benefits, training, turnover — makes 24/7 human coverage economically unviable for all but the largest practices. An AI receptionist gives small and mid-size firms capabilities that previously only large firms could afford to consider.</p>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">How It Works</div>
+    <h2 class="sp-h2">What Our AI Receptionist <span class="purple">Actually Does</span></h2>
+    <p class="sp-p">It's worth being specific, because this category has a wide range of quality. Some AI receptionist tools are little more than glorified voicemail. What we build for law firms is a genuine intake system.</p>
+    <div class="card-grid">
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <h4>Answers Every Incoming Call</h4>
+        <p>Every call to your firm's main number is answered within two rings, any time of day or night. The caller hears a professional greeting specific to your firm — not a generic recording, not a menu system.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h4>Qualifies Leads With Smart Questions</h4>
+        <p>The AI asks qualifying questions specific to your practice areas. Type of matter, jurisdiction, what happened, timeline. Based on your firm's criteria, it categorises each caller and routes accordingly.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h4>Books Consultations Directly</h4>
+        <p>For qualified leads, the AI checks your calendar availability in real time and books the consultation directly — with confirmation sent to both the caller and your team. No back-and-forth scheduling.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h4>Sends Intake Forms Automatically</h4>
+        <p>After qualifying a caller, the system sends a customised intake form to their phone or email before the consultation — so your attorney has context before the first meeting and intake is partially complete.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <h4>Escalates Urgent Matters</h4>
+        <p>When a caller indicates an urgent situation — arrested client, active emergency, critical deadline — the system flags the call and routes it to the appropriate attorney or emergency contact immediately.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <h4>Speaks Your Clients' Language</h4>
+        <p>Bilingual support in English and Spanish is available for firms serving diverse client populations. The system detects language preference early in the conversation and adapts accordingly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">Intake Comparison</div>
+    <h2 class="sp-h2">Traditional Intake vs <span class="purple">AI-Powered Intake</span></h2>
+    <div class="sp-table-wrap">
+      <table class="sp-table">
+        <thead><tr><th>Scenario</th><th>Traditional Intake</th><th>AI Receptionist</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Call at 8:30 p.m.</strong></td><td>Voicemail or missed call</td><td>Answered, qualified, booked</td></tr>
+          <tr><td><strong>Call on Saturday</strong></td><td>No one available</td><td>Full intake completed</td></tr>
+          <tr><td><strong>High call volume period</strong></td><td>Hold queues, dropped calls</td><td>Every call handled simultaneously</td></tr>
+          <tr><td><strong>Repeat caller checking status</strong></td><td>Takes staff time to handle</td><td>Handled automatically</td></tr>
+          <tr><td><strong>Spanish-speaking caller</strong></td><td>Language barrier delay</td><td>Handled in Spanish immediately</td></tr>
+          <tr><td><strong>Urgent criminal call at 2 a.m.</strong></td><td>Unanswered or missed</td><td>Escalated to on-call attorney</td></tr>
+          <tr><td><strong>Intake form collection</strong></td><td>Done at consultation, time-consuming</td><td>Sent and completed before consultation</td></tr>
+          <tr><td><strong>Consultation scheduling</strong></td><td>Requires back-and-forth calls</td><td>Booked in real time on the call</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">Integration</div>
+    <h2 class="sp-h2">Fits Into Your Existing <span class="purple">Workflow</span></h2>
+    <p class="sp-p">One concern attorneys often raise is whether adding an AI receptionist creates more work — another system to check, another inbox to monitor. It's a fair concern, and the answer is that it depends entirely on how it's set up.</p>
+    <p class="sp-p">We integrate directly with the practice management software most law firms already use. This means call records, qualified leads, and booked consultations flow directly into your existing system — not into a separate dashboard you have to remember to check.</p>
+    <div class="three-grid">
+      <div class="feat-card"><div class="feat-ico">📋</div><div class="feat-title">Clio Integration</div><div class="feat-desc">New matters created automatically from qualified calls. No double entry.</div></div>
+      <div class="feat-card"><div class="feat-ico">⚖️</div><div class="feat-title">MyCase</div><div class="feat-desc">Client records and consultation bookings sync directly into MyCase.</div></div>
+      <div class="feat-card"><div class="feat-ico">📁</div><div class="feat-title">Smokeball</div><div class="feat-desc">Lead data pushed to Smokeball for immediate follow-up workflow.</div></div>
+      <div class="feat-card"><div class="feat-ico">📅</div><div class="feat-title">Google Calendar</div><div class="feat-desc">Real-time availability checking and booking against your Google Calendar.</div></div>
+      <div class="feat-card"><div class="feat-ico">📊</div><div class="feat-title">Salesforce &amp; HubSpot</div><div class="feat-desc">Lead qualification data pushed to your CRM for pipeline tracking.</div></div>
+      <div class="feat-card"><div class="feat-ico">💬</div><div class="feat-title">SMS &amp; Email Alerts</div><div class="feat-desc">Instant notification to attorneys when a hot lead is booked or escalated.</div></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">Practice Areas</div>
+    <h2 class="sp-h2">Built For Every <span class="purple">Practice Area</span></h2>
+    <p class="sp-p">The qualifying questions your AI receptionist asks depend on the type of law you practice. A personal injury caller needs to describe the accident. A family law caller needs to explain whether there are children involved. A business law caller has different context needs entirely.</p>
+    <p class="sp-p">We configure the intake flow specifically for your practice areas. The AI doesn't ask a personal injury question to a probate caller. Every conversation is tailored to the matter type the caller presents.</p>
+    <div class="dark-box">
+      <h3>Practice Area Specific Intake Flows</h3>
+      <ul>
+        <li><strong style="color:#fff;">Personal Injury</strong> — Date of incident, type of accident, injuries sustained, other parties involved, insurance status, statute of limitations check</li>
+        <li><strong style="color:#fff;">Family Law</strong> — Type of matter (divorce, custody, support), children involved, whether proceedings have started, urgency level</li>
+        <li><strong style="color:#fff;">Criminal Defense</strong> — Charges or investigation type, jurisdiction, court date if any, urgency — with automatic escalation for imminent hearings</li>
+        <li><strong style="color:#fff;">Business Law</strong> — Business type, matter type (contract, dispute, formation), timeline, counterparty information</li>
+        <li><strong style="color:#fff;">Immigration</strong> — Matter type, current status, deadlines, bilingual intake available for Spanish-speaking clients</li>
+        <li><strong style="color:#fff;">Wills &amp; Estates</strong> — Nature of inquiry (new will, probate, dispute), existing documents, urgency based on health situation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">What We See</div>
+    <h2 class="sp-h2">Common Intake Mistakes <span class="purple">Law Firms Make</span></h2>
+    <div class="mistake-list">
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>Relying On Voicemail As A Backup</h4><p>Most callers who reach voicemail don't leave a message and don't call back. Voicemail is not a safety net — it's a lead-loss mechanism disguised as one.</p></div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>No After-Hours Coverage</h4><p>Legal matters are not nine-to-five events. Car accidents, arrests, and family crises happen at all hours. Firms without after-hours coverage lose a disproportionate share of urgent, high-value matters.</p></div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>Intake Forms Completed At The Consultation</h4><p>Having attorneys collect basic intake information during a paid consultation is an inefficient use of everyone's time. It also results in incomplete information if the client doesn't retain the firm.</p></div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>No Qualification Before Booking</h4><p>Booking consultations for matters completely outside your practice areas wastes attorney time. A proper intake system screens for fit before a consultation is ever scheduled.</p></div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>Slow Follow-Up On Web Leads</h4><p>Contact form submissions and chat inquiries that sit in an inbox for hours or days lose most of their potential. Speed of response to initial contact is a measurable factor in consultation conversion.</p></div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><h4>One Phone Line For Everything</h4><p>Existing clients checking on matters, prospective clients seeking consultations, and referrals from other attorneys all have different needs. A single undifferentiated phone line handles none of them optimally.</p></div></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">Our Process</div>
+    <h2 class="sp-h2">How We Set Up Your <span class="purple">AI Receptionist</span></h2>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-num">1</div><div class="step-body"><h4>Practice Area Mapping</h4><p>We document your practice areas, the types of matters you take, the geography you serve, and your criteria for a qualified lead versus a referral out. This becomes the foundation of your intake logic.</p></div></div>
+      <div class="process-step"><div class="step-num">2</div><div class="step-body"><h4>Call Flow Design</h4><p>We design the conversation flow — how the AI greets callers, what questions it asks in what order, how it handles common objections and questions, how it routes based on matter type and urgency.</p></div></div>
+      <div class="process-step"><div class="step-num">3</div><div class="step-body"><h4>Integration Setup</h4><p>We connect the system to your practice management software, calendar, and CRM. We configure SMS and email alerts so your team is notified immediately when a qualified lead is captured or an urgent matter is escalated.</p></div></div>
+      <div class="process-step"><div class="step-num">4</div><div class="step-body"><h4>Testing and Refinement</h4><p>We run through dozens of call scenarios — different practice areas, different urgency levels, difficult callers — before going live. We refine the call flow until the interaction feels natural and professionally appropriate for your firm.</p></div></div>
+      <div class="process-step"><div class="step-num">5</div><div class="step-body"><h4>Monitoring and Optimisation</h4><p>After launch, we review call recordings and qualification data regularly. We adjust the intake logic based on what we see — improving qualification accuracy, refining question sequencing, and expanding coverage as your practice evolves.</p></div></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="sp-tag">FAQ</div>
+    <h2 class="sp-h2">Frequently Asked <span class="purple">Questions</span></h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is an AI receptionist for law firms?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">An AI receptionist is a voice-based system that answers your firm's incoming calls 24 hours a day, 7 days a week. It greets callers, qualifies them as potential clients, collects basic case information, books consultations, and routes urgent matters to the appropriate attorney — without requiring a human staff member to be available.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Will callers know they're speaking to an AI?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">The system speaks naturally and professionally, and most callers will experience it as a capable phone service. We recommend being straightforward if a caller directly asks — the AI is designed to handle this gracefully and offer to connect with a human if the caller prefers. Transparency is better than attempted deception, and most callers care far more about getting their question answered than about whether they spoke to a human.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can an AI receptionist replace a human receptionist?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">It handles the majority of routine call volume — new client inquiries, appointment scheduling, basic case screening, and after-hours calls. For complex existing client matters or sensitive conversations, the system routes calls to the appropriate attorney or staff member. Most firms use it to extend their coverage, not replace human staff entirely.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does the AI receptionist qualify leads?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">The system asks callers a set of qualifying questions specific to your practice areas — type of matter, jurisdiction, timeline, and basic facts. Based on your firm's criteria, it categorises the caller as a strong lead, a referral out, or a follow-up, and routes or logs accordingly.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens when someone calls with an emergency?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">The AI is configured to recognise urgency indicators — an arrest, an imminent court date, a situation requiring immediate counsel. When these triggers are detected, the call is escalated immediately to your designated on-call attorney via call transfer and simultaneous text alert. No emergency gets routed to a scheduling queue.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which practice management software does it integrate with?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">We integrate with Clio, MyCase, Smokeball, Lawmatics, Google Calendar, Salesforce, HubSpot, and several others. If you use a system not on this list, we'll assess integration feasibility during onboarding. Most common legal practice management platforms are supported.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I customise the greeting and the questions it asks?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Yes, completely. The greeting uses your firm's name and reflects your firm's tone. The qualifying questions are built specifically for your practice areas and your criteria for a qualified client. Nothing is generic out of the box — it's configured for your firm specifically.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does it work for multi-location firms?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Yes. We can configure separate intake flows for different office numbers, different practice groups, or different geographic locations — all managed within a single system. Routing logic can direct calls to the appropriate office or attorney based on the caller's matter type and location.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does setup take?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Most firms are live within two to three weeks. The timeline includes practice area mapping, call flow design, integration setup, and testing. We don't go live until the system has been thoroughly tested and you're satisfied with how it handles your firm's common call scenarios.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I listen to call recordings?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Yes. You have access to recordings and transcripts of all calls through your dashboard. We review these as part of ongoing optimisation, and you can review any call at any time.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is this compliant with lawyer advertising rules?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">The AI receptionist is a call answering and intake tool, not an advertising medium. It doesn't make claims about legal services or provide legal advice. It collects information and facilitates scheduling. We recommend reviewing the call flow with your state bar's ethics guidance if you have specific compliance questions — most bar associations have not identified AI receptionists as a regulated activity distinct from general receptionist services.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens to calls that don't qualify?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Calls that don't meet your qualification criteria are handled gracefully — the AI can explain that your firm focuses on different matter types, offer a referral if you have referral arrangements, or simply thank the caller and log the contact. You choose how non-qualified calls are handled.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does it handle existing client calls too?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">It can be configured to handle routine existing client inquiries — status updates, appointment confirmation, document requests — and route complex client matters to the appropriate attorney. For firms with high existing client call volume, this can meaningfully reduce staff time spent on routine calls.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What does it cost?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">Pricing depends on call volume, the number of practice areas configured, and the integrations required. We structure it as a monthly service rather than a large upfront cost. The right way to evaluate it is to compare the cost against the value of one additional retained client per month — for most practice areas, the math is straightforward.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I try it before committing?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="faq-a">We offer a live demo where you can call a working example of the AI receptionist configured for a law firm similar to yours. Book a strategy call and we'll set that up so you can hear it in action before making any decision.</div></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<section class="page-cta">
+  <div style="max-width:640px;margin:0 auto;">
+    <div class="tag" style="margin-bottom:20px;"><span>Get Started</span></div>
+    <h2>Stop Losing Clients to <span class="grad">Voicemail</span></h2>
+    <p>Every unanswered call is a potential client who just called the next firm on the list. Let's fix that — permanently. Book a strategy call and we'll show you exactly how many calls your firm is missing and what capturing them would be worth.</p>
+    <div class="cta-btns">
+      <button class="cta-btn-p" onclick="window.location='index.html#lead-gen'">See A Live Demo</button>
+      <button class="cta-btn-s" onclick="window.location='index.html#lead-gen'">Book A Strategy Call</button>
+    </div>
+    <p class="cta-note">No obligation. No hard sell. Just a real conversation about your firm's intake.</p>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:28px;">
+      <div><div class="footer-logo">Lex<span>Scale</span>.ai</div><div class="footer-tagline">AI Growth Systems For Law Firms</div></div>
+      <div class="footer-col"><h5>Services</h5><a href="ai-website-design-for-law-firms.html">AI Website Design</a><a href="ai-seo-for-law-firms.html">AI SEO</a><a href="ai-receptionist-for-law-firms.html" class="current">AI Receptionist</a><a href="ai-chatbot-for-law-firms.html">AI Chatbot</a><a href="index.html#services">Review Management</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="index.html">Home</a><a href="index.html#case-studies">Case Studies</a><a href="index.html#comparison">Compare</a><a href="index.html#lead-gen">Free Report</a></div>
+      <div class="footer-col"><h5>Legal</h5><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2025 LexScale.ai · All rights reserved · Serving law firms across the United States and Canada</div></div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
