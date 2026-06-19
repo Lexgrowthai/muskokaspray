@@ -76,6 +76,13 @@ const nextConfig: NextConfig = {
         destination: "/insights/gemini/google-gemini-for-law-firms",
         permanent: true,
       },
+      // Redirect the standalone /chatgpt/* section to /insights/chatgpt/*
+      { source: "/chatgpt", destination: "/insights/chatgpt", permanent: true },
+      {
+        source: "/chatgpt/:slug",
+        destination: "/insights/chatgpt/:slug",
+        permanent: true,
+      },
     ];
   },
 };
