@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code agent worktrees and Python cache
+.claude/worktrees/
+__pycache__/
+*.pyc
