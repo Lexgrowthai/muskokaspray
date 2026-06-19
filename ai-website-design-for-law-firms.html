@@ -237,6 +237,29 @@ footer{background:#040c1e;padding:36px 40px;}
   .hero-pills{gap:6px;}
   .hero-pill{font-size:11px;padding:5px 11px;}
 }
+.nav-mob{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:101;flex-shrink:0;}
+.nav-mob span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform .3s,opacity .3s;}
+nav.mob-open .nav-mob span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+nav.mob-open .nav-mob span:nth-child(2){opacity:0;transform:scaleX(0);}
+nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:768px){
+  nav{padding:14px 20px;flex-wrap:wrap;gap:0;}
+  .nav-links{display:none;flex-direction:column;gap:0;width:100%;order:3;background:#fff;border-top:1px solid rgba(106,92,255,.08);padding:8px 0 20px;margin-top:2px;}
+  nav.mob-open .nav-links{display:flex;}
+  .nav-links>li{width:100%;border-bottom:1px solid rgba(106,92,255,.06);}
+  .nav-links>li:last-child{border-bottom:none;}
+  .nav-links a{font-size:15px;font-weight:600;padding:13px 20px;display:block;width:100%;color:var(--navy);}
+  .has-drop>a{display:flex;align-items:center;justify-content:space-between;padding:13px 20px;}
+  .drop-arrow{margin-left:auto;transition:transform .25s;}
+  .has-drop.mob-open .drop-arrow{transform:rotate(180deg);}
+  .dropdown{position:static;transform:none;box-shadow:none;border:none;border-radius:0;background:rgba(106,92,255,.04);padding:4px 0 8px;min-width:unset;opacity:1;visibility:visible;pointer-events:all;display:none;transition:none;}
+  .has-drop.mob-open .dropdown{display:block;}
+  .drop-item{padding:10px 28px;}
+  .drop-divider{margin:4px 20px;}
+  .nav-cta{display:none;}
+  .nav-mob{display:flex;}
+  .sticky-cta{flex-direction:column;gap:10px;padding:16px;}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -417,6 +440,9 @@ footer{background:#040c1e;padding:36px 40px;}
     </li>
   </ul>
   <button class="nav-cta" onclick="document.getElementById('leadModal').style.display='flex'">Book A Demo</button>
+  <button class="nav-mob" aria-label="Open menu" onclick="toggleMobNav(this)">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- PAGE HERO -->
@@ -1013,11 +1039,31 @@ footer{background:#040c1e;padding:36px 40px;}
 
 <script>
 function toggleFaq(el){
-  var item=el.parentElement;
-  var isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
-  if(!isOpen)item.classList.add('open');
+  const item=el.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
 }
+function toggleMobNav(btn){
+  const nav=btn.closest('nav');
+  nav.classList.toggle('mob-open');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.has-drop>a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(window.innerWidth>768)return;
+      e.preventDefault();
+      const li=a.closest('.has-drop');
+      li.classList.toggle('mob-open');
+    });
+  });
+  document.addEventListener('click',function(e){
+    const nav=document.querySelector('nav');
+    if(nav&&nav.classList.contains('mob-open')&&!nav.contains(e.target)){
+      nav.classList.remove('mob-open');
+    }
+  });
+});
 </script>
 
 
