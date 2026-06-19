@@ -79,20 +79,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }))
   );
 
-  const chatgptRoutes = [
-    {
-      url: `${SITE_URL}/chatgpt`,
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    },
-    ...CHATGPT_SLUGS.map((slug) => ({
-      url: `${SITE_URL}/chatgpt/${slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
-  ];
+  const chatgptArticleRoutes = CHATGPT_SLUGS.map((slug) => ({
+    url: `${SITE_URL}/insights/chatgpt/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
   const toolRoutes = Array.from(
     new Set(TOOLS_ITEMS.map((t) => t.href))
@@ -122,7 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...serviceRoutes,
     ...insightCategoryRoutes,
     ...insightArticleRoutes,
-    ...chatgptRoutes,
+    ...chatgptArticleRoutes,
     ...toolRoutes,
     ...glossaryRoutes,
     ...caseStudyRoutes,

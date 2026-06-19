@@ -311,6 +311,23 @@ function genericContent(title: string, category: string): ArticleContent {
   };
 }
 
+// Pull the 10 new ChatGPT articles from the dedicated data file
+import { CHATGPT_ARTICLES } from "../../../chatgpt/data";
+
+const CHATGPT_CONTENT_MAP: Record<string, ArticleContent> = Object.fromEntries(
+  CHATGPT_ARTICLES.map((a) => [
+    a.slug,
+    {
+      title: a.title,
+      description: a.description,
+      readTime: a.readTime,
+      stats: a.stats,
+      blocks: a.blocks,
+      faqs: a.faqs,
+    } satisfies ArticleContent,
+  ])
+);
+
 export function getArticleContent(
   slug: string,
   fallbackTitle: string,
@@ -318,5 +335,6 @@ export function getArticleContent(
 ): ArticleContent {
   if (slug === "chatgpt-for-law-firms") return CHATGPT;
   if (slug === "google-gemini-for-law-firms") return GEMINI;
+  if (CHATGPT_CONTENT_MAP[slug]) return CHATGPT_CONTENT_MAP[slug];
   return genericContent(fallbackTitle, categoryName);
 }

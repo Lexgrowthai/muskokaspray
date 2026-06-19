@@ -19,25 +19,80 @@ export const CATEGORIES: Record<string, CategoryData> = {
     articles: [
       {
         slug: "chatgpt-for-law-firms",
-        title:
-          "ChatGPT for Law Firms: Why Being Found on ChatGPT Matters",
+        title: "ChatGPT for Law Firms: Why Being Found on ChatGPT Matters",
         excerpt:
           "Search is changing. Consumers ask complete questions inside ChatGPT instead of typing keywords into Google. Here is what that means for your firm.",
         date: "2026-01-15",
       },
       {
-        slug: "getting-cited-in-chatgpt-answers",
-        title: "How Law Firms Get Cited Inside ChatGPT Answers",
+        slug: "how-law-firms-can-rank-in-chatgpt",
+        title: "How Law Firms Can Rank in ChatGPT",
         excerpt:
-          "Authority signals, structured content, and entity clarity determine which firms ChatGPT names. A practical playbook for legal marketers.",
-        date: "2026-02-04",
+          "Learn the specific strategies law firms use to appear in ChatGPT recommendations — from entity building to content authority and structured data.",
+        date: "2026-06-18",
       },
       {
-        slug: "chatgpt-vs-google-for-legal-clients",
-        title: "ChatGPT vs. Google: How Legal Clients Now Search",
+        slug: "chatgpt-seo-for-lawyers",
+        title: "ChatGPT SEO for Lawyers: A Complete Guide",
         excerpt:
-          "The shift from keyword search to conversational AI is structural, not a trend. We break down what changes for client acquisition.",
-        date: "2026-02-22",
+          "ChatGPT SEO is different from Google SEO. This guide explains exactly what lawyers need to do to build visibility inside AI-generated legal answers.",
+        date: "2026-06-18",
+      },
+      {
+        slug: "why-chatgpt-matters-for-law-firms",
+        title: "Why ChatGPT Matters for Law Firms",
+        excerpt:
+          "ChatGPT is reshaping how potential clients find legal help. Learn why law firms that ignore AI search are losing leads to competitors who show up in the answers.",
+        date: "2026-06-18",
+      },
+      {
+        slug: "how-chatgpt-finds-and-recommends-law-firms",
+        title: "How ChatGPT Finds and Recommends Law Firms",
+        excerpt:
+          "Inside the mechanics of how ChatGPT identifies, evaluates, and recommends law firms — and what this means for how your firm builds its AI presence.",
+        date: "2026-06-18",
+      },
+      {
+        slug: "chatgpt-citations-explained",
+        title: "ChatGPT Citations Explained for Law Firms",
+        excerpt:
+          "What does it mean when ChatGPT cites a law firm? Learn how AI citations work, why they matter, and how to earn them consistently across AI platforms.",
+        date: "2026-06-18",
+      },
+      {
+        slug: "chatgpt-vs-google-search-for-lawyers",
+        title: "ChatGPT vs Google Search for Lawyers: Key Differences",
+        excerpt:
+          "How does ChatGPT compare to Google when it comes to how potential legal clients find lawyers? This guide breaks down the key differences.",
+        date: "2026-06-18",
+      },
+      {
+        slug: "how-ai-search-is-changing-legal-marketing",
+        title: "How AI Search Is Changing Legal Marketing",
+        excerpt:
+          "AI search is fundamentally changing how law firms attract clients. The marketing strategies that win in an AI-first world look very different from yesterday's playbook.",
+        date: "2026-06-18",
+      },
+      {
+        slug: "best-practices-optimizing-law-firm-websites-for-chatgpt",
+        title: "Best Practices for Optimizing Law Firm Websites for ChatGPT",
+        excerpt:
+          "A step-by-step guide to optimizing your law firm website so ChatGPT recognizes your firm as authoritative — covering schema, content structure, and technical implementation.",
+        date: "2026-06-18",
+      },
+      {
+        slug: "common-mistakes-law-firms-make-with-ai-search",
+        title: "Common Mistakes Law Firms Make with AI Search",
+        excerpt:
+          "Most law firms are making the same preventable mistakes with AI search. Learn what they are and how to fix them before your competitors do.",
+        date: "2026-06-18",
+      },
+      {
+        slug: "future-of-chatgpt-and-legal-marketing",
+        title: "The Future of ChatGPT and Legal Marketing",
+        excerpt:
+          "Where is AI search heading and what will it mean for law firms over the next five years? A clear-eyed look at the trends reshaping legal client acquisition.",
+        date: "2026-06-18",
       },
     ],
   },
