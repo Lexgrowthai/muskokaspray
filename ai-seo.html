@@ -4,32 +4,20 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>AI SEO for Law Firms | LexScale.ai</title>
-<meta name="description" content="The complete resource hub on AI SEO for law firms. Learn how to rank in AI search, earn citations from ChatGPT and Google AI, and win more clients — 5 expert guides."/>
+<meta name="description" content="Expert guides on AI SEO for law firms. Learn how to rank in AI-powered search, build topical authority, and get your firm cited by ChatGPT, Gemini, and Perplexity."/>
 <link rel="canonical" href="https://lexscale.ai/ai-seo.html"/>
 <meta property="og:title" content="AI SEO for Law Firms | LexScale.ai"/>
-<meta property="og:description" content="The complete resource hub on AI SEO for law firms. Learn how to rank in AI search, earn citations from ChatGPT and Google AI, and win more clients — 5 expert guides."/>
-<meta property="og:url" content="https://lexscale.ai/ai-seo.html"/>
+<meta property="og:description" content="Expert guides on AI SEO for law firms. Learn how to rank in AI-powered search, build topical authority, and get your firm cited by ChatGPT, Gemini, and Perplexity."/>
 <meta property="og:type" content="website"/>
-<meta name="twitter:card" content="summary_large_image"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "AI SEO for Law Firms",
-  "description": "The complete resource hub on AI SEO for law firms. Learn how to rank in AI search, earn citations from ChatGPT and Google AI, and win more clients \u2014 5 expert guides.",
-  "url": "https://lexscale.ai/ai-seo.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "LexScale.ai",
-    "url": "https://lexscale.ai"
-  }
-}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "AI SEO for Law Firms", "description": "Expert guides on AI SEO for law firms. Learn how to rank in AI-powered search, build topical authority, and get your firm cited by ChatGPT, Gemini, and Perplexity.", "url": "https://lexscale.ai/ai-seo.html", "publisher": {"@type": "Organization", "name": "LexScale.ai", "url": "https://lexscale.ai"}}</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{--navy:#0B1536;--pu:#6A5CFF;--pu2:#8B7FFF;--pu3:#a89fff;--gold:#D4AF37;--gold2:#F0C040;--gold3:#b8962e;}
 body{font-family:'Inter',sans-serif;background:#fff;color:#0B1536;overflow-x:hidden;}
 a{text-decoration:none;}
-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(106,92,255,.09);}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(1.3);}}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(106,92,255,.09);}
 .logo{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.4px;}
 .logo span{color:var(--pu);}
 .nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
@@ -39,29 +27,38 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .has-drop>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
 .drop-arrow{width:14px;height:14px;opacity:.5;transition:transform .2s;}
 .has-drop:hover .drop-arrow{transform:rotate(180deg);}
-.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(106,92,255,.12);border-radius:16px;padding:12px 8px 8px;box-shadow:0 16px 48px rgba(11,21,54,.12);min-width:280px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:200;}
+.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(106,92,255,.12);border-radius:16px;padding:12px 8px 8px;box-shadow:0 16px 48px rgba(11,21,54,.12);min-width:260px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:200;}
 .has-drop:hover .dropdown{opacity:1;pointer-events:all;visibility:visible;}
-.drop-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;transition:background .15s;cursor:pointer;}
+.drop-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;transition:background .15s;}
 .drop-item:hover{background:rgba(106,92,255,.07);}
-.drop-ico{width:30px;height:30px;border-radius:8px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+.drop-ico{width:30px;height:30px;border-radius:8px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .drop-label{font-size:12.5px;font-weight:600;color:var(--navy);}
 .drop-sub{font-size:11px;color:#94a3b8;margin-top:1px;}
 .drop-divider{height:1px;background:rgba(106,92,255,.07);margin:6px 8px;}
 .nav-cta{background:var(--pu);color:#fff;border:none;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;}
 .nav-cta:hover{background:#5848e8;transform:translateY(-1px);}
+footer{background:#040c1e;padding:36px 40px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+.footer-logo{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.4px;}
+.footer-logo span{color:var(--pu);}
+.footer-tagline{font-size:11px;color:rgba(255,255,255,.22);margin-top:3px;}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.28);font-weight:500;transition:color .2s;}
+.footer-links a:hover{color:var(--pu3);}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.16);}
+@media(max-width:768px){nav{padding:14px 20px;}.nav-links{display:none;}footer{padding:28px 20px;}.footer-inner{flex-direction:column;gap:12px;}}
 .hub-hero{background:linear-gradient(160deg,#060d24 0%,#0B1536 55%,#111d45 100%);padding:72px 40px 64px;text-align:center;position:relative;overflow:hidden;}
-.hub-hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(106,92,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(106,92,255,.05) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;}
-.hub-hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:2;}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(106,92,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(106,92,255,.05) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;}
+.hub-inner{max-width:760px;margin:0 auto;position:relative;z-index:2;}
 .hub-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(106,92,255,.12);border:1px solid rgba(106,92,255,.3);border-radius:100px;padding:6px 16px;margin-bottom:20px;}
-.hub-tag span{font-size:11px;font-weight:700;color:var(--pu3);letter-spacing:.8px;text-transform:uppercase;}
+.hub-tag span{font-size:11px;font-weight:700;color:#6A5CFF;letter-spacing:.8px;text-transform:uppercase;}
 .hub-h1{font-size:clamp(30px,4vw,52px);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.08;margin-bottom:18px;}
-.hub-h1 .accent{background:linear-gradient(135deg,var(--pu2),var(--pu3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hub-h1 .accent{background:linear-gradient(135deg,#6A5CFF,#6A5CFFaa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hub-desc{font-size:17px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto;}
 .hub-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 .btn-primary{display:inline-block;background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;padding:14px 30px;border-radius:100px;font-size:15px;font-weight:700;box-shadow:0 4px 20px rgba(106,92,255,.4);transition:all .25s;}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(106,92,255,.55);}
+.btn-primary:hover{transform:translateY(-2px);}
 .btn-outline{display:inline-block;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);padding:14px 30px;border-radius:100px;font-size:15px;font-weight:600;transition:all .25s;}
-.btn-outline:hover{border-color:rgba(106,92,255,.6);color:#fff;}
 .stats-bar{background:#f8f7ff;border-bottom:1px solid rgba(106,92,255,.08);padding:20px 40px;}
 .stats-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:60px;flex-wrap:wrap;}
 .stat-item{text-align:center;}
@@ -76,7 +73,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .art-card{background:#fff;border:1px solid rgba(106,92,255,.1);border-radius:20px;overflow:hidden;transition:all .3s cubic-bezier(.34,1.1,.64,1);display:flex;flex-direction:column;}
 .art-card:hover{transform:translateY(-6px);border-color:rgba(106,92,255,.3);box-shadow:0 20px 56px rgba(106,92,255,.12);}
 .art-card-top{padding:28px 28px 0;}
-.art-cat-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(106,92,255,.07);border:1px solid rgba(106,92,255,.15);border-radius:100px;padding:4px 12px;margin-bottom:16px;}
+.art-cat-badge{display:inline-flex;align-items:center;background:rgba(106,92,255,.07);border:1px solid rgba(106,92,255,.15);border-radius:100px;padding:4px 12px;margin-bottom:16px;}
 .art-cat-badge span{font-size:10px;font-weight:700;color:var(--pu);letter-spacing:.6px;text-transform:uppercase;}
 .art-title{font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-.4px;line-height:1.3;margin-bottom:10px;}
 .art-desc{font-size:13px;color:#64748b;line-height:1.65;margin-bottom:20px;}
@@ -90,39 +87,13 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .art-card.featured .art-card-top{flex:1;padding:36px 0 36px 36px;}
 .art-card.featured .art-card-footer{padding:0 36px 36px 36px;margin-top:0;display:flex;align-items:flex-end;}
 .art-card.featured .art-divider{display:none;}
-.art-card.featured .art-right{width:280px;flex-shrink:0;background:linear-gradient(135deg,rgba(106,92,255,.08),rgba(106,92,255,.03));display:flex;align-items:center;justify-content:center;border-left:1px solid rgba(106,92,255,.08);font-size:48px;}
+.art-card.featured .art-right{width:260px;flex-shrink:0;background:linear-gradient(135deg,rgba(106,92,255,.06),rgba(106,92,255,.02));border-left:1px solid rgba(106,92,255,.08);}
 .art-card.featured .art-title{font-size:22px;}
-.art-card.featured .art-desc{font-size:14px;max-width:520px;}
 .cta-banner{background:linear-gradient(135deg,var(--navy) 0%,#1a2456 100%);padding:72px 40px;text-align:center;position:relative;overflow:hidden;}
-.cta-banner .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(106,92,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(106,92,255,.06) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;}
 .cta-inner{max-width:640px;margin:0 auto;position:relative;z-index:2;}
 .cta-inner h2{font-size:clamp(26px,3vw,38px);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:14px;}
 .cta-inner p{font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:32px;}
-footer{background:#040c1e;padding:36px 40px;}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
-.footer-logo{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.4px;}
-.footer-logo span{color:var(--pu);}
-.footer-tagline{font-size:11px;color:rgba(255,255,255,.22);margin-top:3px;}
-.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-links a{font-size:12px;color:rgba(255,255,255,.28);font-weight:500;transition:color .2s;}
-.footer-links a:hover{color:var(--pu3);}
-.footer-copy{font-size:11px;color:rgba(255,255,255,.16);}
-@media(max-width:900px){
-  nav{padding:14px 20px;}
-  .hub-hero{padding:52px 20px 48px;}
-  .stats-bar{padding:20px;}
-  .stats-inner{gap:30px;}
-  .articles-section{padding:48px 20px;}
-  .articles-grid{grid-template-columns:1fr;}
-  .art-card.featured{flex-direction:column;}
-  .art-card.featured .art-card-top{padding:28px 24px 0;}
-  .art-card.featured .art-card-footer{padding:0 24px 24px;margin-top:auto;}
-  .art-card.featured .art-right{display:none;}
-  .cta-banner{padding:52px 20px;}
-  footer{padding:28px 20px;}
-  .footer-inner{flex-direction:column;gap:14px;}
-  .nav-links{display:none;}
-}
+@media(max-width:900px){.hub-hero{padding:52px 20px 48px;}.articles-section{padding:48px 20px;}.articles-grid{grid-template-columns:1fr;}.art-card.featured{flex-direction:column;}.art-card.featured .art-card-top{padding:28px 24px 0;}.art-card.featured .art-card-footer{padding:0 24px 24px;margin-top:auto;}.art-card.featured .art-right{display:none;}.cta-banner{padding:52px 20px;}.stats-bar{padding:20px;}.stats-inner{gap:30px;}}
 </style>
 </head>
 <body>
@@ -130,202 +101,139 @@ footer{background:#040c1e;padding:36px 40px;}
   <a href="index.html" class="logo">Lex<span>Scale</span>.ai</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li class="has-drop">
-      <a href="#">Services
-        <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+    <li class="has-drop"><a href="#">Services<svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <div class="dropdown">
-        <a href="ai-website-design-for-law-firms.html" class="drop-item"><div class="drop-ico">🌐</div><div><div class="drop-label">AI Website Design</div><div class="drop-sub">High-converting law firm sites</div></div></a>
-        <a href="ai-seo-for-law-firms.html" class="drop-item"><div class="drop-ico">🔎</div><div><div class="drop-label">AI SEO</div><div class="drop-sub">Rank on Google &amp; AI platforms</div></div></a>
-        <a href="ai-receptionist-for-law-firms.html" class="drop-item"><div class="drop-ico">📞</div><div><div class="drop-label">AI Receptionist</div><div class="drop-sub">Never miss a client call</div></div></a>
-        <a href="ai-chatbot-for-law-firms.html" class="drop-item"><div class="drop-ico">💬</div><div><div class="drop-label">AI Chatbot</div><div class="drop-sub">Convert visitors into clients</div></div></a>
+        <a href="ai-website-design-for-law-firms.html" class="drop-item"><div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><div class="drop-label">AI Website Design</div><div class="drop-sub">For law firms</div></div></a>
+        <a href="ai-seo-for-law-firms.html" class="drop-item"><div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div><div><div class="drop-label">AI SEO</div><div class="drop-sub">Rank higher, get cited by AI</div></div></a>
+        <a href="ai-receptionist-for-law-firms.html" class="drop-item"><div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="drop-label">AI Receptionist</div><div class="drop-sub">24/7 call answering</div></div></a>
+        <a href="ai-chatbot-for-law-firms.html" class="drop-item"><div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div><div class="drop-label">AI Chatbot</div><div class="drop-sub">Convert more website visitors</div></div></a>
       </div>
     </li>
     <li><a href="about.html">About</a></li>
-    <li class="has-drop">
-      <a href="#" style="color:#6A5CFF;font-weight:700;">Insights
-        <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+    <li class="has-drop"><a href="#">Insights<svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <div class="dropdown">
-  <a href="chatgpt.html" class="drop-item">
-    <div class="drop-ico">🤖</div>
-    <div><div class="drop-label">ChatGPT for Law Firms</div><div class="drop-sub">10 articles</div></div>
-  </a>
-  <a href="google-gemini.html" class="drop-item">
-    <div class="drop-ico">✨</div>
-    <div><div class="drop-label">Google Gemini for Law Firms</div><div class="drop-sub">5 articles</div></div>
-  </a>
-  <a href="perplexity.html" class="drop-item">
-    <div class="drop-ico">🔍</div>
-    <div><div class="drop-label">Perplexity for Law Firms</div><div class="drop-sub">5 articles</div></div>
-  </a>
-  <a href="ai-seo.html" class="drop-item">
-    <div class="drop-ico">📈</div>
-    <div><div class="drop-label">AI SEO for Law Firms</div><div class="drop-sub">5 articles</div></div>
-  </a>
-  <a href="ai-receptionists.html" class="drop-item">
-    <div class="drop-ico">📞</div>
-    <div><div class="drop-label">AI Receptionists for Law Firms</div><div class="drop-sub">5 articles</div></div>
-  </a>
-  <a href="ai-chatbots.html" class="drop-item">
-    <div class="drop-ico">💬</div>
-    <div><div class="drop-label">AI Chatbots for Law Firms</div><div class="drop-sub">5 articles</div></div>
-  </a>
-  <a href="entity-seo.html" class="drop-item">
-    <div class="drop-ico">🗂️</div>
-    <div><div class="drop-label">Entity SEO &amp; Structured Data</div><div class="drop-sub">5 articles</div></div>
-  </a>
-  <a href="ai-websites.html" class="drop-item">
-    <div class="drop-ico">🌐</div>
-    <div><div class="drop-label">AI Websites for Law Firms</div><div class="drop-sub">5 articles</div></div>
-  </a>
-</div>
+        <a href="chatgpt.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">ChatGPT for Law Firms</div><div class="drop-sub">10 articles</div></div></a>
+        <a href="google-gemini.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">Google Gemini for Law Firms</div><div class="drop-sub">1 article</div></div></a>
+        <a href="perplexity.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#20B8CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><div class="drop-label">Perplexity for Law Firms</div><div class="drop-sub">Coming soon</div></div></a>
+        <div class="drop-divider"></div>
+        <a href="ai-seo.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">AI SEO for Law Firms</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-receptionists.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="drop-label">AI Receptionists for Law Firms</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-chatbots.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">AI Chatbots for Law Firms</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="entity-seo.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="drop-label">Entity SEO &amp; Structured Data</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-websites.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><div class="drop-label">AI Websites for Law Firms</div><div class="drop-sub">5 articles</div></div></a>
+      </div>
     </li>
-    <li><a href="index.html#contact">Contact</a></li>
   </ul>
-  <button class="nav-cta" onclick="openForm()">Get a Free Strategy Call</button>
+  <button class="nav-cta" onclick="document.getElementById('leadModal').style.display='flex'">Book A Demo</button>
 </nav>
 <section class="hub-hero">
   <div class="grid-bg"></div>
-  <div class="hub-hero-inner">
+  <div class="hub-inner">
     <div class="hub-tag"><span>AI SEO</span></div>
-    <h1 class="hub-h1">AI SEO <span class="accent">for Law Firms</span></h1>
-    <p class="hub-desc">The complete resource hub on AI SEO for law firms. Learn how to rank in AI search, earn citations from ChatGPT and Google AI, and win more clients — 5 expert guides.</p>
+    <h1 class="hub-h1">AI SEO Insights for <span class="accent">Law Firms</span></h1>
+    <p class="hub-desc">Everything your law firm needs to know about AI SEO — from Google AI Overviews to topical authority to getting cited by AI search engines.</p>
     <div class="hub-btns">
-      <a href="index.html#contact" class="btn-primary">Get AI Visible Now →</a>
+      <a href="ai-seo-for-law-firms.html" class="btn-primary">Get AI Visible Now →</a>
       <a href="index.html" class="btn-outline">View All Services</a>
     </div>
   </div>
 </section>
-<div class="stats-bar"><div class="stats-inner"><div class="stat-item"><div class="stat-num">5</div><div class="stat-lbl">in-depth guides</div></div><div class="stat-item"><div class="stat-num">3-6mo</div><div class="stat-lbl">to see results</div></div><div class="stat-item"><div class="stat-num">2025</div><div class="stat-lbl">fully up to date</div></div><div class="stat-item"><div class="stat-num">AI-first</div><div class="stat-lbl">strategy</div></div></div></div>
+<div class="stats-bar"><div class="stats-inner"><div class="stat-item"><div class="stat-num">73%</div><div class="stat-lbl">of searches now use AI</div></div><div class="stat-item"><div class="stat-num">5</div><div class="stat-lbl">in-depth articles</div></div><div class="stat-item"><div class="stat-num">6 min</div><div class="stat-lbl">avg read time</div></div><div class="stat-item"><div class="stat-num">2025</div><div class="stat-lbl">fully up to date</div></div></div></div>
 <section class="articles-section">
   <div class="articles-inner">
-    <div class="section-header">
-      <h2>All AI SEO Articles</h2>
-      <p>In-depth guides to help your law firm get found, get cited, and win more clients in the age of AI search.</p>
-    </div>
-    <div class="articles-grid">
-      <a href="ai-seo-for-law-firms-complete-guide.html" class="art-card featured">
+    <div class="section-header"><h2>All AI SEO Articles</h2><p>Expert guides to help your law firm grow with AI-powered marketing and search visibility.</p></div>
+    <div class="articles-grid"><a href="ai-seo-for-law-firms-complete-guide.html" class="art-card featured">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>AI SEO</span></div>
     <div class="art-title">AI SEO for Law Firms: The Complete Guide</div>
-    <div class="art-desc">Search is no longer ten blue links. Learn how AI SEO works, why it matters for law firms, and the exact steps to get cited by AI search.</div>
+    <div class="art-desc">How AI is transforming search for attorneys and what your firm must do now to stay visible and competitive.</div>
   </div>
-  <div class="art-meta"><span>June 2025</span><span class="art-meta-dot"></span><span>10 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-  <div class="art-right">📈</div>
-</a><a href="ai-seo-vs-traditional-seo-lawyers.html" class="art-card">
+  <div class="art-meta"><span>June 2025</span><span class="art-meta-dot"></span><span>8 min read</span></div>
+  <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+  <div class="art-right"></div>
+</a>
+<a href="ai-seo-vs-traditional-seo-lawyers.html" class="art-card">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>AI SEO</span></div>
     <div class="art-title">AI SEO vs Traditional SEO for Lawyers</div>
-    <div class="art-desc">AI SEO and traditional SEO share a foundation but optimize for different outcomes. Here's how they differ and why lawyers now need both.</div>
+    <div class="art-desc">The key differences between AI SEO and traditional SEO — and why law firms need both strategies working together.</div>
   </div>
-  <div class="art-meta"><span>June 2025</span><span class="art-meta-dot"></span><span>8 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-</a><a href="how-google-ai-overviews-affect-law-firms.html" class="art-card">
+  <div class="art-meta"><span>June 2025</span><span class="art-meta-dot"></span><span>6 min read</span></div>
+  <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+  
+</a>
+<a href="how-google-ai-overviews-affect-law-firms.html" class="art-card">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>AI SEO</span></div>
     <div class="art-title">How Google AI Overviews Affect Law Firms</div>
-    <div class="art-desc">Google AI Overviews now answer legal questions at the top of results. Here's what that means for your firm's traffic, leads, and visibility.</div>
+    <div class="art-desc">What AI Overviews mean for legal search traffic, how they work, and how to get your firm featured in them.</div>
   </div>
-  <div class="art-meta"><span>June 2025</span><span class="art-meta-dot"></span><span>8 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-</a><a href="topical-authority-for-law-firms.html" class="art-card">
+  <div class="art-meta"><span>June 2025</span><span class="art-meta-dot"></span><span>7 min read</span></div>
+  <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+  
+</a>
+<a href="topical-authority-for-law-firms.html" class="art-card">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>AI SEO</span></div>
     <div class="art-title">Building Topical Authority for Law Firms</div>
-    <div class="art-desc">Topical authority is the biggest driver of AI and search visibility. Learn how law firms build deep expertise that AI systems trust.</div>
+    <div class="art-desc">How to become the definitive online resource in your practice area so Google and AI engines trust and recommend you.</div>
   </div>
-  <div class="art-meta"><span>June 2025</span><span class="art-meta-dot"></span><span>8 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-</a><a href="local-ai-seo-for-law-firms.html" class="art-card">
+  <div class="art-meta"><span>June 2025</span><span class="art-meta-dot"></span><span>7 min read</span></div>
+  <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+  
+</a>
+<a href="local-ai-seo-for-law-firms.html" class="art-card">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>AI SEO</span></div>
     <div class="art-title">Local AI SEO for Law Firms</div>
-    <div class="art-desc">Most legal clients hire locally. Learn how to make your firm the local recommendation across AI assistants, AI Overviews, and map results.</div>
+    <div class="art-desc">How to dominate local AI search results and get recommended to potential clients searching in your city.</div>
   </div>
-  <div class="art-meta"><span>June 2025</span><span class="art-meta-dot"></span><span>8 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
+  <div class="art-meta"><span>June 2025</span><span class="art-meta-dot"></span><span>5 min read</span></div>
+  <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+  
 </a>
-    </div>
+</div>
   </div>
 </section>
 <section class="cta-banner">
   <div class="grid-bg"></div>
   <div class="cta-inner">
-    <h2>Is Your Firm Visible in AI Search?</h2>
-    <p>Get a free AI Visibility Report and see exactly where your law firm stands — and what it takes to get recommended.</p>
-    <button class="btn-primary" onclick="document.getElementById('form-overlay').style.display='flex'" style="border:none;cursor:pointer;font-family:inherit;">Get My Free Report →</button>
+    <h2>Ready to Grow Your Law Firm with AI?</h2>
+    <p>Get a free AI Visibility Report and see exactly where your firm stands across ChatGPT, Gemini, and Perplexity.</p>
+    <button class="btn-primary" onclick="document.getElementById('leadModal').style.display='flex'" style="border:none;cursor:pointer;font-family:inherit;">Get My Free Report →</button>
   </div>
 </section>
 <footer>
-  <div class="foot-logo">Lex<span>Scale</span>.ai</div>
-  <div class="foot-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="ai-website-design-for-law-firms.html">AI Website Design</a>
-    <a href="ai-seo-for-law-firms.html">AI SEO</a>
-    <a href="ai-receptionist-for-law-firms.html">AI Receptionist</a>
-    <a href="ai-chatbot-for-law-firms.html">AI Chatbot</a>
-    <a href="chatgpt.html">Insights</a>
-    <a href="index.html#contact">Contact</a>
+  <div class="footer-inner">
+    <div><div class="footer-logo">Lex<span>Scale</span>.ai</div><div class="footer-tagline">AI Growth Systems For Law Firms</div></div>
+    <div class="footer-links">
+      <a href="ai-website-design-for-law-firms.html">AI Website Design</a>
+      <a href="ai-seo-for-law-firms.html">AI SEO</a>
+      <a href="ai-receptionist-for-law-firms.html">AI Receptionist</a>
+      <a href="ai-chatbot-for-law-firms.html">AI Chatbot</a>
+      <a href="about.html">About</a>
+      <a href="chatgpt.html">Insights</a>
+      <a href="#">Privacy</a><a href="#">Terms</a>
+    </div>
+    <div class="footer-copy">© 2025 LexScale.ai · All rights reserved</div>
   </div>
-  <div class="foot-copy">© 2025 LexScale.ai · All rights reserved</div>
 </footer>
-<div id="sticky-cta">
-  <div class="sc-left">
-    <div style="width:36px;height:36px;border-radius:50%;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🔎</div>
-    <span class="sc-text"><strong>Is Your Firm Visible in AI Search?</strong> Find out where you stand — free AI visibility audit.</span>
-  </div>
-  <div class="sc-right">
-    <button onclick="openForm()" style="background:linear-gradient(135deg,var(--gold3),var(--gold2));color:var(--navy);border:none;padding:10px 22px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;">Get Free AI Audit →</button>
-    <button class="sc-dismiss" onclick="document.getElementById('sticky-cta').style.transform='translateY(100%)'">×</button>
+<div id="stickyCTA" style="position:fixed;bottom:0;left:0;right:0;z-index:500;background:linear-gradient(135deg,var(--navy),#1a2456);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 -4px 24px rgba(11,21,54,.2);transform:translateY(100%);transition:transform .4s;">
+  <div style="color:#fff;font-size:14px;font-weight:600;">Is your firm visible in AI search?</div>
+  <button onclick="document.getElementById('leadModal').style.display='flex'" style="background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:10px 22px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;">Get Free Report →</button>
+</div>
+<script>setTimeout(function(){document.getElementById('stickyCTA').style.transform='translateY(0)';},3000);</script>
+<div id="leadModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(11,21,54,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border-radius:24px;padding:40px;max-width:480px;width:100%;position:relative;box-shadow:0 32px 80px rgba(11,21,54,.25);">
+    <button onclick="document.getElementById('leadModal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;cursor:pointer;color:#94a3b8;font-size:22px;">✕</button>
+    <div style="font-size:11px;font-weight:700;color:var(--pu);letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px;">Free AI Visibility Report</div>
+    <h3 style="font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.5px;margin-bottom:6px;">See How Your Firm Ranks in AI Search</h3>
+    <p style="font-size:13px;color:#64748b;line-height:1.6;margin-bottom:22px;">Get a free report showing your firm's visibility across ChatGPT, Gemini, and Perplexity.</p>
+    <input type="text" placeholder="Your Name" style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:10px;outline:none;">
+    <input type="email" placeholder="Work Email" style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:10px;outline:none;">
+    <input type="text" placeholder="Law Firm Name" style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:16px;outline:none;">
+    <button style="width:100%;background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:14px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;">Get My Free Report →</button>
   </div>
 </div>
-<div id="form-overlay" onclick="if(event.target===this)closeForm()" style="position:fixed;inset:0;background:rgba(6,9,15,.75);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;">
-  <div style="background:#fff;border-radius:24px;padding:40px;max-width:500px;width:100%;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.3);max-height:90vh;overflow-y:auto;">
-    <button onclick="closeForm()" style="position:absolute;top:18px;right:18px;background:rgba(11,21,54,.06);border:none;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#64748b;">×</button>
-    <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.2);border-radius:100px;padding:5px 12px;margin-bottom:16px;">
-      <span style="font-size:10px;font-weight:700;color:var(--gold3);text-transform:uppercase;letter-spacing:.8px;">Free AI Visibility Audit</span>
-    </div>
-    <h3 style="font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.5px;margin-bottom:8px;">See How Your Firm Ranks in AI Search</h3>
-    <p style="font-size:14px;color:#64748b;margin-bottom:24px;line-height:1.6;">We'll run a full AI visibility audit across ChatGPT, Perplexity, and Google AI — and show you exactly where your firm stands.</p>
-    <form onsubmit="submitForm(event)" style="display:flex;flex-direction:column;gap:14px;">
-      <input required type="text" placeholder="Your Name" style="width:100%;border:1.5px solid rgba(106,92,255,.15);border-radius:10px;padding:12px 14px;font-size:14px;font-family:inherit;color:var(--navy);outline:none;box-sizing:border-box;"/>
-      <input required type="text" placeholder="Firm Name" style="width:100%;border:1.5px solid rgba(106,92,255,.15);border-radius:10px;padding:12px 14px;font-size:14px;font-family:inherit;color:var(--navy);outline:none;box-sizing:border-box;"/>
-      <input required type="tel" placeholder="Phone Number" style="width:100%;border:1.5px solid rgba(106,92,255,.15);border-radius:10px;padding:12px 14px;font-size:14px;font-family:inherit;color:var(--navy);outline:none;box-sizing:border-box;"/>
-      <input type="url" placeholder="https://yourfirm.com" style="width:100%;border:1.5px solid rgba(106,92,255,.15);border-radius:10px;padding:12px 14px;font-size:14px;font-family:inherit;color:var(--navy);outline:none;box-sizing:border-box;"/>
-      <button type="submit" style="background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:15px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:4px;box-shadow:0 4px 20px rgba(106,92,255,.3);">Run My Free AI Audit →</button>
-    </form>
-    <div id="form-success" style="display:none;text-align:center;padding:20px 0;">
-      <div style="font-size:40px;margin-bottom:12px;">✅</div>
-      <h4 style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px;">Audit Request Received!</h4>
-      <p style="font-size:14px;color:#64748b;line-height:1.6;">We'll have your AI visibility audit ready within one business day.</p>
-    </div>
-  </div>
-</div>
-<script>
-(function(){var s=false;window.addEventListener('scroll',function(){if(!s&&window.scrollY>400){s=true;document.getElementById('sticky-cta').style.transform='translateY(0)';}});})();
-function toggleFaq(el){var item=el.parentElement;var ans=item.querySelector('.faq-a');var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';});if(!isOpen){item.classList.add('open');ans.style.maxHeight='600px';}}
-function openForm(){document.getElementById('form-overlay').style.display='flex';document.body.style.overflow='hidden';}
-function closeForm(){document.getElementById('form-overlay').style.display='none';document.body.style.overflow='';}
-function submitForm(e){e.preventDefault();document.querySelector('#form-overlay form').style.display='none';document.getElementById('form-success').style.display='block';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeForm();});
-</script>
 </body>
 </html>
