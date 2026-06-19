@@ -1,0 +1,802 @@
+#!/usr/bin/env python3
+"""
+gen_perplexity_article.py
+Generate what-is-perplexity-ai-for-law-firms.html for LexScale.ai
+"""
+
+import os
+from seo_helpers import (
+    head_block, article_schema, faq_schema, breadcrumb_schema,
+    validate_page, add_to_sitemap, html_open, html_close,
+    NAV, FOOTER, SITE,
+)
+
+SLUG     = "what-is-perplexity-ai-for-law-firms"
+FNAME    = f"{SLUG}.html"
+TITLE    = "What Is Perplexity AI and Why Law Firms Should Pay Attention"
+SEO_TITLE = "Perplexity AI for Law Firms: Why It Matters | LexScale.ai"
+DESC     = "Perplexity AI is changing how clients find lawyers. Learn how this answer engine works, why traditional SEO isn't enough, and how law firms can get cited."
+URL      = f"{SITE}/{SLUG}"
+CAT      = "Perplexity for Law Firms"
+CAT_URL  = f"{SITE}/perplexity"
+DATE_PUB = "2026-06-19"
+
+FAQ_PAIRS = [
+    (
+        "What is Perplexity AI and how does it differ from Google?",
+        "Perplexity AI is an answer engine powered by large language models combined with real-time web retrieval. Unlike Google, which returns a list of links for you to browse, Perplexity reads multiple sources and synthesises a direct answer — with citations — in a single response. You never have to click away to find what you're looking for.",
+    ),
+    (
+        "Can Perplexity AI recommend specific law firms?",
+        "Yes. When a user asks 'Who are the best personal injury lawyers in Austin?' or 'Can you recommend a family law firm in Vancouver?', Perplexity generates a response that names and describes firms it considers authoritative based on their online presence, reviews, structured data, and the quality of their published content. If your firm isn't visible in those signals, it won't be recommended.",
+    ),
+    (
+        "How many people use Perplexity AI?",
+        "Perplexity AI surpassed 100 million monthly active users in early 2025 and continues to grow rapidly. Its user base skews toward educated, high-income professionals — exactly the demographic that hires lawyers for business disputes, estate planning, and complex family matters.",
+    ),
+    (
+        "Do I need to delete my Google SEO strategy to focus on Perplexity?",
+        "No — and anyone who tells you to is wrong. Google still drives the majority of legal search traffic. The right approach is to build on your existing SEO foundation and extend it: stronger structured data, deeper topical content, consistent entity signals, and authoritative citations. What works for Google AI Overviews also works for Perplexity.",
+    ),
+    (
+        "How long does it take to get cited by Perplexity AI?",
+        "There's no fixed timeline. Firms that already have strong domain authority, clear practice area pages, and authoritative content often start appearing in AI citations within a few months of targeted optimisation. Newer firms or those with thin websites may take six to twelve months to build the signals that drive consistent citation.",
+    ),
+    (
+        "What types of content does Perplexity prefer to cite?",
+        "Perplexity prioritises content that directly answers questions: practice area pages with clear explanations, FAQ sections marked up with FAQPage schema, attorney bio pages that establish expertise, and articles that go deep on a specific legal topic rather than staying surface-level. Pages that cite sources, reference statutes, or include real case context perform especially well.",
+    ),
+]
+
+SEO = head_block(
+    title=SEO_TITLE,
+    description=DESC,
+    slug=SLUG,
+    og_type="article",
+    keywords="Perplexity AI for law firms, answer engine optimization, legal marketing AI, law firm AI visibility",
+    schemas=[
+        article_schema(TITLE, DESC, URL, date_pub=DATE_PUB),
+        breadcrumb_schema([
+            ("Home", SITE),
+            (CAT, CAT_URL),
+            (TITLE, URL),
+        ]),
+        faq_schema(FAQ_PAIRS),
+    ],
+)
+
+# Build FAQ HTML manually to match the existing chatgpt-for-law-firms.html pattern
+def faq_items_html(pairs):
+    items = []
+    for q, a in pairs:
+        items.append(f"""    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">{q}</span>
+        <div class="faq-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">{a}</p></div></div>
+    </div>""")
+    return "\n".join(items)
+
+FAQ_HTML = faq_items_html(FAQ_PAIRS)
+
+page = f"""{html_open()}
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+{SEO}
+<style>
+*{{margin:0;padding:0;box-sizing:border-box;}}
+:root{{--navy:#0B1536;--pu:#6A5CFF;--pu2:#8B7FFF;--pu3:#a89fff;--gold:#D4AF37;--gold2:#F0C040;--gold3:#b8962e;}}
+body{{font-family:'Inter',sans-serif;background:#fff;color:#0B1536;overflow-x:hidden;}}
+a{{text-decoration:none;}}
+@keyframes pulse{{0%,100%{{opacity:1;transform:scale(1);}}50%{{opacity:.6;transform:scale(1.3);}}}}
+@keyframes fadeUp{{from{{opacity:0;transform:translateY(24px);}}to{{opacity:1;transform:translateY(0);}}}}
+@keyframes typeDot{{0%,80%,100%{{transform:scale(0);opacity:.4;}}40%{{transform:scale(1);opacity:1;}}}}
+
+/* NAV */
+nav{{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(106,92,255,.09);}}
+.logo{{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.4px;}}
+.logo span{{color:var(--pu);}}
+.nav-links{{display:flex;gap:26px;list-style:none;align-items:center;}}
+.nav-links a{{font-size:13px;color:#4a5568;font-weight:500;transition:color .2s;}}
+.nav-links a:hover{{color:var(--pu);}}
+.has-drop{{position:relative;}}
+.has-drop>a{{display:flex;align-items:center;gap:4px;cursor:pointer;}}
+.drop-arrow{{width:14px;height:14px;opacity:.5;transition:transform .2s;}}
+.has-drop:hover .drop-arrow{{transform:rotate(180deg);}}
+.dropdown{{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(106,92,255,.12);border-radius:16px;padding:12px 8px 8px;box-shadow:0 16px 48px rgba(11,21,54,.12);min-width:240px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:200;}}
+.has-drop:hover .dropdown{{opacity:1;pointer-events:all;visibility:visible;}}
+.drop-item{{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;transition:background .15s;}}
+.drop-item:hover{{background:rgba(106,92,255,.07);}}
+.drop-ico{{width:30px;height:30px;border-radius:8px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}}
+.drop-label{{font-size:12.5px;font-weight:600;color:var(--navy);}}
+.drop-sub{{font-size:11px;color:#94a3b8;margin-top:1px;}}
+.drop-divider{{height:1px;background:rgba(106,92,255,.07);margin:6px 8px;}}
+.nav-cta{{background:var(--pu);color:#fff;border:none;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;}}
+.nav-cta:hover{{background:#5848e8;transform:translateY(-1px);}}
+
+/* HERO */
+.art-hero{{background:linear-gradient(150deg,#04070f 0%,#060c1c 50%,#0B1536 100%);padding:80px 40px 70px;}}
+.art-hero-inner{{max-width:860px;margin:0 auto;text-align:center;}}
+.art-cat{{display:inline-flex;align-items:center;gap:8px;background:rgba(32,184,205,.12);border:1px solid rgba(32,184,205,.25);border-radius:100px;padding:7px 16px;margin-bottom:24px;}}
+.art-cat-dot{{width:6px;height:6px;border-radius:50%;background:#20B8CD;animation:pulse 2s infinite;}}
+.art-cat-txt{{font-size:11px;font-weight:700;color:#20B8CD;letter-spacing:.8px;text-transform:uppercase;}}
+.art-h1{{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1.8px;margin-bottom:20px;}}
+.art-h1 .gold-grad{{background:linear-gradient(135deg,var(--gold3),var(--gold2),#ffe680);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}}
+.art-deck{{font-size:clamp(14px,1.6vw,17px);color:rgba(255,255,255,.6);line-height:1.8;max-width:680px;margin:0 auto 32px;}}
+.art-meta{{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}}
+.art-meta-item{{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.35);font-weight:500;}}
+
+/* CONTENT LAYOUT */
+.content-wrap{{max-width:1100px;margin:0 auto;padding:64px 40px;display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start;}}
+.article-body{{min-width:0;}}
+.sidebar{{position:sticky;top:90px;}}
+
+/* ARTICLE BODY */
+.art-section{{margin-bottom:56px;}}
+.art-h2{{font-size:clamp(22px,2.5vw,30px);font-weight:800;color:var(--navy);letter-spacing:-.7px;line-height:1.2;margin-bottom:16px;}}
+.art-h2.with-bar{{padding-left:18px;border-left:3px solid var(--pu);}}
+.art-h3{{font-size:18px;font-weight:700;color:var(--navy);letter-spacing:-.3px;margin:28px 0 10px;}}
+.art-p{{font-size:15.5px;color:#374151;line-height:1.85;margin-bottom:18px;}}
+.art-p:last-child{{margin-bottom:0;}}
+.art-ul{{margin:16px 0 20px 0;display:flex;flex-direction:column;gap:10px;}}
+.art-li{{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#374151;line-height:1.65;}}
+.art-li::before{{content:'';width:7px;height:7px;border-radius:50%;background:var(--pu);flex-shrink:0;margin-top:8px;}}
+
+/* CALLOUT BOXES */
+.callout{{border-radius:16px;padding:24px 28px;margin:28px 0;}}
+.callout.blue{{background:rgba(106,92,255,.06);border:1px solid rgba(106,92,255,.18);}}
+.callout.gold{{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);}}
+.callout.dark{{background:linear-gradient(135deg,#060d1e,#0B1536);border:1px solid rgba(106,92,255,.2);}}
+.callout.teal{{background:rgba(32,184,205,.05);border:1px solid rgba(32,184,205,.2);}}
+.callout-label{{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}}
+.callout.blue .callout-label{{color:var(--pu);}}
+.callout.gold .callout-label{{color:var(--gold3);}}
+.callout.dark .callout-label{{color:var(--pu3);}}
+.callout.teal .callout-label{{color:#20B8CD;}}
+.callout-text{{font-size:15px;line-height:1.75;}}
+.callout.blue .callout-text{{color:#374151;}}
+.callout.gold .callout-text{{color:#374151;}}
+.callout.dark .callout-text{{color:rgba(255,255,255,.75);}}
+.callout.teal .callout-text{{color:#374151;}}
+
+/* COMPARISON TABLE */
+.comp-table{{width:100%;border-collapse:separate;border-spacing:0;margin:24px 0;border-radius:16px;overflow:hidden;border:1px solid rgba(106,92,255,.1);}}
+.comp-table th{{background:var(--navy);color:#fff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:14px 18px;text-align:left;}}
+.comp-table td{{padding:13px 18px;font-size:14px;color:#374151;border-bottom:1px solid rgba(106,92,255,.07);}}
+.comp-table tr:last-child td{{border-bottom:none;}}
+.comp-table tr:nth-child(even) td{{background:rgba(106,92,255,.025);}}
+.comp-table .good{{color:#059669;font-weight:700;}}
+
+/* RANKING FACTORS */
+.factors-grid{{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}}
+.factor-card{{background:#fff;border:1px solid rgba(106,92,255,.1);border-radius:16px;padding:20px;transition:all .3s;}}
+.factor-card:hover{{border-color:rgba(106,92,255,.25);box-shadow:0 8px 28px rgba(106,92,255,.08);transform:translateY(-3px);}}
+.factor-num{{font-size:28px;font-weight:900;color:rgba(106,92,255,.15);letter-spacing:-1px;margin-bottom:4px;}}
+.factor-h{{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;}}
+.factor-p{{font-size:12.5px;color:#64748b;line-height:1.6;}}
+
+/* QUERY EXAMPLES */
+.query-grid{{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;}}
+.query-card{{background:linear-gradient(135deg,#f8f7ff,#eef0f8);border:1px solid rgba(106,92,255,.1);border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:10px;}}
+.query-icon{{width:28px;height:28px;border-radius:8px;background:var(--pu);display:flex;align-items:center;justify-content:center;flex-shrink:0;}}
+.query-text{{font-size:13px;font-weight:600;color:var(--navy);line-height:1.4;font-style:italic;}}
+
+/* AI CHAT MOCKUP */
+.chat-demo{{background:linear-gradient(135deg,#060d1e,#0d1535);border:1px solid rgba(32,184,205,.2);border-radius:20px;padding:24px;margin:32px 0;}}
+.chat-header{{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.07);}}
+.chat-dot{{width:8px;height:8px;border-radius:50%;animation:pulse 2s infinite;}}
+.chat-name{{font-size:13px;font-weight:700;color:rgba(255,255,255,.7);}}
+.chat-msg{{margin-bottom:14px;}}
+.chat-msg.user{{display:flex;justify-content:flex-end;}}
+.chat-msg.ai{{display:flex;justify-content:flex-start;}}
+.chat-bubble{{max-width:80%;padding:12px 16px;border-radius:14px;font-size:13.5px;line-height:1.6;}}
+.chat-msg.user .chat-bubble{{background:#20B8CD;color:#fff;border-bottom-right-radius:4px;}}
+.chat-msg.ai .chat-bubble{{background:rgba(255,255,255,.07);color:rgba(255,255,255,.85);border-bottom-left-radius:4px;}}
+.chat-bubble strong{{color:var(--gold2);}}
+
+/* FAQ */
+.faq-list{{display:flex;flex-direction:column;gap:0;}}
+.faq-item{{border-bottom:1px solid rgba(106,92,255,.08);}}
+.faq-q{{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;gap:16px;}}
+.faq-q-text{{font-size:15px;font-weight:700;color:var(--navy);line-height:1.4;}}
+.faq-icon{{width:28px;height:28px;border-radius:50%;background:rgba(106,92,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;}}
+.faq-item.open .faq-icon{{background:var(--pu);transform:rotate(45deg);}}
+.faq-item.open .faq-icon svg{{stroke:#fff;}}
+.faq-a{{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}}
+.faq-a-inner{{padding:0 0 20px;}}
+.faq-a-text{{font-size:14.5px;color:#64748b;line-height:1.8;}}
+
+/* SIDEBAR */
+.sidebar-card{{background:#fff;border:1px solid rgba(106,92,255,.1);border-radius:20px;padding:24px;margin-bottom:20px;box-shadow:0 4px 20px rgba(11,21,54,.05);}}
+.sidebar-card.dark{{background:linear-gradient(135deg,var(--navy),#162050);border-color:rgba(106,92,255,.2);}}
+.sidebar-card.gold-card{{background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(212,175,55,.04));border:1px solid rgba(212,175,55,.2);}}
+.sb-h{{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:14px;}}
+.sb-h.light{{color:#fff;}}
+.sb-h.gold{{color:var(--gold3);}}
+.toc-item{{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(106,92,255,.06);cursor:pointer;transition:color .2s;}}
+.toc-item:last-child{{border-bottom:none;}}
+.toc-item:hover .toc-text{{color:var(--pu);}}
+.toc-num{{font-size:10px;font-weight:800;color:var(--pu);width:20px;flex-shrink:0;}}
+.toc-text{{font-size:13px;color:#374151;font-weight:500;line-height:1.35;}}
+.stat-highlight{{text-align:center;padding:8px 0;}}
+.sh-val{{font-size:36px;font-weight:900;color:var(--gold2);letter-spacing:-1.5px;}}
+.sh-lbl{{font-size:12px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;font-weight:600;margin-top:4px;}}
+.sh-divider{{height:1px;background:rgba(255,255,255,.07);margin:14px 0;}}
+.sb-cta-btn{{display:block;background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;text-align:center;padding:13px;border-radius:12px;font-size:14px;font-weight:700;transition:all .25s;margin-top:14px;}}
+.sb-cta-btn:hover{{transform:translateY(-2px);box-shadow:0 8px 24px rgba(106,92,255,.35);}}
+.related-item{{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(106,92,255,.07);}}
+.related-item:last-child{{border-bottom:none;}}
+.related-ico{{width:34px;height:34px;border-radius:10px;background:rgba(106,92,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}}
+.related-text{{font-size:13px;font-weight:600;color:var(--navy);line-height:1.4;}}
+.related-text:hover{{color:var(--pu);}}
+
+/* CTA BANNER */
+.cta-banner{{background:linear-gradient(135deg,var(--navy) 0%,#162050 100%);border:1px solid rgba(106,92,255,.2);border-radius:24px;padding:44px;text-align:center;margin:56px 0 0;}}
+.cb-h{{font-size:clamp(22px,2.5vw,30px);font-weight:900;color:#fff;letter-spacing:-.8px;margin-bottom:12px;}}
+.cb-p{{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:28px;}}
+.cb-btns{{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}}
+.btn-p{{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:13px 26px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(106,92,255,.35);transition:all .25s;text-decoration:none;}}
+.btn-p:hover{{transform:translateY(-2px);box-shadow:0 10px 32px rgba(106,92,255,.5);}}
+.btn-g{{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--gold3),var(--gold2));color:var(--navy);border:none;padding:13px 26px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 16px rgba(212,175,55,.3);transition:all .25s;text-decoration:none;}}
+.btn-g:hover{{transform:translateY(-2px);box-shadow:0 10px 28px rgba(212,175,55,.45);}}
+
+/* FOOTER */
+footer{{background:#04070f;border-top:1px solid rgba(255,255,255,.05);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}}
+.foot-logo{{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;}}
+.foot-logo span{{color:var(--pu);}}
+.foot-links{{display:flex;gap:24px;flex-wrap:wrap;}}
+.foot-links a{{font-size:13px;color:rgba(255,255,255,.3);font-weight:500;transition:color .2s;}}
+.foot-links a:hover{{color:rgba(255,255,255,.7);}}
+.foot-copy{{font-size:12px;color:rgba(255,255,255,.18);}}
+
+/* STICKY CTA */
+#sticky-cta{{position:fixed;bottom:0;left:0;right:0;z-index:999;background:linear-gradient(90deg,#040c1e,#0B1536);border-top:1px solid rgba(106,92,255,.2);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .4s cubic-bezier(.34,1,.64,1);}}
+.sc-left{{display:flex;align-items:center;gap:14px;}}
+.sc-text{{font-size:14px;font-weight:600;color:rgba(255,255,255,.75);}}
+.sc-text strong{{color:#fff;}}
+.sc-right{{display:flex;align-items:center;gap:10px;}}
+.sc-dismiss{{background:none;border:none;color:rgba(255,255,255,.3);font-size:20px;cursor:pointer;padding:4px 8px;line-height:1;}}
+.sc-dismiss:hover{{color:rgba(255,255,255,.7);}}
+
+/* RESPONSIVE */
+@media(max-width:960px){{
+  .content-wrap{{grid-template-columns:1fr;gap:40px;}}
+  .sidebar{{position:static;}}
+  nav{{padding:14px 20px;}}
+  .nav-links{{display:none;}}
+  .art-hero{{padding:60px 24px 50px;}}
+  .query-grid{{grid-template-columns:1fr;}}
+  .factors-grid{{grid-template-columns:1fr;}}
+  #sticky-cta{{flex-direction:column;text-align:center;gap:10px;padding:16px 20px;}}
+}}
+@media(max-width:600px){{
+  .content-wrap{{padding:40px 20px;}}
+  footer{{padding:28px 20px;flex-direction:column;align-items:flex-start;}}
+}}
+.nav-mob{{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:101;flex-shrink:0;}}
+.nav-mob span{{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform .3s,opacity .3s;}}
+nav.mob-open .nav-mob span:nth-child(1){{transform:translateY(7px) rotate(45deg);}}
+nav.mob-open .nav-mob span:nth-child(2){{opacity:0;transform:scaleX(0);}}
+nav.mob-open .nav-mob span:nth-child(3){{transform:translateY(-7px) rotate(-45deg);}}
+@media(max-width:768px){{
+  nav{{padding:14px 20px;flex-wrap:wrap;gap:0;}}
+  .nav-links{{display:none;flex-direction:column;gap:0;width:100%;order:3;background:#fff;border-top:1px solid rgba(106,92,255,.08);padding:8px 0 20px;margin-top:2px;}}
+  nav.mob-open .nav-links{{display:flex;}}
+  .nav-links>li{{width:100%;border-bottom:1px solid rgba(106,92,255,.06);}}
+  .nav-links>li:last-child{{border-bottom:none;}}
+  .nav-links a{{font-size:15px;font-weight:600;padding:13px 20px;display:block;width:100%;color:var(--navy);}}
+  .has-drop>a{{display:flex;align-items:center;justify-content:space-between;padding:13px 20px;}}
+  .drop-arrow{{margin-left:auto;transition:transform .25s;}}
+  .has-drop.mob-open .drop-arrow{{transform:rotate(180deg);}}
+  .dropdown{{position:static;transform:none;box-shadow:none;border:none;border-radius:0;background:rgba(106,92,255,.04);padding:4px 0 8px;min-width:unset;opacity:1;visibility:visible;pointer-events:all;display:none;transition:none;}}
+  .has-drop.mob-open .dropdown{{display:block;}}
+  .drop-item{{padding:10px 28px;}}
+  .drop-divider{{margin:4px 20px;}}
+  .nav-cta{{display:none;}}
+  .nav-mob{{display:flex;}}
+}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">Lex<span>Scale</span>.ai</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-drop">
+      <a href="#">Services
+        <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="dropdown">
+        <a href="ai-website-design-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div><div class="drop-label">AI Website Design</div><div class="drop-sub">For law firms</div></div>
+        </a>
+        <a href="ai-seo-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          <div><div class="drop-label">AI SEO</div><div class="drop-sub">Rank higher, get cited by AI</div></div>
+        </a>
+        <a href="ai-chatbot-for-law-firms.html" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><div class="drop-label">AI Chatbot</div><div class="drop-sub">Convert more website visitors</div></div>
+        </a>
+      </div>
+    </li>
+    <li><a href="about.html">About</a></li>
+    <li class="has-drop">
+      <a href="#">Insights
+        <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="dropdown">
+        <a href="chatgpt.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">ChatGPT for Law Firms</div></div></a>
+        <a href="google-gemini.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">Google Gemini for Law Firms</div></div></a>
+        <a href="perplexity.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#20B8CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><div class="drop-label">Perplexity for Law Firms</div></div></a>
+        <div class="drop-divider"></div>
+        <a href="ai-seo.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">AI SEO for Law Firms</div></div></a>
+      </div>
+    </li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('leadModal').style.display='flex'">Book A Demo</button>
+  <button class="nav-mob" aria-label="Open menu" onclick="toggleMobNav(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="art-hero">
+  <div class="art-hero-inner" style="animation:fadeUp .8s ease both;">
+    <div class="art-cat">
+      <div class="art-cat-dot"></div>
+      <span class="art-cat-txt">Perplexity AI · Legal Marketing</span>
+    </div>
+    <h1 class="art-h1">What Is Perplexity AI<br><span class="gold-grad">and Why Law Firms Should Pay Attention</span></h1>
+    <p class="art-deck">Perplexity AI is not just another search engine. It's a direct answer machine — and it's already recommending lawyers to potential clients. Here's what your firm needs to know.</p>
+    <div class="art-meta">
+      <div class="art-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        10 min read
+      </div>
+      <div class="art-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        June 2026
+      </div>
+      <div class="art-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        LexScale.ai Editorial
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="content-wrap">
+
+  <!-- ARTICLE -->
+  <article class="article-body">
+
+    <!-- SECTION 1: What Is Perplexity AI -->
+    <div class="art-section" id="s1">
+      <h2 class="art-h2 with-bar">What Is Perplexity AI?</h2>
+      <p class="art-p">Perplexity AI launched in 2022 and has grown into one of the fastest-adopted search products in history. By early 2025, it had crossed 100 million monthly active users. That number understates the significance, because Perplexity users are not average internet browsers — they skew toward educated, high-income professionals who are actively solving problems.</p>
+      <p class="art-p">The product looks deceptively simple: a search bar. You type a question, and Perplexity responds with a direct, cited answer. No list of ten blue links to sift through. No ads. No navigating to three different websites to piece together an answer yourself. Just the answer, sourced and summarised.</p>
+      <p class="art-p">That single difference — answer instead of links — turns out to be enormous. And it has real consequences for how law firms get found.</p>
+
+      <div class="callout teal">
+        <div class="callout-label">What Perplexity Is</div>
+        <div class="callout-text">Perplexity AI is an answer engine: it uses large language models combined with real-time web retrieval to synthesise a direct response to any question, complete with cited sources. It does not rank pages — it reads them and draws conclusions.</div>
+      </div>
+
+      <h3 class="art-h3">The Founding Problem Perplexity Was Built to Solve</h3>
+      <p class="art-p">The founders of Perplexity looked at Google search and identified a friction point that billions of people were tolerating without realising they could expect better: you ask a question, you get ten links, and now you have to do the work of reading, comparing, and synthesising those results yourself. Google was giving you a library card, not the answer.</p>
+      <p class="art-p">Perplexity aimed to give you the answer — with the sources clearly cited so you could verify. For legal consumers, who are often anxious and time-pressed, this is a dramatically better experience. They don't want to read five law firm blog posts. They want to know what to do next.</p>
+    </div>
+
+    <!-- SECTION 2: How Answer Engines Work -->
+    <div class="art-section" id="s2">
+      <h2 class="art-h2 with-bar">How Answer Engines Actually Work</h2>
+      <p class="art-p">Understanding what happens under the hood matters if you want to influence the output. Perplexity combines two distinct technologies: a large language model (LLM) and a real-time web retrieval system.</p>
+      <p class="art-p">When you submit a query, Perplexity doesn't just ask its LLM to generate an answer from memory. It first searches the web in real time, retrieves a set of pages it considers relevant and authoritative, reads those pages, and then instructs the LLM to synthesise a response grounded in what it just retrieved. The citations you see at the bottom of every Perplexity answer are the actual source pages it pulled.</p>
+
+      <h3 class="art-h3">What This Means for How Sources Get Selected</h3>
+      <p class="art-p">Perplexity decides which pages to retrieve using signals that will feel familiar to anyone who knows technical SEO: domain authority, relevance of the page content to the query, freshness, and the quality of structured markup. But there's an additional layer — the LLM evaluates the clarity and credibility of the text itself. Thin content, vague writing, and generic service pages get passed over. Pages that directly answer a specific question, in specific language, with specific context, get cited.</p>
+      <p class="art-p">This is meaningfully different from how Google PageRank has worked historically. It's not enough to have links pointing at your page. The text on your page has to be genuinely useful to someone asking a specific question.</p>
+
+      <!-- Chat Demo -->
+      <div class="chat-demo">
+        <div class="chat-header">
+          <div class="chat-dot" style="background:#20B8CD;"></div>
+          <span class="chat-name" style="margin-left:4px;">Perplexity AI — Real Client Query</span>
+        </div>
+        <div class="chat-msg user">
+          <div class="chat-bubble">Who are the best estate planning lawyers in Austin, Texas?</div>
+        </div>
+        <div class="chat-msg ai">
+          <div class="chat-bubble">Based on attorney ratings, peer reviews, and client feedback, several Austin estate planning firms consistently appear in top recommendations. Key factors to evaluate include <strong>board certification in estate planning and probate law</strong>, experience with complex trusts, and responsiveness. Firms with strong educational content and transparent fee structures tend to receive the highest client satisfaction scores...<br><br>For your specific situation — particularly if you have a taxable estate, business interests, or blended family considerations — look for firms that publish detailed guides on Texas-specific estate planning rules, as these signal genuine expertise.</div>
+        </div>
+        <div style="font-size:11px;color:rgba(255,255,255,.25);text-align:center;margin-top:12px;">Is your firm what Perplexity recommends for your practice area?</div>
+      </div>
+
+      <h3 class="art-h3">The Role of Real-Time Retrieval</h3>
+      <p class="art-p">Because Perplexity retrieves pages fresh with each query, recency matters. A law firm blog post published in 2018 that hasn't been updated competes against a competitor's page updated last month. Perplexity's citations tend to favour pages that signal currency — updated dates, references to recent case law or regulatory changes, and content that reflects the current state of a legal question rather than a years-old snapshot.</p>
+    </div>
+
+    <!-- SECTION 3: Why Search Behaviour Is Changing -->
+    <div class="art-section" id="s3">
+      <h2 class="art-h2 with-bar">Why Search Behaviour Is Changing — and Fast</h2>
+      <p class="art-p">Google's dominance has been so complete for so long that it's easy to forget people learned how to search. Ten keyword phrases, scan the top three results, open in new tabs — that entire workflow was a learned behaviour. People adopted it because it was the best available option.</p>
+      <p class="art-p">It no longer is. For a growing segment of users — particularly those under 45 and those with higher household incomes — typing a full question into Perplexity and getting a synthesised answer is simply a better experience. They're not switching because they hate Google. They're switching because Perplexity saves them time and cognitive load.</p>
+
+      <div class="callout gold">
+        <div class="callout-label">The Shift in Numbers</div>
+        <div class="callout-text">Perplexity processes hundreds of millions of queries per month and its growth rate remains steep. Legal, financial, and medical queries — questions where people are anxious and want accurate information fast — are among the highest-volume categories on the platform.</div>
+      </div>
+
+      <h3 class="art-h3">People Want Answers, Not Research Projects</h3>
+      <p class="art-p">When someone's business partner is threatening litigation, when a marriage is falling apart, when an employer just fired them for what seems like an illegal reason — they're not in a headspace to read eight law firm websites and compare practice areas. They want someone to tell them what's happening and what they should do.</p>
+      <p class="art-p">Perplexity gives them that. And then — if they ask — it tells them who to call.</p>
+      <p class="art-p">That second step is where law firms either appear or don't. The firms that have built genuine digital authority, that have published content answering real questions in depth, are the ones Perplexity surfaces. The firms that rely on a five-page website and a Google Ads budget get nothing.</p>
+
+      <h3 class="art-h3">Comparing Perplexity to Google for Legal Queries</h3>
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Google Search</th>
+            <th>Perplexity AI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Result format</td>
+            <td>List of links</td>
+            <td class="good">Direct synthesised answer</td>
+          </tr>
+          <tr>
+            <td>User effort required</td>
+            <td>High — must click and read</td>
+            <td class="good">Low — answer delivered immediately</td>
+          </tr>
+          <tr>
+            <td>Firm recommendations</td>
+            <td>Maps pack + paid ads</td>
+            <td class="good">Named in body of response</td>
+          </tr>
+          <tr>
+            <td>Ranking signal</td>
+            <td>Backlinks + on-page SEO</td>
+            <td class="good">Content quality + entity authority</td>
+          </tr>
+          <tr>
+            <td>Content freshness</td>
+            <td>Moderate factor</td>
+            <td class="good">Strong factor — retrieves live pages</td>
+          </tr>
+          <tr>
+            <td>Structured data benefit</td>
+            <td>Rich snippets</td>
+            <td class="good">Signals credibility for citation</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION 4: Why This Matters for Law Firms -->
+    <div class="art-section" id="s4">
+      <h2 class="art-h2 with-bar">Why This Matters Specifically for Law Firms</h2>
+      <p class="art-p">Legal is one of the highest-stakes categories in AI search. When someone asks Perplexity whether they have grounds to dispute a non-compete, or what happens to shared custody if they relocate, they're asking a question with real consequences. Perplexity takes that seriously — and it tends to cite sources that demonstrate genuine expertise rather than generic marketing copy.</p>
+      <p class="art-p">The query types that send clients to Perplexity map almost perfectly to the intake funnel for most law firms: practice area questions, jurisdiction-specific procedural questions, cost and timeline questions, and — critically — "who should I call" questions.</p>
+
+      <h3 class="art-h3">Real Queries That Lead to Firm Recommendations</h3>
+      <div class="query-grid">
+        <div class="query-card">
+          <div class="query-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="query-text">"Best employment lawyers in Chicago for wrongful termination"</div>
+        </div>
+        <div class="query-card">
+          <div class="query-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="query-text">"Who should I hire for a contested divorce in Florida?"</div>
+        </div>
+        <div class="query-card">
+          <div class="query-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="query-text">"Top-rated personal injury law firms in Atlanta"</div>
+        </div>
+        <div class="query-card">
+          <div class="query-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="query-text">"Criminal defense attorney recommendations in Seattle"</div>
+        </div>
+      </div>
+
+      <p class="art-p">These are not hypothetical. They reflect the actual patterns Perplexity users follow when a legal problem becomes urgent. Someone spends twenty minutes asking Perplexity about their employment situation. At some point in that conversation, they ask who to call. Perplexity answers — naming firms it trusts based on the signals it has access to.</p>
+
+      <h3 class="art-h3">High-Value Clients Are Disproportionately Likely to Use Perplexity</h3>
+      <p class="art-p">Perplexity's early adopter base and continuing growth demographic isn't random. It's the same demographic that generates the most valuable legal matters: business owners, tech professionals, high-earning individuals navigating complex divorces or estate matters, and executives who need employment counsel. These clients have less tolerance for inefficiency — they'd rather get a synthesised answer than read through search results — and they've found a tool that suits them.</p>
+      <p class="art-p">Firms that serve high-value clients and ignore Perplexity are ceding ground to competitors who are paying attention.</p>
+    </div>
+
+    <!-- SECTION 5: Why Traditional SEO Isn't Enough -->
+    <div class="art-section" id="s5">
+      <h2 class="art-h2 with-bar">Why Traditional SEO Alone Is No Longer Enough</h2>
+      <p class="art-p">The law firm that ranks number one on Google for "personal injury lawyer Houston" is not automatically the firm Perplexity recommends when someone asks "Who are the best personal injury lawyers in Houston?" Those are different systems with different logic.</p>
+      <p class="art-p">Traditional SEO was built on a link graph. Get the right links from the right domains, and you rank. That still matters — Google is still massive and still runs on PageRank logic at its core. But Perplexity's retrieval system is not a link graph. It evaluates text. It reads your page the way a researcher would, asking: does this actually answer the question? Is the information specific, accurate, and trustworthy?</p>
+
+      <div class="callout blue">
+        <div class="callout-label">The Gap Traditional SEO Misses</div>
+        <div class="callout-text">A law firm can rank highly on Google with thin practice area pages, a few bought links, and a strong Google Business Profile. None of that creates the kind of substantive, entity-authoritative content Perplexity needs to cite your firm confidently. The two systems reward different things.</div>
+      </div>
+
+      <h3 class="art-h3">Where Most Law Firm Websites Fall Short for AI Citation</h3>
+      <ul class="art-ul">
+        <li class="art-li">Practice area pages that describe services without explaining how those services actually work, what outcomes clients can expect, or what the process looks like</li>
+        <li class="art-li">Attorney bio pages with credentials listed but no signal of expertise: no published articles, no speaking engagements, no case results, no commentary on legal developments</li>
+        <li class="art-li">Blog posts written for keyword density rather than genuine utility — covering topics shallowly to chase volume rather than becoming the definitive resource on a specific question</li>
+        <li class="art-li">No structured data: FAQPage, Person, LegalService, and BreadcrumbList schema that signal to crawlers exactly what the page covers and who is responsible for it</li>
+        <li class="art-li">Outdated content that doesn't reflect current law, recent court decisions, or changes in procedural rules</li>
+      </ul>
+
+      <p class="art-p">Fixing these gaps doesn't require abandoning what you've built. It requires layering substantive content strategy and technical SEO architecture on top of whatever foundation you already have.</p>
+    </div>
+
+    <!-- SECTION 6: How Law Firms Can Position for Perplexity -->
+    <div class="art-section" id="s6">
+      <h2 class="art-h2 with-bar">How Law Firms Can Position Themselves to Be Cited by Perplexity</h2>
+      <p class="art-p">Getting cited by Perplexity isn't a matter of hacking an algorithm. It's a matter of building the kind of digital presence that answers questions — specifically, clearly, and credibly. That said, there are concrete steps that make a measurable difference.</p>
+
+      <h3 class="art-h3">Build Deep, Question-Anchored Content</h3>
+      <p class="art-p">Perplexity retrieves pages that answer the specific question being asked. Broad practice area pages don't perform as well as pages that address a specific scenario: "What happens to a business during a divorce in Texas?" is a better target than "Divorce Law in Texas." Each specific question your prospective clients ask is an opportunity to create a page — or section — that Perplexity can cite directly.</p>
+      <p class="art-p">Think about the questions your intake team fields every week. Every one of those is a query someone is typing into Perplexity. If your website answers it in depth, you're a candidate for citation. If it doesn't, you're not.</p>
+
+      <h3 class="art-h3">Establish Entity Authority</h3>
+      <p class="art-p">Perplexity, like Google AI Overviews and most modern LLM-based systems, reasons about entities: your firm's name, your attorneys' names, your practice areas, your geography. The more consistently these entities appear across your website, your Google Business Profile, legal directories like Avvo and Martindale, bar association listings, and third-party press, the more confidently an AI system can reference your firm in a response.</p>
+      <p class="art-p">This is sometimes called entity SEO, and it's the foundation of <a href="ai-seo-for-law-firms.html" style="color:var(--pu);font-weight:600;">AI SEO for law firms</a>. It's different from keyword SEO — you're not just targeting phrases, you're establishing who you are as a recognisable, authoritative legal entity.</p>
+
+      <h3 class="art-h3">Implement Structured Data Across Your Site</h3>
+      <p class="art-p">Schema markup is not a magic bullet, but it does provide machine-readable signals that help AI retrieval systems understand your content faster and more accurately. At minimum, law firm websites should implement:</p>
+      <ul class="art-ul">
+        <li class="art-li"><strong>LegalService schema</strong> — specifying your practice areas, jurisdiction, and geographic coverage</li>
+        <li class="art-li"><strong>Person schema</strong> on attorney bio pages — with credentials, bar admissions, and links to published work</li>
+        <li class="art-li"><strong>FAQPage schema</strong> on pages with FAQ sections — Perplexity actively retrieves FAQ content</li>
+        <li class="art-li"><strong>BreadcrumbList schema</strong> on every page — signals content hierarchy and site structure</li>
+        <li class="art-li"><strong>Organization schema</strong> on the homepage — establishes your firm as a coherent entity with a specific identity</li>
+      </ul>
+
+      <h3 class="art-h3">Update Content Regularly and Reference Current Law</h3>
+      <p class="art-p">Perplexity's real-time retrieval means it can tell the difference between a page updated this quarter and one that hasn't changed since 2019. Legal information goes stale quickly — statutes change, courts issue new opinions, procedural rules get amended. A page that reflects the current state of the law is far more likely to be cited than one that's technically accurate but outdated.</p>
+      <p class="art-p">You don't need to rewrite your entire website on a rolling basis. A quarterly review of your highest-traffic practice area pages, updating key facts and adding references to recent developments, is enough to maintain the freshness signal that AI retrieval systems reward.</p>
+
+      <h3 class="art-h3">Build Third-Party Citations and Reviews</h3>
+      <p class="art-p">Perplexity doesn't only retrieve your own website. When someone asks for a lawyer recommendation, Perplexity pulls from legal directories, review sites, bar association listings, and news articles. Firms with strong Avvo profiles, Martindale-Hubbell ratings, Google reviews, and media mentions have more citation material for Perplexity to draw on. Firms that exist only on their own domain have far less.</p>
+
+      <div class="factors-grid">
+        <div class="factor-card">
+          <div class="factor-num">01</div>
+          <div class="factor-h">Deep, specific content</div>
+          <div class="factor-p">Pages that answer precise legal questions outperform broad practice area descriptions in AI retrieval.</div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-num">02</div>
+          <div class="factor-h">Entity consistency</div>
+          <div class="factor-p">Your firm name, attorney names, and practice areas should appear consistently across all platforms.</div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-num">03</div>
+          <div class="factor-h">Structured data</div>
+          <div class="factor-p">FAQPage, LegalService, Person, and BreadcrumbList schema help AI systems read your content accurately.</div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-num">04</div>
+          <div class="factor-h">Fresh, current content</div>
+          <div class="factor-p">Real-time retrieval rewards pages that reflect the current state of the law, not outdated snapshots.</div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-num">05</div>
+          <div class="factor-h">Third-party authority</div>
+          <div class="factor-p">Directory listings, reviews, and media coverage give Perplexity more sources to draw on when recommending your firm.</div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-num">06</div>
+          <div class="factor-h">Domain authority</div>
+          <div class="factor-p">Websites with strong backlink profiles are retrieved more often — traditional SEO still supports AI visibility.</div>
+        </div>
+      </div>
+
+      <p class="art-p">The good news is that most of these steps reinforce each other. The content strategy that helps you get cited by Perplexity is the same strategy that improves your performance in <a href="chatgpt-for-law-firms.html" style="color:var(--pu);font-weight:600;">ChatGPT for law firms</a> queries and in <a href="google-gemini-for-law-firms.html" style="color:var(--pu);font-weight:600;">Google Gemini for law firms</a> results. And it complements rather than replaces your Google SEO work. The foundation is the same — authoritative, specific, well-structured content from a credible source — even if the retrieval mechanisms differ.</p>
+
+      <p class="art-p">Firms that want to understand the full picture of <a href="ai-seo-for-law-firms.html" style="color:var(--pu);font-weight:600;">AI SEO for law firms</a> should also explore the broader <a href="ai-seo.html" style="color:var(--pu);font-weight:600;">AI SEO insights hub</a> for a complete view of how these systems interact. And if you're starting from scratch or want a professional audit of your current position, the team at <a href="about.html" style="color:var(--pu);font-weight:600;">LexScale.ai</a> works exclusively with law firms on exactly this problem. <a href="contact.html" style="color:var(--pu);font-weight:600;">Get in touch</a> to start a conversation.</p>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div class="art-section" id="faq">
+      <h2 class="art-h2 with-bar">Frequently Asked Questions</h2>
+      <div class="faq-list">
+{FAQ_HTML}
+      </div>
+    </div>
+
+    <!-- CTA BANNER -->
+    <div class="cta-banner">
+      <div class="cb-h">Is Your Firm Getting Cited by Perplexity AI?</div>
+      <p class="cb-p">Most law firms aren't — yet. We audit your current AI visibility across Perplexity, ChatGPT, and Google Gemini, and build the content and technical infrastructure to change that.</p>
+      <div class="cb-btns">
+        <a href="contact.html" class="btn-g">Book a Free Strategy Call &#8594;</a>
+        <a href="ai-seo-for-law-firms.html" class="btn-p">Learn About AI SEO</a>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- TOC -->
+    <div class="sidebar-card">
+      <div class="sb-h">In This Article</div>
+      <div class="toc-item" onclick="document.getElementById('s1').scrollIntoView({{behavior:'smooth'}})">
+        <span class="toc-num">01</span>
+        <span class="toc-text">What Is Perplexity AI?</span>
+      </div>
+      <div class="toc-item" onclick="document.getElementById('s2').scrollIntoView({{behavior:'smooth'}})">
+        <span class="toc-num">02</span>
+        <span class="toc-text">How Answer Engines Work</span>
+      </div>
+      <div class="toc-item" onclick="document.getElementById('s3').scrollIntoView({{behavior:'smooth'}})">
+        <span class="toc-num">03</span>
+        <span class="toc-text">Why Search Behaviour Is Changing</span>
+      </div>
+      <div class="toc-item" onclick="document.getElementById('s4').scrollIntoView({{behavior:'smooth'}})">
+        <span class="toc-num">04</span>
+        <span class="toc-text">Why Law Firms Must Pay Attention</span>
+      </div>
+      <div class="toc-item" onclick="document.getElementById('s5').scrollIntoView({{behavior:'smooth'}})">
+        <span class="toc-num">05</span>
+        <span class="toc-text">Why Traditional SEO Isn't Enough</span>
+      </div>
+      <div class="toc-item" onclick="document.getElementById('s6').scrollIntoView({{behavior:'smooth'}})">
+        <span class="toc-num">06</span>
+        <span class="toc-text">How to Get Cited by Perplexity</span>
+      </div>
+      <div class="toc-item" onclick="document.getElementById('faq').scrollIntoView({{behavior:'smooth'}})">
+        <span class="toc-num">07</span>
+        <span class="toc-text">FAQ</span>
+      </div>
+    </div>
+
+    <!-- STAT CARD -->
+    <div class="sidebar-card dark">
+      <div class="stat-highlight">
+        <div class="sh-val">100M+</div>
+        <div class="sh-lbl">Monthly Perplexity Users</div>
+      </div>
+      <div class="sh-divider"></div>
+      <div class="stat-highlight">
+        <div class="sh-val">Top 3</div>
+        <div class="sh-lbl">Legal is a top query category</div>
+      </div>
+      <div class="sh-divider"></div>
+      <a href="contact.html" class="sb-cta-btn">Get Your AI Visibility Audit &#8594;</a>
+    </div>
+
+    <!-- RELATED ARTICLES -->
+    <div class="sidebar-card">
+      <div class="sb-h">Related Articles</div>
+      <a href="chatgpt-for-law-firms.html" class="related-item">
+        <div class="related-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="related-text">ChatGPT for Law Firms: Why AI Visibility Matters</div>
+      </a>
+      <a href="google-gemini-for-law-firms.html" class="related-item">
+        <div class="related-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        <div class="related-text">Google Gemini for Law Firms</div>
+      </a>
+      <a href="ai-seo-for-law-firms.html" class="related-item">
+        <div class="related-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        <div class="related-text">AI SEO for Law Firms: The Complete Guide</div>
+      </a>
+      <a href="perplexity.html" class="related-item">
+        <div class="related-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#20B8CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div class="related-text">Perplexity for Law Firms &#8212; All Articles</div>
+      </a>
+    </div>
+
+    <!-- CTA CARD -->
+    <div class="sidebar-card gold-card">
+      <div class="sb-h gold">Ready to Get Found on Perplexity?</div>
+      <p style="font-size:13px;color:#64748b;line-height:1.65;margin-bottom:16px;">LexScale.ai builds AI-visibility systems exclusively for law firms. We handle the content, the technical SEO, and the entity architecture — so you appear where your clients are looking.</p>
+      <a href="contact.html" class="sb-cta-btn gold-btn" style="background:linear-gradient(135deg,var(--gold3),var(--gold2));color:var(--navy);">Book a Free Strategy Call</a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">Lex<span>Scale</span>.ai</div>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="ai-seo-for-law-firms.html">AI SEO</a>
+    <a href="perplexity.html">Perplexity</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <div class="foot-copy">&#169; 2026 LexScale.ai &#183; All rights reserved</div>
+</footer>
+
+<!-- STICKY CTA -->
+<div id="sticky-cta">
+  <div class="sc-left">
+    <div class="sc-text"><strong>Is your firm visible on Perplexity AI?</strong> Most aren't — yet.</div>
+  </div>
+  <div class="sc-right">
+    <a href="contact.html" class="btn-g" style="padding:10px 20px;font-size:13px;">Book a Free Strategy Call &#8594;</a>
+    <button class="sc-dismiss" onclick="document.getElementById('sticky-cta').style.transform='translateY(100%)'">&#215;</button>
+  </div>
+</div>
+
+<!-- LEAD MODAL -->
+<div id="leadModal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(4,7,15,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border-radius:24px;padding:40px;max-width:460px;width:100%;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.3);">
+    <button onclick="document.getElementById('leadModal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;color:#94a3b8;cursor:pointer;">&#215;</button>
+    <div style="font-size:24px;font-weight:900;color:var(--navy);letter-spacing:-.6px;margin-bottom:8px;">Book a Free Strategy Call</div>
+    <p style="font-size:14px;color:#64748b;line-height:1.65;margin-bottom:24px;">Tell us about your firm and we'll show you exactly where you stand on Perplexity, ChatGPT, and Google AI.</p>
+    <form onsubmit="event.preventDefault();this.innerHTML='&lt;p style=&quot;text-align:center;color:#059669;font-weight:700;padding:20px;&quot;&gt;Thanks! We will be in touch shortly.&lt;/p&gt;'">
+      <input type="text" placeholder="Your Name" required style="width:100%;padding:12px 16px;border:1.5px solid rgba(106,92,255,.2);border-radius:12px;font-size:14px;font-family:inherit;margin-bottom:12px;outline:none;color:var(--navy);" onfocus="this.style.borderColor='var(--pu)'" onblur="this.style.borderColor='rgba(106,92,255,.2)'"/>
+      <input type="email" placeholder="Your Email" required style="width:100%;padding:12px 16px;border:1.5px solid rgba(106,92,255,.2);border-radius:12px;font-size:14px;font-family:inherit;margin-bottom:12px;outline:none;color:var(--navy);" onfocus="this.style.borderColor='var(--pu)'" onblur="this.style.borderColor='rgba(106,92,255,.2)'"/>
+      <input type="text" placeholder="Firm Name" style="width:100%;padding:12px 16px;border:1.5px solid rgba(106,92,255,.2);border-radius:12px;font-size:14px;font-family:inherit;margin-bottom:20px;outline:none;color:var(--navy);" onfocus="this.style.borderColor='var(--pu)'" onblur="this.style.borderColor='rgba(106,92,255,.2)'"/>
+      <button type="submit" style="width:100%;background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:14px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;">Get My Free Audit &#8594;</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// Sticky CTA
+setTimeout(function(){{var s=document.getElementById('sticky-cta');if(s)s.style.transform='translateY(0)';}},3000);
+
+// FAQ toggle
+function toggleFaq(el){{
+  var item=el.parentElement;
+  var ans=item.querySelector('.faq-a');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){{
+    i.classList.remove('open');
+    i.querySelector('.faq-a').style.maxHeight='0';
+  }});
+  if(!isOpen){{
+    item.classList.add('open');
+    ans.style.maxHeight=ans.scrollHeight+'px';
+  }}
+}}
+
+// Mobile nav
+function toggleMobNav(btn){{
+  btn.closest('nav').classList.toggle('mob-open');
+}}
+
+// Mobile dropdown
+document.querySelectorAll('.has-drop>a').forEach(function(a){{
+  a.addEventListener('click',function(e){{
+    if(window.innerWidth<=768){{
+      e.preventDefault();
+      a.closest('.has-drop').classList.toggle('mob-open');
+    }}
+  }});
+}});
+</script>
+</body>
+</html>"""
+
+# Validate
+issues = validate_page(page, FNAME)
+assert not issues, "SEO issues found:\n" + "\n".join(issues)
+
+# Write file
+out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), FNAME)
+open(out_path, "w").write(page)
+
+# Add to sitemap
+add_to_sitemap(SLUG, priority="0.7", changefreq="monthly")
+
+print(f"✓ {FNAME} written to {out_path}")
+print(f"✓ Added to sitemap.xml")
