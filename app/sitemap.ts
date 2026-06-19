@@ -6,6 +6,15 @@ import {
   TOOLS_ITEMS,
 } from "@/lib/navigation";
 import { CHATGPT_SLUGS } from "./chatgpt/data";
+import { ARTICLE_SLUGS as GEMINI_SLUGS, SILO_META as GEMINI_META } from "./gemini/data";
+import { ARTICLE_SLUGS as PERPLEXITY_SLUGS, SILO_META as PERPLEXITY_META } from "./perplexity/data";
+import { ARTICLE_SLUGS as AI_WEBSITES_SLUGS, SILO_META as AI_WEBSITES_META } from "./ai-websites/data";
+import { ARTICLE_SLUGS as AI_SEO_SLUGS, SILO_META as AI_SEO_META } from "./ai-seo/data";
+import { ARTICLE_SLUGS as SCHEMA_SLUGS, SILO_META as SCHEMA_META } from "./schema/data";
+import { ARTICLE_SLUGS as AI_RECEPTIONISTS_SLUGS, SILO_META as AI_RECEPTIONISTS_META } from "./ai-receptionists/data";
+import { ARTICLE_SLUGS as AI_CHATBOTS_SLUGS, SILO_META as AI_CHATBOTS_META } from "./ai-chatbots/data";
+import { ARTICLE_SLUGS as LAW_FIRM_MARKETING_SLUGS, SILO_META as LAW_FIRM_MARKETING_META } from "./law-firm-marketing/data";
+import { ARTICLE_SLUGS as FUTURE_OF_SEARCH_SLUGS, SILO_META as FUTURE_OF_SEARCH_META } from "./future-of-search/data";
 
 const GLOSSARY_TERMS = [
   "entity-seo",
@@ -109,12 +118,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const silos = [
+    { meta: GEMINI_META, slugs: GEMINI_SLUGS },
+    { meta: PERPLEXITY_META, slugs: PERPLEXITY_SLUGS },
+    { meta: AI_WEBSITES_META, slugs: AI_WEBSITES_SLUGS },
+    { meta: AI_SEO_META, slugs: AI_SEO_SLUGS },
+    { meta: SCHEMA_META, slugs: SCHEMA_SLUGS },
+    { meta: AI_RECEPTIONISTS_META, slugs: AI_RECEPTIONISTS_SLUGS },
+    { meta: AI_CHATBOTS_META, slugs: AI_CHATBOTS_SLUGS },
+    { meta: LAW_FIRM_MARKETING_META, slugs: LAW_FIRM_MARKETING_SLUGS },
+    { meta: FUTURE_OF_SEARCH_META, slugs: FUTURE_OF_SEARCH_SLUGS },
+  ];
+
+  const siloHubRoutes = silos.map(({ meta }) => ({
+    url: `${SITE_URL}/${meta.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  const siloArticleRoutes = silos.flatMap(({ meta, slugs }) =>
+    slugs.map((slug) => ({
+      url: `${SITE_URL}/${meta.slug}/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
+  );
+
   return [
     ...staticRoutes,
     ...serviceRoutes,
     ...insightCategoryRoutes,
     ...insightArticleRoutes,
     ...chatgptArticleRoutes,
+    ...siloHubRoutes,
+    ...siloArticleRoutes,
     ...toolRoutes,
     ...glossaryRoutes,
     ...caseStudyRoutes,
