@@ -199,7 +199,7 @@ def collection_schema(name: str, desc: str, url: str) -> str:
 
 
 def about_schema(desc: str) -> str:
-    url = f"{SITE}/about.html"
+    url = f"{SITE}/about"
     return _ld({
         "@context": "https://schema.org",
         "@type": "AboutPage",
@@ -238,6 +238,7 @@ def head_block(
     assert len(description) <= 160, f"Description too long ({len(description)}c)"
     assert len(description) >= 100, f"Description too short ({len(description)}c)"
 
+    slug = slug.removesuffix(".html")  # tolerate either form
     canonical = SITE if not slug else f"{SITE}/{slug}"
     kw_line   = f'\n<meta name="keywords" content="{keywords}"/>' if keywords else ""
     ld_blocks = "\n".join(schemas) if schemas else ""
@@ -321,8 +322,9 @@ def validate_page(html: str, filename: str = "?") -> list:
         issues.append("NO JSON-LD schema")
 
     # BreadcrumbList (required on all non-homepage pages)
-    # We skip this check for index.html
-    if '"BreadcrumbList"' not in html and 'index.html' not in filename:
+    # We skip this check for homepage (index.html or index)
+    is_home = filename in ("index.html", "index", "")
+    if '"BreadcrumbList"' not in html and not is_home:
         issues.append("MISSING BreadcrumbList schema")
 
     # Images without alt
@@ -331,7 +333,7 @@ def validate_page(html: str, filename: str = "?") -> list:
         issues.append(f"{len(imgs_no_alt)} <img> tag(s) missing alt attribute")
 
     # Internal links — at least 2
-    internal_links = findall(r'href="[^"]*\.html"') + findall(r'href="/"') + findall(r'href=""')
+    internal_links = findall(r'href="/[^"]*"') + findall(r'href="[a-z][^"]*"')
     if len(internal_links) < 5:
         issues.append(f"Too few internal links ({len(internal_links)}) — aim for ≥5")
 
@@ -377,27 +379,27 @@ def add_to_sitemap(
 
 NAV = """\
 <nav>
-  <a href="index.html" class="logo">Lex<span>Scale</span>.ai</a>
+  <a href="index" class="logo">Lex<span>Scale</span>.ai</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index">Home</a></li>
     <li class="has-drop">
       <a href="#">Services
         <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <div class="dropdown">
-        <a href="ai-website-design-for-law-firms.html" class="drop-item">
+        <a href="ai-website-design-for-law-firms" class="drop-item">
           <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
           <div><div class="drop-label">AI Website Design</div><div class="drop-sub">For law firms</div></div>
         </a>
-        <a href="ai-seo-for-law-firms.html" class="drop-item">
+        <a href="ai-seo-for-law-firms" class="drop-item">
           <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
           <div><div class="drop-label">AI SEO</div><div class="drop-sub">Rank higher, get cited by AI</div></div>
         </a>
-        <a href="ai-receptionist-for-law-firms.html" class="drop-item">
+        <a href="ai-receptionist-for-law-firms" class="drop-item">
           <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
           <div><div class="drop-label">AI Receptionist</div><div class="drop-sub">24/7 call answering</div></div>
         </a>
-        <a href="ai-chatbot-for-law-firms.html" class="drop-item">
+        <a href="ai-chatbot-for-law-firms" class="drop-item">
           <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
           <div><div class="drop-label">AI Chatbot</div><div class="drop-sub">Convert more website visitors</div></div>
         </a>
@@ -408,19 +410,19 @@ NAV = """\
         <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <div class="dropdown">
-        <a href="chatgpt.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">ChatGPT for Law Firms</div><div class="drop-sub">12 articles</div></div></a>
-        <a href="google-gemini.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">Google Gemini</div><div class="drop-sub">For law firms</div></div></a>
-        <a href="perplexity.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#20B8CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><div class="drop-label">Perplexity AI</div><div class="drop-sub">For law firms</div></div></a>
+        <a href="chatgpt" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">ChatGPT for Law Firms</div><div class="drop-sub">12 articles</div></div></a>
+        <a href="google-gemini" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">Google Gemini</div><div class="drop-sub">For law firms</div></div></a>
+        <a href="perplexity" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#20B8CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><div class="drop-label">Perplexity AI</div><div class="drop-sub">For law firms</div></div></a>
         <div class="drop-divider"></div>
-        <a href="ai-seo.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">AI SEO</div><div class="drop-sub">5 articles</div></div></a>
-        <a href="ai-receptionists.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="drop-label">AI Receptionists</div><div class="drop-sub">5 articles</div></div></a>
-        <a href="ai-chatbots.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">AI Chatbots</div><div class="drop-sub">5 articles</div></div></a>
-        <a href="entity-seo.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="drop-label">Entity SEO</div><div class="drop-sub">5 articles</div></div></a>
-        <a href="ai-websites.html" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><div class="drop-label">AI Websites</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-seo" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">AI SEO</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-receptionists" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="drop-label">AI Receptionists</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-chatbots" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">AI Chatbots</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="entity-seo" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="drop-label">Entity SEO</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-websites" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><div class="drop-label">AI Websites</div><div class="drop-sub">5 articles</div></div></a>
       </div>
     </li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about">About</a></li>
+    <li><a href="contact">Contact</a></li>
   </ul>
   <button class="nav-cta" onclick="document.getElementById('leadModal').style.display='flex'">Book A Demo</button>
 </nav>"""
@@ -433,14 +435,14 @@ FOOTER = f"""\
       <div class="footer-tagline">AI Growth Systems For Law Firms</div>
     </div>
     <div class="footer-links">
-      <a href="ai-website-design-for-law-firms.html">AI Website Design</a>
-      <a href="ai-seo-for-law-firms.html">AI SEO</a>
-      <a href="ai-receptionist-for-law-firms.html">AI Receptionist</a>
-      <a href="ai-chatbot-for-law-firms.html">AI Chatbot</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="chatgpt-for-law-firms.html">Insights</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="ai-website-design-for-law-firms">AI Website Design</a>
+      <a href="ai-seo-for-law-firms">AI SEO</a>
+      <a href="ai-receptionist-for-law-firms">AI Receptionist</a>
+      <a href="ai-chatbot-for-law-firms">AI Chatbot</a>
+      <a href="about">About</a>
+      <a href="contact">Contact</a>
+      <a href="chatgpt-for-law-firms">Insights</a>
+      <a href="privacy">Privacy</a>
     </div>
     <div class="footer-copy">© {YEAR} LexScale.ai · All rights reserved</div>
   </div>
@@ -575,11 +577,11 @@ if __name__ == "__main__":
     hb = head_block(
         title="AI SEO for Law Firms | Rank & Get Cited by AI",
         description="AI SEO built for law firms. Rank on Google, appear in AI Overviews, get cited by ChatGPT, Gemini, and Perplexity. Legal SEO across North America.",
-        slug="ai-seo-for-law-firms.html",
+        slug="ai-seo-for-law-firms",
         schemas=[
-            webpage_schema("AI SEO for Law Firms", "...", f"{SITE}/ai-seo-for-law-firms.html"),
-            service_schema("AI SEO for Law Firms", "...", f"{SITE}/ai-seo-for-law-firms.html"),
-            breadcrumb_schema([("Home", SITE), ("AI SEO for Law Firms", f"{SITE}/ai-seo-for-law-firms.html")]),
+            webpage_schema("AI SEO for Law Firms", "...", f"{SITE}/ai-seo-for-law-firms"),
+            service_schema("AI SEO for Law Firms", "...", f"{SITE}/ai-seo-for-law-firms"),
+            breadcrumb_schema([("Home", SITE), ("AI SEO for Law Firms", f"{SITE}/ai-seo-for-law-firms")]),
         ]
     )
     print("head_block: OK")
@@ -589,9 +591,9 @@ if __name__ == "__main__":
     {NAV}
     <h1>Test Page</h1>
     <h2>Section</h2>
-    <p>Content <a href="about.html">about</a> <a href="contact.html">contact</a>
-    <a href="ai-seo-for-law-firms.html">seo</a> <a href="index.html">home</a>
-    <a href="ai-chatbot-for-law-firms.html">chatbot</a></p>
+    <p>Content <a href="about">about</a> <a href="contact">contact</a>
+    <a href="ai-seo-for-law-firms">seo</a> <a href="/">home</a>
+    <a href="ai-chatbot-for-law-firms">chatbot</a></p>
     {FOOTER}
     </body></html>"""
 
