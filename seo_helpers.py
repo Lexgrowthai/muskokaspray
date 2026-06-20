@@ -85,6 +85,7 @@ def local_business_schema() -> str:
         "url": SITE,
         "logo": OG_IMG,
         "image": OG_IMG,
+        "telephone": "+17059886026",
         "email": "info@lexscale.ai",
         "areaServed": [
             {"@type": "Country", "name": "United States"},
