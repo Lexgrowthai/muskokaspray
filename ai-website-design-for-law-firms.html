@@ -145,13 +145,13 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .dark-box p{font-size:14.5px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:12px;}
 .dark-box p:last-child{margin-bottom:0;}
 .dark-box ul{margin-top:12px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
-.dark-box li{font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.65;display:flex;align-items:flex-start;gap:8px;}
-.dark-box li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu3);flex-shrink:0;margin-top:8px;}
+.dark-box li{font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.65;display:block;padding-left:16px;position:relative;margin-bottom:6px;}
+.dark-box li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu3);position:absolute;left:0;top:8px;}
 
 /* BULLET LIST */
 .sp-list{list-style:none;padding:0;margin:16px 0 20px;display:flex;flex-direction:column;gap:10px;}
-.sp-list li{font-size:15px;color:#374151;line-height:1.7;display:flex;align-items:flex-start;gap:10px;}
-.sp-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu);flex-shrink:0;margin-top:8px;}
+.sp-list li{font-size:15px;color:#374151;line-height:1.7;display:block;padding-left:18px;position:relative;}
+.sp-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pu);position:absolute;left:0;top:9px;}
 
 /* TABLE */
 .sp-table-wrap{overflow-x:auto;margin:24px 0;border-radius:16px;border:1px solid rgba(106,92,255,.12);}
@@ -236,11 +236,6 @@ footer{background:#040c1e;padding:36px 40px;}
   .sp-table th,.sp-table td{padding:10px 12px;font-size:12px;}
 }
 @media(max-width:600px){
-  /* Fix two-column list layout on mobile — stack term above description */
-  .sp-list li{display:block;padding-left:18px;position:relative;margin-bottom:4px;}
-  .sp-list li::before{position:absolute;left:0;top:9px;margin-top:0;}
-  .dark-box li{display:block;padding-left:16px;position:relative;margin-bottom:8px;}
-  .dark-box li::before{position:absolute;left:0;top:8px;margin-top:0;}
   /* Before/after strip: stack vertically */
   .ba-strip-grid{grid-template-columns:1fr !important;gap:12px !important;}
   .ba-strip-arrow{display:none;}
