@@ -245,6 +245,1006 @@
       "source": "/mobile-first-law-firm-website",
       "destination": "/insights/ai-websites/mobile-first-law-firm-website",
       "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/ai-chatbot-for-law-firm-website.html",
+      "destination": "/ai-chatbot-for-law-firm-website",
+      "permanent": true
+    },
+    {
+      "source": "/ai-chatbot-for-law-firms.html",
+      "destination": "/ai-chatbot-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/ai-chatbot-intake-qualification.html",
+      "destination": "/ai-chatbot-intake-qualification",
+      "permanent": true
+    },
+    {
+      "source": "/ai-chatbot-roi-for-law-firms.html",
+      "destination": "/ai-chatbot-roi-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/ai-chatbot-vs-live-chat-lawyers.html",
+      "destination": "/ai-chatbot-vs-live-chat-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/ai-chatbots.html",
+      "destination": "/ai-chatbots",
+      "permanent": true
+    },
+    {
+      "source": "/ai-receptionist-for-law-firms.html",
+      "destination": "/ai-receptionist-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/ai-receptionist-intake-automation.html",
+      "destination": "/ai-receptionist-intake-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-receptionist-vs-human-receptionist.html",
+      "destination": "/ai-receptionist-vs-human-receptionist",
+      "permanent": true
+    },
+    {
+      "source": "/ai-receptionists.html",
+      "destination": "/ai-receptionists",
+      "permanent": true
+    },
+    {
+      "source": "/ai-seo-for-law-firms-complete-guide.html",
+      "destination": "/ai-seo-for-law-firms-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/ai-seo-for-law-firms.html",
+      "destination": "/ai-seo-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/ai-seo-vs-traditional-seo-lawyers.html",
+      "destination": "/ai-seo-vs-traditional-seo-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/ai-seo.html",
+      "destination": "/ai-seo",
+      "permanent": true
+    },
+    {
+      "source": "/ai-website-design-for-law-firms-guide.html",
+      "destination": "/ai-website-design-for-law-firms-guide",
+      "permanent": true
+    },
+    {
+      "source": "/ai-website-design-for-law-firms.html",
+      "destination": "/ai-website-design-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/ai-websites.html",
+      "destination": "/ai-websites",
+      "permanent": true
+    },
+    {
+      "source": "/attorney-knowledge-panel-optimization.html",
+      "destination": "/attorney-knowledge-panel-optimization",
+      "permanent": true
+    },
+    {
+      "source": "/best-practices-optimizing-law-firm-websites-for-chatgpt.html",
+      "destination": "/best-practices-optimizing-law-firm-websites-for-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/chatgpt-citations-explained.html",
+      "destination": "/chatgpt-citations-explained",
+      "permanent": true
+    },
+    {
+      "source": "/chatgpt-for-law-firms.html",
+      "destination": "/chatgpt-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/chatgpt-seo-for-lawyers.html",
+      "destination": "/chatgpt-seo-for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/chatgpt-vs-google-search-for-lawyers.html",
+      "destination": "/chatgpt-vs-google-search-for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/chatgpt.html",
+      "destination": "/chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/common-mistakes-law-firms-make-with-ai-search.html",
+      "destination": "/common-mistakes-law-firms-make-with-ai-search",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/entity-seo-vs-keyword-seo.html",
+      "destination": "/entity-seo-vs-keyword-seo",
+      "permanent": true
+    },
+    {
+      "source": "/entity-seo.html",
+      "destination": "/entity-seo",
+      "permanent": true
+    },
+    {
+      "source": "/future-of-chatgpt-and-legal-marketing.html",
+      "destination": "/future-of-chatgpt-and-legal-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/google-gemini-for-law-firms.html",
+      "destination": "/google-gemini-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/google-gemini.html",
+      "destination": "/google-gemini",
+      "permanent": true
+    },
+    {
+      "source": "/how-ai-chatbots-convert-legal-leads.html",
+      "destination": "/how-ai-chatbots-convert-legal-leads",
+      "permanent": true
+    },
+    {
+      "source": "/how-ai-receptionists-increase-law-firm-revenue.html",
+      "destination": "/how-ai-receptionists-increase-law-firm-revenue",
+      "permanent": true
+    },
+    {
+      "source": "/how-ai-search-is-changing-legal-marketing.html",
+      "destination": "/how-ai-search-is-changing-legal-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/how-chatgpt-finds-and-recommends-law-firms.html",
+      "destination": "/how-chatgpt-finds-and-recommends-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/how-google-ai-overviews-affect-law-firms.html",
+      "destination": "/how-google-ai-overviews-affect-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/how-law-firms-can-rank-in-chatgpt.html",
+      "destination": "/how-law-firms-can-rank-in-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/how-perplexity-ai-ranks-law-firms.html",
+      "destination": "/how-perplexity-ai-ranks-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-rank-in-perplexity-ai.html",
+      "destination": "/how-to-rank-in-perplexity-ai",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots.html",
+      "destination": "/insights/ai-chatbots",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/ai-chatbot-after-hours-law-firms.html",
+      "destination": "/insights/ai-chatbots/ai-chatbot-after-hours-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/ai-chatbot-cost-law-firms.html",
+      "destination": "/insights/ai-chatbots/ai-chatbot-cost-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/ai-chatbot-family-law-firms.html",
+      "destination": "/insights/ai-chatbots/ai-chatbot-family-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/ai-chatbot-for-law-firm-website.html",
+      "destination": "/insights/ai-chatbots/ai-chatbot-for-law-firm-website",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/ai-chatbot-for-law-firms-complete-guide.html",
+      "destination": "/insights/ai-chatbots/ai-chatbot-for-law-firms-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/ai-chatbot-intake-qualification.html",
+      "destination": "/insights/ai-chatbots/ai-chatbot-intake-qualification",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/ai-chatbot-lead-qualification.html",
+      "destination": "/insights/ai-chatbots/ai-chatbot-lead-qualification",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/ai-chatbot-personal-injury-law-firms.html",
+      "destination": "/insights/ai-chatbots/ai-chatbot-personal-injury-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/ai-chatbot-roi-for-law-firms.html",
+      "destination": "/insights/ai-chatbots/ai-chatbot-roi-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/ai-chatbot-vs-live-chat-lawyers.html",
+      "destination": "/insights/ai-chatbots/ai-chatbot-vs-live-chat-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-chatbots/how-ai-chatbots-convert-legal-leads.html",
+      "destination": "/insights/ai-chatbots/how-ai-chatbots-convert-legal-leads",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists.html",
+      "destination": "/insights/ai-receptionists",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-after-hours-law-firm.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-after-hours-law-firm",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-clio-integration.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-clio-integration",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-cost-for-law-firms.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-cost-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-family-law-firms.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-family-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-for-solo-lawyers.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-for-solo-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-intake-automation.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-intake-automation",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-law-firm-complete-guide.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-law-firm-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-personal-injury-law-firms.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-personal-injury-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-roi-calculator.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-roi-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-vs-answering-service-law-firms.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-vs-answering-service-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/ai-receptionist-vs-human-receptionist.html",
+      "destination": "/insights/ai-receptionists/ai-receptionist-vs-human-receptionist",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/best-ai-receptionist-canadian-law-firms.html",
+      "destination": "/insights/ai-receptionists/best-ai-receptionist-canadian-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/how-ai-receptionists-increase-law-firm-revenue.html",
+      "destination": "/insights/ai-receptionists/how-ai-receptionists-increase-law-firm-revenue",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/never-miss-a-call-law-firm.html",
+      "destination": "/insights/ai-receptionists/never-miss-a-call-law-firm",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-receptionists/what-is-an-ai-receptionist-for-law-firms.html",
+      "destination": "/insights/ai-receptionists/what-is-an-ai-receptionist-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo.html",
+      "destination": "/insights/ai-seo",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-audit-law-firms.html",
+      "destination": "/insights/ai-seo/ai-seo-audit-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-content-calendar-law-firms.html",
+      "destination": "/insights/ai-seo/ai-seo-content-calendar-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-for-criminal-defense-lawyers.html",
+      "destination": "/insights/ai-seo/ai-seo-for-criminal-defense-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-for-family-lawyers.html",
+      "destination": "/insights/ai-seo/ai-seo-for-family-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-for-immigration-lawyers.html",
+      "destination": "/insights/ai-seo/ai-seo-for-immigration-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-for-law-firms-complete-guide.html",
+      "destination": "/insights/ai-seo/ai-seo-for-law-firms-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-for-personal-injury-lawyers.html",
+      "destination": "/insights/ai-seo/ai-seo-for-personal-injury-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-google-business-profile-law-firms.html",
+      "destination": "/insights/ai-seo/ai-seo-google-business-profile-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-keyword-strategy-law-firms.html",
+      "destination": "/insights/ai-seo/ai-seo-keyword-strategy-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-link-building-law-firms.html",
+      "destination": "/insights/ai-seo/ai-seo-link-building-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-reporting-law-firms.html",
+      "destination": "/insights/ai-seo/ai-seo-reporting-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/ai-seo-vs-traditional-seo-lawyers.html",
+      "destination": "/insights/ai-seo/ai-seo-vs-traditional-seo-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/common-mistakes-law-firms-make-with-ai-search.html",
+      "destination": "/insights/ai-seo/common-mistakes-law-firms-make-with-ai-search",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/how-ai-search-is-changing-legal-marketing.html",
+      "destination": "/insights/ai-seo/how-ai-search-is-changing-legal-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/how-google-ai-overviews-affect-law-firms.html",
+      "destination": "/insights/ai-seo/how-google-ai-overviews-affect-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/is-traditional-seo-still-worth-it-for-lawyers.html",
+      "destination": "/insights/ai-seo/is-traditional-seo-still-worth-it-for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/local-ai-seo-for-law-firms.html",
+      "destination": "/insights/ai-seo/local-ai-seo-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-seo/technical-ai-seo-for-law-firms.html",
+      "destination": "/insights/ai-seo/technical-ai-seo-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites.html",
+      "destination": "/insights/ai-websites",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/ai-website-design-for-law-firms-guide.html",
+      "destination": "/insights/ai-websites/ai-website-design-for-law-firms-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-attorney-bio-pages.html",
+      "destination": "/insights/ai-websites/law-firm-attorney-bio-pages",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-contact-page-optimisation.html",
+      "destination": "/insights/ai-websites/law-firm-contact-page-optimisation",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-content-strategy-blog.html",
+      "destination": "/insights/ai-websites/law-firm-content-strategy-blog",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-homepage-design.html",
+      "destination": "/insights/ai-websites/law-firm-homepage-design",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-practice-area-pages.html",
+      "destination": "/insights/ai-websites/law-firm-practice-area-pages",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-accessibility-guide.html",
+      "destination": "/insights/ai-websites/law-firm-website-accessibility-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-analytics-guide.html",
+      "destination": "/insights/ai-websites/law-firm-website-analytics-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-content-strategy.html",
+      "destination": "/insights/ai-websites/law-firm-website-content-strategy",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-conversion-optimization.html",
+      "destination": "/insights/ai-websites/law-firm-website-conversion-optimization",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-lead-generation.html",
+      "destination": "/insights/ai-websites/law-firm-website-lead-generation",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-security-https.html",
+      "destination": "/insights/ai-websites/law-firm-website-security-https",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-seo-structure.html",
+      "destination": "/insights/ai-websites/law-firm-website-seo-structure",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-speed-performance.html",
+      "destination": "/insights/ai-websites/law-firm-website-speed-performance",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-testimonials-case-results.html",
+      "destination": "/insights/ai-websites/law-firm-website-testimonials-case-results",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-trust-signals.html",
+      "destination": "/insights/ai-websites/law-firm-website-trust-signals",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-video-strategy.html",
+      "destination": "/insights/ai-websites/law-firm-website-video-strategy",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/law-firm-website-vs-legal-directories.html",
+      "destination": "/insights/ai-websites/law-firm-website-vs-legal-directories",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/mobile-first-law-firm-website.html",
+      "destination": "/insights/ai-websites/mobile-first-law-firm-website",
+      "permanent": true
+    },
+    {
+      "source": "/insights/ai-websites/why-law-firms-need-ai-websites.html",
+      "destination": "/insights/ai-websites/why-law-firms-need-ai-websites",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt.html",
+      "destination": "/insights/chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/best-practices-optimizing-law-firm-websites-for-chatgpt.html",
+      "destination": "/insights/chatgpt/best-practices-optimizing-law-firm-websites-for-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-backlinks-law-firms.html",
+      "destination": "/insights/chatgpt/chatgpt-backlinks-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-business-lawyers.html",
+      "destination": "/insights/chatgpt/chatgpt-business-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-citations-explained.html",
+      "destination": "/insights/chatgpt/chatgpt-citations-explained",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-content-for-law-firms.html",
+      "destination": "/insights/chatgpt/chatgpt-content-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-criminal-defense-lawyers.html",
+      "destination": "/insights/chatgpt/chatgpt-criminal-defense-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-estate-planning-lawyers.html",
+      "destination": "/insights/chatgpt/chatgpt-estate-planning-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-family-law-firms.html",
+      "destination": "/insights/chatgpt/chatgpt-family-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-for-law-firms.html",
+      "destination": "/insights/chatgpt/chatgpt-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-google-business-profile-law-firms.html",
+      "destination": "/insights/chatgpt/chatgpt-google-business-profile-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-immigration-lawyers.html",
+      "destination": "/insights/chatgpt/chatgpt-immigration-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-law-firm-faq-strategy.html",
+      "destination": "/insights/chatgpt/chatgpt-law-firm-faq-strategy",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-law-firm-roi.html",
+      "destination": "/insights/chatgpt/chatgpt-law-firm-roi",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-legal-content-writing.html",
+      "destination": "/insights/chatgpt/chatgpt-legal-content-writing",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-local-search-law-firms.html",
+      "destination": "/insights/chatgpt/chatgpt-local-search-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-personal-injury-lawyers.html",
+      "destination": "/insights/chatgpt/chatgpt-personal-injury-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-real-estate-lawyers.html",
+      "destination": "/insights/chatgpt/chatgpt-real-estate-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-reviews-law-firms.html",
+      "destination": "/insights/chatgpt/chatgpt-reviews-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-schema-markup-law-firms.html",
+      "destination": "/insights/chatgpt/chatgpt-schema-markup-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-search-for-lawyers.html",
+      "destination": "/insights/chatgpt/chatgpt-search-for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-seo-for-lawyers.html",
+      "destination": "/insights/chatgpt/chatgpt-seo-for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-visibility-checklist-law-firms.html",
+      "destination": "/insights/chatgpt/chatgpt-visibility-checklist-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/chatgpt-vs-google-search-for-lawyers.html",
+      "destination": "/insights/chatgpt/chatgpt-vs-google-search-for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/future-of-chatgpt-and-legal-marketing.html",
+      "destination": "/insights/chatgpt/future-of-chatgpt-and-legal-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/how-chatgpt-finds-and-recommends-law-firms.html",
+      "destination": "/insights/chatgpt/how-chatgpt-finds-and-recommends-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/how-chatgpt-ranks-law-firm-websites.html",
+      "destination": "/insights/chatgpt/how-chatgpt-ranks-law-firm-websites",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/how-law-firms-can-rank-in-chatgpt.html",
+      "destination": "/insights/chatgpt/how-law-firms-can-rank-in-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/law-firm-chatgpt-visibility-audit.html",
+      "destination": "/insights/chatgpt/law-firm-chatgpt-visibility-audit",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/measuring-chatgpt-visibility-law-firms.html",
+      "destination": "/insights/chatgpt/measuring-chatgpt-visibility-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/chatgpt/why-chatgpt-matters-for-law-firms.html",
+      "destination": "/insights/chatgpt/why-chatgpt-matters-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo.html",
+      "destination": "/insights/entity-seo",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/attorney-knowledge-panel-optimization.html",
+      "destination": "/insights/entity-seo/attorney-knowledge-panel-optimization",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/eeat-law-firms-guide.html",
+      "destination": "/insights/entity-seo/eeat-law-firms-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/entity-seo-vs-keyword-seo.html",
+      "destination": "/insights/entity-seo/entity-seo-vs-keyword-seo",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/faq-schema-for-law-firms.html",
+      "destination": "/insights/entity-seo/faq-schema-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/knowledge-graph-connection-law-firms.html",
+      "destination": "/insights/entity-seo/knowledge-graph-connection-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/local-business-schema-law-firms.html",
+      "destination": "/insights/entity-seo/local-business-schema-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/organization-schema-law-firms.html",
+      "destination": "/insights/entity-seo/organization-schema-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/person-schema-for-lawyers.html",
+      "destination": "/insights/entity-seo/person-schema-for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/review-schema-for-law-firms.html",
+      "destination": "/insights/entity-seo/review-schema-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/schema-markup-for-lawyers-guide.html",
+      "destination": "/insights/entity-seo/schema-markup-for-lawyers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/topical-authority-for-law-firms.html",
+      "destination": "/insights/entity-seo/topical-authority-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/entity-seo/what-is-entity-seo-for-law-firms.html",
+      "destination": "/insights/entity-seo/what-is-entity-seo-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-business-profile.html",
+      "destination": "/insights/google-business-profile",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-business-profile/gbp-for-law-firms-and-ai-search.html",
+      "destination": "/insights/google-business-profile/gbp-for-law-firms-and-ai-search",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-business-profile/gbp-for-multi-location-law-firms.html",
+      "destination": "/insights/google-business-profile/gbp-for-multi-location-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-business-profile/gbp-new-law-firms-guide.html",
+      "destination": "/insights/google-business-profile/gbp-new-law-firms-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-business-profile/gbp-optimization-checklist-law-firms.html",
+      "destination": "/insights/google-business-profile/gbp-optimization-checklist-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-business-profile/gbp-personal-injury-law-firms.html",
+      "destination": "/insights/google-business-profile/gbp-personal-injury-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-business-profile/gbp-posts-for-law-firms.html",
+      "destination": "/insights/google-business-profile/gbp-posts-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-business-profile/gbp-reviews-for-law-firms.html",
+      "destination": "/insights/google-business-profile/gbp-reviews-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-business-profile/google-business-profile-complete-guide-law-firms.html",
+      "destination": "/insights/google-business-profile/google-business-profile-complete-guide-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini.html",
+      "destination": "/insights/google-gemini",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/gemini-for-law-firm-client-intake.html",
+      "destination": "/insights/google-gemini/gemini-for-law-firm-client-intake",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/gemini-for-law-firm-content-writing.html",
+      "destination": "/insights/google-gemini/gemini-for-law-firm-content-writing",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/gemini-for-law-firm-reputation-management.html",
+      "destination": "/insights/google-gemini/gemini-for-law-firm-reputation-management",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/gemini-google-business-profile-law-firms.html",
+      "destination": "/insights/google-gemini/gemini-google-business-profile-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/gemini-local-search-for-lawyers.html",
+      "destination": "/insights/google-gemini/gemini-local-search-for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/gemini-seo-for-lawyers.html",
+      "destination": "/insights/google-gemini/gemini-seo-for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/gemini-vs-chatgpt-for-lawyers.html",
+      "destination": "/insights/google-gemini/gemini-vs-chatgpt-for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/gemini-vs-google-search-for-law-firms.html",
+      "destination": "/insights/google-gemini/gemini-vs-google-search-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/google-gemini-ai-overviews-law-firms.html",
+      "destination": "/insights/google-gemini/google-gemini-ai-overviews-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/google-gemini-for-law-firms.html",
+      "destination": "/insights/google-gemini/google-gemini-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/how-gemini-finds-law-firms.html",
+      "destination": "/insights/google-gemini/how-gemini-finds-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/google-gemini/how-to-rank-in-google-gemini.html",
+      "destination": "/insights/google-gemini/how-to-rank-in-google-gemini",
+      "permanent": true
+    },
+    {
+      "source": "/insights/lead-generation.html",
+      "destination": "/insights/lead-generation",
+      "permanent": true
+    },
+    {
+      "source": "/insights/lead-generation/law-firm-consultation-booking.html",
+      "destination": "/insights/lead-generation/law-firm-consultation-booking",
+      "permanent": true
+    },
+    {
+      "source": "/insights/lead-generation/law-firm-lead-generation-complete-guide.html",
+      "destination": "/insights/lead-generation/law-firm-lead-generation-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/perplexity.html",
+      "destination": "/insights/perplexity",
+      "permanent": true
+    },
+    {
+      "source": "/insights/perplexity/get-recommended-perplexity-law-firms.html",
+      "destination": "/insights/perplexity/get-recommended-perplexity-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/perplexity/how-perplexity-ai-ranks-law-firms.html",
+      "destination": "/insights/perplexity/how-perplexity-ai-ranks-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/perplexity/how-to-rank-in-perplexity-ai.html",
+      "destination": "/insights/perplexity/how-to-rank-in-perplexity-ai",
+      "permanent": true
+    },
+    {
+      "source": "/insights/perplexity/optimizing-content-perplexity-law-firms.html",
+      "destination": "/insights/perplexity/optimizing-content-perplexity-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/perplexity/perplexity-ai-for-law-firms-complete-guide.html",
+      "destination": "/insights/perplexity/perplexity-ai-for-law-firms-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/perplexity/perplexity-citations-law-firms.html",
+      "destination": "/insights/perplexity/perplexity-citations-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/insights/perplexity/what-is-perplexity-ai-for-law-firms.html",
+      "destination": "/insights/perplexity/what-is-perplexity-ai-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/law-firm-website-conversion-optimization.html",
+      "destination": "/law-firm-website-conversion-optimization",
+      "permanent": true
+    },
+    {
+      "source": "/law-firm-website-seo-structure.html",
+      "destination": "/law-firm-website-seo-structure",
+      "permanent": true
+    },
+    {
+      "source": "/law-firm-website-speed-performance.html",
+      "destination": "/law-firm-website-speed-performance",
+      "permanent": true
+    },
+    {
+      "source": "/local-ai-seo-for-law-firms.html",
+      "destination": "/local-ai-seo-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/local-business-schema-law-firms.html",
+      "destination": "/local-business-schema-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/mobile-first-law-firm-website.html",
+      "destination": "/mobile-first-law-firm-website",
+      "permanent": true
+    },
+    {
+      "source": "/never-miss-a-call-law-firm.html",
+      "destination": "/never-miss-a-call-law-firm",
+      "permanent": true
+    },
+    {
+      "source": "/perplexity.html",
+      "destination": "/perplexity",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/schema-markup-for-lawyers-guide.html",
+      "destination": "/schema-markup-for-lawyers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/topical-authority-for-law-firms.html",
+      "destination": "/topical-authority-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-an-ai-receptionist-for-law-firms.html",
+      "destination": "/what-is-an-ai-receptionist-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-entity-seo-for-law-firms.html",
+      "destination": "/what-is-entity-seo-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-perplexity-ai-for-law-firms.html",
+      "destination": "/what-is-perplexity-ai-for-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/why-chatgpt-matters-for-law-firms.html",
+      "destination": "/why-chatgpt-matters-for-law-firms",
+      "permanent": true
     }
   ]
 }

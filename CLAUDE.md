@@ -19,8 +19,8 @@ All pages are plain `.html` files in the root directory.
 | Scripts | Inline `<script>` blocks |
 | SEO helpers | `seo_helpers.py` — **always import from here** |
 | Page generators | `expand_articles.py`, `gen_insight_silos.py` |
-| Deployment | Vercel (`vercel.json`: `cleanUrls: false`, `trailingSlash: false`) |
-| URLs | Always include `.html` extension (e.g. `about.html`, not `/about`) |
+| Deployment | Vercel (`vercel.json`: `cleanUrls: true`, `trailingSlash: false`) |
+| URLs | **No `.html` extension** in hrefs, canonicals, or sitemap (e.g. `/about`, not `about.html`) |
 
 ### CSS Custom Properties
 ```
@@ -329,9 +329,9 @@ A page with any validation issue must not be committed.
 
 ## URL Rules
 
-- All pages use `.html` extension — `about.html`, not `/about` or `about/`
-- Canonical URLs include `.html` except the homepage (`https://lexscale.ai`)
-- Vercel `cleanUrls: false` — do not change this setting
+- All pages are `.html` files on disk but are served and linked **without** `.html` — `/about`, not `about.html`
+- Canonical URLs never include `.html` — `https://lexscale.ai/about`, not `.../about.html`
+- Vercel `cleanUrls: true` — pages served without `.html`; `.html` URLs 301 redirect to clean URL
 - No trailing slashes on any page
 
 ---
