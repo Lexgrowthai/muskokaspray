@@ -190,6 +190,20 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
   .nav-mob{display:flex;}
   .sticky-cta{flex-direction:column;gap:10px;padding:16px;}
 }
+
+.toc-section{background:#f8f7ff;border-top:1px solid rgba(106,92,255,.1);border-bottom:1px solid rgba(106,92,255,.1);padding:20px 40px;}
+.toc-inner{max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.toc-eyebrow{font-size:11px;font-weight:700;color:var(--pu);letter-spacing:.8px;text-transform:uppercase;white-space:nowrap;padding-top:2px;flex-shrink:0;}
+.toc-links{display:flex;flex-wrap:wrap;gap:8px;}
+.toc-links a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#374151;background:#fff;border:1px solid rgba(106,92,255,.18);border-radius:100px;padding:6px 14px;text-decoration:none;transition:all .18s;}
+.toc-links a:hover{background:var(--pu);color:#fff;border-color:var(--pu);}
+.toc-links a svg{flex-shrink:0;transition:transform .18s;}
+.toc-links a:hover svg{transform:translateX(2px);}
+.art-group{margin-bottom:52px;}
+.group-h2{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-.4px;padding:14px 0 14px;border-bottom:2px solid rgba(106,92,255,.1);margin-bottom:20px;scroll-margin-top:80px;display:flex;align-items:center;gap:10px;}
+.group-h2::before{content:'';display:inline-block;width:4px;height:22px;background:linear-gradient(180deg,var(--pu),var(--pu2));border-radius:2px;flex-shrink:0;}
+@media(max-width:768px){.toc-section{padding:16px 20px;}.toc-inner{gap:12px;}.group-h2{font-size:16px;}}
+
 </style>
 </head>
 <body>
@@ -270,13 +284,27 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
 </div>
 
 <!-- ARTICLES -->
+
+<section class="toc-section">
+  <div class="toc-inner">
+    <span class="toc-eyebrow">In This Hub</span>
+    <div class="toc-links">
+      <a href="#gemini-fundamentals">Understanding Google Gemini <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#gemini-optimization">Optimization & Content <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#gemini-local">Local Search & Business Integration <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
 <section class="articles-section">
   <div class="articles-inner">
     <div class="section-header">
       <h2>All Google Gemini Articles</h2>
       <p>In-depth guides to help your law firm get recommended by AI search engines and win more clients.</p>
     </div>
-    <div class="articles-grid">
+    
+<div class="art-group">
+<h2 id="gemini-fundamentals" class="group-h2">Understanding Google Gemini</h2>
+<div class="articles-grid">
       <a href="/insights/google-gemini/google-gemini-for-law-firms" class="art-card featured">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>Google Gemini</span></div>
@@ -290,7 +318,6 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
   </div>
   <div class="art-right"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
 </a>
-
       <a href="/insights/google-gemini/how-gemini-finds-law-firms" class="art-card">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>Google Gemini</span></div>
@@ -315,6 +342,23 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
     <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
   </div>
 </a>
+      <a href="/insights/google-gemini/gemini-vs-google-search-for-law-firms.html" class="art-card">
+  <div class="art-card-top">
+    <div class="art-cat-badge"><span>Google Gemini</span></div>
+    <div class="art-title">Google Gemini vs Google Search: What's Different for Law Firms?</div>
+    <div class="art-desc">Same index, completely different ranking algorithms. Here's what law firms need to understand about how Gemini and traditional Google Search differ — and how to win both.</div>
+  </div>
+  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>13 min read</span></div>
+  <div class="art-card-footer">
+    <div class="art-divider"></div>
+    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+  </div>
+</a>
+</div>
+</div>
+<div class="art-group">
+<h2 id="gemini-optimization" class="group-h2">Optimization & Content</h2>
+<div class="articles-grid">
       <a href="/insights/google-gemini/how-to-rank-in-google-gemini" class="art-card">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>Google Gemini</span></div>
@@ -322,18 +366,6 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
     <div class="art-desc">A practical step-by-step guide to building Gemini visibility for law firms — covering structured data, content strategy, GBP, and authority building.</div>
   </div>
   <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>14 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-</a>
-      <a href="/insights/google-gemini/google-gemini-ai-overviews-law-firms" class="art-card">
-  <div class="art-card-top">
-    <div class="art-cat-badge"><span>Google Gemini</span></div>
-    <div class="art-title">Google Gemini and AI Overviews: What Law Firms Must Know</div>
-    <div class="art-desc">AI Overviews powered by Gemini are reshaping legal search. Learn how they work, how they affect your firm's traffic, and how to earn AI Overview citations.</div>
-  </div>
-  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>13 min read</span></div>
   <div class="art-card-footer">
     <div class="art-divider"></div>
     <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -356,6 +388,35 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
     <div class="art-cat-badge"><span>Google Gemini</span></div>
     <div class="art-title">Using Google Gemini for Law Firm Content Writing</div>
     <div class="art-desc">How Ontario law firms can use Google Gemini to create SEO-optimized, compliant content — from practice area pages to blog articles — without sounding like a robot.</div>
+  </div>
+  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>13 min read</span></div>
+  <div class="art-card-footer">
+    <div class="art-divider"></div>
+    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+  </div>
+</a>
+      <a href="/insights/google-gemini/gemini-for-law-firm-reputation-management.html" class="art-card">
+  <div class="art-card-top">
+    <div class="art-cat-badge"><span>Google Gemini</span></div>
+    <div class="art-title">Google Gemini &amp; Law Firm Reputation Management</div>
+    <div class="art-desc">Gemini surfaces reputation signals when recommending lawyers — reviews, mentions, directory listings, and news. Here's how to manage what AI search says about your firm.</div>
+  </div>
+  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>12 min read</span></div>
+  <div class="art-card-footer">
+    <div class="art-divider"></div>
+    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+  </div>
+</a>
+</div>
+</div>
+<div class="art-group">
+<h2 id="gemini-local" class="group-h2">Local Search & Business Integration</h2>
+<div class="articles-grid">
+      <a href="/insights/google-gemini/google-gemini-ai-overviews-law-firms" class="art-card">
+  <div class="art-card-top">
+    <div class="art-cat-badge"><span>Google Gemini</span></div>
+    <div class="art-title">Google Gemini and AI Overviews: What Law Firms Must Know</div>
+    <div class="art-desc">AI Overviews powered by Gemini are reshaping legal search. Learn how they work, how they affect your firm's traffic, and how to earn AI Overview citations.</div>
   </div>
   <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>13 min read</span></div>
   <div class="art-card-footer">
@@ -399,30 +460,8 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
     <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
   </div>
 </a>
-      <a href="/insights/google-gemini/gemini-vs-google-search-for-law-firms.html" class="art-card">
-  <div class="art-card-top">
-    <div class="art-cat-badge"><span>Google Gemini</span></div>
-    <div class="art-title">Google Gemini vs Google Search: What's Different for Law Firms?</div>
-    <div class="art-desc">Same index, completely different ranking algorithms. Here's what law firms need to understand about how Gemini and traditional Google Search differ — and how to win both.</div>
-  </div>
-  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>13 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-</a>
-      <a href="/insights/google-gemini/gemini-for-law-firm-reputation-management.html" class="art-card">
-  <div class="art-card-top">
-    <div class="art-cat-badge"><span>Google Gemini</span></div>
-    <div class="art-title">Google Gemini &amp; Law Firm Reputation Management</div>
-    <div class="art-desc">Gemini surfaces reputation signals when recommending lawyers — reviews, mentions, directory listings, and news. Here's how to manage what AI search says about your firm.</div>
-  </div>
-  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>12 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-</a>
+</div>
+</div>
     </div>
   </div>
 </section>

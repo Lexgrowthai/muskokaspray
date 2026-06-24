@@ -161,6 +161,20 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
   .nav-mob{display:flex;}
   .sticky-cta{flex-direction:column;gap:10px;padding:16px;}
 }
+
+.toc-section{background:#f8f7ff;border-top:1px solid rgba(106,92,255,.1);border-bottom:1px solid rgba(106,92,255,.1);padding:20px 40px;}
+.toc-inner{max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.toc-eyebrow{font-size:11px;font-weight:700;color:var(--pu);letter-spacing:.8px;text-transform:uppercase;white-space:nowrap;padding-top:2px;flex-shrink:0;}
+.toc-links{display:flex;flex-wrap:wrap;gap:8px;}
+.toc-links a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#374151;background:#fff;border:1px solid rgba(106,92,255,.18);border-radius:100px;padding:6px 14px;text-decoration:none;transition:all .18s;}
+.toc-links a:hover{background:var(--pu);color:#fff;border-color:var(--pu);}
+.toc-links a svg{flex-shrink:0;transition:transform .18s;}
+.toc-links a:hover svg{transform:translateX(2px);}
+.art-group{margin-bottom:52px;}
+.group-h2{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-.4px;padding:14px 0 14px;border-bottom:2px solid rgba(106,92,255,.1);margin-bottom:20px;scroll-margin-top:80px;display:flex;align-items:center;gap:10px;}
+.group-h2::before{content:'';display:inline-block;width:4px;height:22px;background:linear-gradient(180deg,var(--pu),var(--pu2));border-radius:2px;flex-shrink:0;}
+@media(max-width:768px){.toc-section{padding:16px 20px;}.toc-inner{gap:12px;}.group-h2{font-size:16px;}}
+
 </style>
 </head>
 <body>
@@ -236,13 +250,28 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
   </div>
 </div>
 
+
+<section class="toc-section">
+  <div class="toc-inner">
+    <span class="toc-eyebrow">In This Hub</span>
+    <div class="toc-links">
+      <a href="#website-design">Design & Architecture <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#website-content">Content, Trust & Authority <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#website-conversion">Conversion & Analytics <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#website-technical">Security & Compliance <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
 <section class="articles-section">
   <div class="articles-inner">
     <div class="section-header">
       <h2>All AI Website Articles</h2>
       <p>Everything your law firm needs to build a website that ranks in AI search and converts more visitors into consultations.</p>
     </div>
-    <div class="articles-grid">
+    
+<div class="art-group">
+<h2 id="website-design" class="group-h2">Design & Architecture</h2>
+<div class="articles-grid">
       <a href="/insights/ai-websites/ai-website-design-for-law-firms-guide.html" class="art-card featured">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>AI Websites</span></div>
@@ -263,42 +292,6 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
     <div class="art-desc">Traditional websites no longer cut it. Discover why AI-powered websites are the new standard for law firms that want to attract and convert clients.</div>
   </div>
   <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>9 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-</a>
-      <a href="/insights/ai-websites/law-firm-website-trust-signals.html" class="art-card">
-  <div class="art-card-top">
-    <div class="art-cat-badge"><span>AI Websites</span></div>
-    <div class="art-title">Law Firm Website Trust Signals That Convert Visitors</div>
-    <div class="art-desc">The trust signals that turn law firm website visitors into consultations — credibility indicators, social proof, and authority elements.</div>
-  </div>
-  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>10 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-</a>
-      <a href="/insights/ai-websites/law-firm-website-content-strategy.html" class="art-card">
-  <div class="art-card-top">
-    <div class="art-cat-badge"><span>AI Websites</span></div>
-    <div class="art-title">Law Firm Website Content Strategy for AI Search</div>
-    <div class="art-desc">How to structure and write your law firm website content to rank in both traditional Google search and AI-powered search engines.</div>
-  </div>
-  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>12 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-</a>
-      <a href="/insights/ai-websites/law-firm-website-lead-generation.html" class="art-card">
-  <div class="art-card-top">
-    <div class="art-cat-badge"><span>AI Websites</span></div>
-    <div class="art-title">Law Firm Website Lead Generation: Convert More Visitors</div>
-    <div class="art-desc">The lead generation tactics, CTAs, and conversion strategies that turn law firm website visitors into qualified consultation requests.</div>
-  </div>
-  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>11 min read</span></div>
   <div class="art-card-footer">
     <div class="art-divider"></div>
     <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -340,18 +333,6 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
     <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
   </div>
 </a>
-      <a href="/insights/ai-websites/law-firm-website-conversion-optimization.html" class="art-card">
-  <div class="art-card-top">
-    <div class="art-cat-badge"><span>AI Websites</span></div>
-    <div class="art-title">Law Firm Website Conversion Optimization Guide</div>
-    <div class="art-desc">How to systematically improve your law firm website's conversion rate — from layout and copy to forms and follow-up sequences.</div>
-  </div>
-  <div class="art-meta"><span>March 2025</span><span class="art-meta-dot"></span><span>11 min read</span></div>
-  <div class="art-card-footer">
-    <div class="art-divider"></div>
-    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-  </div>
-</a>
       <a href="/insights/ai-websites/mobile-first-law-firm-website.html" class="art-card">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>AI Websites</span></div>
@@ -359,6 +340,35 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
     <div class="art-desc">Most legal searches happen on mobile. Learn how to design and optimize a mobile-first law firm website that ranks and converts.</div>
   </div>
   <div class="art-meta"><span>March 2025</span><span class="art-meta-dot"></span><span>10 min read</span></div>
+  <div class="art-card-footer">
+    <div class="art-divider"></div>
+    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+  </div>
+</a>
+</div>
+</div>
+<div class="art-group">
+<h2 id="website-content" class="group-h2">Content, Trust & Authority</h2>
+<div class="articles-grid">
+      <a href="/insights/ai-websites/law-firm-website-trust-signals.html" class="art-card">
+  <div class="art-card-top">
+    <div class="art-cat-badge"><span>AI Websites</span></div>
+    <div class="art-title">Law Firm Website Trust Signals That Convert Visitors</div>
+    <div class="art-desc">The trust signals that turn law firm website visitors into consultations — credibility indicators, social proof, and authority elements.</div>
+  </div>
+  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>10 min read</span></div>
+  <div class="art-card-footer">
+    <div class="art-divider"></div>
+    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+  </div>
+</a>
+      <a href="/insights/ai-websites/law-firm-website-content-strategy.html" class="art-card">
+  <div class="art-card-top">
+    <div class="art-cat-badge"><span>AI Websites</span></div>
+    <div class="art-title">Law Firm Website Content Strategy for AI Search</div>
+    <div class="art-desc">How to structure and write your law firm website content to rank in both traditional Google search and AI-powered search engines.</div>
+  </div>
+  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>12 min read</span></div>
   <div class="art-card-footer">
     <div class="art-divider"></div>
     <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -381,6 +391,53 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
   </div>
   <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>12 min read</span></div>
   <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+</a>
+      <a href="/insights/ai-websites/law-firm-website-testimonials-case-results.html" class="art-card">
+  <div class="art-card-top">
+    <div class="art-cat-badge"><span>AI Websites</span></div>
+    <div class="art-title">Law Firm Testimonials & Case Results: Build Trust That Converts</div>
+    <div class="art-desc">How to ethically collect, display, and leverage client testimonials and case results on your law firm website to win more consultations.</div>
+  </div>
+  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>11 min read</span></div>
+  <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+</a>
+      <a href="/insights/ai-websites/law-firm-content-strategy-blog.html" class="art-card">
+  <div class="art-card-top">
+    <div class="art-cat-badge"><span>AI Websites</span></div>
+    <div class="art-title">Law Firm Content Strategy: Build a Resource Library That Ranks</div>
+    <div class="art-desc">A blog nobody reads wastes everyone's time. Here's how to build a content library that earns AI citations, answers client questions, and brings in cases on autopilot.</div>
+  </div>
+  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>11 min read</span></div>
+  <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+</a>
+</div>
+</div>
+<div class="art-group">
+<h2 id="website-conversion" class="group-h2">Conversion & Analytics</h2>
+<div class="articles-grid">
+      <a href="/insights/ai-websites/law-firm-website-lead-generation.html" class="art-card">
+  <div class="art-card-top">
+    <div class="art-cat-badge"><span>AI Websites</span></div>
+    <div class="art-title">Law Firm Website Lead Generation: Convert More Visitors</div>
+    <div class="art-desc">The lead generation tactics, CTAs, and conversion strategies that turn law firm website visitors into qualified consultation requests.</div>
+  </div>
+  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>11 min read</span></div>
+  <div class="art-card-footer">
+    <div class="art-divider"></div>
+    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+  </div>
+</a>
+      <a href="/insights/ai-websites/law-firm-website-conversion-optimization.html" class="art-card">
+  <div class="art-card-top">
+    <div class="art-cat-badge"><span>AI Websites</span></div>
+    <div class="art-title">Law Firm Website Conversion Optimization Guide</div>
+    <div class="art-desc">How to systematically improve your law firm website's conversion rate — from layout and copy to forms and follow-up sequences.</div>
+  </div>
+  <div class="art-meta"><span>March 2025</span><span class="art-meta-dot"></span><span>11 min read</span></div>
+  <div class="art-card-footer">
+    <div class="art-divider"></div>
+    <span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+  </div>
 </a>
       <a href="/insights/ai-websites/law-firm-website-vs-legal-directories.html" class="art-card">
   <div class="art-card-top">
@@ -409,24 +466,11 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
   <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>12 min read</span></div>
   <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
 </a>
-      <a href="/insights/ai-websites/law-firm-website-testimonials-case-results.html" class="art-card">
-  <div class="art-card-top">
-    <div class="art-cat-badge"><span>AI Websites</span></div>
-    <div class="art-title">Law Firm Testimonials & Case Results: Build Trust That Converts</div>
-    <div class="art-desc">How to ethically collect, display, and leverage client testimonials and case results on your law firm website to win more consultations.</div>
-  </div>
-  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>11 min read</span></div>
-  <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
-</a>
-      <a href="/insights/ai-websites/law-firm-website-video-strategy.html" class="art-card">
-  <div class="art-card-top">
-    <div class="art-cat-badge"><span>AI Websites</span></div>
-    <div class="art-title">Law Firm Video Strategy: How to Use Video to Win Clients Online</div>
-    <div class="art-desc">Video builds trust faster than any other medium. Here's how Canadian law firms can use video on their website and YouTube to attract clients and rank in AI search.</div>
-  </div>
-  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>10 min read</span></div>
-  <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
-</a>
+</div>
+</div>
+<div class="art-group">
+<h2 id="website-technical" class="group-h2">Security & Compliance</h2>
+<div class="articles-grid">
       <a href="/insights/ai-websites/law-firm-website-security-https.html" class="art-card">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>AI Websites</span></div>
@@ -445,15 +489,17 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
   <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>12 min read</span></div>
   <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
 </a>
-      <a href="/insights/ai-websites/law-firm-content-strategy-blog.html" class="art-card">
+      <a href="/insights/ai-websites/law-firm-website-video-strategy.html" class="art-card">
   <div class="art-card-top">
     <div class="art-cat-badge"><span>AI Websites</span></div>
-    <div class="art-title">Law Firm Content Strategy: Build a Resource Library That Ranks</div>
-    <div class="art-desc">A blog nobody reads wastes everyone's time. Here's how to build a content library that earns AI citations, answers client questions, and brings in cases on autopilot.</div>
+    <div class="art-title">Law Firm Video Strategy: How to Use Video to Win Clients Online</div>
+    <div class="art-desc">Video builds trust faster than any other medium. Here's how Canadian law firms can use video on their website and YouTube to attract clients and rank in AI search.</div>
   </div>
-  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>11 min read</span></div>
+  <div class="art-meta"><span>June 2026</span><span class="art-meta-dot"></span><span>10 min read</span></div>
   <div class="art-card-footer"><div class="art-divider"></div><span class="art-read-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
 </a>
+</div>
+</div>
     </div>
   </div>
 </section>

@@ -163,6 +163,20 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
   .nav-mob{display:flex;}
   .sticky-cta{flex-direction:column;gap:10px;padding:16px;}
 }
+
+.toc-section{background:#f8f7ff;border-top:1px solid rgba(106,92,255,.1);border-bottom:1px solid rgba(106,92,255,.1);padding:20px 40px;}
+.toc-inner{max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.toc-eyebrow{font-size:11px;font-weight:700;color:var(--pu);letter-spacing:.8px;text-transform:uppercase;white-space:nowrap;padding-top:2px;flex-shrink:0;}
+.toc-links{display:flex;flex-wrap:wrap;gap:8px;}
+.toc-links a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#374151;background:#fff;border:1px solid rgba(106,92,255,.18);border-radius:100px;padding:6px 14px;text-decoration:none;transition:all .18s;}
+.toc-links a:hover{background:var(--pu);color:#fff;border-color:var(--pu);}
+.toc-links a svg{flex-shrink:0;transition:transform .18s;}
+.toc-links a:hover svg{transform:translateX(2px);}
+.art-group{margin-bottom:52px;}
+.group-h2{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-.4px;padding:14px 0 14px;border-bottom:2px solid rgba(106,92,255,.1);margin-bottom:20px;scroll-margin-top:80px;display:flex;align-items:center;gap:10px;}
+.group-h2::before{content:'';display:inline-block;width:4px;height:22px;background:linear-gradient(180deg,var(--pu),var(--pu2));border-radius:2px;flex-shrink:0;}
+@media(max-width:768px){.toc-section{padding:16px 20px;}.toc-inner{gap:12px;}.group-h2{font-size:16px;}}
+
 </style>
 </head>
 <body>
@@ -236,15 +250,27 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
   </div>
 </section>
 
+
+<section class="toc-section">
+  <div class="toc-inner">
+    <span class="toc-eyebrow">In This Hub</span>
+    <div class="toc-links">
+      <a href="#gbp-setup">Setup & Optimization <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#gbp-content">Reviews & Content Strategy <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#gbp-advanced">Advanced & AI Search <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
 <section class="articles-section">
   <div class="articles-inner">
     <div class="section-header">
       <h2>Everything Law Firms Need to Know About Google Business Profile</h2>
       <p>From initial setup to review management and AI search optimization — these guides cover every aspect of running a high-performing GBP for your law firm.</p>
     </div>
-    <div class="articles-grid">
-
-      <!-- Featured Card -->
+    
+<div class="art-group">
+<h2 id="gbp-setup" class="group-h2">Setup & Optimization</h2>
+<div class="articles-grid">
       <a href="/insights/google-business-profile/google-business-profile-complete-guide-law-firms.html" class="art-card featured">
         <div class="art-card-top">
           <div class="art-cat-badge"><span>GBP Guide</span></div>
@@ -258,26 +284,6 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
       </a>
-
-      <!-- Card 2 -->
-      <a href="/insights/google-business-profile/gbp-reviews-for-law-firms.html" class="art-card">
-        <div class="art-card-top">
-          <div class="art-cat-badge"><span>Reviews</span></div>
-          <div class="art-title">Google Reviews for Law Firms: Get More and Handle the Bad Ones</div>
-          <div class="art-desc">Reviews are the most powerful GBP signal. Here's how Ontario law firms build a genuine review pipeline and handle negative ones under LSO rules.</div>
-        </div>
-        <div class="art-meta">
-          <span>June 2026</span>
-          <span class="art-meta-dot"></span>
-          <span>12 min read</span>
-        </div>
-        <div class="art-card-footer">
-          <div class="art-divider"></div>
-          <span class="art-read-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <!-- Card 3 -->
       <a href="/insights/google-business-profile/gbp-optimization-checklist-law-firms.html" class="art-card">
         <div class="art-card-top">
           <div class="art-cat-badge"><span>Checklist</span></div>
@@ -294,8 +300,27 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
           <span class="art-read-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
-
-      <!-- Card 4 -->
+</div>
+</div>
+<div class="art-group">
+<h2 id="gbp-content" class="group-h2">Reviews & Content Strategy</h2>
+<div class="articles-grid">
+      <a href="/insights/google-business-profile/gbp-reviews-for-law-firms.html" class="art-card">
+        <div class="art-card-top">
+          <div class="art-cat-badge"><span>Reviews</span></div>
+          <div class="art-title">Google Reviews for Law Firms: Get More and Handle the Bad Ones</div>
+          <div class="art-desc">Reviews are the most powerful GBP signal. Here's how Ontario law firms build a genuine review pipeline and handle negative ones under LSO rules.</div>
+        </div>
+        <div class="art-meta">
+          <span>June 2026</span>
+          <span class="art-meta-dot"></span>
+          <span>12 min read</span>
+        </div>
+        <div class="art-card-footer">
+          <div class="art-divider"></div>
+          <span class="art-read-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
       <a href="/insights/google-business-profile/gbp-posts-for-law-firms.html" class="art-card">
         <div class="art-card-top">
           <div class="art-cat-badge"><span>Posts</span></div>
@@ -312,8 +337,11 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
           <span class="art-read-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
-
-      <!-- Card 5 -->
+</div>
+</div>
+<div class="art-group">
+<h2 id="gbp-advanced" class="group-h2">Advanced & AI Search</h2>
+<div class="articles-grid">
       <a href="/insights/google-business-profile/gbp-for-multi-location-law-firms.html" class="art-card">
         <div class="art-card-top">
           <div class="art-cat-badge"><span>Multi-Location</span></div>
@@ -330,8 +358,6 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
           <span class="art-read-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
-
-      <!-- Card 6 -->
       <a href="/insights/google-business-profile/gbp-for-law-firms-and-ai-search.html" class="art-card">
         <div class="art-card-top">
           <div class="art-cat-badge"><span>AI Search</span></div>
@@ -348,7 +374,8 @@ nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg
           <span class="art-read-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
-
+</div>
+</div>
     </div>
   </div>
 </section>
