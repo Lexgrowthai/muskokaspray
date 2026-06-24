@@ -360,10 +360,10 @@ footer{background:#040c1e;padding:36px 40px;}
   .dash-grid,.cs-stats,.cs-mini-grid{grid-template-columns:1fr 1fr;}
   /* AI icons bar: 2x2 on mobile */
   .ai-platforms-grid{grid-template-columns:repeat(2,1fr) !important;}
-  /* Comparison: hide traditional agency column, show only LexScale */
-  .cmp-head,.cmp-row{grid-template-columns:1fr auto !important;}
-  .cmp-trad{display:none !important;}
-  .cmp-hcell:last-child{display:none !important;}
+  /* Comparison: horizontal scroll so both columns stay visible */
+  .cmp-card{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .cmp-head,.cmp-row{grid-template-columns:minmax(140px,1fr) 90px 90px !important;min-width:320px;}
+  .cmp-hcell,.cmp-cell{padding:10px 8px !important;}
   /* Testimonials: single column on mobile */
   .t-grid{grid-template-columns:1fr !important;}
 }
