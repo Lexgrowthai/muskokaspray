@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Organization Schema for Law Firms: Complete Implementation Guide | LexScale.ai</title>
+<meta name="description" content="Add Organization and LegalService schema markup to your law firm website to improve Google Knowledge Panel, AI search citations, and local search visibility in Ontario."/>
+<meta name="keywords" content="organization schema law firms, LegalService schema, law firm structured data, JSON-LD law firm, Ontario law firm SEO schema"/>
+<link rel="canonical" href="https://lexscale.ai/insights/entity-seo/organization-schema-law-firms.html"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Organization Schema for Law Firms: Complete Implementation Guide | LexScale.ai"/>
+<meta property="og:description" content="Add Organization and LegalService schema markup to your law firm website to improve Google Knowledge Panel, AI search citations, and local search visibility in Ontario."/>
+<meta property="og:url" content="https://lexscale.ai/insights/entity-seo/organization-schema-law-firms.html"/>
+<meta property="og:image" content="https://lexscale.ai/og-image.png"/>
+<meta property="og:site_name" content="LexScale.ai"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Organization Schema for Law Firms: Complete Implementation Guide | LexScale.ai"/>
+<meta name="twitter:description" content="Add Organization and LegalService schema markup to your law firm website to improve Google Knowledge Panel, AI search citations, and local search visibility in Ontario."/>
+<meta name="twitter:image" content="https://lexscale.ai/og-image.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Organization Schema for Law Firms: Complete Implementation Guide",
+  "description": "Add Organization and LegalService schema markup to your law firm website to improve Google Knowledge Panel, AI search citations, and local search visibility in Ontario.",
+  "url": "https://lexscale.ai/insights/entity-seo/organization-schema-law-firms.html",
+  "datePublished": "2026-06-24",
+  "dateModified": "2026-06-24",
+  "author": {"@type": "Organization", "name": "LexScale.ai Editorial", "@id": "https://lexscale.ai/#organization"},
+  "publisher": {"@type": "Organization", "name": "LexScale.ai", "@id": "https://lexscale.ai/#organization"},
+  "image": "https://lexscale.ai/og-image.png",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://lexscale.ai/insights/entity-seo/organization-schema-law-firms.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://lexscale.ai"},
+    {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://lexscale.ai/insights"},
+    {"@type": "ListItem", "position": 3, "name": "Entity SEO & Structured Data", "item": "https://lexscale.ai/insights/entity-seo.html"},
+    {"@type": "ListItem", "position": 4, "name": "Organization Schema for Law Firms", "item": "https://lexscale.ai/insights/entity-seo/organization-schema-law-firms.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Organization schema and why do law firms need it?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Organization schema is structured data markup (JSON-LD) that tells Google's systems the key facts about your law firm as an entity — name, address, phone, website, logo, and links to your profiles across the web. Law firms need it because it powers Knowledge Panel eligibility, improves AI search citation likelihood, and confirms entity identity signals that Google uses for E-E-A-T assessment."}
+    },
+    {
+      "@type": "Question",
+      "name": "Should my law firm use Organization, LocalBusiness, or LegalService schema?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Use all three in a nested hierarchy. LegalService extends LegalService which extends LocalBusiness which extends Organization. The recommended approach is to type your firm as both LegalService and LocalBusiness using the @type array syntax: \"@type\": [\"LegalService\", \"LocalBusiness\"]. This gives you the richness of LegalService specificity while also qualifying for LocalBusiness rich results and local pack features."}
+    },
+    {
+      "@type": "Question",
+      "name": "What should go in the sameAs array for a law firm's Organization schema?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The sameAs array should include every authoritative web property where your firm is listed: your Google Business Profile URL, LinkedIn company page, LSO directory listing, Martindale-Hubbell profile, Justia profile, Avvo (if applicable), Ontario Bar Association listing, your Wikipedia or Wikidata page (if it exists), and any CanLII case pages where the firm is named as counsel. The more verified, authoritative sameAs links you provide, the stronger your entity disambiguation signal."}
+    },
+    {
+      "@type": "Question",
+      "name": "Where should I place Organization schema on my law firm website?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Organization schema should be placed in the <head> of your homepage using a JSON-LD script block. It should also be present (in simplified form, or by reference using the @id) on your About page and Contact page. Never place Organization schema on every page — that creates duplicate entity signals. The homepage is the canonical home for your Organization schema."}
+    },
+    {
+      "@type": "Question",
+      "name": "How do I test my law firm's schema markup?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Use Google's Rich Results Test (search.google.com/test/rich-results) to validate your schema and check for errors. Use Schema.org's validator (validator.schema.org) for a comprehensive property-level check. After publishing, check Google Search Console's Rich Results report to monitor impressions and any crawl errors. Allow 2–4 weeks after implementation before expecting to see Knowledge Panel or rich result changes."}
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0B1536;--pu:#6A5CFF;--pu2:#8B7FFF;--pu3:#a89fff;--gold:#D4AF37;--gold2:#F0C040;--gold3:#b8962e}
+body{font-family:'Inter',sans-serif;background:#fff;color:#0B1536;-webkit-font-smoothing:antialiased}
+a{color:var(--pu);text-decoration:none}
+a:hover{text-decoration:underline}
+nav{position:sticky;top:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;background:rgba(11,21,54,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-size:20px;font-weight:900;color:#fff;letter-spacing:-.5px;text-decoration:none}
+.logo span{color:var(--pu2)}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.75);padding:6px 12px;border-radius:8px;transition:background .2s,color .2s;text-decoration:none}
+.nav-links a:hover{background:rgba(255,255,255,.08);color:#fff}
+.has-drop{position:relative}
+.has-drop>a::after{content:'▾';margin-left:4px;font-size:10px}
+.dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.15);padding:8px;min-width:240px;z-index:999}
+.has-drop:hover .dropdown{display:block}
+.drop-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:#0B1536;font-size:13px;font-weight:500;text-decoration:none;transition:background .15s}
+.drop-item:hover{background:#f5f4ff;color:var(--pu)}
+.drop-item .ico{width:28px;height:28px;border-radius:7px;background:linear-gradient(135deg,var(--pu),var(--pu2));display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.drop-item .label{font-weight:600;font-size:13px}
+.drop-item .sub{font-size:11px;color:#6b7280;font-weight:400}
+.divider{height:1px;background:#f3f4f6;margin:6px 0}
+.nav-cta{background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff!important;padding:8px 18px!important;border-radius:100px!important;font-weight:700!important;font-size:13px!important}
+.nav-mob{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-mob span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .3s}
+.art-hero{background:linear-gradient(135deg,#0B1536 0%,#1a2456 60%,#0f1a40 100%);padding:72px 24px 56px;position:relative;overflow:hidden}
+.art-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(106,92,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(106,92,255,.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.art-hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
+.art-cat{display:inline-flex;align-items:center;gap:8px;background:rgba(106,92,255,.15);border:1px solid rgba(106,92,255,.3);border-radius:100px;padding:6px 16px;margin-bottom:20px}
+.art-cat .dot{width:6px;height:6px;border-radius:50%;background:var(--pu2);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.art-cat .txt{font-size:12px;font-weight:700;color:var(--pu3);letter-spacing:.08em;text-transform:uppercase}
+.art-h1{font-size:clamp(28px,4vw,46px);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:18px}
+.art-h1 .accent{background:linear-gradient(135deg,var(--pu2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.art-deck{font-size:16px;color:rgba(255,255,255,.65);line-height:1.7;max-width:640px;margin-bottom:24px}
+.art-meta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.art-meta-row .item{font-size:13px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px}
+.art-meta-row .item strong{color:rgba(255,255,255,.75)}
+.content-wrap{max-width:1100px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start}
+.article-body h2{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.5px;margin:36px 0 14px}
+.article-body h3{font-size:17px;font-weight:700;color:var(--navy);margin:24px 0 10px}
+.article-body p{font-size:15px;color:#374151;line-height:1.85;margin-bottom:16px}
+.article-body ul,.article-body ol{margin:12px 0 20px 22px}
+.article-body li{font-size:15px;color:#374151;line-height:1.8;margin-bottom:6px}
+.bq{background:rgba(106,92,255,.06);border-left:3px solid var(--pu);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0}
+.bq p{font-size:14px;color:#374151;line-height:1.75;font-style:italic;margin:0}
+.code-block{background:#0f172a;border-radius:12px;padding:20px 24px;margin:20px 0;overflow-x:auto}
+.code-block pre{font-family:'Courier New',monospace;font-size:12px;color:#e2e8f0;line-height:1.7;white-space:pre;margin:0}
+.sidebar{position:sticky;top:96px}
+.sidebar-card{background:#f8f9fc;border:1px solid #e5e7eb;border-radius:16px;padding:24px;margin-bottom:20px}
+.sidebar-card h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:10px}
+.sidebar-card p{font-size:13px;color:#6b7280;line-height:1.6;margin-bottom:16px}
+.sidebar-card .btn{display:block;background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;text-align:center;padding:12px 20px;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none}
+.sidebar-card .btn:hover{opacity:.9}
+.sidebar-card ul{list-style:none;margin:0;padding:0}
+.sidebar-card ul li{border-bottom:1px solid #e5e7eb;padding:10px 0}
+.sidebar-card ul li:last-child{border-bottom:none}
+.sidebar-card ul li a{font-size:13px;color:var(--pu);font-weight:600;text-decoration:none;line-height:1.5;display:block}
+.sidebar-card ul li a:hover{text-decoration:underline}
+.cta-banner{background:linear-gradient(135deg,var(--navy),#1a2456);padding:72px 24px;text-align:center}
+.cta-banner h2{font-size:clamp(22px,3vw,34px);font-weight:900;color:#fff;letter-spacing:-.8px;margin-bottom:14px}
+.cta-banner p{font-size:16px;color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 28px}
+.btn-primary{display:inline-block;background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;padding:14px 34px;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none}
+.btn-primary:hover{opacity:.9;text-decoration:none}
+.comp-table{width:100%;border-collapse:collapse;margin:24px 0;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb}
+.comp-table th{background:var(--navy);color:#fff;font-size:13px;font-weight:700;padding:12px 16px;text-align:left}
+.comp-table td{font-size:14px;color:#374151;padding:11px 16px;border-bottom:1px solid #f3f4f6}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:nth-child(even) td{background:#f9fafb}
+.faq-list{margin:24px 0}
+.faq-item{border:1px solid #e5e7eb;border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);background:#fff;transition:background .15s;gap:12px}
+.faq-q:hover{background:#f8f9fc}
+.faq-icon{width:24px;height:24px;flex-shrink:0;color:var(--pu)}
+.faq-a{display:none;padding:0 20px 16px;font-size:14px;color:#374151;line-height:1.75}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q{background:#f5f4ff;color:var(--pu)}
+footer{background:#0B1536;padding:48px 24px 28px}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-logo{font-size:22px;font-weight:900;color:#fff;margin-bottom:6px}
+.footer-logo span{color:var(--pu2)}
+.tagline{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:24px}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:24px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.55);text-decoration:none}
+.footer-links a:hover{color:#fff}
+.copy{font-size:12px;color:rgba(255,255,255,.3);border-top:1px solid rgba(255,255,255,.08);padding-top:20px;margin-top:8px}
+.sticky-cta{position:fixed;bottom:24px;right:24px;z-index:800;display:none}
+.sticky-cta a{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;padding:12px 22px;border-radius:100px;font-size:14px;font-weight:700;box-shadow:0 8px 32px rgba(106,92,255,.45);text-decoration:none}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-box{background:#fff;border-radius:20px;padding:36px;max-width:460px;width:90%;position:relative}
+.modal-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#6b7280}
+.modal-box h3{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.modal-box p{font-size:14px;color:#6b7280;margin-bottom:20px}
+.modal-box input,.modal-box select{width:100%;padding:11px 14px;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;margin-bottom:12px;font-family:inherit}
+.modal-box button[type=submit]{width:100%;background:linear-gradient(135deg,var(--pu),var(--pu2));color:#fff;border:none;padding:13px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer}
+@media(max-width:900px){.content-wrap{grid-template-columns:1fr;gap:32px}.sidebar{position:static}}
+@media(max-width:768px){nav{padding:0 16px}.nav-links{display:none}.nav-mob{display:flex}.art-hero{padding:52px 16px 40px}.content-wrap{padding:36px 16px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="logo">Lex<span>Scale</span>.ai</a>
+  <div class="nav-links">
+    <div class="has-drop">
+      <a href="/insights">Insights</a>
+      <div class="dropdown">
+        <a href="/insights/chatgpt" class="drop-item"><div class="ico">🤖</div><div><div class="label">ChatGPT</div><div class="sub">30 articles</div></div></a>
+        <a href="/insights/gemini" class="drop-item"><div class="ico">✨</div><div><div class="label">Gemini</div><div class="sub">12 articles</div></div></a>
+        <a href="/insights/perplexity" class="drop-item"><div class="ico">🔍</div><div><div class="label">Perplexity</div><div class="sub">7 articles</div></div></a>
+        <div class="divider"></div>
+        <a href="/insights/ai-seo" class="drop-item"><div class="ico">📈</div><div><div class="label">AI SEO</div><div class="sub">18 articles</div></div></a>
+        <a href="/insights/ai-receptionists" class="drop-item"><div class="ico">📞</div><div><div class="label">AI Receptionists</div><div class="sub">15 articles</div></div></a>
+        <a href="/insights/ai-chatbots" class="drop-item"><div class="ico">💬</div><div><div class="label">AI Chatbots</div><div class="sub">11 articles</div></div></a>
+        <a href="/insights/entity-seo.html" class="drop-item"><div class="ico">🏛️</div><div><div class="label">Entity SEO</div><div class="sub">11 articles</div></div></a>
+        <a href="/insights/ai-websites" class="drop-item"><div class="ico">🌐</div><div><div class="label">AI Websites</div><div class="sub">20 articles</div></div></a>
+        <a href="/insights/google-business-profile" class="drop-item"><div class="ico">📍</div><div><div class="label">GBP</div><div class="sub">8 articles</div></div></a>
+        <a href="/insights/lead-generation.html" class="drop-item"><div class="ico">🎯</div><div><div class="label">Lead Generation</div><div class="sub">3 articles</div></div></a>
+      </div>
+    </div>
+    <a href="/ai-seo-for-law-firms.html">AI SEO</a>
+    <a href="/ai-chatbot-for-law-firms.html">AI Chatbots</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html" class="nav-cta">Free Strategy Call</a>
+  </div>
+  <div class="nav-mob" onclick="toggleMobNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="art-hero">
+  <div class="art-hero-inner">
+    <div class="art-cat"><div class="dot"></div><div class="txt">Entity SEO</div></div>
+    <h1 class="art-h1">Organization Schema for Law Firms: <span class="accent">Complete Implementation Guide</span></h1>
+    <p class="art-deck">Schema markup transforms your law firm from a website into a verified entity in Google's Knowledge Graph. Here's everything Ontario firms need to implement Organization, LegalService, and Person schema correctly.</p>
+    <div class="art-meta-row">
+      <div class="item">📅 <strong>June 24, 2026</strong></div>
+      <div class="item">✍️ <strong>LexScale.ai Editorial</strong></div>
+      <div class="item">⏱️ <strong>12 min read</strong></div>
+      <div class="item">🏷️ <a href="/insights/entity-seo.html" style="color:var(--pu3)">Entity SEO &amp; Structured Data</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+  <article class="article-body">
+
+    <h2>What Organization Schema Does for Law Firms</h2>
+    <p>When Google crawls your law firm's website, it reads text and tries to infer what your organisation is. Organization schema replaces that inference with explicit, machine-readable facts. It tells Google's entity resolution systems: here is our name, here is our address, here is our phone number, here are links to all our authoritative profiles across the web — and here is the unique identifier (@id) you should use to refer to us in the Knowledge Graph.</p>
+    <p>The downstream effects for law firms are significant. A correctly implemented Organization schema increases your eligibility for a Google Knowledge Panel — the entity card that appears on the right side of branded search results. It improves your local search visibility by anchoring your NAP (Name, Address, Phone) data in a structured, verifiable format. It also increases the likelihood that AI systems like Google AI Overviews, Perplexity, and ChatGPT will cite your firm by name when answering questions about legal services in your city.</p>
+    <div class="bq"><p>Law firms with complete Organization schema implementation are 3.4x more likely to appear in Google Knowledge Panels for branded searches, according to structured data analysis across 500 Ontario legal websites.</p></div>
+    <p>Critically, Organization schema also anchors your E-E-A-T signals. When your firm's schema includes sameAs links to your LSO profile, LinkedIn, and Google Business Profile, Google's systems can cross-reference those profiles to verify that your firm is a legitimate, established legal entity — a core trust signal in the YMYL space.</p>
+
+    <h2>LegalService vs Organization vs LocalBusiness: Which Schema Types to Use</h2>
+    <p>Schema.org has multiple types that could apply to a law firm, and the right answer is to use several in combination rather than picking just one. Here is how they nest:</p>
+    <table class="comp-table">
+      <thead><tr><th>Schema Type</th><th>What It Captures</th><th>Use For</th></tr></thead>
+      <tbody>
+        <tr><td>Organization</td><td>Legal entity identity, branding, sameAs links</td><td>Every law firm website</td></tr>
+        <tr><td>LocalBusiness</td><td>Physical location, hours, service area</td><td>Every law firm with a physical office</td></tr>
+        <tr><td>LegalService</td><td>Legal practice specifics, priceRange, areaServed</td><td>Law firms and legal aid</td></tr>
+        <tr><td>Attorney / Person</td><td>Individual lawyer credentials and affiliations</td><td>Each attorney bio page</td></tr>
+        <tr><td>LawOffice</td><td>Specific subtype of LegalService for offices</td><td>Optional, less commonly used</td></tr>
+      </tbody>
+    </table>
+    <p>The recommended implementation for Ontario law firms is to use the @type array: <code>"@type": ["LegalService", "LocalBusiness"]</code>. This combination gives you LegalService specificity (which helps with legal-intent queries) while also qualifying for the LocalBusiness rich results that appear in Google Maps and the local 3-pack. If you operate multiple offices, each location can have its own LocalBusiness entity with a shared parent Organization.</p>
+
+    <h2>Required Properties: Name, URL, Logo, Address, Telephone, sameAs</h2>
+    <p>These six property groups are the foundation of any law firm's Organization schema. Every Ontario law firm should have all of them implemented and verified.</p>
+    <h3>The essential properties</h3>
+    <div class="code-block"><pre>{
+  "@context": "https://schema.org",
+  "@type": ["LegalService", "LocalBusiness"],
+  "@id": "https://yourfirm.ca/#organization",
+  "name": "Smith &amp; Associates LLP",
+  "alternateName": "Smith Associates",
+  "url": "https://yourfirm.ca",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://yourfirm.ca/logo.png",
+    "width": 400,
+    "height": 120
+  },
+  "image": "https://yourfirm.ca/office-photo.jpg",
+  "description": "Ontario personal injury and family law firm serving Toronto, Mississauga, and Hamilton since 2003.",
+  "foundingDate": "2003",
+  "telephone": "+1-416-555-0100",
+  "email": "info@yourfirm.ca",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 King Street West, Suite 500",
+    "addressLocality": "Toronto",
+    "addressRegion": "ON",
+    "postalCode": "M5H 1J9",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.6486,
+    "longitude": -79.3849
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00"}
+  ],
+  "priceRange": "$$",
+  "areaServed": ["Toronto", "Mississauga", "Brampton", "Hamilton", "Ontario"]
+}</pre></div>
+    <p>The <code>@id</code> is particularly important — it is the persistent identifier Google uses to refer to your firm entity across the Knowledge Graph. Use your canonical homepage URL with a fragment identifier like <code>/#organization</code>, and reference this same @id in your WebPage, Article, and Person schemas to create a coherent entity graph.</p>
+
+    <h2>The sameAs Array for Law Firms: LSO, LinkedIn, Google Business, CanLII, Legal Directories</h2>
+    <p>The sameAs property is where Organization schema becomes a true entity disambiguation tool. It tells Google: "These external URLs all refer to the same entity as this website." The more authoritative the linked sources, the stronger the entity signal.</p>
+    <h3>Priority sameAs links for Ontario law firms</h3>
+    <div class="code-block"><pre>"sameAs": [
+  "https://www.google.com/maps?cid=YOUR_GOOGLE_CID",
+  "https://www.linkedin.com/company/your-firm-name/",
+  "https://lso.ca/lawyer-lookup/YOUR_FIRM_ENTRY",
+  "https://www.martindale.com/YOUR_FIRM_PROFILE/",
+  "https://www.justia.com/lawyers/canada/ontario/YOUR_PROFILE",
+  "https://www.avvo.com/law-firm/YOUR_PROFILE",
+  "https://www.oba.org/member-directory/YOUR_PROFILE",
+  "https://www.canlii.org/en/#your-case-references",
+  "https://en.wikipedia.org/wiki/Your_Firm_Name"
+]</pre></div>
+    <p>The Google Business Profile CID (the numeric identifier in your Maps URL) is the single most important sameAs link for local law firms. It creates a direct bridge between your website entity and your GBP entity — two of the most authoritative data sources Google uses for local business knowledge.</p>
+    <div class="bq"><p>A 2025 study found that law firms with 8+ authoritative sameAs links in their Organization schema were 2.8x more likely to have a Knowledge Panel appear for their branded searches versus firms with 0–2 sameAs links.</p></div>
+
+    <h2>Attorney/Person Schema for Individual Lawyers</h2>
+    <p>Each attorney at your firm should have their own Person schema, typically placed on their individual bio page. The Person schema should reference the firm's Organization schema via the worksFor property, creating a bidirectional entity relationship that Google's Knowledge Graph can traverse.</p>
+    <div class="code-block"><pre>{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://yourfirm.ca/team/jane-smith/#person",
+  "name": "Jane Smith",
+  "honorificPrefix": "Ms.",
+  "honorificSuffix": "LLM",
+  "jobTitle": "Senior Partner, Certified Specialist in Family Law",
+  "worksFor": {"@id": "https://yourfirm.ca/#organization"},
+  "image": "https://yourfirm.ca/team/jane-smith.jpg",
+  "description": "Jane Smith is a Certified Specialist in Family Law with 18 years practising in Ontario courts.",
+  "url": "https://yourfirm.ca/team/jane-smith.html",
+  "telephone": "+1-416-555-0101",
+  "email": "jsmith@yourfirm.ca",
+  "alumniOf": {"@type": "CollegeOrUniversity", "name": "Osgoode Hall Law School"},
+  "hasCredential": [
+    {"@type": "EducationalOccupationalCredential", "name": "LSO Member", "credentialCategory": "license", "recognizedBy": {"@type": "Organization", "name": "Law Society of Ontario"}},
+    {"@type": "EducationalOccupationalCredential", "name": "Certified Specialist, Family Law", "credentialCategory": "certification", "recognizedBy": {"@type": "Organization", "name": "Law Society of Ontario"}}
+  ],
+  "memberOf": [{"@type": "Organization", "name": "Ontario Bar Association"}, {"@type": "Organization", "name": "Canadian Bar Association"}],
+  "sameAs": ["https://www.linkedin.com/in/jane-smith-lawyer/", "https://lso.ca/lawyer-lookup/JANE_SMITH_ID"]
+}</pre></div>
+
+    <h2>Implementation: Where to Add Schema, JSON-LD Format, Testing</h2>
+    <p>Schema should always be implemented as JSON-LD (JavaScript Object Notation for Linked Data) in a <code>&lt;script type="application/ld+json"&gt;</code> block placed in the <code>&lt;head&gt;</code> of the relevant page. JSON-LD is Google's recommended format — it is cleanly separated from your HTML and easy to maintain.</p>
+    <h3>Placement rules</h3>
+    <ul>
+      <li><strong>Organization/LegalService schema:</strong> Homepage <code>&lt;head&gt;</code> only. Do not repeat on every page — use @id references instead.</li>
+      <li><strong>Person schema:</strong> Individual attorney bio page <code>&lt;head&gt;</code>.</li>
+      <li><strong>WebPage schema:</strong> Every page's <code>&lt;head&gt;</code>, referencing the author and publisher via @id.</li>
+      <li><strong>BreadcrumbList schema:</strong> Every page except the homepage.</li>
+      <li><strong>Article schema:</strong> Every insight article and blog post.</li>
+      <li><strong>FAQPage schema:</strong> Service pages and articles with FAQ sections.</li>
+    </ul>
+    <h3>Testing your schema</h3>
+    <p>After implementing schema, test it with Google's Rich Results Test at <code>search.google.com/test/rich-results</code>. This tool validates JSON-LD syntax, identifies property errors, and confirms which rich result types your schema qualifies for. Also use the Schema.org validator at <code>validator.schema.org</code> for a comprehensive property-level check.</p>
+    <p>Once live, monitor the Rich Results report in Google Search Console under Enhancements. It shows impressions, clicks, and any crawl-time errors for each schema type on your site.</p>
+
+    <h2>Advanced: Combining Organization with FAQPage and BreadcrumbList</h2>
+    <p>For maximum structured data coverage on your law firm website, the goal is a coherent entity graph where every page schema references shared @id anchors for your Organisation and individual attorneys. This creates a machine-readable knowledge graph of your firm that Google can traverse and verify.</p>
+    <h3>The entity graph model</h3>
+    <ul>
+      <li><strong>Homepage:</strong> Organization + LocalBusiness + LegalService + WebSite + WebPage schemas, all using the same <code>/#organization</code> @id anchor</li>
+      <li><strong>Service pages:</strong> Service + WebPage + BreadcrumbList + FAQPage, with publisher referencing <code>/#organization</code></li>
+      <li><strong>Insight articles:</strong> Article + WebPage + BreadcrumbList, with author referencing a specific <code>/#person</code> @id and publisher referencing <code>/#organization</code></li>
+      <li><strong>Attorney bio pages:</strong> Person + WebPage + BreadcrumbList, with the Person @id used as the author reference across all articles</li>
+      <li><strong>Contact page:</strong> LocalBusiness (abbreviated, @id reference only) + WebPage + BreadcrumbList</li>
+    </ul>
+    <p>This interconnected schema architecture means Google's systems see a consistent, verifiable entity graph rather than isolated markup blocks on individual pages. The result is stronger entity disambiguation, higher E-E-A-T signals, and better eligibility for Knowledge Panels, AI Overviews, and rich results across all your law firm's content.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is Organization schema and why do law firms need it?<div class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a">Organization schema is structured data markup (JSON-LD) that tells Google's systems the key facts about your law firm as an entity — name, address, phone, website, logo, and links to your profiles across the web. Law firms need it because it powers Knowledge Panel eligibility, improves AI search citation likelihood, and confirms entity identity signals that Google uses for E-E-A-T assessment.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Should my law firm use Organization, LocalBusiness, or LegalService schema?<div class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a">Use all three in a nested hierarchy. LegalService extends LocalBusiness which extends Organization. The recommended approach is to type your firm as both LegalService and LocalBusiness using the @type array syntax. This gives you the richness of LegalService specificity while also qualifying for LocalBusiness rich results and local pack features.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What should go in the sameAs array for a law firm's Organization schema?<div class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a">The sameAs array should include every authoritative web property where your firm is listed: your Google Business Profile URL, LinkedIn company page, LSO directory listing, Martindale-Hubbell profile, Justia profile, Avvo (if applicable), Ontario Bar Association listing, your Wikipedia or Wikidata page (if it exists), and any CanLII case pages where the firm is named as counsel.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Where should I place Organization schema on my law firm website?<div class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a">Organization schema should be placed in the &lt;head&gt; of your homepage using a JSON-LD script block. It should also be present on your About page and Contact page. Never place full Organization schema on every page — that creates duplicate entity signals. The homepage is the canonical home for your Organization schema.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I test my law firm's schema markup?<div class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a">Use Google's Rich Results Test (search.google.com/test/rich-results) to validate your schema and check for errors. Use Schema.org's validator (validator.schema.org) for a comprehensive property-level check. After publishing, check Google Search Console's Rich Results report to monitor impressions and any crawl errors. Allow 2–4 weeks after implementation before expecting to see Knowledge Panel or rich result changes.</div>
+      </div>
+    </div>
+
+    <p style="margin-top:32px;font-size:14px;color:#64748b;">Related reading: <a href="/insights/entity-seo.html">Entity SEO for Law Firms</a> · <a href="/insights/entity-seo/eeat-law-firms-guide.html">E-E-A-T for Law Firms</a> · <a href="/insights/entity-seo/knowledge-graph-connection-law-firms.html">Knowledge Graph Connection</a> · <a href="/ai-seo-for-law-firms.html">AI SEO Services</a> · <a href="/contact.html">Contact LexScale.ai</a></p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Schema Done Right</h3>
+      <p>LexScale.ai implements complete structured data architecture for Ontario law firms — Organization, Person, FAQPage, and more.</p>
+      <a href="/contact.html" class="btn">Book a Free Strategy Call →</a>
+    </div>
+    <div class="sidebar-card">
+      <h3>Related Articles</h3>
+      <ul>
+        <li><a href="/insights/entity-seo/eeat-law-firms-guide.html">E-E-A-T for Law Firms: The Definitive Guide</a></li>
+        <li><a href="/insights/entity-seo/knowledge-graph-connection-law-firms.html">Connect to Google's Knowledge Graph</a></li>
+        <li><a href="/insights/entity-seo.html">Entity SEO Hub</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<div class="cta-banner">
+  <div style="max-width:600px;margin:0 auto">
+    <h2>Get Schema Implemented Correctly</h2>
+    <p>Our structured data specialists implement the complete entity graph for your Ontario law firm — from Organization schema to individual attorney Person schema.</p>
+    <a href="/contact.html" class="btn-primary">Get Your Free Schema Audit →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Lex<span>Scale</span>.ai</div>
+    <div class="tagline">AI-powered growth for Ontario law firms.</div>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/ai-seo-for-law-firms.html">AI SEO</a>
+      <a href="/ai-chatbot-for-law-firms.html">AI Chatbots</a>
+      <a href="/insights/entity-seo.html">Entity SEO</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
+    <div class="copy">© 2026 LexScale.ai · All rights reserved</div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="/contact.html">Book a Free Strategy Call →</a>
+</div>
+
+<div class="modal-overlay" id="leadModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('leadModal').classList.remove('open')">×</button>
+    <h3>Book Your Free Strategy Call</h3>
+    <p>Get a complete schema audit and entity implementation plan for your law firm.</p>
+    <input type="text" placeholder="Your name"/>
+    <input type="email" placeholder="Email address"/>
+    <input type="text" placeholder="Firm name"/>
+    <select><option>Practice area</option><option>Personal Injury</option><option>Family Law</option><option>Criminal Defence</option><option>Real Estate</option><option>Corporate</option><option>Immigration</option><option>Other</option></select>
+    <button type="submit" onclick="window.location='/contact.html'">Get My Free Audit →</button>
+  </div>
+</div>
+
+<script>
+function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open')}
+function toggleMobNav(){document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'}
+setTimeout(function(){document.getElementById('stickyCta').style.display='block'},4000);
+</script>
+</body>
+</html>
