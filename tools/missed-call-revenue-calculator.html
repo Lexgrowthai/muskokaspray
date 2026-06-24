@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<title>Missed Call Revenue Calculator for Law Firms | LexScale.ai</title>
+<meta name="description" content="Calculate how much revenue your law firm loses to missed calls and after-hours inquiries. See the annual cost and how an AI receptionist recovers it."/>
+<link rel="canonical" href="https://lexscale.ai/tools/missed-call-revenue-calculator"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Missed Call Revenue Calculator for Law Firms | LexScale.ai"/>
+<meta property="og:description" content="Calculate how much revenue your law firm loses to missed calls and after-hours inquiries. See the annual cost and how an AI receptionist recovers it."/>
+<meta property="og:url" content="https://lexscale.ai/tools/missed-call-revenue-calculator"/>
+<meta property="og:image" content="https://lexscale.ai/og-image.png"/>
+<meta property="og:site_name" content="LexScale.ai"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Missed Call Revenue Calculator for Law Firms | LexScale.ai"/>
+<meta name="twitter:description" content="Calculate how much revenue your law firm loses to missed calls and after-hours inquiries. See the annual cost and how an AI receptionist recovers it."/>
+<meta name="twitter:image" content="https://lexscale.ai/og-image.png"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Missed Call Revenue Calculator for Law Firms","description":"Calculate how much revenue your law firm loses to missed calls and after-hours inquiries. See the annual cost and how an AI receptionist recovers it.","url":"https://lexscale.ai/tools/missed-call-revenue-calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"},"publisher":{"@id":"https://lexscale.ai/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lexscale.ai"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://lexscale.ai/tools"},{"@type":"ListItem","position":3,"name":"Missed Call Revenue Calculator for Law Firms","item":"https://lexscale.ai/tools/missed-call-revenue-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many calls does the average law firm miss?","acceptedAnswer":{"@type":"Answer","text":"LexScale.ai data from Ontario law firms shows the average firm misses 28–35% of inbound calls. After-hours calls account for 22–40% of total daily call volume depending on practice area. Personal injury and criminal defence firms see the highest after-hours call rates due to urgent client situations."}},{"@type":"Question","name":"What is the average client value used in the calculator?","acceptedAnswer":{"@type":"Answer","text":"The calculator uses your input, not a fixed average. However, typical values by practice area in Ontario are: personal injury $8,000–$45,000; family law $4,000–$12,000; criminal defence $3,500–$15,000; corporate law $5,000–$50,000. Using your actual average gives the most accurate revenue leakage figure."}},{"@type":"Question","name":"How does an AI receptionist fix missed calls?","acceptedAnswer":{"@type":"Answer","text":"An AI receptionist answers every call instantly — 24 hours a day, 7 days a week, including holidays. It qualifies the caller, collects contact information, answers common questions, and books consultations directly into your calendar. Firms using LexScale.ai AI receptionists typically see missed-call rates drop from 30%+ to under 5%."}},{"@type":"Question","name":"Is the after-hours call figure included automatically?","acceptedAnswer":{"@type":"Answer","text":"Yes. The calculator includes a separate after-hours multiplier based on your practice area. You can also enter a custom after-hours call percentage if you have data from your phone system. The output breaks out business-hours vs after-hours revenue leakage separately."}},{"@type":"Question","name":"What does an AI receptionist cost compared to the revenue it recovers?","acceptedAnswer":{"@type":"Answer","text":"Most Ontario law firms recover the cost of an AI receptionist within the first 30–60 days from a single additional retained client. LexScale.ai AI receptionists start at a fixed monthly fee with no per-call charges, making the math straightforward — book a strategy call for current pricing."}}]}</script>
+<style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:"Inter",sans-serif;background:#fff;color:#0B1536;}.faq-item.open .faq-a{display:block!important;}.faq-item.open .faq-icon{background:#6A5CFF;}.faq-item.open .faq-icon svg line,.faq-item.open .faq-icon svg path{stroke:#fff;}</style>
+</head>
+<body>
+<nav style="position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(106,92,255,.09);font-family:'Inter',sans-serif;">
+  <a href="/" style="font-size:19px;font-weight:800;color:#0B1536;text-decoration:none;letter-spacing:-.4px;">Lex<span style="color:#6A5CFF;">Scale</span>.ai</a>
+  <div style="display:flex;gap:24px;align-items:center;">
+    <a href="/" style="font-size:13px;color:#4a5568;font-weight:500;text-decoration:none;">Home</a>
+    <a href="/about" style="font-size:13px;color:#4a5568;font-weight:500;text-decoration:none;">About</a>
+    <a href="/insights" style="font-size:13px;color:#4a5568;font-weight:500;text-decoration:none;">Insights</a>
+    <a href="/tools" style="font-size:13px;color:#6A5CFF;font-weight:700;text-decoration:none;">Tools</a>
+    <a href="/case-studies" style="font-size:13px;color:#4a5568;font-weight:500;text-decoration:none;">Case Studies</a>
+    <a href="/contact" style="font-size:13px;color:#4a5568;font-weight:500;text-decoration:none;">Contact</a>
+  </div>
+  <button onclick="document.getElementById('leadModal').style.display='flex'" style="background:#6A5CFF;color:#fff;border:none;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;">Book A Demo</button>
+</nav>
+
+<div style="background:#f8f7ff;padding:10px 40px;border-bottom:1px solid rgba(106,92,255,.08);">
+  <div style="max-width:1100px;margin:0 auto;font-size:12px;color:#94a3b8;">
+    <a href="/" style="color:#6A5CFF;text-decoration:none;">Home</a> <span style="margin:0 6px;">›</span>
+    <a href="/tools" style="color:#6A5CFF;text-decoration:none;">Tools</a> <span style="margin:0 6px;">›</span>
+    Missed Call Revenue Calculator for Law Firms
+  </div>
+</div>
+
+<section style="background:linear-gradient(135deg,#060d24,#0B1536,#111d45);padding:72px 40px 64px;text-align:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(106,92,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(106,92,255,.04) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;"></div>
+  <div style="max-width:760px;margin:0 auto;position:relative;z-index:2;">
+    <div style="display:inline-block;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);border-radius:100px;padding:6px 16px;margin-bottom:20px;">
+      <span style="font-size:11px;font-weight:700;color:#D4AF37;letter-spacing:.8px;text-transform:uppercase;">Free Calculator</span>
+    </div>
+    <h1 style="font-size:clamp(28px,3.5vw,48px);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:18px;">Missed Call Revenue Calculator for Law Firms</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,.6);line-height:1.7;max-width:560px;margin:0 auto 28px;">Calculate how much revenue your law firm loses to missed calls and after-hours inquiries. See the annual cost and how an AI receptionist recovers it.</p>
+    <button onclick="document.getElementById('leadModal').style.display='flex'" style="background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;border:none;padding:14px 32px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;">Join the Waitlist →</button>
+  </div>
+</section>
+
+<section style="padding:64px 40px;background:#fff;">
+  <div style="max-width:760px;margin:0 auto;">
+    <div style="background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(212,175,55,.06));border:1.5px solid rgba(212,175,55,.3);border-radius:16px;padding:28px 32px;margin:0 auto 40px;max-width:760px;text-align:center;">
+    <div style="font-size:11px;font-weight:700;color:#D4AF37;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;">Now in Development</div>
+    <h2 style="font-size:22px;font-weight:800;color:#0B1536;margin-bottom:10px;">The Missed Call Revenue Calculator is coming soon</h2>
+    <p style="font-size:15px;color:#64748b;line-height:1.7;margin-bottom:20px;">Join the waitlist and be first to access this free tool when it launches. We'll notify you by email.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <input type="email" placeholder="your@lawfirm.com" style="padding:12px 18px;border:1.5px solid rgba(11,21,54,.12);border-radius:100px;font-size:14px;font-family:inherit;outline:none;min-width:240px;">
+      <button onclick="document.getElementById('leadModal').style.display='flex'" style="background:#6A5CFF;color:#fff;border:none;padding:12px 24px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;">Join Waitlist →</button>
+    </div>
+  </div>
+
+    <h2 style="font-size:clamp(22px,2.5vw,30px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin:48px 0 16px;">What This Tool Does</h2>
+    <p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:20px;">The Missed Call Revenue Calculator quantifies the annual revenue your law firm loses every time a call goes unanswered. You enter your average daily call volume, estimated percentage of missed calls (including after-hours), your close rate on inbound calls, and your average client value. The calculator multiplies this through to show monthly and annual revenue leakage — numbers that are often shocking to managing partners who haven't done this math before.</p>
+
+    <h2 style="font-size:clamp(22px,2.5vw,30px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin:48px 0 16px;">Why It Matters for Your Law Firm</h2>
+    <p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:20px;">Research shows that 62% of people who can't reach a law firm on the first call will call a competitor instead. For a firm receiving 15 calls per day with a 30% missed-call rate, a $5,000 average client value, and a 20% close rate — that's $492,750 in annual lost revenue. The calculator makes this tangible. It also models the financial impact of deploying an AI receptionist: what happens to annual revenue when your answered-call rate goes from 70% to 97%.</p>
+
+    <h2 style="font-size:clamp(22px,2.5vw,30px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin:48px 0 16px;">What You'll Get</h2>
+    <p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:20px;">The report shows: estimated monthly missed calls, annual revenue leakage from missed calls, projected revenue recovery with an AI receptionist, net ROI of AI receptionist deployment, and payback timeline. A secondary calculation shows the after-hours call opportunity specifically — many firms are surprised to find 25–40% of inbound calls arrive outside business hours.</p>
+  </div>
+</section>
+
+<section style="background:#f8f7ff;padding:36px 40px;border-top:1px solid rgba(106,92,255,.1);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p style="font-size:12px;font-weight:700;color:#6A5CFF;letter-spacing:.8px;text-transform:uppercase;margin-bottom:14px;">Related Resources</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+      <a href="/tools" style="display:inline-block;background:#fff;border:1px solid rgba(106,92,255,.2);border-radius:100px;padding:8px 18px;font-size:14px;font-weight:600;color:#0B1536;text-decoration:none;">← All Tools</a>
+      <a href="/insights/ai-receptionists" style="display:inline-block;background:#fff;border:1px solid rgba(106,92,255,.2);border-radius:100px;padding:8px 18px;font-size:14px;font-weight:600;color:#0B1536;text-decoration:none;">AI Receptionists Hub</a>
+      <a href="/insights/ai-chatbots" style="display:inline-block;background:#fff;border:1px solid rgba(106,92,255,.2);border-radius:100px;padding:8px 18px;font-size:14px;font-weight:600;color:#0B1536;text-decoration:none;">AI Chatbots Hub</a>
+      <a href="/ai-receptionist-for-law-firms" style="display:inline-block;background:#fff;border:1px solid rgba(106,92,255,.2);border-radius:100px;padding:8px 18px;font-size:14px;font-weight:600;color:#0B1536;text-decoration:none;">AI Receptionist Service</a>
+      <a href="/contact" style="display:inline-block;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;border-radius:100px;padding:8px 18px;font-size:14px;font-weight:700;text-decoration:none;">Book Free Strategy Call →</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f8f7ff;padding:72px 40px;">
+  <div style="max-width:760px;margin:0 auto;">
+    <p style="font-size:11px;font-weight:700;color:#6A5CFF;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;">Frequently Asked Questions</p>
+    <h2 style="font-size:clamp(22px,2.5vw,32px);font-weight:900;color:#0B1536;letter-spacing:-1px;margin-bottom:32px;">Questions About This Tool</h2>
+    <div class="faq-item" style="border:1px solid rgba(106,92,255,.1);border-radius:14px;margin-bottom:10px;overflow:hidden;background:#fff;">
+      <div class="faq-q" onclick="toggleFaq(this)" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-size:15px;font-weight:700;color:#0B1536;gap:12px;">How many calls does the average law firm miss?<div class="faq-icon" style="width:24px;height:24px;border-radius:50%;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+      <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:14px;color:#374151;line-height:1.8;">LexScale.ai data from Ontario law firms shows the average firm misses 28–35% of inbound calls. After-hours calls account for 22–40% of total daily call volume depending on practice area. Personal injury and criminal defence firms see the highest after-hours call rates due to urgent client situations.</div>
+    </div>
+    <div class="faq-item" style="border:1px solid rgba(106,92,255,.1);border-radius:14px;margin-bottom:10px;overflow:hidden;background:#fff;">
+      <div class="faq-q" onclick="toggleFaq(this)" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-size:15px;font-weight:700;color:#0B1536;gap:12px;">What is the average client value used in the calculator?<div class="faq-icon" style="width:24px;height:24px;border-radius:50%;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+      <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:14px;color:#374151;line-height:1.8;">The calculator uses your input, not a fixed average. However, typical values by practice area in Ontario are: personal injury $8,000–$45,000; family law $4,000–$12,000; criminal defence $3,500–$15,000; corporate law $5,000–$50,000. Using your actual average gives the most accurate revenue leakage figure.</div>
+    </div>
+    <div class="faq-item" style="border:1px solid rgba(106,92,255,.1);border-radius:14px;margin-bottom:10px;overflow:hidden;background:#fff;">
+      <div class="faq-q" onclick="toggleFaq(this)" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-size:15px;font-weight:700;color:#0B1536;gap:12px;">How does an AI receptionist fix missed calls?<div class="faq-icon" style="width:24px;height:24px;border-radius:50%;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+      <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:14px;color:#374151;line-height:1.8;">An AI receptionist answers every call instantly — 24 hours a day, 7 days a week, including holidays. It qualifies the caller, collects contact information, answers common questions, and books consultations directly into your calendar. Firms using LexScale.ai AI receptionists typically see missed-call rates drop from 30%+ to under 5%.</div>
+    </div>
+    <div class="faq-item" style="border:1px solid rgba(106,92,255,.1);border-radius:14px;margin-bottom:10px;overflow:hidden;background:#fff;">
+      <div class="faq-q" onclick="toggleFaq(this)" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-size:15px;font-weight:700;color:#0B1536;gap:12px;">Is the after-hours call figure included automatically?<div class="faq-icon" style="width:24px;height:24px;border-radius:50%;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+      <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:14px;color:#374151;line-height:1.8;">Yes. The calculator includes a separate after-hours multiplier based on your practice area. You can also enter a custom after-hours call percentage if you have data from your phone system. The output breaks out business-hours vs after-hours revenue leakage separately.</div>
+    </div>
+    <div class="faq-item" style="border:1px solid rgba(106,92,255,.1);border-radius:14px;margin-bottom:10px;overflow:hidden;background:#fff;">
+      <div class="faq-q" onclick="toggleFaq(this)" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-size:15px;font-weight:700;color:#0B1536;gap:12px;">What does an AI receptionist cost compared to the revenue it recovers?<div class="faq-icon" style="width:24px;height:24px;border-radius:50%;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+      <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:14px;color:#374151;line-height:1.8;">Most Ontario law firms recover the cost of an AI receptionist within the first 30–60 days from a single additional retained client. LexScale.ai AI receptionists start at a fixed monthly fee with no per-call charges, making the math straightforward — book a strategy call for current pricing.</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(135deg,#0B1536,#1a2456);padding:72px 40px;text-align:center;">
+  <div style="max-width:600px;margin:0 auto;">
+    <div style="font-size:11px;font-weight:700;color:#a89fff;letter-spacing:.8px;text-transform:uppercase;margin-bottom:12px;">Can't wait for the tool?</div>
+    <h2 style="font-size:clamp(24px,3vw,36px);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:16px;">Get a Free Manual Audit Instead</h2>
+    <p style="font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:28px;">Book a free strategy call and our team will manually run this analysis for your law firm — no waiting required.</p>
+    <a href="/contact" style="display:inline-block;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;padding:14px 32px;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;">Book Free Strategy Call →</a>
+  </div>
+</section>
+
+<footer style="background:#0B1536;padding:48px 40px 24px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px;margin-bottom:40px;">
+      <div><div style="font-size:19px;font-weight:800;color:#fff;margin-bottom:12px;">Lex<span style="color:#6A5CFF;">Scale</span>.ai</div><p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.6;">AI-powered marketing for Canadian law firms.</p></div>
+      <div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.8px;text-transform:uppercase;margin-bottom:12px;">Services</div><a href="/ai-website-design-for-law-firms" style="display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;text-decoration:none;">AI Website Design</a><a href="/ai-seo-for-law-firms" style="display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;text-decoration:none;">AI SEO</a><a href="/ai-receptionist-for-law-firms" style="display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;text-decoration:none;">AI Receptionist</a><a href="/ai-chatbot-for-law-firms" style="display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;text-decoration:none;">AI Chatbot</a></div>
+      <div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.8px;text-transform:uppercase;margin-bottom:12px;">Resources</div><a href="/insights" style="display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;text-decoration:none;">All Insights</a><a href="/tools" style="display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;text-decoration:none;">Free Tools</a><a href="/case-studies" style="display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;text-decoration:none;">Case Studies</a></div>
+      <div><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.8px;text-transform:uppercase;margin-bottom:12px;">Company</div><a href="/about" style="display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;text-decoration:none;">About</a><a href="/contact" style="display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;text-decoration:none;">Contact</a></div>
+    </div>
+    <div style="font-size:13px;color:rgba(255,255,255,.35);text-align:center;padding-top:32px;border-top:1px solid rgba(255,255,255,.06);">&copy; 2026 LexScale.ai &middot; All rights reserved</div>
+  </div>
+  <p style="text-align:center;padding:8px 0;font-size:12px;color:rgba(255,255,255,.35);"><a href="/contact" style="color:rgba(255,255,255,.45);text-decoration:none;margin:0 8px;">Contact</a> &middot; <a href="/privacy" style="color:rgba(255,255,255,.45);text-decoration:none;margin:0 8px;">Privacy Policy</a></p>
+</footer>
+<div id="leadModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(11,21,54,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border-radius:24px;padding:40px;max-width:480px;width:100%;position:relative;box-shadow:0 32px 80px rgba(11,21,54,.25);">
+    <button onclick="document.getElementById('leadModal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;cursor:pointer;color:#94a3b8;font-size:22px;">&times;</button>
+    <div style="font-size:11px;font-weight:700;color:#6A5CFF;letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px;">Free AI Visibility Report</div>
+    <h3 style="font-size:22px;font-weight:800;color:#0B1536;letter-spacing:-.5px;margin-bottom:6px;">See How Your Firm Ranks in AI Search</h3>
+    <p style="font-size:13px;color:#64748b;line-height:1.6;margin-bottom:22px;">Get a free report showing your firm's visibility across ChatGPT, Gemini, and Perplexity.</p>
+    <input type="text" placeholder="Your Name" style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:10px;outline:none;">
+    <input type="email" placeholder="Work Email" style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:10px;outline:none;">
+    <input type="text" placeholder="Law Firm Name" style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:16px;outline:none;">
+    <button style="width:100%;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;border:none;padding:14px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;">Get My Free Report &rarr;</button>
+  </div>
+</div>
+<script>
+function toggleFaq(el){const item=el.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');}
+</script>
+</body>
+</html>

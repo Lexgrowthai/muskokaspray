@@ -1245,6 +1245,71 @@
       "source": "/why-chatgpt-matters-for-law-firms.html",
       "destination": "/why-chatgpt-matters-for-law-firms",
       "permanent": true
+    },
+    {
+      "source": "/insights/index.html",
+      "destination": "/insights/index",
+      "permanent": true
+    },
+    {
+      "source": "/tools/index.html",
+      "destination": "/tools/index",
+      "permanent": true
+    },
+    {
+      "source": "/tools/ai-visibility-checker.html",
+      "destination": "/tools/ai-visibility-checker",
+      "permanent": true
+    },
+    {
+      "source": "/tools/chatgpt-citation-checker.html",
+      "destination": "/tools/chatgpt-citation-checker",
+      "permanent": true
+    },
+    {
+      "source": "/tools/law-firm-roi-calculator.html",
+      "destination": "/tools/law-firm-roi-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/tools/missed-call-revenue-calculator.html",
+      "destination": "/tools/missed-call-revenue-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/tools/google-business-profile-score-checker.html",
+      "destination": "/tools/google-business-profile-score-checker",
+      "permanent": true
+    },
+    {
+      "source": "/tools/ai-search-readiness-assessment.html",
+      "destination": "/tools/ai-search-readiness-assessment",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/index.html",
+      "destination": "/case-studies/index",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/family-law-firm-growth.html",
+      "destination": "/case-studies/family-law-firm-growth",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/criminal-defence-law-firm-growth.html",
+      "destination": "/case-studies/criminal-defence-law-firm-growth",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/personal-injury-law-firm-growth.html",
+      "destination": "/case-studies/personal-injury-law-firm-growth",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/business-law-firm-growth.html",
+      "destination": "/case-studies/business-law-firm-growth",
+      "permanent": true
     }
   ]
 }
