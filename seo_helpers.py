@@ -446,6 +446,7 @@ FOOTER = f"""\
       <a href="about">About</a>
       <a href="contact">Contact</a>
       <a href="chatgpt-for-law-firms">Insights</a>
+      <a href="resources">Resources</a>
       <a href="privacy">Privacy</a>
     </div>
     <div class="footer-copy">© {YEAR} LexScale.ai · All rights reserved</div>
