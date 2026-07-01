@@ -1097,4 +1097,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://lexscale.ai/insights/ai-receptionists/ai-receptionist-for-criminal-defense-lawyers</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/ai-receptionists/ai-receptionist-for-immigration-lawyers</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/ai-receptionists/ai-receptionist-bilingual-law-firms</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/ai-receptionists/ai-receptionist-call-screening-law-firms</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/ai-receptionists/ai-receptionist-multi-location-law-firms</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/perplexity/perplexity-for-personal-injury-lawyers</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0B1536;--pu:#6A5CFF;--pu2:#8B7FFF;--pu3:#a89fff;--gold:#D4AF37;--gold2:#F0C040;--gold3:#b8962e;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#0B1536;overflow-x:hidden;}
+a{text-decoration:none;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(106,92,255,.09);}
+.logo{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.4px;}
+.logo span{color:var(--pu);}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
+.nav-links a{font-size:13px;color:#4a5568;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--pu);}
+.has-drop{position:relative;}
+.has-drop>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.drop-arrow{width:14px;height:14px;opacity:.5;transition:transform .2s;}
+.has-drop:hover .drop-arrow{transform:rotate(180deg);}
+.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(106,92,255,.12);border-radius:16px;padding:12px 8px 8px;box-shadow:0 16px 48px rgba(11,21,54,.12);min-width:260px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:200;}
+.has-drop:hover .dropdown{opacity:1;pointer-events:all;visibility:visible;}
+.drop-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;transition:background .15s;}
+.drop-item:hover{background:rgba(106,92,255,.07);}
+.drop-ico{width:30px;height:30px;border-radius:8px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.drop-label{font-size:12.5px;font-weight:600;color:var(--navy);}
+.drop-sub{font-size:11px;color:#94a3b8;margin-top:1px;}
+.drop-divider{height:1px;background:rgba(106,92,255,.07);margin:6px 8px;}
+.nav-cta{background:var(--pu);color:#fff;border:none;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;}
+.nav-cta:hover{background:#5848e8;transform:translateY(-1px);}
+footer{background:#0B1536;padding:48px 40px 32px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:28px;align-items:center;text-align:center;}
+.footer-logo{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.3px;}
+.footer-logo span{color:var(--pu2);}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.4);margin-top:4px;}
+.footer-links{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3);}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(106,92,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(106,92,255,.04) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;}
+.tag{display:inline-flex;align-items:center;gap:7px;background:rgba(106,92,255,.08);border:1px solid rgba(106,92,255,.2);border-radius:100px;padding:6px 14px;margin-bottom:18px;}
+.tag span{font-size:11px;font-weight:700;color:var(--pu);letter-spacing:.8px;text-transform:uppercase;}
+.purple{color:var(--pu);}
+.faq-list{display:flex;flex-direction:column;gap:0;margin:24px 0;}
+.faq-item{border-bottom:1px solid rgba(106,92,255,.09);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);line-height:1.4;}
+.faq-q:hover{color:var(--pu);}
+.faq-arrow{width:22px;height:22px;border-radius:50%;background:rgba(106,92,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;}
+.faq-item.open .faq-arrow{background:var(--pu);transform:rotate(180deg);}
+.faq-a{font-size:14px;color:#4b5563;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:20px;}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:90;border-top:1px solid rgba(106,92,255,.2);}
+.sticky-cta p{font-size:14px;color:rgba(255,255,255,.7);margin:0;}
+.sticky-cta button{background:var(--pu);color:#fff;border:none;padding:10px 22px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.nav-mob{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:101;flex-shrink:0;}
+.nav-mob span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform .3s,opacity .3s;}
+nav.mob-open .nav-mob span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+nav.mob-open .nav-mob span:nth-child(2){opacity:0;transform:scaleX(0);}
+nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:768px){
+  nav{padding:14px 20px;flex-wrap:wrap;gap:0;}
+  .nav-links{display:none;flex-direction:column;gap:0;width:100%;order:3;background:#fff;border-top:1px solid rgba(106,92,255,.08);padding:8px 0 20px;margin-top:2px;}
+  nav.mob-open .nav-links{display:flex;}
+  .nav-links>li{width:100%;border-bottom:1px solid rgba(106,92,255,.06);}
+  .nav-links>li:last-child{border-bottom:none;}
+  .nav-links a{font-size:15px;font-weight:600;padding:13px 20px;display:block;width:100%;color:var(--navy);}
+  .has-drop>a{display:flex;align-items:center;justify-content:space-between;padding:13px 20px;}
+  .drop-arrow{margin-left:auto;transition:transform .25s;}
+  .has-drop.mob-open .drop-arrow{transform:rotate(180deg);}
+  .dropdown{position:static;transform:none;box-shadow:none;border:none;border-radius:0;background:rgba(106,92,255,.04);padding:4px 0 8px;min-width:unset;opacity:1;visibility:visible;pointer-events:all;display:none;transition:none;}
+  .has-drop.mob-open .dropdown{display:block;}
+  .drop-item{padding:10px 28px;}
+  .drop-divider{margin:4px 20px;}
+  .nav-cta{display:none;}
+  .nav-mob{display:flex;}
+  .sticky-cta{flex-direction:column;gap:10px;padding:16px;}
+}
+</style>
+<title>AI Receptionist for Immigration Lawyers | LexScale.ai</title>
+<meta name="description" content="Immigration clients call from abroad and across time zones. An AI receptionist handles calls 24/7 in multiple languages so your firm captures every lead."/>
+<meta name="keywords" content="AI receptionist immigration law, immigration lawyer call answering, bilingual legal AI receptionist, 24/7 immigration intake"/>
+<link rel="canonical" href="https://lexscale.ai/insights/ai-receptionists/ai-receptionist-for-immigration-lawyers"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="AI Receptionist for Immigration Lawyers | LexScale.ai"/>
+<meta property="og:description" content="Immigration clients call from abroad and across time zones. An AI receptionist handles calls 24/7 in multiple languages so your firm captures every lead."/>
+<meta property="og:url" content="https://lexscale.ai/insights/ai-receptionists/ai-receptionist-for-immigration-lawyers"/>
+<meta property="og:image" content="https://lexscale.ai/og-image.png"/>
+<meta property="og:site_name" content="LexScale.ai"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Receptionist for Immigration Lawyers | LexScale.ai"/>
+<meta name="twitter:description" content="Immigration clients call from abroad and across time zones. An AI receptionist handles calls 24/7 in multiple languages so your firm captures every lead."/>
+<meta name="twitter:image" content="https://lexscale.ai/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://lexscale.ai/insights/ai-receptionists/ai-receptionist-for-immigration-lawyers#article",
+  "headline": "AI Receptionist for Immigration Lawyers: Serve Clients Across Time Zones",
+  "description": "Immigration clients call from abroad and across time zones. An AI receptionist handles calls 24/7 in multiple languages so your firm captures every lead.",
+  "url": "https://lexscale.ai/insights/ai-receptionists/ai-receptionist-for-immigration-lawyers",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "author": {
+    "@id": "https://lexscale.ai/#organization"
+  },
+  "publisher": {
+    "@id": "https://lexscale.ai/#organization"
+  },
+  "isPartOf": {
+    "@id": "https://lexscale.ai/#website"
+  },
+  "image": "https://lexscale.ai/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://lexscale.ai"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://lexscale.ai/insights"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI Receptionists for Law Firms",
+      "item": "https://lexscale.ai/insights/ai-receptionists"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "AI Receptionist for Immigration Lawyers: Serve Clients Across Time Zones",
+      "item": "https://lexscale.ai/insights/ai-receptionists/ai-receptionist-for-immigration-lawyers"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can an AI receptionist handle calls in Spanish and other languages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Modern AI receptionists can be deployed in multiple languages simultaneously. For immigration firms, Spanish is the most common secondary language, but systems can also be configured for Mandarin, Tagalog, Portuguese, Hindi, and dozens of other languages depending on your client population. The system detects the caller's language preference — either by the caller's own choice at the start of the call or through automatic language detection — and switches seamlessly. All intake information is captured in the same structured format regardless of language, and lead records are stored in English for your team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What immigration case types can the AI receptionist screen for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The screening logic is fully customizable to your firm's practice areas. Common immigration intake questions include: whether the caller is already in the country or calling from abroad, the type of visa or status they currently hold, the type of immigration benefit they are seeking (green card, citizenship, work visa, asylum, deportation defense), whether they have an upcoming immigration court date, and whether they have any prior orders of removal or denial history. This information helps your attorneys triage leads by urgency and complexity before making the first callback."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does an AI receptionist handle callers who are in deportation proceedings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deportation defense is treated as a high-urgency case type, similar to arrest calls in criminal defense. The AI is scripted to recognize language indicating an imminent removal order, an upcoming immigration court hearing, or a recent ICE encounter. When those triggers are detected, the system immediately escalates the call to priority status, alerts the on-call immigration attorney via SMS with full intake notes, and sends the caller a confirmation message explaining that an attorney will be in contact very soon. For immigration firms, this urgency routing can be the difference between a firm that lands the case and one that loses it to a competitor who answers faster."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="index" class="logo">Lex<span>Scale</span>.ai</a>
+  <ul class="nav-links">
+    <li><a href="index">Home</a></li>
+    <li class="has-drop">
+      <a href="#">Services
+        <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="dropdown">
+        <a href="ai-website-design-for-law-firms" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div><div class="drop-label">AI Website Design</div><div class="drop-sub">For law firms</div></div>
+        </a>
+        <a href="ai-seo-for-law-firms" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          <div><div class="drop-label">AI SEO</div><div class="drop-sub">Rank higher, get cited by AI</div></div>
+        </a>
+        <a href="ai-receptionist-for-law-firms" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="drop-label">AI Receptionist</div><div class="drop-sub">24/7 call answering</div></div>
+        </a>
+        <a href="ai-chatbot-for-law-firms" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div><div class="drop-label">AI Chatbot</div><div class="drop-sub">Convert more website visitors</div></div>
+        </a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">Insights
+        <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="dropdown">
+        <a href="chatgpt" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">ChatGPT for Law Firms</div><div class="drop-sub">12 articles</div></div></a>
+        <a href="google-gemini" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">Google Gemini</div><div class="drop-sub">For law firms</div></div></a>
+        <a href="perplexity" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#20B8CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><div class="drop-label">Perplexity AI</div><div class="drop-sub">For law firms</div></div></a>
+        <div class="drop-divider"></div>
+        <a href="ai-seo" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">AI SEO</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-receptionists" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="drop-label">AI Receptionists</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-chatbots" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">AI Chatbots</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="entity-seo" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="drop-label">Entity SEO</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-websites" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><div class="drop-label">AI Websites</div><div class="drop-sub">5 articles</div></div></a>
+      </div>
+    </li>
+    <li><a href="about">About</a></li>
+    <li><a href="contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('leadModal').style.display='flex'">Book A Demo</button>
+  <button class="nav-mob" aria-label="Open menu" onclick="toggleMobNav(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section style="background:linear-gradient(135deg,#0B1536,#1a2456);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;">
+  <div class="grid-bg"></div>
+  <div style="position:relative;z-index:1;max-width:760px;margin:0 auto;">
+    <div class="tag"><span>IMMIGRATION LAW</span></div>
+    <h1 style="font-size:clamp(28px,4vw,50px);font-weight:900;color:#fff;letter-spacing:-1.5px;margin-bottom:16px;line-height:1.15;">
+      AI Receptionist for Immigration Lawyers: Serve Clients Across Time Zones
+    </h1>
+    <p style="font-size:17px;color:rgba(255,255,255,.65);line-height:1.7;max-width:600px;margin:0 auto 32px;">
+      Immigration clients call from abroad and across time zones. An AI receptionist handles calls 24/7 in multiple languages so your firm captures every lead.
+    </p>
+    <a href="/contact" style="display:inline-block;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;padding:14px 32px;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;">
+      Book a Free Strategy Call →
+    </a>
+  </div>
+</section>
+
+
+<nav aria-label="Breadcrumb" style="background:#f8f9fc;padding:12px 24px;border-bottom:1px solid rgba(106,92,255,.09);">
+  <div style="max-width:1100px;margin:0 auto;font-size:13px;color:#64748b;">
+    <a href="/" style="color:#6A5CFF;">Home</a> →
+    <a href="/insights" style="color:#6A5CFF;margin:0 6px;">Insights</a> →
+    <a href="/insights/ai-receptionists" style="color:#6A5CFF;margin:0 6px;">AI Receptionists</a> →
+    <span style="color:#0B1536;margin-left:6px;">AI Receptionist for Immigration Lawyers: Serve Clients Across Time Zones</span>
+  </div>
+</nav>
+
+
+<section style="padding:56px 24px;background:#f8f9fc;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+    
+        <div style="text-align:center;padding:32px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(11,21,54,.07);">
+          <div style="font-size:42px;font-weight:900;color:#6A5CFF;letter-spacing:-1px;">24/7</div>
+          <div style="font-size:14px;color:#64748b;margin-top:8px;line-height:1.5;">client calls answered across all time zones and languages</div>
+        </div>
+        <div style="text-align:center;padding:32px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(11,21,54,.07);">
+          <div style="font-size:42px;font-weight:900;color:#6A5CFF;letter-spacing:-1px;">68%</div>
+          <div style="font-size:14px;color:#64748b;margin-top:8px;line-height:1.5;">of immigration clients research and call from outside business hours</div>
+        </div>
+        <div style="text-align:center;padding:32px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(11,21,54,.07);">
+          <div style="font-size:42px;font-weight:900;color:#6A5CFF;letter-spacing:-1px;">3×</div>
+          <div style="font-size:14px;color:#64748b;margin-top:8px;line-height:1.5;">more leads captured by firms with 24/7 AI intake vs. voicemail-only</div>
+        </div>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:#fff;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(22px,2.6vw,32px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin-bottom:16px;">The Time-Zone Problem That Costs Immigration Firms Thousands of Dollars</h2><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">Immigration law has a client geography problem that most practice areas do not. Your clients are not local. They are calling from Los Angeles, Houston, Toronto, Mexico City, Bogotá, Manila, and Mumbai. They are calling during their morning, their lunch break, or their evening — which may be your 2 AM or your Sunday afternoon.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">A family in Central America consulting an immigration attorney in Miami will call during their business day, which is Miami's business day too — unless it is a Saturday, a holiday, or one of the dozens of other windows when a law firm's phones go unanswered. And a client in Southeast Asia consulting a U.S. immigration attorney is almost certainly calling from a time zone that is completely misaligned with any normal office schedule.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">The result is predictable: immigration firms with standard business-hours phone coverage lose a material percentage of inbound leads to voicemail every single day. Those leads do not wait. They move to the next firm on their list.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">An AI receptionist eliminates the time-zone gap entirely. Your phones are answered 24 hours a day, 365 days a year, in the languages your clients speak. Every inquiry is captured, qualified, and routed to your team with full intake notes. No lead is ever sent to voicemail because it arrived at the wrong time of day.</p>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:#f8f9fc;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(22px,2.6vw,32px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin-bottom:16px;">Multilingual Intake: Meeting Clients in Their Language</h2><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">Language is the single biggest barrier between immigration clients and their attorneys. Many immigration clients are non-native English speakers who are already under enormous stress. Asking them to navigate a complex intake process in a second language — or worse, reaching a voicemail recording in English only — is a fast way to lose a client who genuinely needs your help.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">AI receptionists for immigration firms are typically configured to offer language selection at the start of every call: 'To continue in English, press 1. Para continuar en español, oprima 2.' From that point, the entire intake conversation happens in the caller's language. The AI asks the same structured intake questions, captures the same information, and delivers the same quality of service — just in the language the caller chose.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">For Spanish-speaking clients, this is often the deciding factor in whether they stay on the line or hang up. An AI that says 'Gracias por llamar a [Nombre de la firma]. Entiendo que puede ser una situación urgente — está en el lugar correcto' creates immediate trust and comfort.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">The intake records are stored in English in your practice management system, making them accessible to your entire team regardless of their language skills. The caller experience is bilingual (or multilingual). The operational workflow stays consistent.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+  <div><h3 style="font-size:18px;font-weight:700;color:#0B1536;margin-bottom:10px;margin-top:28px;">Languages commonly configured</h3><ul style='font-size:15px;color:#374151;line-height:2.2;padding-left:20px;'><li>Spanish (United States and Latin America)</li><li>Mandarin and Cantonese</li><li>Tagalog / Filipino</li><li>Portuguese (Brazil and Portugal)</li><li>Hindi and Punjabi</li><li>Arabic and French</li></ul></div>
+  <div><h3 style="font-size:18px;font-weight:700;color:#0B1536;margin-bottom:10px;margin-top:28px;">What the AI captures on every call</h3><ul style='font-size:15px;color:#374151;line-height:2.2;padding-left:20px;'><li>Current immigration status and country of origin</li><li>Type of benefit or relief being sought</li><li>Whether the caller is in the U.S. or abroad</li><li>Upcoming court dates or government deadlines</li><li>Prior immigration history (denials, removals)</li><li>Best contact method and time zone</li></ul></div>
+</div>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:#fff;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(22px,2.6vw,32px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin-bottom:16px;">Screening and Prioritizing Immigration Leads Automatically</h2><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">Not all immigration calls are equal in urgency or fit. A family planning ahead for a green card application is a different kind of lead than a client who received an ICE notice last week and has a hearing in three days. Your attorneys' time is finite, and the highest-urgency cases need to reach them first.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">AI receptionists handle this triage automatically. The intake script asks questions that surface urgency indicators: upcoming court dates, recent government notices, current detention or custody situations. When those indicators are present, the system escalates the call to priority status and triggers an immediate alert.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">For routine leads — green card applications, citizenship petitions, work visa renewals — the system captures all necessary information, assigns a follow-up priority based on your firm's criteria, and places the lead in the appropriate intake queue for your team's next business day review.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">This means your attorneys come in every morning knowing which calls need a same-day response and which can be handled through the normal intake workflow. No guessing. No missed urgencies buried in a voicemail inbox.</p>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:#f8f9fc;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(22px,2.6vw,32px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin-bottom:16px;">Building an Immigration Practice That Operates Without Borders</h2><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">The most successful immigration firms are not limited by office hours or geography. They serve clients across the country and across the world because their intake infrastructure operates at the same scale as the problems their clients face.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">An AI receptionist is the foundation of that infrastructure. It is the 24/7 presence that ensures no call goes unanswered, no language creates a barrier, and no time zone prevents a new client from reaching your firm. It is also the system that ensures your attorneys are spending their time on legal work — not on returning missed calls or managing a backlog of voicemails.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">For immigration firms looking to grow, the AI receptionist is not a cost-reduction tool. It is a growth infrastructure investment that expands your effective hours of operation from 45 to 168 per week without adding a single person to your payroll.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">Combined with an <a href='/ai-chatbot-for-law-firms' style='color:#6A5CFF;'>AI chatbot</a> on your website and a strong <a href='/ai-seo-for-law-firms' style='color:#6A5CFF;'>SEO presence</a>, the AI receptionist completes a 24/7 client acquisition system that works while your attorneys sleep.</p><p style="margin-top:24px;font-size:14px;color:#64748b;line-height:2;">Related: <a href="/insights/ai-receptionists" style="color:#6A5CFF;font-weight:600;">AI Receptionists Hub</a> · <a href="/ai-receptionist-bilingual-law-firms" style="color:#6A5CFF;font-weight:600;">Bilingual AI Receptionists</a> · <a href="/ai-receptionist-for-law-firms" style="color:#6A5CFF;font-weight:600;">AI Receptionist for Law Firms</a> · <a href="/ai-chatbot-for-law-firms" style="color:#6A5CFF;font-weight:600;">AI Chatbot for Law Firms</a> · <a href="/ai-seo-for-law-firms" style="color:#6A5CFF;font-weight:600;">AI SEO for Law Firms</a> · <a href="/ai-website-design-for-law-firms" style="color:#6A5CFF;font-weight:600;">AI Website Design</a> · <a href="/contact" style="color:#6A5CFF;font-weight:600;">Book a Strategy Call</a></p>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:#f8f9fc;">
+  <div style="max-width:760px;margin:0 auto;">
+    <h2 style="font-size:28px;font-weight:800;color:#0B1536;text-align:center;margin-bottom:32px;">Frequently Asked Questions</h2><div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can an AI receptionist handle calls in Spanish and other languages?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="faq-a">Yes. Modern AI receptionists can be deployed in multiple languages simultaneously. For immigration firms, Spanish is the most common secondary language, but systems can also be configured for Mandarin, Tagalog, Portuguese, Hindi, and dozens of other languages depending on your client population. The system detects the caller's language preference — either by the caller's own choice at the start of the call or through automatic language detection — and switches seamlessly. All intake information is captured in the same structured format regardless of language, and lead records are stored in English for your team.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What immigration case types can the AI receptionist screen for?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="faq-a">The screening logic is fully customizable to your firm's practice areas. Common immigration intake questions include: whether the caller is already in the country or calling from abroad, the type of visa or status they currently hold, the type of immigration benefit they are seeking (green card, citizenship, work visa, asylum, deportation defense), whether they have an upcoming immigration court date, and whether they have any prior orders of removal or denial history. This information helps your attorneys triage leads by urgency and complexity before making the first callback.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How does an AI receptionist handle callers who are in deportation proceedings?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="faq-a">Deportation defense is treated as a high-urgency case type, similar to arrest calls in criminal defense. The AI is scripted to recognize language indicating an imminent removal order, an upcoming immigration court hearing, or a recent ICE encounter. When those triggers are detected, the system immediately escalates the call to priority status, alerts the on-call immigration attorney via SMS with full intake notes, and sends the caller a confirmation message explaining that an attorney will be in contact very soon. For immigration firms, this urgency routing can be the difference between a firm that lands the case and one that loses it to a competitor who answers faster.</div>
+      </div>
+</div>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:linear-gradient(135deg,#0B1536,#1a2456);text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <h2 style="font-size:clamp(24px,3vw,36px);font-weight:900;color:#fff;letter-spacing:-.8px;margin-bottom:16px;">
+      Ready to Never Miss Another Client Call?
+    </h2>
+    <p style="font-size:16px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:32px;">
+      LexScale.ai deploys AI receptionists built exclusively for law firms. No scripts to write, no tech team needed.
+    </p>
+    <a href="/contact" style="display:inline-block;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;padding:16px 36px;border-radius:100px;font-size:16px;font-weight:700;text-decoration:none;">
+      Book a Free Strategy Call →
+    </a>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Lex<span>Scale</span>.ai</div>
+      <div class="footer-tagline">AI Growth Systems For Law Firms</div>
+    </div>
+    <div class="footer-links">
+      <a href="ai-website-design-for-law-firms">AI Website Design</a>
+      <a href="ai-seo-for-law-firms">AI SEO</a>
+      <a href="ai-receptionist-for-law-firms">AI Receptionist</a>
+      <a href="ai-chatbot-for-law-firms">AI Chatbot</a>
+      <a href="about">About</a>
+      <a href="contact">Contact</a>
+      <a href="chatgpt-for-law-firms">Insights</a>
+      <a href="resources">Resources</a>
+      <a href="privacy">Privacy</a>
+    </div>
+    <div class="footer-copy">© 2026 LexScale.ai · All rights reserved</div>
+  </div>
+</footer>
+<div class="sticky-cta">
+  <p>Ready to grow your firm with AI?</p>
+  <button onclick="document.getElementById('leadModal').style.display='flex'">Book a Free Strategy Call →</button>
+</div>
+<div id="leadModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border-radius:24px;padding:40px;max-width:480px;width:100%;position:relative;">
+    <button onclick="document.getElementById('leadModal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#94a3b8;">✕</button>
+    <h3 style="font-size:22px;font-weight:800;color:#0B1536;margin-bottom:8px;">Book a Free Strategy Call</h3>
+    <p style="font-size:14px;color:#64748b;margin-bottom:24px;">Tell us about your firm. We'll show you exactly how AI can help you grow.</p>
+    <form name="lead" method="POST" action="/">
+      <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-family:inherit;font-size:14px;margin-bottom:12px;outline:none;"/>
+      <input type="email" name="email" placeholder="Work email" required style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-family:inherit;font-size:14px;margin-bottom:12px;outline:none;"/>
+      <input type="text" name="firm" placeholder="Firm name" required style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-family:inherit;font-size:14px;margin-bottom:20px;outline:none;"/>
+      <button type="submit" style="width:100%;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;border:none;padding:14px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;">Book My Strategy Call →</button>
+    </form>
+  </div>
+</div>
+<script>
+function toggleFaq(el){
+  const item=el.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+function toggleMobNav(btn){
+  const nav=btn.closest('nav');
+  nav.classList.toggle('mob-open');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  /* Mobile sub-menu accordions */
+  document.querySelectorAll('.has-drop>a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(window.innerWidth>768)return;
+      e.preventDefault();
+      const li=a.closest('.has-drop');
+      li.classList.toggle('mob-open');
+    });
+  });
+  /* Close mobile menu on outside tap */
+  document.addEventListener('click',function(e){
+    const nav=document.querySelector('nav');
+    if(nav&&nav.classList.contains('mob-open')&&!nav.contains(e.target)){
+      nav.classList.remove('mob-open');
+    }
+  });
+});
+</script>
+</body>
+</html>

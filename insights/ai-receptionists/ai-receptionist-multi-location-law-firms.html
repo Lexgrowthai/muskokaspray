@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0B1536;--pu:#6A5CFF;--pu2:#8B7FFF;--pu3:#a89fff;--gold:#D4AF37;--gold2:#F0C040;--gold3:#b8962e;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#0B1536;overflow-x:hidden;}
+a{text-decoration:none;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(255,255,255,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(106,92,255,.09);}
+.logo{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.4px;}
+.logo span{color:var(--pu);}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
+.nav-links a{font-size:13px;color:#4a5568;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--pu);}
+.has-drop{position:relative;}
+.has-drop>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.drop-arrow{width:14px;height:14px;opacity:.5;transition:transform .2s;}
+.has-drop:hover .drop-arrow{transform:rotate(180deg);}
+.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(106,92,255,.12);border-radius:16px;padding:12px 8px 8px;box-shadow:0 16px 48px rgba(11,21,54,.12);min-width:260px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:200;}
+.has-drop:hover .dropdown{opacity:1;pointer-events:all;visibility:visible;}
+.drop-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;transition:background .15s;}
+.drop-item:hover{background:rgba(106,92,255,.07);}
+.drop-ico{width:30px;height:30px;border-radius:8px;background:rgba(106,92,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.drop-label{font-size:12.5px;font-weight:600;color:var(--navy);}
+.drop-sub{font-size:11px;color:#94a3b8;margin-top:1px;}
+.drop-divider{height:1px;background:rgba(106,92,255,.07);margin:6px 8px;}
+.nav-cta{background:var(--pu);color:#fff;border:none;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;}
+.nav-cta:hover{background:#5848e8;transform:translateY(-1px);}
+footer{background:#0B1536;padding:48px 40px 32px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:28px;align-items:center;text-align:center;}
+.footer-logo{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.3px;}
+.footer-logo span{color:var(--pu2);}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.4);margin-top:4px;}
+.footer-links{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3);}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(106,92,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(106,92,255,.04) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;}
+.tag{display:inline-flex;align-items:center;gap:7px;background:rgba(106,92,255,.08);border:1px solid rgba(106,92,255,.2);border-radius:100px;padding:6px 14px;margin-bottom:18px;}
+.tag span{font-size:11px;font-weight:700;color:var(--pu);letter-spacing:.8px;text-transform:uppercase;}
+.purple{color:var(--pu);}
+.faq-list{display:flex;flex-direction:column;gap:0;margin:24px 0;}
+.faq-item{border-bottom:1px solid rgba(106,92,255,.09);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);line-height:1.4;}
+.faq-q:hover{color:var(--pu);}
+.faq-arrow{width:22px;height:22px;border-radius:50%;background:rgba(106,92,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;}
+.faq-item.open .faq-arrow{background:var(--pu);transform:rotate(180deg);}
+.faq-a{font-size:14px;color:#4b5563;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:20px;}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:90;border-top:1px solid rgba(106,92,255,.2);}
+.sticky-cta p{font-size:14px;color:rgba(255,255,255,.7);margin:0;}
+.sticky-cta button{background:var(--pu);color:#fff;border:none;padding:10px 22px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.nav-mob{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:101;flex-shrink:0;}
+.nav-mob span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform .3s,opacity .3s;}
+nav.mob-open .nav-mob span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+nav.mob-open .nav-mob span:nth-child(2){opacity:0;transform:scaleX(0);}
+nav.mob-open .nav-mob span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:768px){
+  nav{padding:14px 20px;flex-wrap:wrap;gap:0;}
+  .nav-links{display:none;flex-direction:column;gap:0;width:100%;order:3;background:#fff;border-top:1px solid rgba(106,92,255,.08);padding:8px 0 20px;margin-top:2px;}
+  nav.mob-open .nav-links{display:flex;}
+  .nav-links>li{width:100%;border-bottom:1px solid rgba(106,92,255,.06);}
+  .nav-links>li:last-child{border-bottom:none;}
+  .nav-links a{font-size:15px;font-weight:600;padding:13px 20px;display:block;width:100%;color:var(--navy);}
+  .has-drop>a{display:flex;align-items:center;justify-content:space-between;padding:13px 20px;}
+  .drop-arrow{margin-left:auto;transition:transform .25s;}
+  .has-drop.mob-open .drop-arrow{transform:rotate(180deg);}
+  .dropdown{position:static;transform:none;box-shadow:none;border:none;border-radius:0;background:rgba(106,92,255,.04);padding:4px 0 8px;min-width:unset;opacity:1;visibility:visible;pointer-events:all;display:none;transition:none;}
+  .has-drop.mob-open .dropdown{display:block;}
+  .drop-item{padding:10px 28px;}
+  .drop-divider{margin:4px 20px;}
+  .nav-cta{display:none;}
+  .nav-mob{display:flex;}
+  .sticky-cta{flex-direction:column;gap:10px;padding:16px;}
+}
+</style>
+<title>Multi-Location Law Firm AI Receptionist | LexScale.ai</title>
+<meta name="description" content="Multi-location law firms struggle with inconsistent call handling. One AI receptionist manages every office line with the same professional standard, 24/7."/>
+<meta name="keywords" content="multi-location law firm AI receptionist, law firm multiple offices call handling, centralized legal intake, law firm phone system AI"/>
+<link rel="canonical" href="https://lexscale.ai/insights/ai-receptionists/ai-receptionist-multi-location-law-firms"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Multi-Location Law Firm AI Receptionist | LexScale.ai"/>
+<meta property="og:description" content="Multi-location law firms struggle with inconsistent call handling. One AI receptionist manages every office line with the same professional standard, 24/7."/>
+<meta property="og:url" content="https://lexscale.ai/insights/ai-receptionists/ai-receptionist-multi-location-law-firms"/>
+<meta property="og:image" content="https://lexscale.ai/og-image.png"/>
+<meta property="og:site_name" content="LexScale.ai"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Multi-Location Law Firm AI Receptionist | LexScale.ai"/>
+<meta name="twitter:description" content="Multi-location law firms struggle with inconsistent call handling. One AI receptionist manages every office line with the same professional standard, 24/7."/>
+<meta name="twitter:image" content="https://lexscale.ai/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://lexscale.ai/insights/ai-receptionists/ai-receptionist-multi-location-law-firms#article",
+  "headline": "Managing Multiple Office Lines With One AI Receptionist",
+  "description": "Multi-location law firms struggle with inconsistent call handling. One AI receptionist manages every office line with the same professional standard, 24/7.",
+  "url": "https://lexscale.ai/insights/ai-receptionists/ai-receptionist-multi-location-law-firms",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "author": {
+    "@id": "https://lexscale.ai/#organization"
+  },
+  "publisher": {
+    "@id": "https://lexscale.ai/#organization"
+  },
+  "isPartOf": {
+    "@id": "https://lexscale.ai/#website"
+  },
+  "image": "https://lexscale.ai/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://lexscale.ai"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://lexscale.ai/insights"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI Receptionists for Law Firms",
+      "item": "https://lexscale.ai/insights/ai-receptionists"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Managing Multiple Office Lines With One AI Receptionist",
+      "item": "https://lexscale.ai/insights/ai-receptionists/ai-receptionist-multi-location-law-firms"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does one AI receptionist handle different phone numbers for different offices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The AI system is configured with routing logic that recognizes which number the caller dialed. Each office number maps to its own greeting and intake flow — so a caller who dials the downtown office hears a greeting specific to that location, and a caller who dials the suburban office hears a different but equally professional greeting. The AI knows which attorneys and practice areas are associated with each location, routes calls accordingly, and logs all intake records with the relevant office location tagged. From the caller's perspective, it feels like they reached the specific office they intended to call. From your firm's perspective, all call data flows into one unified dashboard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the AI receptionist route calls to different attorneys based on practice area and location?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and this is one of the most powerful features for multi-location firms. The routing logic can be built to account for both location and practice area simultaneously. For example: personal injury calls to the downtown number route to the PI attorneys at that office; family law calls to the same number route to the family law team; after-hours calls to either number route to the on-call attorney for that practice area, regardless of location. These routing rules are defined in your configuration and can be updated whenever your team structure or practice mix changes. The system always routes to the right person based on the current rules — no manual call forwarding, no confusion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I open a new office location?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adding a new location to your AI receptionist configuration is straightforward. You provide the new phone number, the office location details, the attorneys and practice areas associated with that office, and any location-specific intake questions or routing preferences. The AI is updated and the new line is live typically within a few business days. There is no need to hire new reception staff, train anyone on call handling protocols, or worry about the new office's call quality being inconsistent with your established locations. The AI delivers the same professional experience from day one at the new location as it does at your offices that have been running for years."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="index" class="logo">Lex<span>Scale</span>.ai</a>
+  <ul class="nav-links">
+    <li><a href="index">Home</a></li>
+    <li class="has-drop">
+      <a href="#">Services
+        <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="dropdown">
+        <a href="ai-website-design-for-law-firms" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div><div class="drop-label">AI Website Design</div><div class="drop-sub">For law firms</div></div>
+        </a>
+        <a href="ai-seo-for-law-firms" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          <div><div class="drop-label">AI SEO</div><div class="drop-sub">Rank higher, get cited by AI</div></div>
+        </a>
+        <a href="ai-receptionist-for-law-firms" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="drop-label">AI Receptionist</div><div class="drop-sub">24/7 call answering</div></div>
+        </a>
+        <a href="ai-chatbot-for-law-firms" class="drop-item">
+          <div class="drop-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div><div class="drop-label">AI Chatbot</div><div class="drop-sub">Convert more website visitors</div></div>
+        </a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">Insights
+        <svg class="drop-arrow" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#4a5568" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="dropdown">
+        <a href="chatgpt" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">ChatGPT for Law Firms</div><div class="drop-sub">12 articles</div></div></a>
+        <a href="google-gemini" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">Google Gemini</div><div class="drop-sub">For law firms</div></div></a>
+        <a href="perplexity" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#20B8CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><div class="drop-label">Perplexity AI</div><div class="drop-sub">For law firms</div></div></a>
+        <div class="drop-divider"></div>
+        <a href="ai-seo" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><div class="drop-label">AI SEO</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-receptionists" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="drop-label">AI Receptionists</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-chatbots" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="drop-label">AI Chatbots</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="entity-seo" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="drop-label">Entity SEO</div><div class="drop-sub">5 articles</div></div></a>
+        <a href="ai-websites" class="drop-item"><div class="drop-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6A5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><div class="drop-label">AI Websites</div><div class="drop-sub">5 articles</div></div></a>
+      </div>
+    </li>
+    <li><a href="about">About</a></li>
+    <li><a href="contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('leadModal').style.display='flex'">Book A Demo</button>
+  <button class="nav-mob" aria-label="Open menu" onclick="toggleMobNav(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section style="background:linear-gradient(135deg,#0B1536,#1a2456);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;">
+  <div class="grid-bg"></div>
+  <div style="position:relative;z-index:1;max-width:760px;margin:0 auto;">
+    <div class="tag"><span>MULTI-LOCATION FIRMS</span></div>
+    <h1 style="font-size:clamp(28px,4vw,50px);font-weight:900;color:#fff;letter-spacing:-1.5px;margin-bottom:16px;line-height:1.15;">
+      Managing Multiple Office Lines With One AI Receptionist
+    </h1>
+    <p style="font-size:17px;color:rgba(255,255,255,.65);line-height:1.7;max-width:600px;margin:0 auto 32px;">
+      Multi-location law firms struggle with inconsistent call handling. One AI receptionist manages every office line with the same professional standard, 24/7.
+    </p>
+    <a href="/contact" style="display:inline-block;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;padding:14px 32px;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;">
+      Book a Free Strategy Call →
+    </a>
+  </div>
+</section>
+
+
+<nav aria-label="Breadcrumb" style="background:#f8f9fc;padding:12px 24px;border-bottom:1px solid rgba(106,92,255,.09);">
+  <div style="max-width:1100px;margin:0 auto;font-size:13px;color:#64748b;">
+    <a href="/" style="color:#6A5CFF;">Home</a> →
+    <a href="/insights" style="color:#6A5CFF;margin:0 6px;">Insights</a> →
+    <a href="/insights/ai-receptionists" style="color:#6A5CFF;margin:0 6px;">AI Receptionists</a> →
+    <span style="color:#0B1536;margin-left:6px;">Managing Multiple Office Lines With One AI Receptionist</span>
+  </div>
+</nav>
+
+
+<section style="padding:56px 24px;background:#f8f9fc;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+    
+        <div style="text-align:center;padding:32px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(11,21,54,.07);">
+          <div style="font-size:42px;font-weight:900;color:#6A5CFF;letter-spacing:-1px;">3×</div>
+          <div style="font-size:14px;color:#64748b;margin-top:8px;line-height:1.5;">more consistent call quality when AI handles all locations vs. distributed human receptionists</div>
+        </div>
+        <div style="text-align:center;padding:32px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(11,21,54,.07);">
+          <div style="font-size:42px;font-weight:900;color:#6A5CFF;letter-spacing:-1px;">$85K+</div>
+          <div style="font-size:14px;color:#64748b;margin-top:8px;line-height:1.5;">annual savings vs. maintaining a dedicated receptionist at each office location</div>
+        </div>
+        <div style="text-align:center;padding:32px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(11,21,54,.07);">
+          <div style="font-size:42px;font-weight:900;color:#6A5CFF;letter-spacing:-1px;">100%</div>
+          <div style="font-size:14px;color:#64748b;margin-top:8px;line-height:1.5;">of calls answered consistently regardless of which office line the caller dials</div>
+        </div>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:#fff;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(22px,2.6vw,32px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin-bottom:16px;">The Call Consistency Problem in Multi-Location Law Firms</h2><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">Every managing partner who has grown a law firm from one office to two or more has discovered the same problem: call handling quality is extraordinarily difficult to standardize across locations. The downtown office has an experienced receptionist who has been with the firm for six years. The new suburban location has a paralegal covering the phones between other duties. The satellite office in the next city over uses an answering service that the partners never feel confident about.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">The result is that the caller experience — a potential client's very first impression of your firm — varies dramatically depending on which number they dialed and what time of day they called. A referral from a satisfied client in one city may reach a professional, empathetic intake conversation. A cold lead who found you through Google in another city may reach a voicemail or an overwhelmed paralegal who gives them three minutes.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">This inconsistency has real business consequences. Prospective clients who reach a poor first-contact experience do not call back. They do not leave reviews explaining that the intake was unprofessional. They just disappear, and the firm never knows what it lost.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">An AI receptionist eliminates location-based inconsistency entirely. Every line at every office delivers the same professional, empathetic, structured intake experience on every call. The quality is not dependent on which staff member happened to be available, what mood they were in, or how busy the office was when the phone rang.</p>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:#f8f9fc;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(22px,2.6vw,32px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin-bottom:16px;">How Centralized AI Intake Works Across Multiple Offices</h2><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">The mechanics of multi-location AI reception are straightforward. Each office phone number is mapped to a specific configuration within the AI system. When a call comes in on the downtown office line, the AI answers with a greeting specific to that office: 'Thank you for calling [Firm Name] — downtown office. How can I help you today?' When a call comes in on the suburban office line, the greeting reflects that location.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">The intake logic after the greeting can be identical across all locations, or it can vary by location if your offices serve different practice areas or client populations. A firm where the downtown office focuses on business litigation and the suburban office focuses on personal injury would configure each line with practice-area-appropriate intake scripts.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">All call records flow into a single centralized dashboard that your firm administrator can access from anywhere. The dashboard shows call volume by location, lead status, call transcripts, and follow-up tasks — giving the managing partner visibility into intake performance across the entire firm in one place, rather than having to check in with each office separately.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+  <div><h3 style="font-size:18px;font-weight:700;color:#0B1536;margin-bottom:10px;margin-top:28px;">Configuration options by location</h3><ul style='font-size:15px;color:#374151;line-height:2.2;padding-left:20px;'><li>Location-specific greetings and attorney rosters</li><li>Practice-area-specific intake question flows</li><li>Different business hours per office (holiday and time-zone aware)</li><li>Location-tagged lead records for performance tracking</li><li>Office-specific referral partner lists for disqualified leads</li><li>Separate escalation paths per location for after-hours urgency</li></ul></div>
+  <div><h3 style="font-size:18px;font-weight:700;color:#0B1536;margin-bottom:10px;margin-top:28px;">Centralized visibility for managing partners</h3><ul style='font-size:15px;color:#374151;line-height:2.2;padding-left:20px;'><li>Unified dashboard with call volume by location and date</li><li>Lead pipeline status across all offices in one view</li><li>Call transcript archive searchable across all locations</li><li>Response time tracking per attorney and per office</li><li>Conversion rate by location and practice area</li><li>Real-time alerts for urgent leads at any location</li></ul></div>
+</div>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:#fff;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(22px,2.6vw,32px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin-bottom:16px;">Eliminating the Staffing Complexity of Multi-Location Reception</h2><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">Running front-desk reception across multiple law firm offices is a human resources challenge as much as a phone management challenge. Each office needs coverage during business hours. Coverage means either a dedicated receptionist at each location, or a shared resource who cannot be in two places, or a patchwork of paralegals and assistants who cover phones as a secondary duty — which invariably means the phones go unanswered or are handled poorly during busy periods.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">An AI receptionist removes this complexity entirely. There is no headcount to manage for reception. No PTO coverage to arrange. No training program to maintain. No turnover to absorb. The AI covers all lines at all locations during all hours, and the quality is identical on the 500th call of the month as it is on the first.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">For firms in growth mode — adding a new location every 18 to 24 months — this scalability is particularly valuable. Each new office comes online with full professional phone coverage from day one, with no hiring delay and no ramp-up period. The intake experience at the new location is immediately as good as the most established office in the firm.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">Existing staff can be redeployed away from phone coverage duties and toward higher-value work: preparing client files, managing deadlines, drafting correspondence, and supporting attorneys on substantive matters. The AI handles the phones. The humans handle the work that requires human judgment.</p>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:#f8f9fc;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(22px,2.6vw,32px);font-weight:800;color:#0B1536;letter-spacing:-.6px;margin-bottom:16px;">Routing Intelligence: The Right Attorney, Right Location, Right Time</h2><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">The most sophisticated benefit of a multi-location AI receptionist is intelligent routing. Rather than simply answering calls and taking messages, a well-configured system actively routes each call to the right person based on multiple factors simultaneously: the office line dialed, the nature of the matter, the caller's language preference, the time of day, and the availability status of specific attorneys.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">A personal injury call to the downtown office during business hours routes to the PI intake specialist at that location. The same type of call after hours routes to the on-call PI attorney, who may be physically at any location or working remotely. A family law call to the suburban office routes to the family law attorney there, or to a shared family law team if that office does not have a dedicated family law attorney.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">This routing intelligence means your clients are always connected to the most relevant person in the shortest time, regardless of which phone number they called or when they called it. It also means your attorneys are not receiving calls outside their practice area, not being interrupted with matters that belong to a different office, and not wasting time on calls that should have gone to someone else.</p><p style="font-size:16px;color:#374151;line-height:1.8;margin-bottom:16px;">When paired with an <a href='/ai-chatbot-for-law-firms' style='color:#6A5CFF;'>AI chatbot</a> on your firm's website and a robust <a href='/ai-seo-for-law-firms' style='color:#6A5CFF;'>local SEO presence</a> for each office location, the AI receptionist completes a client acquisition system that operates at the scale of a large firm even when you are running a boutique multi-office practice.</p><p style="margin-top:24px;font-size:14px;color:#64748b;line-height:2;">Related: <a href="/insights/ai-receptionists" style="color:#6A5CFF;font-weight:600;">AI Receptionists Hub</a> · <a href="/ai-receptionist-for-law-firms" style="color:#6A5CFF;font-weight:600;">AI Receptionist Overview</a> · <a href="/ai-receptionist-for-law-firms" style="color:#6A5CFF;font-weight:600;">AI Receptionist for Law Firms</a> · <a href="/ai-chatbot-for-law-firms" style="color:#6A5CFF;font-weight:600;">AI Chatbot for Law Firms</a> · <a href="/ai-seo-for-law-firms" style="color:#6A5CFF;font-weight:600;">AI SEO for Law Firms</a> · <a href="/ai-website-design-for-law-firms" style="color:#6A5CFF;font-weight:600;">AI Website Design</a> · <a href="/contact" style="color:#6A5CFF;font-weight:600;">Book a Strategy Call</a></p>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:#f8f9fc;">
+  <div style="max-width:760px;margin:0 auto;">
+    <h2 style="font-size:28px;font-weight:800;color:#0B1536;text-align:center;margin-bottom:32px;">Frequently Asked Questions</h2><div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How does one AI receptionist handle different phone numbers for different offices?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="faq-a">The AI system is configured with routing logic that recognizes which number the caller dialed. Each office number maps to its own greeting and intake flow — so a caller who dials the downtown office hears a greeting specific to that location, and a caller who dials the suburban office hears a different but equally professional greeting. The AI knows which attorneys and practice areas are associated with each location, routes calls accordingly, and logs all intake records with the relevant office location tagged. From the caller's perspective, it feels like they reached the specific office they intended to call. From your firm's perspective, all call data flows into one unified dashboard.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can the AI receptionist route calls to different attorneys based on practice area and location?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="faq-a">Yes, and this is one of the most powerful features for multi-location firms. The routing logic can be built to account for both location and practice area simultaneously. For example: personal injury calls to the downtown number route to the PI attorneys at that office; family law calls to the same number route to the family law team; after-hours calls to either number route to the on-call attorney for that practice area, regardless of location. These routing rules are defined in your configuration and can be updated whenever your team structure or practice mix changes. The system always routes to the right person based on the current rules — no manual call forwarding, no confusion.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What happens if I open a new office location?<div class="faq-arrow"><svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="#6A5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="faq-a">Adding a new location to your AI receptionist configuration is straightforward. You provide the new phone number, the office location details, the attorneys and practice areas associated with that office, and any location-specific intake questions or routing preferences. The AI is updated and the new line is live typically within a few business days. There is no need to hire new reception staff, train anyone on call handling protocols, or worry about the new office's call quality being inconsistent with your established locations. The AI delivers the same professional experience from day one at the new location as it does at your offices that have been running for years.</div>
+      </div>
+</div>
+  </div>
+</section>
+
+
+<section style="padding:72px 24px;background:linear-gradient(135deg,#0B1536,#1a2456);text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <h2 style="font-size:clamp(24px,3vw,36px);font-weight:900;color:#fff;letter-spacing:-.8px;margin-bottom:16px;">
+      Ready to Never Miss Another Client Call?
+    </h2>
+    <p style="font-size:16px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:32px;">
+      LexScale.ai deploys AI receptionists built exclusively for law firms. No scripts to write, no tech team needed.
+    </p>
+    <a href="/contact" style="display:inline-block;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;padding:16px 36px;border-radius:100px;font-size:16px;font-weight:700;text-decoration:none;">
+      Book a Free Strategy Call →
+    </a>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Lex<span>Scale</span>.ai</div>
+      <div class="footer-tagline">AI Growth Systems For Law Firms</div>
+    </div>
+    <div class="footer-links">
+      <a href="ai-website-design-for-law-firms">AI Website Design</a>
+      <a href="ai-seo-for-law-firms">AI SEO</a>
+      <a href="ai-receptionist-for-law-firms">AI Receptionist</a>
+      <a href="ai-chatbot-for-law-firms">AI Chatbot</a>
+      <a href="about">About</a>
+      <a href="contact">Contact</a>
+      <a href="chatgpt-for-law-firms">Insights</a>
+      <a href="resources">Resources</a>
+      <a href="privacy">Privacy</a>
+    </div>
+    <div class="footer-copy">© 2026 LexScale.ai · All rights reserved</div>
+  </div>
+</footer>
+<div class="sticky-cta">
+  <p>Ready to grow your firm with AI?</p>
+  <button onclick="document.getElementById('leadModal').style.display='flex'">Book a Free Strategy Call →</button>
+</div>
+<div id="leadModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border-radius:24px;padding:40px;max-width:480px;width:100%;position:relative;">
+    <button onclick="document.getElementById('leadModal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#94a3b8;">✕</button>
+    <h3 style="font-size:22px;font-weight:800;color:#0B1536;margin-bottom:8px;">Book a Free Strategy Call</h3>
+    <p style="font-size:14px;color:#64748b;margin-bottom:24px;">Tell us about your firm. We'll show you exactly how AI can help you grow.</p>
+    <form name="lead" method="POST" action="/">
+      <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-family:inherit;font-size:14px;margin-bottom:12px;outline:none;"/>
+      <input type="email" name="email" placeholder="Work email" required style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-family:inherit;font-size:14px;margin-bottom:12px;outline:none;"/>
+      <input type="text" name="firm" placeholder="Firm name" required style="width:100%;padding:12px 16px;border:1.5px solid rgba(11,21,54,.12);border-radius:10px;font-family:inherit;font-size:14px;margin-bottom:20px;outline:none;"/>
+      <button type="submit" style="width:100%;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;border:none;padding:14px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;">Book My Strategy Call →</button>
+    </form>
+  </div>
+</div>
+<script>
+function toggleFaq(el){
+  const item=el.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+function toggleMobNav(btn){
+  const nav=btn.closest('nav');
+  nav.classList.toggle('mob-open');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  /* Mobile sub-menu accordions */
+  document.querySelectorAll('.has-drop>a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(window.innerWidth>768)return;
+      e.preventDefault();
+      const li=a.closest('.has-drop');
+      li.classList.toggle('mob-open');
+    });
+  });
+  /* Close mobile menu on outside tap */
+  document.addEventListener('click',function(e){
+    const nav=document.querySelector('nav');
+    if(nav&&nav.classList.contains('mob-open')&&!nav.contains(e.target)){
+      nav.classList.remove('mob-open');
+    }
+  });
+});
+</script>
+</body>
+</html>
