@@ -1354,4 +1354,45 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <url>
+    <loc>https://lexscale.ai/insights/chatgpt/chatgpt-for-bankruptcy-lawyers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/chatgpt/chatgpt-attorney-bio-optimization</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/chatgpt/chatgpt-for-workers-compensation-lawyers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/perplexity/perplexity-for-criminal-defense-lawyers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/perplexity/perplexity-for-family-lawyers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/perplexity/perplexity-for-immigration-lawyers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/perplexity/perplexity-deep-research-law-firms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexscale.ai/insights/perplexity/perplexity-for-estate-planning-lawyers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
