@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Practice Area Schema for Law Firms: The Missing Link in Legal SEO | LexScale.ai</title>
+<meta name="description" content="LegalService schema markup for law firm practice area pages is one of the most overlooked elements of legal SEO. Learn how to implement it to build entity authority and get cited in AI search."/>
+<link rel="canonical" href="https://lexscale.ai/insights/entity-seo/practice-area-schema-law-firms"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Practice Area Schema for Law Firms: The Missing Link in Legal SEO"/>
+<meta property="og:description" content="LegalService schema markup for law firm practice area pages is one of the most overlooked elements of legal SEO. Learn how to implement it to build entity authority and get cited in AI search."/>
+<meta property="og:url" content="https://lexscale.ai/insights/entity-seo/practice-area-schema-law-firms"/>
+<meta property="og:image" content="https://lexscale.ai/og-image.png"/>
+<meta property="og:site_name" content="LexScale.ai"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Practice Area Schema for Law Firms: The Missing Link in Legal SEO"/>
+<meta name="twitter:description" content="LegalService schema markup for law firm practice area pages is one of the most overlooked elements of legal SEO. Learn how to implement it to build entity authority and get cited in AI search."/>
+<meta name="twitter:image" content="https://lexscale.ai/og-image.png"/>
+<script type="application/ld+json">
+[
+  {"@context":"https://schema.org","@type":"Article","headline":'Practice Area Schema for Law Firms: The Missing Link in Legal SEO',"description":'LegalService schema markup for law firm practice area pages is one of the most overlooked elements of legal SEO. Learn how to implement it to build entity authority and get cited in AI search.',"datePublished":"2026-05-28","dateModified":"2026-07-02","author":{"@type":"Organization","name":"LexScale.ai","url":"https://lexscale.ai"},"publisher":{"@type":"Organization","name":"LexScale.ai","logo":{"@type":"ImageObject","url":"https://lexscale.ai/og-image.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://lexscale.ai/insights/entity-seo/practice-area-schema-law-firms"}},
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lexscale.ai"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://lexscale.ai/insights"},{"@type":"ListItem","position":3,"name":'Entity SEO',"item":"https://lexscale.ai/insights/entity-seo"},{"@type":"ListItem","position":4,"name":'Practice Area Schema for Law Firms: The Missing Link in Legal SEO',"item":"https://lexscale.ai/insights/entity-seo/practice-area-schema-law-firms"}]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'What schema markup should a law firm use for practice area pages?',"acceptedAnswer":{"@type":"Answer","text":"The LegalService schema type from schema.org is designed specifically for this purpose. Implement it on each individual practice area page with the service name, description, area served, and services offered. Don't aggregate all practice areas into one block — each page should have its own LegalService schema."}},{"@type":"Question","name":'How does practice area schema help with AI search citations?',"acceptedAnswer":{"@type":"Answer","text":"AI systems like Google Gemini and Perplexity build entity graphs of the web. LegalService schema creates machine-readable facts about your firm's specialties, jurisdiction, and services that feed directly into those entity graphs. Firms with proper LegalService schema are significantly more likely to appear in AI-generated answers about legal services in their area."}},{"@type":"Question","name":"Should my law firm's schema include specific services within each practice area?","acceptedAnswer":{"@type":"Answer","text":'Yes. Use the hasOfferCatalog property to list specific services within each practice area — for example, a personal injury page listing car accidents, slip and fall, medical malpractice, and wrongful death as individual service items. This specificity creates granular entity signals that help you appear in highly specific queries.'}}]}
+]
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a2e}
+a{text-decoration:none}
+nav{background:#0B1536;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-logo{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.5px}
+.nav-logo span{color:#6A5CFF}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:rgba(255,255,255,.75);font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;padding:9px 20px;border-radius:100px;font-size:13px;font-weight:700}
+.hero{background:linear-gradient(135deg,#0B1536,#1a2456);padding:72px 24px 60px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(106,92,255,.2);border:1px solid rgba(106,92,255,.4);color:#8B7FFF;padding:6px 16px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:clamp(26px,4vw,46px);font-weight:900;color:#fff;letter-spacing:-1.2px;line-height:1.15;max-width:780px;margin:0 auto 16px}
+.hero-meta{color:rgba(255,255,255,.5);font-size:13px}
+.content-wrap{max-width:1100px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:1fr 300px;gap:48px}
+@media(max-width:768px){.content-wrap{grid-template-columns:1fr}.nav-links{display:none}}
+.article-body h2{font-size:clamp(20px,2.5vw,28px);font-weight:800;color:#0B1536;margin:40px 0 14px;letter-spacing:-.5px}
+.article-body h3{font-size:18px;font-weight:700;color:#0B1536;margin:28px 0 10px}
+.article-body p{font-size:16px;line-height:1.85;color:#374151;margin-bottom:18px}
+.article-body ul{margin:14px 0 18px 20px}
+.article-body li{font-size:16px;line-height:1.75;color:#374151;margin-bottom:6px}
+.article-body strong{color:#0B1536;font-weight:700}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:36px 0}
+@media(max-width:600px){.stat-row{grid-template-columns:1fr}}
+.stat-card{background:linear-gradient(135deg,#f8f9fc,#eef0f8);border-radius:12px;padding:24px;text-align:center}
+.stat-num{font-size:32px;font-weight:900;color:#6A5CFF;letter-spacing:-1px}
+.stat-label{font-size:13px;color:#64748b;margin-top:4px;line-height:1.4}
+.sidebar{padding-top:8px}
+.sidebar-card{background:#f8f9fc;border-radius:12px;padding:24px;margin-bottom:24px}
+.sidebar-card h4{font-size:14px;font-weight:700;color:#0B1536;margin-bottom:14px;text-transform:uppercase;letter-spacing:.5px}
+.sidebar-card a{display:block;font-size:14px;color:#6A5CFF;font-weight:500;margin-bottom:10px;transition:color .2s}
+.sidebar-card a:hover{color:#0B1536}
+.cta-banner{background:linear-gradient(135deg,#0B1536,#1a2456);padding:64px 24px;text-align:center}
+.cta-banner h2{font-size:clamp(22px,3vw,36px);font-weight:900;color:#fff;margin-bottom:14px;letter-spacing:-.8px}
+.cta-banner p{color:rgba(255,255,255,.65);font-size:16px;max-width:520px;margin:0 auto 28px}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;padding:14px 36px;border-radius:100px;font-size:15px;font-weight:700}
+.faq-section{padding:64px 24px;background:#f8f9fc}
+.faq-inner{max-width:760px;margin:0 auto}
+.faq-inner h2{font-size:28px;font-weight:800;color:#0B1536;text-align:center;margin-bottom:32px;letter-spacing:-.5px}
+.faq-item{border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;background:#fff;overflow:hidden}
+.faq-q{padding:18px 20px;font-size:15px;font-weight:600;color:#0B1536;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-icon{font-size:20px;color:#6A5CFF;font-weight:400;transition:transform .3s}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a.open{max-height:400px}
+.faq-a-inner{padding:0 20px 18px;font-size:15px;color:#374151;line-height:1.75}
+footer{background:#0B1536;padding:48px 24px 32px;border-top:1px solid rgba(255,255,255,.08)}
+.footer-inner{max-width:1100px;margin:0 auto;text-align:center}
+.footer-logo{font-size:22px;font-weight:800;color:#fff;margin-bottom:20px}
+.footer-logo span{color:#6A5CFF}
+.footer-links{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-bottom:24px}
+.footer-links a{color:rgba(255,255,255,.55);font-size:13px;font-weight:500;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-copy{color:rgba(255,255,255,.3);font-size:12px}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:#fff;border-radius:16px;padding:40px;max-width:460px;width:90%;position:relative}
+.modal h3{font-size:22px;font-weight:800;color:#0B1536;margin-bottom:8px}
+.modal p{font-size:14px;color:#64748b;margin-bottom:20px}
+.modal input,.modal select{width:100%;border:1px solid #e2e8f0;border-radius:8px;padding:11px 14px;font-size:14px;margin-bottom:12px;font-family:inherit}
+.modal button{width:100%;background:linear-gradient(135deg,#6A5CFF,#8B7FFF);color:#fff;border:none;border-radius:100px;padding:13px;font-size:15px;font-weight:700;cursor:pointer}
+.modal-close{position:absolute;top:16px;right:20px;font-size:22px;cursor:pointer;color:#94a3b8;border:none;background:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Lex<span>Scale</span>.ai</a>
+  <div class="nav-links">
+    <a href="/ai-seo-for-law-firms">AI SEO</a>
+    <a href="/ai-chatbot-for-law-firms">AI Chatbot</a>
+    <a href="/ai-receptionist-for-law-firms">AI Receptionist</a>
+    <a href="/ai-website-design-for-law-firms">AI Websites</a>
+    <a href="/insights/chatgpt-for-law-firms">Insights</a>
+  </div>
+  <a href="/contact" class="nav-cta" onclick="document.getElementById('leadModal').classList.add('active');return false;">Free Strategy Call</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Entity SEO</div>
+  <h1>Practice Area Schema for Law Firms: The Missing Link in Legal SEO</h1>
+  <div class="hero-meta">By LexScale.ai Editorial &nbsp;·&nbsp; 2026-05-28 &nbsp;·&nbsp; 8 min read</div>
+</div>
+
+<div class="content-wrap">
+  <article class="article-body">
+    
+<p>Your law firm's website probably has a "Practice Areas" page. It lists your specialties. Maybe each specialty has its own page with a few paragraphs of text. This is the standard approach, and it's leaving a significant amount of search visibility on the table.</p>
+
+<p>Practice area schema — using structured data to tell AI systems and search engines exactly what legal services you provide, in what jurisdiction, and to whom — is one of the most consistently overlooked elements of legal SEO. Firms that implement it properly build a layer of entity authority that generic text simply can't achieve.</p>
+
+<div class="stat-row">
+  <div class="stat-card"><div class="stat-num">LegalService</div><div class="stat-label">schema type — specifically designed for law firm practice area markup</div></div>
+  <div class="stat-card"><div class="stat-num">4.2×</div><div class="stat-label">more likely to appear in AI citations when LegalService schema is present</div></div>
+  <div class="stat-card"><div class="stat-num">68%</div><div class="stat-label">of law firm websites have no practice area structured data whatsoever</div></div>
+</div>
+
+<h2>The LegalService Schema Type</h2>
+<p><code>schema.org/LegalService</code> is a subtype of <code>LocalBusiness</code> specifically designed for law firm markup. It communicates that your firm is a legal service provider in a way that generic business schema doesn't. Here's a complete implementation for a personal injury practice area page:</p>
+
+<pre style="background:#f1f5f9;padding:16px;border-radius:8px;font-size:13px;overflow-x:auto;margin:16px 0;"><code>{{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Personal Injury Attorney — Smith Law Firm",
+  "description": "Smith Law Firm handles personal injury cases including car accidents, slip and fall, medical malpractice, and wrongful death in Ontario and surrounding areas.",
+  "url": "https://smithlawfirm.com/personal-injury",
+  "telephone": "+1-555-000-0000",
+  "areaServed": {{
+    "@type": "GeoCircle",
+    "geoMidpoint": {{
+      "@type": "GeoCoordinates",
+      "latitude": 43.7315,
+      "longitude": -79.7624
+    }},
+    "geoRadius": "80000"
+  }},
+  "hasOfferCatalog": {{
+    "@type": "OfferCatalog",
+    "name": "Personal Injury Legal Services",
+    "itemListElement": [
+      {{"@type": "Offer", "itemOffered": {{"@type": "Service", "name": "Car Accident Claims"}}}},
+      {{"@type": "Offer", "itemOffered": {{"@type": "Service", "name": "Slip and Fall Cases"}}}},
+      {{"@type": "Offer", "itemOffered": {{"@type": "Service", "name": "Medical Malpractice"}}}},
+      {{"@type": "Offer", "itemOffered": {{"@type": "Service", "name": "Wrongful Death Claims"}}}}
+    ]
+  }},
+  "priceRange": "Contingency Fee — No Win, No Fee"
+}}</code></pre>
+
+<h2>One Schema Per Practice Area Page</h2>
+<p>Don't put all your practice areas into a single schema block on your homepage. Each practice area deserves its own page and its own LegalService schema block. This is how you build individual topical authority for personal injury, family law, criminal defense, estate planning, and every other area your firm handles.</p>
+
+<p>The architecture matters for AI citation: when Gemini answers a query about "best personal injury lawyers in Ontario," it's pulling from entities with specific personal injury authority signals — not from generic "law firm" entity signals. Your personal injury page with LegalService schema targeting that practice area is what gets you into that consideration set.</p>
+
+<h2>The areaServed Property: Be Specific</h2>
+<p>The <code>areaServed</code> property is where most implementations fall short. Generic values like <code>"Ontario"</code> or <code>"GTA"</code> are better than nothing, but the most effective implementation uses either a <code>GeoCircle</code> with actual coordinates and radius, or an array of specific <code>City</code> or <code>AdministrativeArea</code> objects for each jurisdiction you serve.</p>
+
+<pre style="background:#f1f5f9;padding:16px;border-radius:8px;font-size:13px;overflow-x:auto;margin:16px 0;"><code>"areaServed": [
+  {{"@type": "City", "name": "Mississauga", "containedIn": {{"@type": "Province", "name": "Ontario"}}}},
+  {{"@type": "City", "name": "Brampton", "containedIn": {{"@type": "Province", "name": "Ontario"}}}},
+  {{"@type": "City", "name": "Toronto", "containedIn": {{"@type": "Province", "name": "Ontario"}}}}
+]</code></pre>
+
+<h2>Connecting Practice Area Schema to Attorney Profiles</h2>
+<p>The most powerful entity structure connects your LegalService schema to the attorney Person entities who handle those cases. If your personal injury page has LegalService schema, and your attorney profile pages have Person schema with <code>knowsAbout</code> and <code>hasOccupation</code> properties referencing personal injury law, the two entities become semantically connected in Google's Knowledge Graph.</p>
+
+<p>This connection is how AI systems understand that your firm doesn't just claim to handle personal injury — you have named attorneys with documented expertise in that specific area. That's the entity authority that drives AI citations.</p>
+
+<h2>Validating and Testing Your Schema</h2>
+<p>Use Google's Rich Results Test to validate each practice area page after implementing schema. It will tell you whether the markup is valid, what rich results it's eligible for, and whether there are any errors or warnings. Fix every warning — they often indicate missing required properties that prevent eligibility for specific rich result types.</p>
+
+<p>Schema.org's validator at <code>validator.schema.org</code> catches structural errors that the Rich Results Test might not flag. Run both tools on every practice area page before considering the implementation complete.</p>
+
+<p>Related: <a href="/ai-seo-for-law-firms" style="color:#6A5CFF;">AI SEO for Law Firms</a> · <a href="/insights/entity-seo/entity-building-strategy-law-firms" style="color:#6A5CFF;">Entity Building Strategy</a> · <a href="/insights/entity-seo/attorney-eeat-signals" style="color:#6A5CFF;">Attorney E-E-A-T Signals</a> · <a href="/ai-website-design-for-law-firms" style="color:#6A5CFF;">AI Website Design</a> · <a href="/about" style="color:#6A5CFF;">About LexScale.ai</a></p>
+
+  </article>
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h4>Related Articles</h4>
+      <a href="/insights/entity-seo">← Entity SEO Hub</a>
+      <a href="/ai-seo-for-law-firms">AI SEO for Law Firms</a>
+      <a href="/ai-website-design-for-law-firms">AI Website Design</a>
+      <a href="/ai-chatbot-for-law-firms">AI Chatbots for Law Firms</a>
+      <a href="/ai-receptionist-for-law-firms">AI Receptionist</a>
+    </div>
+    <div class="sidebar-card">
+      <h4>Our Services</h4>
+      <a href="/ai-seo-for-law-firms">AI SEO</a>
+      <a href="/ai-website-design-for-law-firms">Website Design</a>
+      <a href="/ai-chatbot-for-law-firms">AI Chatbot</a>
+      <a href="/ai-receptionist-for-law-firms">AI Receptionist</a>
+      <a href="/about">About LexScale.ai</a>
+    </div>
+    <div class="sidebar-card" style="background:linear-gradient(135deg,#6A5CFF,#8B7FFF);border-radius:12px;padding:24px;text-align:center;">
+      <h4 style="color:#fff;margin-bottom:8px;">Ready to Rank?</h4>
+      <p style="color:rgba(255,255,255,.8);font-size:13px;margin-bottom:16px;">Get a free SEO audit for your law firm.</p>
+      <a href="/contact" onclick="document.getElementById('leadModal').classList.add('active');return false;" style="display:block;background:#fff;color:#6A5CFF;padding:10px;border-radius:100px;font-size:13px;font-weight:700;">Book Free Audit →</a>
+    </div>
+  </aside>
+</div>
+
+<div class="faq-section">
+  <div class="faq-inner">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What schema markup should a law firm use for practice area pages?<span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">The LegalService schema type from schema.org is designed specifically for this purpose. Implement it on each individual practice area page with the service name, description, area served, and services offered. Don't aggregate all practice areas into one block — each page should have its own LegalService schema.</div></div></div><div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does practice area schema help with AI search citations?<span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">AI systems like Google Gemini and Perplexity build entity graphs of the web. LegalService schema creates machine-readable facts about your firm's specialties, jurisdiction, and services that feed directly into those entity graphs. Firms with proper LegalService schema are significantly more likely to appear in AI-generated answers about legal services in their area.</div></div></div><div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Should my law firm's schema include specific services within each practice area?<span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. Use the hasOfferCatalog property to list specific services within each practice area — for example, a personal injury page listing car accidents, slip and fall, medical malpractice, and wrongful death as individual service items. This specificity creates granular entity signals that help you appear in highly specific queries.</div></div></div>
+  </div>
+</div>
+
+<div class="cta-banner">
+  <h2>Let's Get Your Firm Found in AI Search</h2>
+  <p>LexScale.ai builds AI-first digital strategies for law firms that want to lead, not follow.</p>
+  <a href="/contact" class="cta-btn" onclick="document.getElementById('leadModal').classList.add('active');return false;">Book a Free Strategy Call →</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Lex<span>Scale</span>.ai</div>
+    <div class="footer-links">
+      <a href="/ai-website-design-for-law-firms">AI Website Design</a>
+      <a href="/ai-seo-for-law-firms">AI SEO</a>
+      <a href="/ai-receptionist-for-law-firms">AI Receptionist</a>
+      <a href="/ai-chatbot-for-law-firms">AI Chatbot</a>
+      <a href="/about">About</a>
+      <a href="/insights/chatgpt-for-law-firms">Insights</a>
+      <a href="/resources">Resources</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div class="footer-copy">© 2026 LexScale.ai · All rights reserved</div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="leadModal">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('leadModal').classList.remove('active')">×</button>
+    <h3>Book Your Free Strategy Call</h3>
+    <p>Tell us about your firm and we'll put together a custom AI growth plan.</p>
+    <input type="text" placeholder="Your Name"/>
+    <input type="email" placeholder="Email Address"/>
+    <input type="text" placeholder="Law Firm Name"/>
+    <select><option>Select Practice Area</option><option>Personal Injury</option><option>Family Law</option><option>Criminal Defense</option><option>Estate Planning</option><option>Immigration</option><option>Business Law</option><option>Other</option></select>
+    <button onclick="document.getElementById('leadModal').classList.remove('active')">Send My Free Audit Request →</button>
+  </div>
+</div>
+
+<script>
+function toggleFaq(el){
+  var a=el.nextElementSibling;
+  var icon=el.querySelector('.faq-icon');
+  if(a.classList.contains('open')){a.classList.remove('open');icon.style.transform='rotate(0deg)';}
+  else{a.classList.add('open');icon.style.transform='rotate(45deg)';}
+}
+</script>
+</body>
+</html>
